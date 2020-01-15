@@ -10,7 +10,7 @@ jobs:
           name: Install dependencies
           command: pip install --require-hashes -r requirements/requirements.txt
       - run:
-          name: Test
+          name: Run lint and link checker
           command: make docs-lint && make docs-linkcheck
     
 workflows:
