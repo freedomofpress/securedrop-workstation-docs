@@ -1,6 +1,8 @@
 Communicating with sources
 ==========================
 
+.. include:: ../includes/top-warning.rst
+
 Opening a conversation
 ----------------------
 

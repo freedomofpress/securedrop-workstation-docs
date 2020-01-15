@@ -1,6 +1,8 @@
 Working with submissions
 ========================
 
+.. include:: ../includes/top-warning.rst
+
 Downloading
 -----------
 
