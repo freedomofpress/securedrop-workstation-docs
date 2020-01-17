@@ -1,6 +1,8 @@
 Starting the SecureDrop client
 ==============================
 
+.. include:: ../includes/top-warning.rst
+
 Performing updates
 ------------------
 

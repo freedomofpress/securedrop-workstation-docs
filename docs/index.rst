@@ -6,6 +6,8 @@
 Welcome to SecureDrop Workstation's documentation!
 ==================================================
 
+.. include:: includes/top-warning.rst
+
 SecureDrop Workstation is an application built on Qubes OS, that can be used in 
 conjunction with SecureDrop to communicate with anonymous sources and manage
 submitted documents with a reasonable level of security.
