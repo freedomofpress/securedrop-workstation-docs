@@ -13,7 +13,7 @@ conjunction with SecureDrop to communicate with anonymous sources and manage
 submitted documents with a reasonable level of security.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Guide for Journalists
 
    journalist/introduction
@@ -26,7 +26,7 @@ submitted documents with a reasonable level of security.
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Guide for Administrators
 
    admin/securing_workstation
