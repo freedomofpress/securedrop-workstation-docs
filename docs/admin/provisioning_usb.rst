@@ -11,9 +11,9 @@ to an encrypted USB *Export Device*.
   systems such as Tails. Support for Veracrypt-encrypted devices is planned,
   which will allow the use of the *Export Device* with MacOS and Windows systems.
 
-In order to provision an *Export Device* for  use with SecureDrop Workstation,
+In order to provision an *Export Device* for use with SecureDrop Workstation,
 you will need a fresh USB stick and a Linux-based system. Tails is recommended -
-if available, the  *Secure Viewing Station* can be used, adding the extra benefit
+if available, the *Secure Viewing Station* can be used, adding the extra benefit
 of its airgap:
 
 - First, boot into the *Secure Viewing Station*, without unlocking its 

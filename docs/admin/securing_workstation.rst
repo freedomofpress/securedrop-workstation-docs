@@ -5,7 +5,7 @@ Keeping the Workstation secure
 
 The *SecureDrop Workstation* provides the combined functionality of the 
 Tails-based *Journalist Workstation* and *Secure Viewing Station* (SVS). As such,
-it contains both a copy of the submission private key, and encrypted and 
+it contains both a copy of the *Submission Private Key*, and encrypted and 
 decryypted messages and submissions. It's critical to ensure that the same
 security practices that are used to protect the SVS are applied to the 
 *SecureDrop Workstation* as well.
