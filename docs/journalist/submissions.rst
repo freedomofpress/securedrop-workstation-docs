@@ -11,7 +11,7 @@ flow, a file size, and light-gray text that says "Encrypted file on server."
 Downloading
 -----------
 
-To download a file, double-click on the Download button.
+To download a file, click the **Download** button.
 
 .. | screenshot_download_button |
 
@@ -64,8 +64,10 @@ Exporting to an Export USB
 --------------------------
 
 Currently, a LUKS-encrypted USB drive is required for exporting submissions. A
-Linux-based system such as Tails will allow you to configure a LUKS-encrypted
-drive; for assistance with this, see your SecureDrop Administrator.
+Linux-based system such as Tails is required to configure and use a LUKS-
+encrypted drive, meaning that for the time being, you will only be able to
+export to a Linux environment where these drives can be read. For assistance
+with this, see your SecureDrop administrator.
 
 Once you have provisioned a LUKS-encrypted export drive, insert the drive and
 click **Export**.

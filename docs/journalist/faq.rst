@@ -15,8 +15,8 @@ How secure is Qubes? How does the security of this system compare to using an ai
   - Discuss Xen
   - Discuss benefits of avoiding systems where security responsibility is on the user (opsec concerns)
 
-Can I install custom software on the SecureDrop Workstation?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I install custom software on SecureDrop Workstation?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Right now, the pilot project is designed to make the journalist experience
 easier by combining the functionality of the Journalist Workstation and Secure
@@ -26,7 +26,11 @@ processing options down the line, at this time we request that you leave the
 workstation configured the way it was provisioned, and hold off on installing
 additional software or changing the functionality or configuration of any of
 the VMs. If you have specific needs that you'd like to discuss with us, open an
-issue on Redmine or send us an email at support@freedom.press.
+issue `in our support portal`_ or send us a `GPG-encrypted email`_ at
+support@freedom.press.
+
+.. _`in our support portal`: https://support.freedom.press/
+.. _`GPG-encrypted email`: https://securedrop.org/sites/default/files/fpf-email.asc
 
 Why can’t I save or print from the Viewer VM apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,8 +41,8 @@ Why can’t I save or print from the Viewer VM apps?
    malicious files in environments where you may also attach external devices
    (printers, USB sticks); the workstation prevents this
 
-My downloads and uploads are time-consuming
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It takes a long time to start SecureDrop Workstation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [This section is a stub]
- - We're sorry
+ - Updates must be fetched, they are important to security

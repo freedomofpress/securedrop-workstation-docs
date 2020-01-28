@@ -3,15 +3,15 @@ Starting the SecureDrop Client
 
 .. include:: ../includes/top-warning.rst
 
-Double-click on the Desktop shortcut to launch the SecureDrop Client
-application.
+Double-click on the **SecureDrop Workstation Launcher** desktop shortcut to
+launch the SecureDrop Client application.
 
 .. | screenshot_desktop-shortcut|
 
 Performing updates
 ------------------
 
-When you launch the application, it will first check for important security
+When you launch the application, it will first check for security
 updates. This can take several minutes.
 
 .. | screenshot_check_updates |
@@ -33,8 +33,8 @@ Signing in
 ----------
 
 To sign in, enter the username and passphrase provided to you by your
-SecureDrop administrator, as well as the 2-factor method you have set up (such
-as Google Authenticator or FreeOTP). If you have used SecureDrop before, these
+SecureDrop administrator, as well as the two-factor code using the method you
+have set up. If you have used SecureDrop before, these
 are the same credentials that you would use to log in to the Journalist
 Interface.
 
@@ -64,3 +64,11 @@ Offline mode is available for circumstances where you wish to work offline or
 are unable to connect to the SecureDrop servers. In offline mode, any content
 that you have previously downloaded will be available. You will not be able to
 send or delete messages.
+
+Because SecureDrop Workstation allows you to download and decrypt submissions
+on one machine, submissions that you have downloaded are still available in
+offline mode and can be accessed even when you are not logged in.
+
+.. important:: Protecting downloaded submissions is another reason why
+   SecureDrop Workstation needs to be powered off completely when it is not in
+   use.
