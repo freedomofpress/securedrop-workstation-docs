@@ -21,8 +21,7 @@ submitted documents with a reasonable level of security.
    journalist/starting_client
    journalist/sources
    journalist/submissions
-   journalist/closing_client
-   journalist/stopping_qubes
+   journalist/ending_session
    journalist/faq
 
 

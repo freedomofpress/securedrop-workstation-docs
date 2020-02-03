@@ -3,8 +3,8 @@ Starting the SecureDrop Client
 
 .. include:: ../includes/top-warning.rst
 
-Double-click on the **SecureDrop Workstation Launcher** desktop shortcut to
-launch the SecureDrop Client application.
+Double-click on the **SecureDrop** desktop shortcut to launch the SecureDrop
+Client application.
 
 .. | screenshot_desktop-shortcut|
 
@@ -17,17 +17,18 @@ updates. This can take several minutes.
 .. | screenshot_check_updates |
 
 If updates are found, you will be asked to apply them before launching the
-client. You have the option of completing this now, or at another time. Keep in
-mind that updates are important to security, and you should apply them the same
-day you receive the notification.
+SecureDrop Client. You have the option of completing this now, or at another
+time. Keep in mind that updates are important to security, and you should apply
+them the same day you receive the notification.
 
-It is important that, when you do click "Apply Updates," you allow the update
-process to complete fully, without closing or interrupting it. The update
-process may take some time.
+.. important:: When you click "Apply Updates," allow the update
+   process to complete fully, without closing or interrupting it, or you risk
+   breaking important system components. The update process may take some
+   time.
 
 .. | screenshot_apply_updates |
 
-Once the update process has been completed, the SecureDrop client will launch.
+Once the update process has been completed, the SecureDrop Client will launch.
 
 Signing in
 ----------

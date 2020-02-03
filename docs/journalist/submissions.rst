@@ -29,15 +29,15 @@ Viewing
 -------
 
 To view a downloaded submission, double-click on the filename. This will open
-the file in a temporary container, called a "disposable VM." The file you
+the file in a temporary environment, called a "disposable VM." The file you
 clicked on will open in a new window with a different colored border and a
 window title prefixed with "disp" (meaning disposable).
 
 .. | screenshot_dispvm |
 
-This container is a special isolated environment similar to the *Secure Viewing
-Station*; it does not have internet access, and isolates the files that you are
-viewing from other sensitive files and applications on the SecureDrop
+This disposable VM is a special isolated environment similar to the *Secure
+Viewing Station*; it does not have internet access, and isolates the files that
+you are viewing from other sensitive files and applications on the SecureDrop
 Workstation.
 
 Because this isolation is important to the security of your system, you will
@@ -46,8 +46,8 @@ example, the copy-and-paste keyboard will not allow you to copy to or from a
 disposable VM. For more information about this and other security features of
 Qubes, see `the Qubes OS documentation`_.
 
-.. tip:: In Qubes, window border colors are used to signify different
- qubes.
+.. tip:: In Qubes, window border colors are used to signify different virtual
+   machines.
 
 .. _`the Qubes OS documentation`: https://www.qubes-os.org
 
