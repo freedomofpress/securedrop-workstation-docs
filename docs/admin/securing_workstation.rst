@@ -6,7 +6,7 @@ Keeping the Workstation secure
 The *SecureDrop Workstation* provides the combined functionality of the 
 Tails-based *Journalist Workstation* and *Secure Viewing Station* (SVS). As such,
 it contains both a copy of the *Submission Private Key*, and encrypted and 
-decryypted messages and submissions. It's critical to ensure that the same
+decrypted messages and submissions. It's critical to ensure that the same
 security practices that are used to protect the SVS are applied to the 
 *SecureDrop Workstation* as well.
 
@@ -51,7 +51,7 @@ Passwords and other credentials in use by *SecureDrop Workstation* include:
 Apply updates when prompted
 ---------------------------
 
-*SecureDrop Workstation* includes a updater application that runs automatically
+*SecureDrop Workstation* includes an updater application that runs automatically
 on startup, checks for Qubes and SecureDrop updates, and prompts the user to
 apply them if found. Given the sensitive nature of the system, it is critical
 that updates are applied when available. Administrators should ensure that users
