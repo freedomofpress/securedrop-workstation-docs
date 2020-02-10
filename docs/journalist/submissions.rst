@@ -70,6 +70,10 @@ export to a Linux environment where these drives can be read. For assistance
 with this, see your SecureDrop administrator.
 
 Once you have provisioned a LUKS-encrypted export drive, insert the drive and
-click **Export**.
+click **Export**. You will be prompted for the password configured for this
+USB drive.
+
+After the export operation is complete, you can physically unplug the USB drive
+or export additional files.
 
 .. | screenshot_export_drive |
