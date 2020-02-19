@@ -54,7 +54,7 @@ following VMs have no network access:
 
 - ``sd-app``, which runs the SecureDrop Client, and holds decrypted messages,
   replies, and documents.
-- ``sd-viewer``, which is the template used for disposable VMs for opening
+- ``sd-viewer``, which is the template for disposable VMs used for opening
   documents from the SecureDrop Client.
 - ``sd-gpg``, which holds the *Submission Private Key* required to decrypt
   messages, replies, and documents.
@@ -64,24 +64,46 @@ following VMs have no network access:
 .. important:
 
    If you attempt to directly access the network in any of these VMs, it will
-   not work, and that is the expected behavior.
+   not work. That is the expected behavior.
 
 Because the SecureDrop Client must connect to the SecureDrop
 *Application Server* in order to send or retrieve messages, documents, and
 replies, it can communicate through Qubes-internal system calls with another
-VM, ``sd-proxy``.
+VM, ``sd-proxy``, which can only access the open Internet through the Tor
+network, using the separate ``sd-whonix`` VM.
 
+Qubes OS ships with a Whonix service called ``sys-whonix``. When troubleshooting
+network issues specific to SecureDrop, ``sys-whonix`` is only relevant during
+updates of the Whonix VMs.
 
+SecureDrop Workstation uses the ``sd-whonix`` service to connect to SecureDrop.
+It contains a sensitive authentication token required to access the SecureDrop
+API via Tor, and should not be attached to VMs that are unrelated to SecureDrop.
 
-Issues to cover:
+Troubleshooting login issues
+----------------------------
+If you experience difficulty logging into SecureDrop using the SecureDrop
+Client, this may or may not be a network issue. Before taking other steps,
+please make sure that your username, passphrase, and two-factor code are correct.
 
-- Use of network manager in Qubes
-- Networking architecture of the workstation
-   + Networkless VMs
-- "Can't log in" - excluding other causes
-   + 2FA errors
-   + Double-checking passphrase
-   + Problems with ``sd-proxy``
+You can reveal the passphrase by clicking the "eye" icon next to it in the login
+dialog (ensure you are in a fully private setting before doing so). Check for
+extra characters at the beginning at the end, or subtle differences like
+capitalization.
+
+Wait for a new two-factor code from your app before trying again. If you access
+multiple sites and services using a single two-factor app, make sure that the
+correct site or service is selected.
+
+If you have access to a Tails-based *Journalist Workstation*, verify whether you
+can access SecureDrop using the same credentials that do not work in Qubes.
+
+Troubleshooting network access via ``sd-proxy`` and ``sd-whonix``
+-----------------------------------------------------------------
+If you are confident that your login credentials are correct, or you are
+experiencing network issues past the login stage, we recommend the following 
+steps:
+
 - Ensuring all required VMs are running
 - Restarting Tor in ``sd-whonix`` via control panel
 - Restarting ``sd-proxy`` and ``sd-whonix``
