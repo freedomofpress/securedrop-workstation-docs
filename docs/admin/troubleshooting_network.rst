@@ -98,13 +98,55 @@ correct site or service is selected.
 If you have access to a Tails-based *Journalist Workstation*, verify whether you
 can access SecureDrop using the same credentials that do not work in Qubes.
 
+Ensuring that all required VMs are running
+------------------------------------------
+The following VMs must be running for all network-bound operations to be
+successfully completed:
+
+- ``sd-app``
+- ``sd-gpg``
+- ``sd-log``
+- ``sd-proxy``
+- ``sd-whonix``
+- ``sys-firewall``
+- ``sys-net``
+- ``sys-whonix``
+
+You can verify whether a VM is running or not by clicking the "Q" icon in the
+top right corner of your Qubes desktop. Only VMs that are currently running are
+listed:
+
+[insert Q widget with VM list expanded]
+
+If a required VM is not running, you can launch it from the Qube Manager. Open
+the Qube Manager by clicking **Open Qube Manager** in the menu above. A window
+like the following should appear:
+
+[insert qube manager screenshot]
+
+To start a VM, select it from the list and press the "play" button in the
+toolbar.
+
+In ordinary operation, VMs should start when they are needed. If you repeatedly
+experience problems with a necessary VM not running, or if an error message
+is displayed when attempting to start the VM, please contact us for assistance.
+
 Troubleshooting network access via ``sd-proxy`` and ``sd-whonix``
 -----------------------------------------------------------------
 If you are confident that your login credentials are correct, or you are
-experiencing network issues past the login stage, we recommend the following 
+experiencing network issues past the login stage, we recommend the following
 steps:
 
-- Ensuring all required VMs are running
+Restart ``sd-proxy`` and ``sd-whonix``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Both VMs are required to successfully connect to the SecureDrop servers. You can
+restart them from the Qube Manager. It may take a moment for Tor connectivity
+to be fully re-established. Tor is ready to use when the icon transitions to
+this state:
+
+[insert sdwdate-gui icon screenshot after time synchronization is complete]
+
+
 - Restarting Tor in ``sd-whonix`` via control panel
 - Restarting ``sd-proxy`` and ``sd-whonix``
 - Testing network connection without Tor
