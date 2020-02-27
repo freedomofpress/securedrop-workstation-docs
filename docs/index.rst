@@ -33,6 +33,7 @@ submitted documents with a reasonable level of security.
    admin/troubleshooting_network
    admin/provisioning_usb
    admin/known_issues
+   admin/workstation_architecture
 
 
 * :ref:`genindex`
