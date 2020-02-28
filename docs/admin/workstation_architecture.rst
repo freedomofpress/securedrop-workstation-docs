@@ -26,6 +26,9 @@ the following VMs have no network access:
 - ``sd-devices``, which passes exported documents through to USB devices like
   printers and encrypted flash drives.
 
+By design, the Qubes OS host domain, ``dom0``, also does not have Internet
+access.
+
 .. note:
 
    If you attempt to directly access the network in any of these VMs, it will

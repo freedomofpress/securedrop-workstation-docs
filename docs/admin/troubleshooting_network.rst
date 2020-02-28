@@ -13,41 +13,62 @@ Step 1: Verify you are connected to the Internet
 
 You can use both wireless and wired networks in Qubes. You can manage network
 access through the network manager, which you can find in the area populated
-with icons in the top right corner of your Qubes desktop.
+with icons in the top right corner of your Qubes desktop, known as the *system
+tray*.
 
 The network manager looks like this for a wired connection:
 
-[SCREENSHOT: network manager wired icon]
+**[SCREENSHOT: network manager wired icon]**
 
 It looks like this for a wireless connection:
 
-[SCREENSHOT: network manager wired icon]
+**[SCREENSHOT: network manager wired icon]**
 
-.. note::
-   Like most operating systems, Qubes gives you the option to remember any
-   wireless network you have previously connected to.
+It looks like this when you are not connected to the Internet at all:
 
-   If Qubes is able to connect to both a wired and a wireless network, the wired
-   connection will take precedence, and the network manager icon for a wired
-   connection will be shown. However, Qubes may still maintain a wireless
-   connection in parallel, and fall back to it if the wired connection is lost.
+**[SCREENSHOT: no connection icon]**
 
 When a network connection is lost, Qubes will display an alert like the
 following:
 
-[SCREENSHOT: lost connection notification]
+**[SCREENSHOT: lost connection notification]**
 
 Common causes for lost connections include fully or partly unplugged network cables,
 lost power to networking equipment, and ISP service outages. When you see a lost
 connection notification, it is most likely due to one of these causes.
 
-If you are experiencing other connectivity issues, move on to the next step.
+If the network manager shows that you are connected to the Internet, you can
+verify whether your connection is working by opening a terminal in ``sys-net``:
+
+**[SCREENSHOT: Q widget with VM list and "Run terminal" expanded]**
+
+1. Click the "Q" icon in the in the system tray (top right area).
+2. A list of running VMs should appear. Select ``sys-net`` from the list, and
+   click **Run Terminal**.
+3. In the terminal window, type the command ``ping google.com``.
+
+You should see a sequence of lines starting with ``64 bytes from`` and ending with
+the number of milliseconds it took to complete the request. If you do not see
+similar output, your network access may be misconfigured, or the Internet may be
+wholly or partially unreachable.
+
+If you have verified that you are able to connect to the Internet using
+``sys-net``, but you are experiencing other connectivity issues, move on to the
+next step.
+
+.. important::
+
+   Not all VMs in Qubes OS have Internet access. For example, opening the Qubes
+   menu (top left) and clicking **Terminal Emulator** opens a ``dom0`` terminal
+   without Internet access. See our :ref:`networking architecture <Networking Architecture>`
+   overview for additional background.
 
 Step 2: Troubleshooting login issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If the issue occurs on the login screen of the SecureDrop Client (the dialog
-with the SecureDrop logo), this may not be a network issue. Make sure that your
-username, passphrase, and two-factor code are correct.
+Issues logging in may not be network-related. If you are experiencing
+connectivity issues before or after logging in, you can skip ahead to the next section.
+
+Make sure that your username, passphrase, and two-factor code are correct.
 
 .. important::
 
@@ -59,11 +80,14 @@ dialog (ensure you are in a fully private setting before doing so). Check for
 extra characters at the beginning at the end, or subtle differences like
 capitalization.
 
-If you access multiple sites and services using a single two-factor app, make
-sure that the correct user account is selected.
+If you use the two-factor app on your phone for other websites and services,
+make sure that you have selected the correct user account.
 
 If you have access to a Tails-based *Journalist Workstation*, verify whether you
-can access SecureDrop using the same credentials that do not work in Qubes.
+can access SecureDrop from Tails.
+
+If you are certain that your credentials are correct but you are unable to log
+in, proceed to the next step.
 
 Step 3: Verify that all required VMs are running
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,50 +102,73 @@ to sources, starring sources, deleting sources):
 - ``sd-whonix``
 - ``sys-firewall``
 - ``sys-net``
-- ``sys-whonix``
+- ``sys-whonix`` (during updates)
 
 You can verify whether a VM is running or not by clicking the "Q" icon in the
-top right corner of your Qubes desktop. Only VMs that are currently running are
-listed:
+system tray (top right). Only VMs that are currently running will appear in the
+list:
 
-[SCREENSHOT: Q widget with VM list expanded]
+**[SCREENSHOT: Q widget with VM list]**
 
 If a required VM is not running, you can launch it from the Qube Manager. Open
 the Qube Manager by clicking **Open Qube Manager** in the menu above. A window
 like the following should appear:
 
-[SCREENSHOT: qube manager screenshot]
+**[SCREENSHOT: Qube manager screenshot]**
 
-To start a VM, select it from the list and press the "play" button in the
-toolbar.
+To start a VM, select it from the list, right-click it, and click **Start/Resume
+Qube**. Alternatively, you can click the "Play" button in the toolbar.
 
-In ordinary operation, VMs should start when they are needed. If you repeatedly
-experience problems with a necessary VM not running, or if an error message
-is displayed when attempting to start the VM, please contact us for assistance.
+In ordinary use, VMs required by SecureDrop should be started on boot or when
+they are needed. If you repeatedly experience problems with a necessary VM not
+running, or if an error message is displayed when attempting to start the VM,
+please contact us for assistance.
 
-If this does not resolve the issue, proceed to the next step.
+If all required VMs are running, proceed to the next step.
 
-Step 4: Verify that required VMs have connectivity and examine logs
--------------------------------------------------------------------
+Step 4: Verify that required VMs have connectivity
+--------------------------------------------------
+In step 1, you have already verified that you can connect to the
+Internet using ``sys-net``. Now, test whether ``sys-firewall``, ``sd-whonix``
+and ``sd-proxy`` are working.
+
+First, open a terminal in ``sys-firewall`` and run the ``ping google.com`` command.
+You should see similar as in ``sys-net`` before.
+
+Now, open a terminal in ``sd-whonix`` and run the following command:
+
+``curl -s https://check.torproject.org/ | cat | grep -m 1 "Congratulations"``
+
+This command contacts a service intended for web browsers to verify whether your
+Tor connection is working.
+
+You should see the text "Congratulations. This browser is configured to use Tor."
+or a similar message on the terminal.
+
+If this command fails, proceed to the next step.
+
+If the command succeeds in ``sd-whonix``, run exactly the same command in
+``sd-proxy``. If it only fails in ``sd-proxy``, your workstation may be
+misconfigured, or the proxy may have crashed. In that case, skip ahead to step 6.
+We also recommend that you contact us, so we can help identify the root cause.
 
 Step 5: Restart Tor
 -------------------
-If all required VMs are running, you may be experiencing issues with the Tor
-network. You can check the Tor status and try restarting Tor.
+If you have narrowed down the problem to ``sd-whonix``, try restarting Tor.
 
 To do so, right-click the Tor icons in the top right corner of your Qubes
 desktop. They look like this:
 
-[SCREENSHOT: sdwdate-gui widget]
+**[SCREENSHOT: sdwdate-gui widget]**
 
 One of the two icons should display the option **sd-whonix**. Select that option
-from the menu with your mouse, and then click **Tor control panel**:
+from the menu with your mouse, and click **Tor control panel**:
 
-[SCREENSHOT: sdwdate-gui widget with Tor control panel option shown]
+**[SCREENSHOT: sdwdate-gui widget with Tor control panel option shown]**
 
 You should now see the following dialog:
 
-[SCREENSHOT: Tor control panel screenshot]
+**[SCREENSHOT: Tor control panel screenshot]**
 
 Click **Restart Tor** in the bottom right of this dialog. You should see a
 progress bar which will indicate when Tor is available again. If this does not
@@ -129,21 +176,44 @@ resolve the issue, proceed to the next step.
 
 Step 6: Restart ``sd-proxy`` and ``sd-whonix``
 ----------------------------------------------
-The VMs ``sd-whonix`` and ``sd-proxy`` are the two most important VMs for
-maintaining the connection between the SecureDrop app and the SecureDrop server.
-You can restart VMs using the Qube Manager:
+Restart ``sd-proxy`` and ``sd-whonix`` to attempt to restore connectivity:
 
-[SCREENSHOT: Qube Manager screenshot]
-
-Select the VM you wish to restart from the list, right-click its entry, and click
-**Restart qube**. (You can also click the restart icon in the toolbar instead.)
-This will take several seconds, and it will take additional time to re-establish
-a Tor connection.
+1. Exit the SecureDrop app if it is running.
+2. Click the "Q" icon in the system tray (top right).
+3. Click **Run Qube Manager**
+4. Right-click ``sd-proxy`` in the list of VMs. Click **Shutdown qube**.
+5. Right-click ``sd-whonix`` in the list of VMs. Click **Shutdown qube**.
+6. Right-click ``sd-proxy`` in the list of VMs. Click **Start/Resume qube**.
+   The ``sd-whonix`` VM should start automatically.
 
 If this does not resolve the issue, proceed to the next step.
 
 Step 7: Restart ``sys-net`` and ``sys-firewall``
 ------------------------------------------------
-Using the same method employed in the previous step, you can restart the two
-VMs that are underlying most network operations in Qubes OS, ``sys-net`` and
+
+.. note::
+
+   You will temporarily lose all Internet connectivity in Qubes OS during this
+   step.
+
+Using the same procedure as in the previous step, shut down ``sd-proxy``,
+``sd-whonix`` and ``sys-whonix`` (in this order). Attempt to shut down
+``sys-firewall``. You may see an error message telling you that other VMs still
+require access to ``sys-firewall``. Save your work in those VMs, shut them
+down, and attempt to shut down ``sys-firewall`` again.
+
+Finally, shut down ``sys-net``. The network manager icon should disappear.
+
+Now, start ``sys-whonix``, which will bring up ``sys-net`` and ``sys-firewall``
+at the same time. Start ``sd-proxy``, which will bring up ``sd-whonix``.
+
+If this does not resolve the issue, please contact us for assistance.
+
+Examining logs
+--------------
+You may wish to examine system logs on your own, or with our guidance. You can
+examine consolidated syslogs from all SecureDrop-related VMs in the ``sd-log``
+VM. They can be found in the default user's ``~/QubesIncomingLogs`` directory.
+
+In addition, you may want to examine ``/var/log/syslog`` in ``sys-net`` and
 ``sys-firewall``.
