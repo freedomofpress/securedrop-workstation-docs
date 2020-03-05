@@ -39,24 +39,26 @@ Sending a reply
 ---------------
 
 Compose a reply to the selected source in the text box at the bottom of the
-conversation view. You may send it, or leave it in the box without sending to
-save it as a draft.
+conversation view. Click the paper airplane icon or press "Ctrl+Enter" to send
+a reply. Any replies you did not send will be discarded when you exit the
+client.
 
 Sources without reply keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+You may sometimes see the text "Awaiting encryption key from server" in a grayed
+out reply box for a source. This typically happens in the following situations:
 
-If the reply box for a source is grayed out, this means that you will be unable
-to reply to the source until they have logged in again. This is because system
-resource limitations prevented an encryption key from being generated for the
-source the first time they logged in, possibly due to a large number of sources
-trying to reach your server.
+- A source has just contacted your SecureDrop moments ago, and the server has
+  not created an encryption key yet. If you are logged in, the key will be
+  automatically fetched as soon as it becomes available, usually within a few
+  seconds. At that point, the reply box will become available.
 
-This limitation is scheduled to be fixed in a future version of SecureDrop.
-Until then, you can use the Journalist Interface to `flag sources for reply`_.
-See your SecureDrop administrator for assistance provisioning a *Journalist
-Workstation* USB if you do not have one already.
+- Your SecureDrop server is experiencing a surge of traffic, and the generation
+  of encryption keys has been temporarily disabled. You have to manually
+  `flag the source for reply`_, and the source has to log in again before you
+  can respond. This cannot currently be done from the SecureDrop Client.
 
-.. _`flag sources for reply`: https://docs.securedrop.org/en/release-1.2.0/journalist.html#flag-for-reply
+.. _`flag the source for reply`: https://docs.securedrop.org/en/stable/journalist.html#flag-for-reply
 
 Deleting a conversation
 -----------------------
@@ -67,4 +69,4 @@ righthand side of the application window, beside the timestamp, and clicking
 
 .. important:: Deleting a source conversation deletes the conversation for
    everyone at your organization, and also prevents the source from logging in
-   again using this codename.
+   again using their current codename.

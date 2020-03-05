@@ -3,8 +3,9 @@ Starting the SecureDrop Client
 
 .. include:: ../includes/top-warning.rst
 
-Double-click on the **SecureDrop** desktop shortcut to launch the SecureDrop
-Client application.
+After you log into Qubes, the SecureDrop Client app will start automatically. If
+you have previously exited the application, you can double-click on the
+**SecureDrop** desktop shortcut to launch it.
 
 .. | screenshot_desktop-shortcut|
 
@@ -12,19 +13,20 @@ Performing updates
 ------------------
 
 When you launch the application, it will first check for security
-updates. This can take several minutes.
+updates. This typically takes a few minutes.
 
 .. | screenshot_check_updates |
 
 If updates are found, you will be asked to apply them before launching the
-SecureDrop Client. You have the option of completing this now, or at another
-time. Keep in mind that updates are important to security, and you should apply
-them the same day you receive the notification.
+SecureDrop Client. For security reasons, you will not be able to launch the
+SecureDrop Client unless updates have been applied. If you prefer to shut down
+the machine or do other work in Qubes OS instead, you can cancel the update.
 
 .. important:: When you click "Apply Updates," allow the update
    process to complete fully, without closing or interrupting it, or you risk
-   breaking important system components. The update process may take some
-   time.
+   breaking important system components. The update process can take from just
+   a few minutes to 30 minutes or longer, depending on your network connection
+   and how many updates are available.
 
 .. | screenshot_apply_updates |
 
@@ -50,13 +52,9 @@ you click on a source submission.
 
 Troubleshooting tips
 ~~~~~~~~~~~~~~~~~~~~
-
-[This section is a stub]
- - Check your network connectivity if you are having issues with the updater or
-   with signing in.
- - You may want to refer to the Qubes documentation to understand the layout,
-   toolbars, and menu options you see in Qubes.
-
+If you have trouble running the updater or logging in, please contact your
+administrator. Our :doc:`network troubleshooting guide <../admin/troubleshooting_connection>`
+for administrators gives detailed steps for investigating connectivity issues.
 
 Working offline
 ---------------
