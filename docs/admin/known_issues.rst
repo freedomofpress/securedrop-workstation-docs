@@ -33,3 +33,4 @@ Current known issues
   source is disabled for more than a minute, they must be flagged for reply in
   the *Journalist Interface* - see the `SecureDrop "Flag for Reply"
   documentation <https://docs.securedrop.org/en/stable/journalist.html#flag-for-reply>`_ for more information.
+- Currently, only app-based two-factor authentication is supported. 
