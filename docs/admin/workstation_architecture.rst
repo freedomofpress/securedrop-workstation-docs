@@ -29,27 +29,27 @@ the following VMs have no network access:
 By design, the Qubes OS host domain, ``dom0``, also does not have Internet
 access.
 
-.. note:
+.. note::
 
    If you attempt to directly access the network in any of these VMs, it will
    not work. That is the expected behavior.
 
 Because the SecureDrop Client must connect to the SecureDrop
 *Application Server* in order to send or retrieve messages, documents, and
-replies, it can communicate through Qubes-internal system calls with another
-VM, ``sd-proxy``, which can only access the open Internet through the Tor
-network, using the separate ``sd-whonix`` VM.
+replies, it can communicate through Qubes-internal Remote Procedure Calls (RPCs)
+with another VM, ``sd-proxy``, which can only access the open Internet through
+the Tor network, using the separate ``sd-whonix`` VM.
 
 Like all networked VMs, ``sd-whonix`` uses the ``sys-firewall`` service to
 connect to the network, which is provided via ``sys-net``. All four VMs must be
-running for the client to successfully connect to the server.
+running for the SecureDrop Client to successfully connect to the server.
 
-.. important:
+.. important::
 
    The ``sd-whonix`` VM contains a sensitive authentication token required to
    access the SecureDrop API via Tor, and should not be attached to VMs that are
    unrelated to SecureDrop.
 
 Qubes OS ships with a Whonix service called ``sys-whonix``. When troubleshooting
-network issues specific to SecureDrop, ``sys-whonix`` is only relevant during
+connection issues specific to SecureDrop, ``sys-whonix`` is only relevant during
 updates of the Whonix VMs (e.g., while the preflight updater is running).

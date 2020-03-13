@@ -1,9 +1,9 @@
-Troubleshooting network issues
-==============================
+Troubleshooting connection problems
+===================================
 
 .. include:: ../includes/top-warning.rst
 
-Before troubleshooting network issues, we recommend reading about the
+Before troubleshooting connection problems, we recommend reading about the
 :ref:`networking architecture <Networking Architecture>`
 of SecureDrop Workstation. If you are in a hurry, this guide offers quick
 diagnostic and remedial steps.
@@ -37,6 +37,13 @@ Common causes for lost connections include fully or partly unplugged network cab
 lost power to networking equipment, and ISP service outages. When you see a lost
 connection notification, it is most likely due to one of these causes.
 
+.. important::
+
+   Not all VMs in Qubes OS have Internet access. For example, opening the Qubes
+   menu (top left) and clicking **Terminal Emulator** opens a ``dom0`` terminal
+   without Internet access. See our :ref:`networking architecture <Networking Architecture>`
+   overview for additional background.
+
 If the network manager shows that you are connected to the Internet, you can
 verify whether your connection is working by opening a terminal in ``sys-net``:
 
@@ -45,23 +52,17 @@ verify whether your connection is working by opening a terminal in ``sys-net``:
 1. Click the "Q" icon in the in the system tray (top right area).
 2. A list of running VMs should appear. Select ``sys-net`` from the list, and
    click **Run Terminal**.
-3. In the terminal window, type the command ``ping google.com``.
+3. In the terminal window, type the command ``ping -c 5 google.com``.
 
 You should see a sequence of lines starting with ``64 bytes from`` and ending with
 the number of milliseconds it took to complete the request. If you do not see
 similar output, your network access may be misconfigured, or the Internet may be
-wholly or partially unreachable.
+wholly or partially unreachable. If using ``8.8.8.8`` instead of ``google.com``
+works, it may suggest a problem at the DNS level in your network configuration.
 
 If you have verified that you are able to connect to the Internet using
 ``sys-net``, but you are experiencing other connectivity issues, move on to the
 next step.
-
-.. important::
-
-   Not all VMs in Qubes OS have Internet access. For example, opening the Qubes
-   menu (top left) and clicking **Terminal Emulator** opens a ``dom0`` terminal
-   without Internet access. See our :ref:`networking architecture <Networking Architecture>`
-   overview for additional background.
 
 Step 2: Troubleshooting login issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,11 +78,12 @@ Make sure that your username, passphrase, and two-factor code are correct.
 
 You can reveal the passphrase by clicking the "eye" icon next to it in the login
 dialog (ensure you are in a fully private setting before doing so). Check for
-extra characters at the beginning at the end, or subtle differences like
-capitalization.
+extra characters and end, or subtle differences like capitalization. Note that
+the spaces between words in SecureDrop passphrases are part of the passphrase.
 
 If you use the two-factor app on your phone for other websites and services,
-make sure that you have selected the correct user account.
+make sure that you have selected the correct user account. It should be labeled
+**SecureDrop**.
 
 If you have access to a Tails-based *Journalist Workstation*, verify whether you
 can access SecureDrop from Tails.
@@ -133,7 +135,7 @@ Internet using ``sys-net``. Now, test whether ``sys-firewall``, ``sd-whonix``
 and ``sd-proxy`` are working.
 
 First, open a terminal in ``sys-firewall`` and run the ``ping google.com`` command.
-You should see similar as in ``sys-net`` before.
+You should see similar output as in ``sys-net`` before.
 
 Now, open a terminal in ``sd-whonix`` and run the following command:
 
@@ -145,9 +147,10 @@ Tor connection is working.
 You should see the text "Congratulations. This browser is configured to use Tor."
 or a similar message on the terminal.
 
-If this command fails, proceed to the next step.
+If the output does not include the text "Congratulations", keep the terminal
+window open and proceed to the next steps.
 
-If the command succeeds in ``sd-whonix``, run exactly the same command in
+If the command does include the expected text in ``sd-whonix``, also run it in
 ``sd-proxy``. If it only fails in ``sd-proxy``, your workstation may be
 misconfigured, or the proxy may have crashed. In that case, skip ahead to step 6.
 We also recommend that you contact us, so we can help identify the root cause.
@@ -155,24 +158,12 @@ We also recommend that you contact us, so we can help identify the root cause.
 Step 5: Restart Tor
 -------------------
 If you have narrowed down the problem to ``sd-whonix``, try restarting Tor.
+You can do this from within the ``sd-whonix`` terminal using the following
+command:
 
-To do so, right-click the Tor icons in the top right corner of your Qubes
-desktop. They look like this:
+``sudo systemctl restart tor``
 
-**[SCREENSHOT: sdwdate-gui widget]**
-
-One of the two icons should display the option **sd-whonix**. Select that option
-from the menu with your mouse, and click **Tor control panel**:
-
-**[SCREENSHOT: sdwdate-gui widget with Tor control panel option shown]**
-
-You should now see the following dialog:
-
-**[SCREENSHOT: Tor control panel screenshot]**
-
-Click **Restart Tor** in the bottom right of this dialog. You should see a
-progress bar which will indicate when Tor is available again. If this does not
-resolve the issue, proceed to the next step.
+If this does not resolve the issue, proceed to the next step.
 
 Step 6: Restart ``sd-proxy`` and ``sd-whonix``
 ----------------------------------------------
