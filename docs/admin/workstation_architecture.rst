@@ -12,10 +12,9 @@ appropriate level of network access for each VM. For example, you could have a
 VM for password storage that has no network access, a work VM that is firewalled
 to only connect to work servers, and a personal VM that always uses Tor.
 
-In the context of SecureDrop Workstation, these capabilities are used to
-minimize the risk that an adversary who is able to exploit a security
-vulnerability in order to exfiltrate documents or private keys. Specifically,
-the following VMs have no network access:
+SecureDrop Workstation tightly controls access to the network, in order to
+prevent the exfiltration of messages, replies, documents, or encryption keys by
+adversaries. Specifically, the following VMs have no network access:
 
 - ``sd-app``, which runs the SecureDrop Client, and holds decrypted messages,
   replies, and documents.
