@@ -3,14 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to SecureDrop Workstation's documentation!
-==================================================
+Welcome to the SecureDrop Workstation documentation!
+====================================================
 
 .. include:: includes/top-warning.rst
 
-SecureDrop Workstation is an application built on Qubes OS, that can be used in
-conjunction with SecureDrop to communicate with anonymous sources and manage
-submitted documents with a reasonable level of security.
+SecureDrop Workstation is a tool to enable journalists to communicate with
+anonymous sources and manage submitted documents, while providing mitigations
+against malware and other security risks. It is built on Qubes OS and requires a
+`SecureDrop <https://www.securedrop.org/>`__ server setup.
 
 .. toctree::
    :maxdepth: 2

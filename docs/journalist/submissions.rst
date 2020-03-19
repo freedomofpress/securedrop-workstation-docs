@@ -15,8 +15,7 @@ To download a file, click the **Download** button.
 
 .. | screenshot_download_button |
 
-In the top left corner of the application window, you will see a message that
-the file is downloading.
+An animated spinner will indicate that the file is downloading:
 
 .. | screenshot_file_downloading |
 
@@ -28,7 +27,7 @@ Once the file has downloaded, the filename will be visible, as will the words
 Viewing
 -------
 
-To view a downloaded submission, double-click on the filename. This will open
+To view a downloaded submission, click its filename. This will open
 the file in a temporary environment, called a "disposable VM." The file you
 clicked on will open in a new window with a different colored border and a
 window title prefixed with "disp" (meaning disposable).
@@ -37,8 +36,8 @@ window title prefixed with "disp" (meaning disposable).
 
 This disposable VM is a special isolated environment similar to the *Secure
 Viewing Station*; it does not have internet access, and isolates the files that
-you are viewing from other sensitive files and applications on the SecureDrop
-Workstation.
+you are viewing from other sensitive files and applications on the same
+computer.
 
 Because this isolation is important to the security of your system, you will
 notice that certain tools that you may be used to have been disabled. For
@@ -56,16 +55,17 @@ Printing
 
 To print a document, click the **Print** button. Currently, printing is only
 supported with select printers from Brother and HP, and for security reasons
-you are required not to use a printer that has any wireless capabilities. You
-should have access to a compatible printer that has been set up by your
-administrator.
+you are required not to use a printer that has any wireless capabilities.
+
+You should have access to a supported printer that has been set up by your
+administrator. The printer must be plugged into the computer's USB port.
 
 Exporting to an Export USB
 --------------------------
 
 Currently, a LUKS-encrypted USB drive is required for exporting submissions. A
-Linux-based system such as Tails is required to configure and use a LUKS-
-encrypted drive, meaning that for the time being, you will only be able to
+Linux-based system such as Tails is required to configure and use a LUKS-encrypted
+drive, meaning that for the time being, you will only be able to
 export to a Linux environment where these drives can be read. For assistance
 with this, see your SecureDrop administrator.
 
@@ -73,7 +73,8 @@ Once you have provisioned a LUKS-encrypted export drive, insert the drive and
 click **Export**. You will be prompted for the password configured for this
 USB drive.
 
-After the export operation is complete, you can physically unplug the USB drive
-or export additional files.
+Once you see a message informing you that the export was successfully completed,
+you can safely unplug the USB drive. Alternatively, you can leave the drive
+plugged in and export additional files.
 
 .. | screenshot_export_drive |

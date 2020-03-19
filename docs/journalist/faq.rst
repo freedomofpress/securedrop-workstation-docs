@@ -58,16 +58,49 @@ For more about the security features of Qubes, see
 .. _`Xen hypervisor`: https://wiki.xen.org/wiki/Xen_Project_Software_Overview
 .. _`the Qubes OS documentation`: https://www.qubes-os.org/faq/#general--security
 
-How secure is Qubes? How does the security of this system compare to using an air-gapped Secure Viewing Station?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How does the security of this system compare to using an air-gapped Secure Viewing Station?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The air-gapped Secure Viewing Station that is part of a SecureDrop setup offers strong
+protections against exfiltration of submissions or encryption keys by adversaries. It lacks
+important protections that SecureDrop Workstation provides. On the other hand, vulnerabilities
+in Qubes OS or Xen Hypervisor may have a greater security impact than vulnerabilities
+in Tails, the operating system used on a Secure Viewing Station.
 
-[This section is a stub]
-  - Audits
-  - grsec
-  - Qubes OS team
-  - Our security team
-  - Discuss Xen
-  - Discuss benefits of avoiding systems where security responsibility is on the user (opsec concerns)
+A typical SVS USB drive may contain documents from multiple sources and always
+contains the highly sensitive private key needed to decrypt them. An adversary who does
+manage to achieve a security compromise (e.g., through a vulnerability in a file viewer
+application) can access these other files, and may be able to exfiltrate them.
+
+In spite of the air-gap, this may be possible through physical channels used to transfer files
+off the SVS (e.g., USB drives), or by motivating the journalist user to perform an
+unsafe action (e.g., `scanning a QR code <https://securedrop.org/news/security-advisory-do-not-scan-qr-codes-submitted-through-securedrop-connected-devices/>`__).
+
+Because the air-gapped SVS has no Internet access, updates can only be performed using
+another computer and a USB drive. In practice, newsrooms may not update their SVS
+in a timely manner, which can significantly worsen its security posture.
+
+In SecureDrop Workstation, any document received via SecureDrop is opened in a
+disposable VM that has no Internet access and no access to other files submitted
+via SecureDrop. The encryption keys are stored in a separate, networkless VM
+from the SecureDrop Client app.
+
+Because SecureDrop Workstation has Internet access, updates can be applied
+automatically as soon as they are available. SecureDrop Workstation enforces this
+by downloading and applying updates before the user logs into SecureDrop.
+
+SecureDrop Workstation uses hardware-assisted virtualization, which allows us
+to use custom kernels for its VMs. These custom kernels use the
+`grsecurity <https://grsecurity.net/>`__ patches which are also used on the
+SecureDrop servers, and provide additional mitigation against security
+vulnerabilities.
+
+An attacker able to exploit vulnerabilities in Qubes OS or Xen-based bare metal
+virtualization (likely in combination with other vulnerabilities, e.g., in a
+viewer application) may be able to exfiltrate information directly to the Internet.
+Qubes closely `tracks <https://www.qubes-os.org/security/xsa/>`__ any security
+vulnerabilities that may impact it, and the automatic update mechanism helps to
+ensure that, in the event of a vulnerability, every SecureDrop Workstation can be
+patched as quickly as possible.
 
 Can I install custom software on SecureDrop Workstation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,13 +108,13 @@ Can I install custom software on SecureDrop Workstation?
 Right now, the pilot project is designed to make the journalist experience
 easier by combining the functionality of the Journalist Workstation and Secure
 Viewing Station. The main focus is making sure that checking SecureDrop is
-easier and faster. While we hope to add advanced tooling and document-
-processing options down the line, at this time we request that you leave the
-workstation configured the way it was provisioned, and hold off on installing
-additional software or changing the functionality or configuration of any of
-the VMs. If you have specific needs that you'd like to discuss with us, open an
-issue `in our support portal`_ or send us a `GPG-encrypted email`_ at
-support@freedom.press.
+easier and faster.
+
+While we hope to add advanced tooling and document-processing options down the line,
+at this time we request that you do not change the configuration of the workstation
+or install additional software on it. If you have specific needs that you would like
+to discuss with us, please open an issue `in our support portal`_ or send us a
+`GPG-encrypted email`_ at support@freedom.press.
 
 .. _`in our support portal`: https://support.freedom.press/
 .. _`GPG-encrypted email`: https://securedrop.org/sites/default/files/fpf-email.asc
