@@ -8,7 +8,7 @@ view submissions, and reply to sources, all on the same computer.
 
 Once logged in, you will see a chat-like user interface consisting of three panels. The small panel on the left shows your username, if you are logged in, or the sign-in button.
 
-.. | screenshot_sdapp_main_view |
+|screenshot_sdapp_main_view|
 
 The source list in the middle panel shows sources that have submitted to your instance. Each source is identified to you with a two word
 pseudonym.
@@ -43,6 +43,8 @@ conversation view. Click the paper airplane icon or press "Ctrl+Enter" to send
 a reply. Any replies you did not send will be discarded when you exit the
 client.
 
+|screenshot_send_reply|
+
 Sources without reply keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 You may sometimes see the text "Awaiting encryption key from server" in a grayed
@@ -70,3 +72,7 @@ righthand side of the application window, beside the timestamp, and clicking
 .. important:: Deleting a source conversation deletes the conversation for
    everyone at your organization, and also prevents the source from logging in
    again using their current codename.
+
+
+.. |screenshot_sdapp_main_view| image:: ../images/screenshot_sdapp_main_view.png
+.. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
