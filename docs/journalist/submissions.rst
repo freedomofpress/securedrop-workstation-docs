@@ -19,8 +19,10 @@ An animated spinner will indicate that the file is downloading:
 
 |screenshot_file_downloading|
 
-Once the file has downloaded, the filename will be visible, as will the words
-**Export** and **Print**.
+Once the file has been downloaded and decrypted, the filename will be visible,
+as will the action **Export** and **Print**. The displayed file size may increase
+after the download is complete, because the SecureDrop Client automatically
+decompresses the downloaded file.
 
 |screenshot_file_download_successful|
 
@@ -38,12 +40,6 @@ This disposable VM is a special isolated environment similar to the *Secure
 Viewing Station*; it does not have internet access, and isolates the files that
 you are viewing from other sensitive files and applications on the same
 computer.
-
-Because this isolation is important to the security of your system, you will
-notice that certain tools that you may be used to have been disabled. For
-example, the copy-and-paste keyboard will not allow you to copy to or from a
-disposable VM. For more information about this and other security features of
-Qubes, see `the Qubes OS documentation`_.
 
 .. tip:: In Qubes, window border colors are used to signify different virtual
    machines.
