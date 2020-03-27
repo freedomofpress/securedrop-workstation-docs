@@ -110,7 +110,7 @@ Before installing SecureDrop Workstation, you must set up network and Tor access
 
 - After logging in, use the network manager widget in the upper-right panel to configure your network connection.
 
-- Next, configure Tor by selecting the Qubes menu (the **Q** icon in the upper left corner) and selecting **Service: sys-whonix > sys-whonix: Anon Connection Wizard**. In most cases, choosing the default**Connect** option is best. Click **Next**, then **Next** again. Then, if Tor connects successfully, click **Finish**. If Tor fails to connect, make sure your network conection is up and does not filter Tor connections, then try again.
+- Next, configure Tor by selecting the Qubes menu (the **Q** icon in the upper left corner) and selecting **Service: sys-whonix > sys-whonix: Anon Connection Wizard**. In most cases, choosing the default **Connect** option is best. Click **Next**, then **Next** again. Then, if Tor connects successfully, click **Finish**. If Tor fails to connect, make sure your network conection is up and does not filter Tor connections, then try again.
 
   .. note:: If Tor connections are blocked on your network, you may need to configure Tor to use bridges in order to get a connection. For more information, see the `Anon Connection Wizard <https://www.whonix.org/wiki/Anon_Connection_Wizard>`_ documentation.
 
@@ -166,9 +166,9 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the Journa
 
 - Connect the Admin Workstation USB to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
 
-- In the the ``vault`` file manager, select **+ Other Locations**., then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the Admin Workstation persistent volume passphrase to unlock and mount it. 
+- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the Admin Workstation persistent volume passphrase to unlock and mount it. 
 
-- Copy the Journalist Interface configuration file to `dom0`. If your SecureDrop instance uses v3 onion services, use the following command:
+- Copy the Journalist Interface configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
   .. code-block:: sh
 
@@ -193,6 +193,8 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 - First, re-enable the network connection using the network manager widget.
 
 - Next, start a terminal in the network-attached ``work`` VM, via **Q > Domain:work > work: Terminal**.
+
+.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Domain: work > work: Firefox** 
 
 - In the ``work`` terminal, run the following commands to download and add the SecureDrop signing key, which is needed to verify the SecureDrop Workstation package:
 
