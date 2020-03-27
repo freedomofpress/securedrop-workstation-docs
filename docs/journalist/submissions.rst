@@ -6,23 +6,23 @@ Working with submissions
 When a source submits files, you will see a Download button in the conversation
 flow, a file size, and light-gray text that says "Encrypted file on server."
 
-.. | screenshot_file_before_download |
+|screenshot_file_before_download|
 
 Downloading
 -----------
 
 To download a file, click the **Download** button.
 
-.. | screenshot_download_button |
+|screenshot_download_button|
 
 An animated spinner will indicate that the file is downloading:
 
-.. | screenshot_file_downloading |
+|screenshot_file_downloading|
 
 Once the file has downloaded, the filename will be visible, as will the words
 **Export** and **Print**.
 
-.. | screenshot_file_download_successful |
+|screenshot_file_download_successful|
 
 Viewing
 -------
@@ -32,7 +32,7 @@ the file in a temporary environment, called a "disposable VM." The file you
 clicked on will open in a new window with a different colored border and a
 window title prefixed with "disp" (meaning disposable).
 
-.. | screenshot_dispvm |
+|screenshot_dispvm|
 
 This disposable VM is a special isolated environment similar to the *Secure
 Viewing Station*; it does not have internet access, and isolates the files that
@@ -70,11 +70,24 @@ export to a Linux environment where these drives can be read. For assistance
 with this, see your SecureDrop administrator.
 
 Once you have provisioned a LUKS-encrypted export drive, insert the drive and
-click **Export**. You will be prompted for the password configured for this
+click **Export**.
+
+|screenshot_export_dialog|
+
+You will be prompted for the password configured for this
 USB drive.
+
+|screenshot_export_drive_passphrase|
 
 Once you see a message informing you that the export was successfully completed,
 you can safely unplug the USB drive. Alternatively, you can leave the drive
 plugged in and export additional files.
 
-.. | screenshot_export_drive |
+
+.. |screenshot_file_before_download| image:: ../images/screenshot_file_before_download.png
+.. |screenshot_download_button| image:: ../images/screenshot_download_button.png
+.. |screenshot_file_downloading| image:: ../images/screenshot_file_downloading.png
+.. |screenshot_file_download_successful| image:: ../images/screenshot_file_download_successful.png
+.. |screenshot_dispvm| image:: ../images/screenshot_dispvm.png
+.. |screenshot_export_dialog| image:: ../images/screenshot_export_dialog.png
+.. |screenshot_export_drive_passphrase| image:: ../images/screenshot_export_drive_passphrase.png

@@ -16,22 +16,23 @@ access through the network manager, which you can find in the area populated
 with icons in the top right corner of your Qubes desktop, known as the *system
 tray*.
 
-The network manager looks like this for a wired connection:
+The network manager is the red icon, which looks like this for a wired connection
+(ordering of icons may vary):
 
-**[SCREENSHOT: network manager wired icon]**
+|screenshot_network_manager_wired_icon|
 
 It looks like this for a wireless connection:
 
-**[SCREENSHOT: network manager wired icon]**
+|screenshot_network_manager_wireless_icon|
 
 It looks like this when you are not connected to the Internet at all:
 
-**[SCREENSHOT: no connection icon]**
+|screenshot_network_manager_no_internet_connection|
 
 When a network connection is lost, Qubes will display an alert like the
 following:
 
-**[SCREENSHOT: lost connection notification]**
+|screenshot_network_manager_lost_connection_notification|
 
 Common causes for lost connections include fully or partly unplugged network cables,
 lost power to networking equipment, and ISP service outages. When you see a lost
@@ -47,7 +48,7 @@ connection notification, it is most likely due to one of these causes.
 If the network manager shows that you are connected to the Internet, you can
 verify whether your connection is working by opening a terminal in ``sys-net``:
 
-**[SCREENSHOT: Q widget with VM list and "Run terminal" expanded]**
+|screenshot_q_widget_sysnet_run_terminal|
 
 1. Click the "Q" icon in the in the system tray (top right area).
 2. A list of running VMs should appear. Select ``sys-net`` from the list, and
@@ -110,16 +111,18 @@ You can verify whether a VM is running or not by clicking the "Q" icon in the
 system tray (top right). Only VMs that are currently running will appear in the
 list:
 
-**[SCREENSHOT: Q widget with VM list]**
+|screenshot_q_widget_vm_list|
 
 If a required VM is not running, you can launch it from the Qube Manager. Open
 the Qube Manager by clicking **Open Qube Manager** in the menu above. A window
 like the following should appear:
 
-**[SCREENSHOT: Qube manager screenshot]**
+|screenshot_qube_manager|
 
 To start a VM, select it from the list, right-click it, and click **Start/Resume
 Qube**. Alternatively, you can click the "Play" button in the toolbar.
+
+|screenshot_start_resume_qube|
 
 In ordinary use, VMs required by SecureDrop should be started on boot or when
 they are needed. If you repeatedly experience problems with a necessary VM not
@@ -208,3 +211,13 @@ VM. They can be found in the default user's ``~/QubesIncomingLogs`` directory.
 
 In addition, you may want to examine ``/var/log/syslog`` in ``sys-net`` and
 ``sys-firewall``.
+
+
+.. |screenshot_network_manager_wired_icon| image:: ../images/screenshot_network_manager_wired_icon.png
+.. |screenshot_network_manager_wireless_icon| image:: ../images/screenshot_network_manager_wireless_icon.png
+.. |screenshot_network_manager_no_internet_connection| image:: ../images/screenshot_network_manager_no_internet_connection.png
+.. |screenshot_network_manager_lost_connection_notification| image:: ../images/screenshot_network_manager_lost_connection_notification.png
+.. |screenshot_q_widget_sysnet_run_terminal| image:: ../images/screenshot_q_widget_sysnet_run_terminal.png
+.. |screenshot_q_widget_vm_list| image:: ../images/screenshot_q_widget_vm_list.png
+.. |screenshot_qube_manager| image:: ../images/screenshot_qube_manager.png
+.. |screenshot_start_resume_qube| image:: ../images/screenshot_start_resume_qube.png
