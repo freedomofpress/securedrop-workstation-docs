@@ -9,7 +9,3 @@ To shut down the computer, click your username in the top righthand corner of
 your screen, and select **Shut Down** from the context menu. Or, in the Qubes
 Applications menu, scroll to the bottom of the menu and select **Log Out > Shut
 Down**.
-
-|screenshot_logout|
-
-.. |screenshot_logout| image:: ../images/screenshot_logout.png

@@ -16,9 +16,10 @@ access through the network manager, which you can find in the area populated
 with icons in the top right corner of your Qubes desktop, known as the *system
 tray*.
 
-The network manager looks like this for a wired connection:
+The network manager is the red icon, which looks like this for a wired connection
+(ordering of icons may vary):
 
-..|screenshot_network_manager_wired_icon|
+|screenshot_network_manager_wired_icon|
 
 It looks like this for a wireless connection:
 
@@ -212,6 +213,7 @@ In addition, you may want to examine ``/var/log/syslog`` in ``sys-net`` and
 ``sys-firewall``.
 
 
+.. |screenshot_network_manager_wired_icon| image:: ../images/screenshot_network_manager_wired_icon.png
 .. |screenshot_network_manager_wireless_icon| image:: ../images/screenshot_network_manager_wireless_icon.png
 .. |screenshot_network_manager_no_internet_connection| image:: ../images/screenshot_network_manager_no_internet_connection.png
 .. |screenshot_network_manager_lost_connection_notification| image:: ../images/screenshot_network_manager_lost_connection_notification.png
