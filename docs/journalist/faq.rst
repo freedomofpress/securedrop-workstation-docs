@@ -121,15 +121,29 @@ to discuss with us, please open an issue `in our support portal`_ or send us a
 
 Why can’t I save or print from the Viewer VM apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When you view a file on SecureDrop Workstation, it is opened in a disposable
+VM that cannot access the network or any peripherals. The VM and all its data
+will be destroyed the moment you close the viewer application.
 
-[This section is a stub]
- - Sandbox/isolation and comparison to SVS
- - Viewer VM being a "true" sandbox means avoiding opening potentially
-   malicious files in environments where you may also attach external devices
-   (printers, USB sticks); the workstation prevents this
+You can save files from a viewer application, but copies saved inside a disposable
+VM will be deleted when you close the application, and the changes will not be applied
+to the main copy of the file stored on your computer.
 
-It takes a long time to start SecureDrop Workstation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You cannot print from the viewer application, because it does not have access
+to peripherals. This prevents malware from exfiltrating data (e.g., via attached
+USB devices), and from targeting hardware-level security vulnerabilities.
 
-[This section is a stub]
- - Updates must be fetched, they are important to security
+You *can* print files directly from the SecureDrop Client by clicking "Print"
+for a downloaded file, which will pass the file through to your USB printer
+without opening it in an interactive viewer application.
+
+Why does it take so long to start the SecureDrop Client?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If the system has not been updated recently, the preflight updater will check
+for available security updates for all VMs used by SecureDrop Workstation,
+download, and apply them. This takes longer than for typical operating systems
+because of the number of VMs involved, and because some updates are performed
+over the Tor network.
+
+These updates are essential to keep SecureDrop Workstation secure. Their speed
+is expected to be improved in subsequent releases of SecureDrop Workstation.

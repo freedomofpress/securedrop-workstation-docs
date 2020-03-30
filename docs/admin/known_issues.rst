@@ -24,8 +24,9 @@ Current known issues
   performance and reliability of the updater.
 - Currently, only LUKS-encrypted *Export Devices* are supported. VeraCrypt support
   will be added in a future release.
-- Printer support is limited to specific models by Brother and HP. Support for
-  more non-networked printers will be added in a future release.
+- Printer support is limited to specific models by Brother and HP, and printing
+  different file types is not as reliable yet as under Tails. Support for
+  additional non-networked printers will be added in a future release.
 - "Flag for reply" functionality is not implemented in the *SecureDrop Client*.
   This is used when a source's reply key was not created on their first
   submission and needs to be created on their next visit.
@@ -34,3 +35,7 @@ Current known issues
   the *Journalist Interface* - see the `SecureDrop "Flag for Reply"
   documentation <https://docs.securedrop.org/en/stable/journalist.html#flag-for-reply>`_ for more information.
 - Currently, only app-based two-factor authentication (TOTP) is supported. 
+- The SecureDrop Client can only be configured with a single *Submission Key*.
+  If the *Submission Key* for your SecureDrop server was rotated in the past,
+  and submissions encrypted with the old key are still on your server, you will
+  not be able to open them with the SecureDrop Client.
