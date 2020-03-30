@@ -7,5 +7,3 @@ When you are finished using SecureDrop Workstation, close the SecureDrop Client 
 
 To shut down the computer, click your username in the top righthand corner of
 your screen, and select **Shut Down** from the menu.
-
-.. | screenshot_shut_down |
