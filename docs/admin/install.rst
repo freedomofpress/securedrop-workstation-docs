@@ -122,7 +122,11 @@ Install tasks
 Copy the submission key
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to decrypt submissions, your SecureDrop Workstation will need a copy of the secret key from your SecureDrop instance's SVS. To protect this key and preserve the air gap, you will need to connect the SVS USB to a Qubes VM with no network access, and copy it from there to ``dom0``. Note that you cannot directly copy and paste to the ``dom0`` VM from another VM - instead, follow the steps below to copy the file into ``dom0``:
+In order to decrypt submissions, your SecureDrop Workstation will need a copy of the secret key from your SecureDrop instance's SVS.
+
+  .. note:: To protect this key and preserve the air gap, you will need to connect the SVS USB to a Qubes VM with no network access, and copy it from there to ``dom0``.
+
+Note that you cannot directly copy and paste to the ``dom0`` VM from another VM - instead, follow the steps below to copy the file into ``dom0``:
 
 - First, use the network manager widget in the upper right panel to disable your network connection. These instructions refer to the ``vault`` VM, which has no network access by default, but if the SVS USB is attached to another VM by mistake, this will offer some protection against exfiltration.
 
