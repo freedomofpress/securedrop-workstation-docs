@@ -238,14 +238,35 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
       MD5 digest: OK
 
 
-- If the package verification was successful, in the ``dom0`` terminal, run the following command to transfer the RPM package to dom0 and install SecureDrop Workstation:
+- If the package verification was successful, in the ``dom0`` terminal, run the following command to transfer the RPM package to dom0:
 
   .. code-block:: sh
 
     qvm-run --pass-io work "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm" > securedrop-workstation.rpm
-    sudo dnf install securedrop-workstation.rpm
 
-  When prompted, press **Y** to install the package.
+- Verify that the RPM was transferred correctly by running the following commands:
+
+  - in the ``work`` terminal:
+
+    .. code-block:: sh
+
+      sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm
+
+  - in the ``dom0`` terminal:
+ 
+    .. code-block:: sh
+
+      sha256sum securedrop-workstation.rpm
+
+  If the hash output for both files matches, the RPM was transferred successfully.
+
+- Install the RPM using the following command in the ``dom0`` terminal:
+
+    .. code-block:: sh
+
+      sudo dnf install securedrop-workstation.rpm
+
+  When prompted, type **Y** and **Enter** to install the package.
 
 - Shut down the ``work`` VM using the Qube widget in the top-right panel.
  
