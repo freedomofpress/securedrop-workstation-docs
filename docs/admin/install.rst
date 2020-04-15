@@ -31,6 +31,9 @@ In order to install SecureDrop Workstation and configure it to use an existing S
 
 - A Qubes-compatible computer with at least 16GB of RAM (32 GB is recommended). SecureDrop Workstation has mainly been tested against Lenovo 6th-gen T480 and X1 models - see Qubes' `Hardware Compatibility List <https://www.qubes-os.org/hcl/>`_ and the SecureDrop Workstation :doc:`hardware` page for more options .
 - Qubes installation medium - this guide assumes the use of a USB 3.0 stick. Qubes may also be installed via optical media, which may make more sense depending on your `security concerns <https://www.qubes-os.org/doc/install-security/>`_.
+
+  .. note:: A USB stick with a Type-A connector is recommended, as USB-C ports may be disabled on your computer when the BIOS settings detailed below are applied.
+
 - The SecureDrop instance's Admin Workstation and Secure Viewing Station (SVS) USBs, and the full GPG fingerprint of the submission key.
 - A working computer (Linux is recommended and assumed in this guide) to use for verification and creation of the Qubes installation medium.
 - A password manager or other system to generate and store strong passphrases for Qubes full disk encryption (FDE) and user accounts.
@@ -336,6 +339,56 @@ Test the Workstation
 To start the SecureDrop Workstation client, double-click the SecureDrop desktop icon that was set up by the previous command. The preflight updater will start and check for updates. The system should be up-to-date and no updates should be required, but if updates are available follow the instructions in the preflight updater to apply them.
 
 Once the update check is complete, the client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
+
+Troubleshooting installation errors
+-----------------------------------
+
+"Recurse failed: none of the specified sources were found"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+An error similar to the following may be displayed during the installation, after which the installation will fail:
+
+.. code-block:: none
+
+    ______ID: dom0-securedrop-launcher-directory
+    Function: file.recurse
+        Name: /opt/securedrop/launcher
+      Result: False
+     Comment: Recurse failed: none of the specified sources were found
+     Started: 20:52:46.766870
+    Duration: 2.371 ms
+     Changes:   
+
+To clear this error, clear the Salt cache and resynchronize by running the following commands in a ``dom0`` terminal:
+
+.. code-block:: sh
+
+  sudo rm -rf /var/cache/salt
+  sudo qubesctl saltutil.sync_all refresh=true
+
+Then, run ``securedrop-admin --apply`` again.
+
+"Failed to return clean data"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An error similar to the following may be displayed during an installation or update: 
+
+.. code-block:: none
+
+  sd-log:
+        ----------
+        _error:
+            Failed to return clean data
+        retcode:
+            None
+        stderr:
+        stdout:
+            deploy
+
+This is a transient error that may affect any of the SecureDrop Workstation VMs. To clear it, run the installation command or update again.
+
+"Temporary failure resolving"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transient network issues may cause an installation to fail. To work around this, verify that you have a working Internet connection, and re-run the ``securedrop-admin --apply`` command.
 
 Uninstalling SecureDrop Workstation
 -----------------------------------
