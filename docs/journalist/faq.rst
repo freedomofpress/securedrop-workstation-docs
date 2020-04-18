@@ -139,16 +139,17 @@ without opening it in an interactive viewer application.
 
 Why can't I copy and paste?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In the current version, copy and paste between and to SecureDrop Workstation VMs
-is disabled for security reasons. The goal of this restriction is to minimize
-the risk of accidental pastes of sensitive content, and to reduce the attack
-surface for attempts to exfiltrate information.
+You should be able to copy and paste *within* any VM on the system, e.g.,
+from one application running in ``sd-app`` to another.
 
-We recommend entering passwords and passphrases manually, and using the provided
-print and export functionality for submissions.
+Copy and paste between and to SecureDrop Workstation VMs is disabled for security
+reasons. The goal of this restriction is to minimize the risk of accidental
+pastes of sensitive content, and to reduce the attack surface for attempts to
+exfiltrate information.
 
-It is possible to copy and paste from ``dom0`` into SecureDrop Workstation VMs,
-but we do not recommend doing so in production environments.
+Administrators can configure limited exceptions to this policy; please see the
+section :doc:`Managing Clipboard Access <../admin/managing_clipboard>` of the admin guide
+for more information.
 
 Why does it take so long to start the SecureDrop Client?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
