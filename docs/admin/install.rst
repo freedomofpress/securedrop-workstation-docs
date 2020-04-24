@@ -284,11 +284,13 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
     sudo cp /tmp/sd-journalist.sec /usr/share/securedrop-workstation-dom0-config/
 
-- Then, check its fingerprint with the command:
+- Your submission key has a unique fingerprint required for the configuration. Obtain the fingerprint by using this command:
 
   .. code-block:: sh
 
     gpg --with-fingerprint --with-colons /tmp/sd-journalist.sec
+
+  The fingerprint will be on a line that starts with ``fpr``. For example, if the output included the line ``fpr:::::::::65A1B5FF195B56353CC63DFFCC40EF1228271441:``, the fingerprint would be the character sequence ``65A1B5FF195B56353CC63DFFCC40EF1228271441``.
 
 - Next, create the SecureDrop Workstation configuration file:
 
