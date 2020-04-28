@@ -17,8 +17,8 @@ More information on hardware compatibility can be found on the `Qubes OS System 
 
 In order to print submissions, a supported non-networked printer is required. Supported models currently include:
 
-- Brother HL-L2320D 
-- HP LaserJet Pro M404n 
+- Brother HL-L2320D
+- HP LaserJet Pro M404n
 
 More printer options will be added in future releases.
 
@@ -40,7 +40,7 @@ The instructions below assume the use of a Linux-based computer for the creation
 - Verify the checksum of the downloaded ISO file using the following command, comparing it against the checksum in the file listing above:
 
   .. code-block:: sh
-   
+
     sha256sum /path/to/downloaded.iso
 
 - Create a USB-bootable version of the ISO using the command:
@@ -52,11 +52,11 @@ The instructions below assume the use of a Linux-based computer for the creation
   .. note:: To install the ``geleltorito`` utility on Debian-based systems, use the command
 
     .. code-block:: sh
-      
+
       sudo apt install genisoimage
 
     To install it on Fedora-based systems, use the command:
-    
+
     .. code-block:: sh
 
       sudo dnf install geteltorito genisoimage
@@ -69,9 +69,9 @@ The instructions below assume the use of a Linux-based computer for the creation
 
     sudo dd if=usb-bios.iso of=/dev/sdX bs=1M && sync
 
-  where ``sdX`` is the device name verified above. 
+  where ``sdX`` is the device name verified above.
 
-  .. caution:: 
+  .. caution::
 
     The ``dd`` command will wipe data on the targeted device. Make sure that you use the correct device name.
 
@@ -80,4 +80,3 @@ The instructions below assume the use of a Linux-based computer for the creation
 - Plug the USB into the T480 and boot it, pressing **F12** on startup. Select the USB's listing in the boot menu.
 
 - Follow the on-screen instructions to update the BIOS, including any mandatory reboots. Note that the instructions may refer to an update CD instead of your update USB.
-
