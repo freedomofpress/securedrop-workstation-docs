@@ -13,7 +13,7 @@ Pre-install tasks:
 #. Apply BIOS updates and check settings
 #. Download and verify Qubes OS
 #. Install Qubes OS
-#. Apply updates to system templates 
+#. Apply updates to system templates
 
 Install tasks:
 ~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ In order to install SecureDrop Workstation and configure it to use an existing S
 - A working computer (Linux is recommended and assumed in this guide) to use for verification and creation of the Qubes installation medium.
 - A password manager or other system to generate and store strong passphrases for Qubes full disk encryption (FDE) and user accounts.
 
-A basic knowledge of the Qubes OS is helpful. 
+A basic knowledge of the Qubes OS is helpful.
 
 
 Pre-install tasks
@@ -48,7 +48,7 @@ Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. If you're using the recommended ThinkPad T480, see the :ref:`t480_bios` section in this documentation. The process will be different for other makes and models, and can usually be found on their respective support sites.
 
-Once the BIOS is up-to-date, boot into the BIOS setup utility and update its settings. Note that not all BIOS versions will support the items listed, but if available following changes are recommended: 
+Once the BIOS is up-to-date, boot into the BIOS setup utility and update its settings. Note that not all BIOS versions will support the items listed, but if available following changes are recommended:
 
 - Ensure the internal clock is correct.
 - Set a password to access the BIOS (and record the password in your password manager).
@@ -74,7 +74,7 @@ Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/secu
 Once you've verified the ISO, copy it to your installation medium - for example, if using Linux and a USB stick, using the command:
 
 .. code-block:: sh
- 
+
   sudo dd if=Qubes-R4.0.3-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
@@ -92,19 +92,19 @@ Follow the `installation documentation <https://www.qubes-os.org/doc/installatio
 
 - Use all available storage space for the installation (as the computer should be dedicated to SecureDrop Workstation).
 - Set a strong FDE passphrase - a 6-word Diceware passphrase is recommended.
-- Create an administrative account named ``user`` with a strong password. 
+- Create an administrative account named ``user`` with a strong password.
 
   .. note:: Qubes is not intended to have multiple user accounts, so this account name and password will be shared by all SecureDrop Workstation users. The password will be required to log in and unlock the screen during sessions - choosing something strong but memorable and easily typed is recommended!
 
-Once the installation is complete, you will be prompted to reboot into Qubes. Reboot, removing the install USB when the computer restarts. 
+Once the installation is complete, you will be prompted to reboot into Qubes. Reboot, removing the install USB when the computer restarts.
 
 You will be prompted to enter the FDE passphrase set during installation.
 
 .. note:: On first booting into a Qubes OS 4.3 installation, you may be prompted to enter the FDE passphrase at a command-line prompt rather than via the GUI. The next system update will restore the GUI prompt.
 
-After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon, then accept the default options and click **Done**. Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs. 
+After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon, then accept the default options and click **Done**. Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
-Once the initial setup is complete, the login dialog will be displayed. Log in using the username and password set during installation. 
+Once the initial setup is complete, the login dialog will be displayed. Log in using the username and password set during installation.
 
 Apply updates to system templates (estimated wait time: 45-60 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,7 +135,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
   |Attach TailsData|
 
-- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the SVS persistent volume passphrase to unlock and mount it. 
+- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the SVS persistent volume passphrase to unlock and mount it.
 
   |Unlock TailsData|
 
@@ -143,7 +143,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
   .. code-block:: sh
 
-    qvm-run --pass-io vault "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint" 
+    qvm-run --pass-io vault "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint"
 
 - Next, run the comand:
 
@@ -151,7 +151,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
     qvm-run --pass-io vault "gpg --homedir /run/media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" > /tmp/sd-journalist.sec
 
-  where ``<SVSFingerprint>`` is the submission key fingerprint, typed as a single unit without whitespace. This will copy the submission key in ASCII format to a temporary file in dom0, ``/tmp/sd-journalist.sec``. 
+  where ``<SVSFingerprint>`` is the submission key fingerprint, typed as a single unit without whitespace. This will copy the submission key in ASCII format to a temporary file in dom0, ``/tmp/sd-journalist.sec``.
 
 - Verify the that the file starts with ``-----BEGIN PGP PRIVATE KEY BLOCK-----`` using the command:
 
@@ -159,7 +159,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
     head -n 1 /tmp/sd-journalist.sec
 
-- In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the SVS USB. 
+- In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the SVS USB.
 
 
 Copy Journalist Interface details
@@ -169,7 +169,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the Journa
 
 - Connect the Admin Workstation USB to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
 
-- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the Admin Workstation persistent volume passphrase to unlock and mount it. 
+- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the Admin Workstation persistent volume passphrase to unlock and mount it.
 
 - Copy the Journalist Interface configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
@@ -197,7 +197,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
 - Next, start a terminal in the network-attached ``work`` VM, via **Q > Domain:work > work: Terminal**.
 
-.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Domain: work > work: Firefox** 
+.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Domain: work > work: Firefox**
 
 - In the ``work`` terminal, run the following commands to download and add the SecureDrop signing key, which is needed to verify the SecureDrop Workstation package:
 
@@ -256,7 +256,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
       sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm
 
   - in the ``dom0`` terminal:
- 
+
     .. code-block:: sh
 
       sha256sum securedrop-workstation.rpm
@@ -272,11 +272,11 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
   When prompted, type **Y** and **Enter** to install the package.
 
 - Shut down the ``work`` VM using the Qube widget in the top-right panel.
- 
+
 Configure SecureDrop Workstation (estimated wait time: 60-90 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before setting up the set of VMs used by SecureDrop Workstation, you must configure the Journalist Interface connection and submission key. 
+Before setting up the set of VMs used by SecureDrop Workstation, you must configure the Journalist Interface connection and submission key.
 
 - To add the submission key, run the following command in the ``dom0`` terminal:
 
@@ -284,16 +284,18 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
     sudo cp /tmp/sd-journalist.sec /usr/share/securedrop-workstation-dom0-config/
 
-- Then, check its fingerprint with the command:
+- Your submission key has a unique fingerprint required for the configuration. Obtain the fingerprint by using this command:
 
   .. code-block:: sh
 
     gpg --with-fingerprint --with-colons /tmp/sd-journalist.sec
 
+  The fingerprint will be on a line that starts with ``fpr``. For example, if the output included the line ``fpr:::::::::65A1B5FF195B56353CC63DFFCC40EF1228271441:``, the fingerprint would be the character sequence ``65A1B5FF195B56353CC63DFFCC40EF1228271441``.
+
 - Next, create the SecureDrop Workstation configuration file:
 
   .. code-block:: sh
-   
+
     cd /usr/share/securedrop-workstation-dom0-config
     sudo cp config.json.example config.json
 
@@ -304,7 +306,7 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
   - **hidserv.key**: use the value of the v2 HidServAuth token for the Journalist Interface, or the v3 private authorization key value if your SecureDrop instance uses v3 onion services
   - **environment**: use the value ``prod``
 
-.. note:: 
+.. note::
   You can find the values for the **hidserv.*** fields in the ``/tmp/journalist.txt`` file that you created in ``dom0`` earlier:
 
   If your instance uses v2 onion services, the file will be formatted as follows:
@@ -314,9 +316,9 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
     HidServAuth ONIONADDRESS.onion AUTHTOKEN # comments, can be ignored
 
   If your instance uses v3 onion services, the file will be formatted as follows:
-  
+
   .. code-block:: none
-  
+
    ONIONADDRESS:descriptor:x25519:AUTHTOKEN
 
 - Verify that the configuration is valid using the command below in the ``dom0`` terminal:
@@ -356,7 +358,7 @@ An error similar to the following may be displayed during the installation, afte
      Comment: Recurse failed: none of the specified sources were found
      Started: 20:52:46.766870
     Duration: 2.371 ms
-     Changes:   
+     Changes:
 
 To clear this error, clear the Salt cache and resynchronize by running the following commands in a ``dom0`` terminal:
 
@@ -370,7 +372,7 @@ Then, run ``securedrop-admin --apply`` again.
 "Failed to return clean data"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An error similar to the following may be displayed during an installation or update: 
+An error similar to the following may be displayed during an installation or update:
 
 .. code-block:: none
 
@@ -395,10 +397,10 @@ Uninstalling SecureDrop Workstation
 To uninstall SecureDrop Workstation, open a ``dom0`` terminal and run the following command:
 
 .. code-block:: sh
-  
+
   securedrop-admin --uninstall
 
-This will remove all associated VMs and configuration details, and uninstall the ``dom0`` SecureDrop Workstation package. 
+This will remove all associated VMs and configuration details, and uninstall the ``dom0`` SecureDrop Workstation package.
 
 The submission key and ``config.json`` file will still be present in ``dom0`` in ``/usr/share/securedrop-workstation-dom0-config``. To delete them, use the command:
 
