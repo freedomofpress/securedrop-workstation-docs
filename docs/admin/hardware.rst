@@ -17,8 +17,8 @@ More information on hardware compatibility can be found on the `Qubes OS System 
 
 In order to print submissions, a supported non-networked printer is required. Supported models currently include:
 
-- Brother HL-L2320D 
-- HP LaserJet Pro M404n 
+- Brother HL-L2320D
+- HP LaserJet Pro M404n
 
 More printer options will be added in future releases.
 
@@ -40,7 +40,7 @@ The instructions below assume the use of a Linux-based computer for the creation
 - Verify the checksum of the downloaded ISO file using the following command, comparing it against the checksum in the file listing above:
 
   .. code-block:: sh
-   
+
     sha256sum /path/to/downloaded.iso
 
 - Create a USB-bootable version of the ISO using the command:
@@ -52,11 +52,11 @@ The instructions below assume the use of a Linux-based computer for the creation
   .. note:: To install the ``geleltorito`` utility on Debian-based systems, use the command
 
     .. code-block:: sh
-      
+
       sudo apt install genisoimage
 
     To install it on Fedora-based systems, use the command:
-    
+
     .. code-block:: sh
 
       sudo dnf install geteltorito genisoimage
@@ -69,9 +69,9 @@ The instructions below assume the use of a Linux-based computer for the creation
 
     sudo dd if=usb-bios.iso of=/dev/sdX bs=1M && sync
 
-  where ``sdX`` is the device name verified above. 
+  where ``sdX`` is the device name verified above.
 
-  .. caution:: 
+  .. caution::
 
     The ``dd`` command will wipe data on the targeted device. Make sure that you use the correct device name.
 
@@ -81,3 +81,11 @@ The instructions below assume the use of a Linux-based computer for the creation
 
 - Follow the on-screen instructions to update the BIOS, including any mandatory reboots. Note that the instructions may refer to an update CD instead of your update USB.
 
+USB-C ports
+~~~~~~~~~~~
+If you intend to use USB-C ports, please note that our recommended BIOS settings will disable dual USB-C/Thunderbolt ports (recognizable by the Thunderbolt logo next to the port). The T480 includes two USB-C ports, `specified <https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-t-series/ThinkPad-T480/p/22TP2TT4800>`__ as follows:
+
+- 1 x USB 3.1 Gen 1 Type-C (Power Delivery, DisplayPort, Data transfer)
+- 1 x USB 3.1 Gen 2 Type-C / Intel Thunderbolt 3 (Power Delivery, DisplayPort, Data transfer)
+
+The first of these ports will continue to function as a USB-C port. After disabling Thunderbolt, the second port can no longer be used for Thunderbolt or for USB-C data transfer, but it can still be used for power delivery (i.e. to plug in your AC adapter). If you are unsure about the features of your laptop's USB-C ports, or if you are using a different make or model, please consult the technical specifications of your laptop for further information.
