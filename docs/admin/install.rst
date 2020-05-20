@@ -143,13 +143,16 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
   .. code-block:: sh
 
-    qvm-run --pass-io vault "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint"
+    qvm-run --pass-io vault \
+      "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint"
 
 - Next, run the comand:
 
   .. code-block:: sh
 
-    qvm-run --pass-io vault "gpg --homedir /run/media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" > /tmp/sd-journalist.sec
+    qvm-run --pass-io vault \
+      "gpg --homedir /run/media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" \
+      > /tmp/sd-journalist.sec
 
   where ``<SVSFingerprint>`` is the submission key fingerprint, typed as a single unit without whitespace. This will copy the submission key in ASCII format to a temporary file in dom0, ``/tmp/sd-journalist.sec``.
 
@@ -175,13 +178,17 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the Journa
 
   .. code-block:: sh
 
-    qvm-run --pass-io vault "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" > /tmp/journalist.txt
+    qvm-run --pass-io vault \
+      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
+      > /tmp/journalist.txt
 
   If your instance uses legacy v2 onion services, use the following command instead:
 
   .. code-block:: sh
 
-    qvm-run --pass-io vault "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist-aths" > /tmp/journalist.txt
+    qvm-run --pass-io vault \
+      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist-aths" \
+      > /tmp/journalist.txt
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
 
@@ -203,8 +210,12 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
   .. code-block:: sh
 
-    gpg --keyserver hkps://keys.openpgp.org --recv-key "2224 5C81 E3BA EB41 38B3 6061 310F 5612 00F4 AD77"
-    gpg --armor --export 22245C81E3BAEB4138B36061310F561200F4AD77 > securedrop-release-key.pub
+    gpg --keyserver hkps://keys.openpgp.org --recv-key \
+      "2224 5C81 E3BA EB41 38B3 6061 310F 5612 00F4 AD77"
+
+    gpg --armor --export 22245C81E3BAEB4138B36061310F561200F4AD77 \
+      > securedrop-release-key.pub
+
     sudo rpmkeys --import securedrop-release-key.pub
 
 - In the ``work`` terminal, open a text editor with escalated privileges (for example, with the command ``sudo gedit``) and create a file ``/etc/yum.repos.d/securedrop-temp.repo`` with the following contents:
@@ -245,7 +256,9 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
   .. code-block:: sh
 
-    qvm-run --pass-io work "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm" > securedrop-workstation.rpm
+    qvm-run --pass-io work \
+      "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm" \
+      > securedrop-workstation.rpm
 
 - Verify that the RPM was transferred correctly by running the following commands:
 
