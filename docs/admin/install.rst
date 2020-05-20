@@ -36,6 +36,9 @@ In order to install SecureDrop Workstation and configure it to use an existing S
 
 - The SecureDrop instance's Admin Workstation and Secure Viewing Station (SVS) USBs, and the full GPG fingerprint of the submission key.
 - A working computer (Linux is recommended and assumed in this guide) to use for verification and creation of the Qubes installation medium.
+
+  .. note:: A Tails USB can be used to perform the tasks below, but due to the size of the Qubes installation ISO, it may make sense to download it on another computer rather than via Tor, and then to use a uSB stick to transfer it to Tails for verification and creation of the installation medium.
+
 - A password manager or other system to generate and store strong passphrases for Qubes full disk encryption (FDE) and user accounts.
 
 A basic knowledge of the Qubes OS is helpful.

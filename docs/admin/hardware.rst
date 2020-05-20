@@ -37,6 +37,28 @@ The instructions below assume the use of a Linux-based computer for the creation
 - Visit `<https://support.lenovo.com>`_ in the Linux-based computer. Type the machine type found above into the search bar, then press **Enter**.
 - In the T480 Product Home page, select **Drivers And Software** and choose **BIOS/UEFI**.
 - Expand the **BIOS Update** listing and download the **BIOS Update (Bootable CD)** file.
+
+.. note::
+  A Tails USB can be used for the verification and conversion process described below, but the Lenovo support site blocks requests over Tor, preventing the ISO download. To work around this, either:
+
+  - download the BIOS ISO on a different computer and transfer it to Tails using a USB stick, or
+  - download the ISO in Tails using the Unsafe Browser as follows:
+
+    - Start Tails with an administration password set in the Welcome Screen.
+    - Open the Unsafe Browser: **Applications > Internet > Unsafe Browser** and find and download the ISO.
+    - Leave the Unsafe Browser running, and open a terminal via **Applications > System Tools > Terminal**.
+    - Copy the ISO to the desktop with the command:
+
+      .. code-block:: sh
+
+        sudo cp /var/lib/unsafe-browser/chroot/home/clearnet/Downloads/<fileName.iso> ~amnesia/Desktop
+
+    - Fix the ISO file's ownership with the command:
+
+      .. code-block:: sh
+
+        sudo chown amnesia:amnesia ~/Desktop/<fileName.iso>
+
 - Verify the checksum of the downloaded ISO file using the following command, comparing it against the checksum in the file listing above:
 
   .. code-block:: sh
