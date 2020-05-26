@@ -45,7 +45,8 @@ The instructions below assume the use of a Linux-based computer for the creation
   - download the ISO in Tails using the Unsafe Browser as follows:
 
     - Start Tails with an administration password set in the Welcome Screen.
-    - Open the Unsafe Browser: **Applications > Internet > Unsafe Browser** and find and download the ISO.
+    - Open the Unsafe Browser: **Applications > Internet > Unsafe Browser** and find and download the ISO
+    - Note the filename, as you'll need it for subsequent steps.
     - Leave the Unsafe Browser running, and open a terminal via **Applications > System Tools > Terminal**.
     - Copy the ISO to the desktop with the command:
 
@@ -57,7 +58,7 @@ The instructions below assume the use of a Linux-based computer for the creation
 
       .. code-block:: sh
 
-        sudo chown amnesia:amnesia ~/Desktop/<fileName.iso>
+        sudo chown amnesia:amnesia ~amnesia/Desktop/<fileName.iso>
 
 - Verify the checksum of the downloaded ISO file using the following command, comparing it against the checksum in the file listing above:
 
