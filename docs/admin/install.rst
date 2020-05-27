@@ -58,7 +58,7 @@ In order to be used with SecureDrop Workstation, your instance must be running t
 
   .. code-block:: sh
 
-    ssh app "sudo cat /etc/apache2/sites-enabled/journalist.conf | grep '^  <LimitExcept GET POST HEAD DELETE>$'"
+    ssh app "grep '^\s\s<LimitExcept GET POST HEAD DELETE>$' /etc/apache2/sites-enabled/journalist.conf"
 
 - If your instance is configured correctly, this command will output two lines as follows:
 
@@ -69,9 +69,9 @@ In order to be used with SecureDrop Workstation, your instance must be running t
 
 - If not, then you will need to:
 
-  - Update the Admin Workstation to the current SecureDrop release version.
-  - Back up the SecureDrop instance.
-  - Verify that the configuration stored on the Admin Workstation is correct by running ``./securedrop-admin sdconfig``.
+  - Update the Admin Workstation to the current SecureDrop release version, by following the applicable upgrade guide in `our documentation <https://docs.securedrop.org>`_.
+  - Back up the SecureDrop instance, using the `server backup <https://docs.securedrop.org/en/master/backup_and_restore.html>`_ instructions.
+  - Verify that the configuration stored on the Admin Workstation is correct by running ``cd ~/Persistent/securedrop && ./securedrop-admin sdconfig``. This command will display each setting in turn - to accept without changing, press **Enter** for each.
   - Update the instance configuration by running ``./securedrop-admin install``.
 
 - When the instance configuration is up to date, continue with the SecureDrop Workstation installation.
