@@ -33,6 +33,8 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/hardware
    admin/install
    admin/securing_workstation
+   admin/managing_clipboard
+   admin/reviewing_logs
    admin/troubleshooting_connection
    admin/provisioning_usb
    admin/known_issues

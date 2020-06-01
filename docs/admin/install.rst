@@ -21,7 +21,8 @@ Install tasks:
 ~~~~~~~~~~~~~~
 
 #. Copy the submission key
-#. Copy Journalist Interface details
+#. Copy *Journalist Interface* details
+#. Copy SecureDrop login credentials
 #. Download and install SecureDrop Workstation
 #. Configure SecureDrop Workstation
 #. Test the Workstation
@@ -36,7 +37,10 @@ In order to install SecureDrop Workstation and configure it to use an existing S
 
   .. note:: A USB stick with a Type-A connector is recommended, as USB-C ports may be disabled on your computer when the BIOS settings detailed below are applied.
 
-- The SecureDrop instance's Admin Workstation and Secure Viewing Station (SVS) USBs, and the full GPG fingerprint of the submission key.
+- The SecureDrop instance's *Admin Workstation* and Secure Viewing Station (SVS) USBs, and the full GPG fingerprint of the submission key.
+- (Optional, for a single-user workstation) The *Journalist Workstation* USB for the intended user of this workstation, if you want to import their SecureDrop login credentials into the workstation's password manager.
+- The passphrases required to unlock the persistent volumes on each of these USB drives.
+
 - A working computer (Linux is recommended and assumed in this guide) to use for verification and creation of the Qubes installation medium.
 
   .. note:: A Tails USB can be used to perform the tasks below, but due to the size of the Qubes installation ISO, it may make sense to download it on another computer rather than via Tor, and then to use a USB stick to transfer it to Tails for verification and creation of the installation medium.
@@ -51,9 +55,9 @@ Pre-install tasks
 
 Verify the SecureDrop server configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In order to be used with SecureDrop Workstation, your instance must be running the latest version of SecureDrop, and the server configuration must have been updated to allow for HTTP ``DELETE`` requests. The configuration change to enable this was added in the ``0.13.0`` version of SecureDrop, released on May 29 2019. If your instance was created using this or a later version, it has the necessary changes. If not, then the ``./securedrop-admin install`` command must have been run from an Admin Workstation updated with the ``0.13.0`` code or later. To check this:
+In order to be used with SecureDrop Workstation, your instance must be running the latest version of SecureDrop, and the server configuration must have been updated to allow for HTTP ``DELETE`` requests. The configuration change to enable this was added in the ``0.13.0`` version of SecureDrop, released on May 29 2019. If your instance was created using this or a later version, it has the necessary changes. If not, then the ``./securedrop-admin install`` command must have been run from an *Admin Workstation* updated with the ``0.13.0`` code or later. To check this:
 
-- Use an Admin Workstation USB to boot into Tails, with the persistent volume unlocked and an administration password set.
+- Use an *Admin Workstation* USB to boot into Tails, with the persistent volume unlocked and an administration password set.
 - Navigate to **Applications ▸ System Tools ▸ Terminal** to open a terminal.
 - Verify that the *Journalist Interface* Apache configuration allows for HTTP ``DELETE`` using the following command:
 
@@ -70,9 +74,9 @@ In order to be used with SecureDrop Workstation, your instance must be running t
 
 - If not, then you will need to:
 
-  - Update the Admin Workstation to the current SecureDrop release version, by following the applicable upgrade guide in `our documentation <https://docs.securedrop.org>`_.
+  - Update the *Admin Workstation* to the current SecureDrop release version, by following the applicable upgrade guide in `our documentation <https://docs.securedrop.org>`_.
   - Back up the SecureDrop instance, using the `server backup <https://docs.securedrop.org/en/master/backup_and_restore.html>`_ instructions.
-  - Verify that the configuration stored on the Admin Workstation is correct by running ``cd ~/Persistent/securedrop && ./securedrop-admin sdconfig``. This command will display each setting in turn - to accept without changing, press **Enter** for each.
+  - Verify that the configuration stored on the *Admin Workstation* is correct by running ``cd ~/Persistent/securedrop && ./securedrop-admin sdconfig``. This command will display each setting in turn - to accept without changing, press **Enter** for each.
   - Update the instance configuration by running ``./securedrop-admin install``.
 
 - When the instance configuration is up to date, continue with the SecureDrop Workstation installation.
@@ -203,16 +207,20 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 - In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the SVS USB.
 
 
-Copy Journalist Interface details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _copy_journalist:
 
-SecureDrop Workstation connects to your SecureDrop instance's API via the Journalist Interface. In order to do so, it will need the Journalist Interface address and authentication info. As the clipboard from another VM cannot be copied into ``dom0`` directly, follow these steps to copy the file into place:
+Copy *Journalist Interface* details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Connect the Admin Workstation USB to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
+SecureDrop Workstation connects to your SecureDrop instance's API via the *Journalist Interface*. In order to do so, it will need the *Journalist Interface* address and authentication info. As the clipboard from another VM cannot be copied into ``dom0`` directly, follow these steps to copy the file into place:
 
-- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the Admin Workstation persistent volume passphrase to unlock and mount it.
+- Locate an *Admin Workstation* or *Journalist Workstation* USB drive. Both hold the address and authentication info for the *Journalist Interface*; if you also want to copy the journalist user's password database, use the *Journalist Workstation* USB drive.
 
-- Copy the Journalist Interface configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
+- Connect the USB drive to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
+
+- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it.
+
+- Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
   .. code-block:: sh
 
@@ -230,8 +238,43 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the Journa
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
 
-- In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the Admin Workstation USB. Shut down the ``vault`` VM using the Qube widget in the upper right panel.
+- If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the USB drive.
 
+Copy SecureDrop login credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Users of SecureDrop Workstation must enter their username, passphrase and two-factor code to connect with the SecureDrop server. You can manage these passphrases using the KeePassXC password manager in the ``vault`` VM. If this laptop will be used by more than one journalist, we recommend that you shut down the ``vault`` VM now (using the Qube widget in the upper right panel), skip this section, and use a smartphone password manager instead.
+
+In order to set up KeePassXC for easy use:
+
+- Add KeePassXC to the application menu by selecting it from the list of available apps in **Q > Domain: vault > vault: Qube Settings > Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
+
+- Launch KeePassXC via **Q > Domain: vault > vault: KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
+
+- Close the application.
+
+.. important::
+
+   The *Admin Workstation* password database contains sensitive credentials not required by journalist users. Make sure to copy the credentials from the *Journalist Workstation* USB.
+
+In order to copy a journalist's login credentials:
+
+- If a *Journalist Workstation* USB is not currently attached, connect it, attach it to the ``vault`` VM, open it in the file manager, and enter its encryption passphrase.
+
+- Locate the password database. It should be in the ``Persistent`` directory, and will typically be named ``keepassx.kdbx`` or similar.
+
+- Open a second ``vault`` file manager window (``Ctrl + N`` in the current window) and navigate to the **Home** directory.
+
+- Drag and drop the password database to copy it.
+
+- In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the *Journalist Workstation* USB. Close this file manager window.
+
+- In the file manager window that displays the home directory, open the copy you made of the password database by double-clicking it.
+
+- If the database is passwordless, KeePassXC may display a security warning when opening it. To preserve convenient passwordless access, you can protect the database using a key file, via **Database > Database settings > Security > Add additional protection > Add Key File > Generate**. This key file has to be selected when you open the database, but KeePassXC will remember the last selection.
+
+- Inspect each section of the password database to ensure that it contains only the information required by the journalist user to log in.
+
+- Close the application window and shut down the ``vault`` VM (using the Qube widget in the upper right panel).
 
 Download and install SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -327,7 +370,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 Configure SecureDrop Workstation (estimated wait time: 60-90 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before setting up the set of VMs used by SecureDrop Workstation, you must configure the Journalist Interface connection and submission key.
+Before setting up the set of VMs used by SecureDrop Workstation, you must configure the *Journalist Interface* connection and submission key.
 
 - To add the submission key, run the following command in the ``dom0`` terminal:
 
@@ -353,8 +396,8 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 - The ``config.json`` file must be updated with the correct values for your instance. Open it with root privileges in a text editor such as ``vi`` or ``nano`` and update the following fields' values:
 
   - **submission_key_fpr**: use the value of the submission key fingerprint as displayed above
-  - **hidserv.hostname**: use the hostname of the Journalist Interface, including the ``.onion`` TLD
-  - **hidserv.key**: use the value of the v2 HidServAuth token for the Journalist Interface, or the v3 private authorization key value if your SecureDrop instance uses v3 onion services
+  - **hidserv.hostname**: use the hostname of the *Journalist Interface*, including the ``.onion`` TLD
+  - **hidserv.key**: use the value of the v2 HidServAuth token for the *Journalist Interface*, or the v3 private authorization key value if your SecureDrop instance uses v3 onion services
   - **environment**: use the value ``prod``
 
 .. note::
@@ -389,9 +432,33 @@ This command will take a considerable amount of time and approximately 4GB of ba
 Test the Workstation
 ~~~~~~~~~~~~~~~~~~~~
 
-To start the SecureDrop Workstation client, double-click the SecureDrop desktop icon that was set up by the previous command. The preflight updater will start and check for updates. The system should be up-to-date and no updates should be required, but if updates are available follow the instructions in the preflight updater to apply them.
+To start the SecureDrop Client, double-click the SecureDrop desktop icon that was set up by the previous command. The preflight updater will start and check for updates. The system should be up-to-date and no updates should be required, but if updates are available follow the instructions in the preflight updater to apply them.
 
-Once the update check is complete, the client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
+Once the update check is complete, the SecureDrop Client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
+
+.. _Password Management Section:
+
+Enable password copy and paste
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you use KeePassXC in the ``vault`` VM to manage login credentials, you can enable the user to copy passwords to the SecureDrop Client using inter-VM copy and paste. While this is relatively safe, we recommend reviewing the section :doc:`Managing Clipboard Access <managing_clipboard>` of this guide, which goes into further detail on the security considerations for inter-VM copy and paste.
+
+The password manager runs in the networkless ``vault`` VM, and the SecureDrop Client runs in the ``sd-app`` VM. To permit this one-directional clipboard use, issue the following command in ``dom0``:
+
+.. code-block:: sh
+
+   qvm-tags vault add sd-send-app-clipboard
+
+Confirm that the tag was correctly applied using the ``ls`` subcommand:
+
+.. code-block:: sh
+
+   qvm-tags vault ls
+
+To revoke this configuration change later or correct a typo, you can use the ``del`` subcommand, e.g.:
+
+.. code-block:: sh
+
+   qvm-tags vault del sd-send-app-clipboard
 
 Troubleshooting installation errors
 -----------------------------------
