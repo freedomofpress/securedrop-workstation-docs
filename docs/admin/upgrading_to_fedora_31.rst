@@ -42,23 +42,22 @@ Type ``y`` to proceed with the installation.
 
 Update the Fedora-31 template
 -----------------------------
-
-Once the template is installed, update by navigating to **System Tools > Qubes
-Update**, enabling the "Enable updates for qubes without known updates" option,
-and selecting ``fedora-31``.
+Once the template installation is complete, update the template using the Qubes
+Updater. Click **Q > System Tools > Qubes Update** in the application menu.
+Click the checkbox "Enable updates for qubes without known updates" option,
+and click the checkbox next to ``fedora-31``. Click **Next** and wait for
+any available updates to be downloaded and applied.
 
 .. _configure_vms:
 
 Configure VMs to use the new template
 -------------------------------------
-
-Update a VM's base template via the **Qubes Application Menu > Qube Manager**.
-All VMs will be visible at a glance; to change a VM's settings, right-click it
-and select **Qube Settings**.
+To apply the template to VMs that currently use an older version, open the
+Qube Manager via **Q > System Tools > Qube Manager**. All VMs will be visible at
+a glance; to change a VM's settings, right-click it and select **Qube Settings**.
 
 In the Qube Settings window, select ``fedora-31`` from the drop-down menu
-beside **Template**, then click **OK.** Note that, if the VM is running, the
-change will only take effect once it has been shut down and rebooted.
+beside **Template**, then click **OK.**
 
 |screenshot_qsettings_fedora31|
 
@@ -72,6 +71,16 @@ You should perform this process for:
 
 Existing SecureDrop Workstation users may perform this process for ``work`` and
 ``vault`` only, as the other VMs will be updated by SecureDrop Workstation.
+
+Reboot the system to ensure the changes take effect. Alternatively, you can
+restart only the VMs you have updated.
+
+.. tip::
+
+   You can also use the **Qubes Template Manager** (also in **Q > System Tools**)
+   to make template changes. However, note that it will not allow you to make
+   template changes for VMs that are currently running, so you may have to
+   manually shut down VMs in the correct order to do so.
 
 .. |screenshot_qsettings_fedora31| image:: ../images/screenshot_qsettings_fedora31.png
 
