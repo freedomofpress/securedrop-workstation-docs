@@ -12,25 +12,26 @@ you have previously exited the application, you can double-click on the
 Performing updates
 ------------------
 
-When you launch the application, it will first check for security
-updates. This typically takes a few minutes.
+Unless the system has just been updated, SecureDrop Workstation will now prompt
+you to automatically download and apply any available security updates:
 
-|screenshot_check_updates|
+|screenshot_update_prompt|
 
-If updates are found, you will be asked to apply them before launching the
-SecureDrop Client. For security reasons, you will not be able to launch the
-SecureDrop Client unless updates have been applied. If you prefer to shut down
-the machine or do other work in Qubes OS instead, you can cancel the update.
+For security reasons, you will not be able to launch the SecureDrop Client until
+updates have been applied. This typically takes between 10 and 30 minutes.
+
+Click "Start updates" if you are ready to start the process. (If you prefer to
+shut down the machine or do other work in Qubes OS instead, click "Cancel".)
+You will see a progress indicator until updates are completed:
 
 |screenshot_apply_updates|
 
-.. important:: When you click "Apply Updates," allow the update
-   process to complete fully, without closing or interrupting it, or you risk
-   breaking important system components. The update process can take from just
-   a few minutes to 30 minutes or longer, depending on your network connection
-   and how many updates are available.
+.. important:: Allow the update process to complete fully, without closing or
+   interrupting it, or you risk breaking important system components.
 
-Once the update process has been completed, the SecureDrop Client will launch.
+At the end of this process, SecureDrop Workstation may prompt you to reboot
+if core system components were updated. Once all steps in the update process have
+been completed, the SecureDrop Client will launch automatically.
 
 Signing in
 ----------
@@ -77,7 +78,7 @@ offline mode and can be accessed even when you are not logged in.
    use.
 
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
-.. |screenshot_check_updates| image:: ../images/screenshot_check_updates.png
+.. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
 .. |screenshot_gpg_access| image:: ../images/screenshot_gpg_access.png
