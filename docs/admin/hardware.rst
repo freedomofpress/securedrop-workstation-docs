@@ -44,7 +44,7 @@ The instructions below assume the use of a Linux-based computer for the creation
   - download the BIOS ISO on a different computer and transfer it to Tails using a USB stick, or
   - download the ISO in Tails using the Unsafe Browser as follows:
 
-    - Start Tails with an administration password set in the Welcome Screen.
+    - Start Tails with an administration password set and the Unsafe Browser enabled under "Additional Settings" on the Welcome Screen.
     - Open the Unsafe Browser: **Applications > Internet > Unsafe Browser** and find and download the ISO
     - Note the filename, as you'll need it for subsequent steps.
     - Leave the Unsafe Browser running, and open a terminal via **Applications > System Tools > Terminal**.
