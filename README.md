@@ -8,6 +8,17 @@ User documentation for SecureDrop Workstation.
 - Run `make docs` to start a live build of the documentation at `http://127.0.0.1:8000`
 - Edit RST files under the `docs` directory - your changes will be reflected in the live build
 
+## Stable and development builds
+
+https://workstation.securedrop.org/ is automatically built from this repo. It redirects
+to the stable version by default, which is built from the commit tagged `stable`.
+The latest version tracks the tip of the `master` branch.
+
+To tag a new stable version, delete the current `stable` tag, and push a new
+individually signed, annotated `stable` tag (`git tag -sa stable`). When
+doing so, be careful not to pull in documentation commits for changes that have
+not been released yet.
+
 ## Detailed setup instructions for macOS
 
 There are multiple ways to set your virtual environment; the following
