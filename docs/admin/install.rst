@@ -137,7 +137,7 @@ Once the installation is complete, you will be prompted to reboot into Qubes. Re
 
 You will be prompted to enter the FDE passphrase set during installation.
 
-.. note:: On first booting into a Qubes OS 4.3 installation, you may be prompted to enter the FDE passphrase at a command-line prompt rather than via the GUI. The next system update will restore the GUI prompt.
+.. note:: On first booting into a Qubes OS 4.0.3 installation, you may be prompted to enter the FDE passphrase at a command-line prompt rather than via the GUI. The next system update will restore the GUI prompt.
 
 After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon, then accept the default options and click **Done**. Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
