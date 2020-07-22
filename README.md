@@ -12,7 +12,7 @@ User documentation for SecureDrop Workstation.
 
 https://workstation.securedrop.org/ is automatically built from this repo. It redirects
 to the stable version by default, which is built from the commit tagged `stable`.
-The latest version tracks the tip of the `master` branch.
+The latest version tracks the tip of the `main` branch.
 
 To tag a new stable version, delete the current `stable` tag, and push a new
 individually signed, annotated `stable` tag (`git tag -sa stable`). When
