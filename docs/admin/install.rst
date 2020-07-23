@@ -419,13 +419,13 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
   .. code-block:: sh
 
-    securedrop-admin --validate
+    sdw-admin --validate
 
 - Finally, in the ``dom0`` terminal, run the command:
 
   .. code-block:: sh
 
-    securedrop-admin --apply
+    sdw-admin --apply
 
 This command will take a considerable amount of time and approximately 4GB of bandwidth, as it sets up multiple VMs and installs supporting packages. When it completes, your SecureDrop Workstation is finally ready to use!
 
@@ -485,7 +485,7 @@ To clear this error, clear the Salt cache and resynchronize by running the follo
   sudo rm -rf /var/cache/salt
   sudo qubesctl saltutil.sync_all refresh=true
 
-Then, run ``securedrop-admin --apply`` again.
+Then, run ``sdw-admin --apply`` again.
 
 "Failed to return clean data"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -508,7 +508,7 @@ This is a transient error that may affect any of the SecureDrop Workstation VMs.
 
 "Temporary failure resolving"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Transient network issues may cause an installation to fail. To work around this, verify that you have a working Internet connection, and re-run the ``securedrop-admin --apply`` command.
+Transient network issues may cause an installation to fail. To work around this, verify that you have a working Internet connection, and re-run the ``sdw-admin --apply`` command.
 
 Uninstalling SecureDrop Workstation
 -----------------------------------
@@ -516,7 +516,7 @@ To uninstall SecureDrop Workstation, open a ``dom0`` terminal and run the follow
 
 .. code-block:: sh
 
-  securedrop-admin --uninstall
+  sdw-admin --uninstall
 
 This will remove all associated VMs and configuration details, and uninstall the ``dom0`` SecureDrop Workstation package.
 
