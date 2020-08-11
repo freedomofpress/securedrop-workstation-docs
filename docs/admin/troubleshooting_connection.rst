@@ -142,7 +142,7 @@ You should see similar output as in ``sys-net`` before.
 
 Now, open a terminal in ``sd-whonix`` and run the following command:
 
-``curl -s https://check.torproject.org/ | cat | grep -m 1 "Congratulations"``
+``wget -qO- https://check.torproject.org/ | cat | grep -m 1 "Congratulations"``
 
 This command contacts a service intended for web browsers to verify whether your
 Tor connection is working.
