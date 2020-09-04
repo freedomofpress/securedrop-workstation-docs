@@ -73,7 +73,7 @@ Existing SecureDrop Workstation users may perform this process for ``work`` and
 ``vault`` only, as the other VMs will be updated by SecureDrop Workstation.
 
 Reboot the system to ensure the changes take effect. Alternatively, you can
-restart only the VMs you have updated.
+restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking how you want to connect to the Tor network, select the "Connect" option, which allows a direct connection to the Tor network.
 
 .. tip::
 
