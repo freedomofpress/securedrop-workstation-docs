@@ -7,7 +7,7 @@ Recommended hardware
 Qubes OS hardware requirements
 ------------------------------
 
-In order to install and use SecureDrop Workstation, you will need a Qubes-Compatible computer with the following speifications:
+In order to install and use SecureDrop Workstation, you will need a Qubes-Compatible computer with the following specifications:
 
 - 64-bit Intel or AMD processor with virtualization support
 - a minimum of 16GB RAM (32GB recommended for production use)
