@@ -132,7 +132,7 @@ please contact us for assistance.
 If all required VMs are running, proceed to the next step.
 
 Step 4: Verify that required VMs have connectivity
---------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In step 1, you have already verified that you can connect to the
 Internet using ``sys-net``. Now, test whether ``sys-firewall``, ``sd-whonix``
 and ``sd-proxy`` are working.
@@ -159,7 +159,7 @@ misconfigured, or the proxy may have crashed. In that case, skip ahead to step 6
 We also recommend that you contact us, so we can help identify the root cause.
 
 Step 5: Restart Tor
--------------------
+~~~~~~~~~~~~~~~~~~~
 If you have narrowed down the problem to ``sd-whonix``, try restarting Tor.
 You can do this from within the ``sd-whonix`` terminal using the following
 command:
@@ -169,7 +169,7 @@ command:
 If this does not resolve the issue, proceed to the next step.
 
 Step 6: Restart ``sd-proxy`` and ``sd-whonix``
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Restart ``sd-proxy`` and ``sd-whonix`` to attempt to restore connectivity:
 
 1. Exit the SecureDrop app if it is running.
@@ -183,7 +183,7 @@ Restart ``sd-proxy`` and ``sd-whonix`` to attempt to restore connectivity:
 If this does not resolve the issue, proceed to the next step.
 
 Step 7: Restart ``sys-net`` and ``sys-firewall``
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -204,7 +204,7 @@ at the same time. Start ``sd-proxy``, which will bring up ``sd-whonix``.
 If this does not resolve the issue, please contact us for assistance.
 
 Examining logs
---------------
+~~~~~~~~~~~~~~
 You may wish to examine system logs on your own, or with our guidance. You can
 examine consolidated syslogs from all SecureDrop-related VMs in the ``sd-log``
 VM. They can be found in the default user's ``~/QubesIncomingLogs`` directory.
