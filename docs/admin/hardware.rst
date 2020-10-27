@@ -32,7 +32,7 @@ The Thinkpad T490 **with an 8th generation Intel Core processor** is a recommend
 
 .. caution::
 
-  There versions of the T490 with 10th generation Intel Core processors, and are at present **untested and unsupported**. The workstation has been tested on model 20N2002AUS.
+  The versions of the T490 with 10th generation Intel Core processors are at present **untested and unsupported**. The Workstation has been tested on models 20N2002AUS & 20N20046US.
 
 Network devices (Ethernet and Wi-Fi) will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, ``sys-net`` will fail to start:
 
