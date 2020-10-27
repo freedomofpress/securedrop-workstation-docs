@@ -22,18 +22,65 @@ In order to print submissions, a supported non-networked printer is required. Su
 
 More printer options will be added in future releases.
 
+Lenovo T series Laptops
+-----------------------
+
+Lenovo ThinkPad T490 (with 8th generation Intel Core processor)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Thinkpad T490 **with an 8th generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation.
+
+
+.. caution::
+
+  The versions of the T490 with 10th generation Intel Core processors are at present **untested and unsupported**. The Workstation has been tested on models 20N2002AUS & 20N20046US.
+
+Network devices (Ethernet and Wi-Fi) will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, ``sys-net`` will fail to start:
+
+|screenshot_sys_net_pci_reset|
+
+Open a ``dom0`` terminal via **Q > Terminal Emulator**, and run the following command to list the devices connected to the ``sys-net`` VM.
+
+.. code-block:: sh
+
+  qvm-pci ls sys-net
+
+
+This will return the two devices (Ethernet and WiFi) that are connected to ``sys-net``:
+
+.. code-block:: sh
+
+  BACKEND:DEVID  DESCRIPTION                                                            USED BY
+  dom0:00_14.3   Network controller: Intel Corporation                                  sys-net
+  dom0:00_1f.6   Ethernet controller: Intel Corporation Ethernet Connection (5) I219-V  sys-net
+
+
+For both device IDs (e.g. ``dom0:00_1f.6`` and ``dom0:00_14.3``), you will need to detach and re-attach the device to ``sys-net``, then restart ``sys-net`` as follows:
+
+.. code-block:: sh
+
+  qvm-pci detach sys-net dom0:00_14.3
+  qvm-pci detach sys-net dom0:00_1f.6
+  qvm-pci attach sys-net --persistent --option no-strict-reset=True dom0:00_14.3
+  qvm-pci attach sys-net --persistent --option no-strict-reset=True dom0:00_1f.6
+  qvm-start sys-net
+
+
+``sys-net`` should now start, and network devices will be functional. This change is only required once on first install.
+
+.. |screenshot_sys_net_pci_reset| image:: ../images/screenshot_sys_net_pci_reset.png
+
 Lenovo ThinkPad T480
---------------------
-The ThinkPad T480 is a recommended option for SecureDrop Workstation, as it is being used by the core team for development and testing. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date before proceeding with the installation:
+~~~~~~~~~~~~~~~~~~~~
+The ThinkPad T480 is also a recommended option for SecureDrop Workstation, as it is being used by the core team for development and testing. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation:
 
 .. _t480_bios:
 
-Upgrading the T480 BIOS
-~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading the BIOS (T480/T490)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The instructions below assume the use of a Linux-based computer for the creation of a BIOS upgrade USB. To upgrade the T480 BIOS:
+The instructions below assume the use of a Linux-based computer for the creation of a BIOS upgrade USB. To upgrade the BIOS:
 
-- Locate the machine type of the T480 - it be found via the ``Main`` tab in Thinkpad Setup (accessed by pressing **Enter** on startup). For recent T480s, it will be a string like `20L5` or `20L6`.
+- Locate the machine type of the T480/T490 - it be found via the ``Main`` tab in Thinkpad Setup (accessed by pressing **Enter** on startup). For recent T480s, it will be a string like `20L5` or `20L6`.
 - Visit `<https://support.lenovo.com>`_ in the Linux-based computer. Type the machine type found above into the search bar, then press **Enter**.
 - In the T480 Product Home page, select **Drivers And Software** and choose **BIOS/UEFI**.
 - Expand the **BIOS Update** listing and download the **BIOS Update (Bootable CD)** file.

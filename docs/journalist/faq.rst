@@ -102,6 +102,9 @@ vulnerabilities that may impact it, and the automatic update mechanism helps to
 ensure that, in the event of a vulnerability, every SecureDrop Workstation can be
 patched as quickly as possible.
 
+For further technical detail on design rationale and mitigations, please consult
+our `design document <https://securedrop.org/whitepaper.pdf>`__.
+
 Can I install custom software on SecureDrop Workstation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
