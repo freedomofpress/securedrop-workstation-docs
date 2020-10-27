@@ -11,7 +11,7 @@ Welcome to the SecureDrop Workstation documentation!
 SecureDrop Workstation is a tool to enable journalists to communicate with
 anonymous sources and manage submitted documents, while providing mitigations
 against malware and other security risks. It is built on Qubes OS and requires a
-`SecureDrop <https://www.securedrop.org/>`__ server setup.
+`SecureDrop <https://securedrop.org/>`__ server setup.
 
 .. toctree::
    :maxdepth: 2

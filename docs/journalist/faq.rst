@@ -103,7 +103,7 @@ ensure that, in the event of a vulnerability, every SecureDrop Workstation can b
 patched as quickly as possible.
 
 For further technical detail on design rationale and mitigations, please consult
-our `design document <https://media.securedrop.org/media/documents/SD_Qubes_Workstation_Whitepaper.pdf>`__.
+our `design document <https://securedrop.org/whitepaper.pdf>`__.
 
 Can I install custom software on SecureDrop Workstation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
