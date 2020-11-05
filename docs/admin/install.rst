@@ -427,7 +427,7 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
     sdw-admin --apply
 
-This command will take a considerable amount of time and approximately 4GB of bandwidth, as it sets up multiple VMs and installs supporting packages. When it completes, your SecureDrop Workstation is finally ready to use!
+This command will take a considerable amount of time and approximately 4GB of bandwidth, as it sets up multiple VMs and installs supporting packages. When the command finishes, reboot the machine to complete the installation. Your SecureDrop Workstation is finally ready to use!
 
 Test the Workstation
 ~~~~~~~~~~~~~~~~~~~~
