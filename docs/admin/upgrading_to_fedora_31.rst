@@ -40,6 +40,26 @@ bar.
 When the download has concluded, you will be prompted to install the package.
 Type ``y`` to proceed with the installation.
 
+TEMPORARY: Exclude Salt packages from updates
+---------------------------------------------
+
+.. important:: Due to an `upstream issue <https://github.com/QubesOS/qubes-issues/issues/6188>`_,
+  you will need to exclude the ``salt`` and ``salt-ssh`` packages from updates, as the current
+  versions conflict with the Qubes updater. After the Fedora 31 template is installed, follow
+  the instructions below to do so:
+
+* Open a ``fedora-31`` terminal via **Q > Template: fedora-31 > fedora-31: Terminal**.
+* Run the command ``echo "exclude=salt salt-ssh" | sudo tee -a /etc/dnf/dnf.conf``
+* Shut down the ``fedora-31`` VM  with the command ``sudo poweroff``.
+
+These steps will be removed from this document as soon as the issue mentioned above
+is resolved, and future versions of SecureDrop Workstation will revert the configuration
+change above. If you wish to revert the workaround manually, follow these steps:
+
+* Open a ``fedora-31`` terminal via **Q > Template: fedora-31 > fedora-31: Terminal**.
+* Run the command ``sudo sed -i '/^exclude=/ d' /etc/dnf/dnf.conf``
+* Shut down the ``fedora-31`` VM with the command ``sudo poweroff``.
+
 Update the Fedora-31 template
 -----------------------------
 Once the template installation is complete, update the template using the Qubes
