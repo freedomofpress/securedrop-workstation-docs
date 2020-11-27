@@ -1,10 +1,10 @@
-Upgrading to Fedora 31
+Upgrading to Fedora 32
 ======================
 
 .. include:: ../includes/top-warning.rst
 
-.. note:: This advisory was written in May 2020, and will be removed when a new
-          version of Qubes that contains the Fedora 31 template is released.
+.. note:: This advisory was written in November 2020, and will be removed when a new
+          version of Qubes that contains the Fedora 32 template is released.
 
 Why do I need to upgrade?
 -------------------------
@@ -16,23 +16,23 @@ Fedora 30 template.
 
 As of May 26, 2020, Fedora 30 templates are end-of-life. If you are
 provisioning SecureDrop Workstation for the first time, you will need to update
-your Fedora template manually from Fedora 31 *before* installing SecureDrop
+your Fedora template manually to Fedora 32 *before* installing SecureDrop
 Workstation.
 
 If you are an existing SecureDrop Workstation user, SecureDrop Workstation
 will install the template automatically when updates are applied, but you
 should also :ref:`manually configure <configure_vms>` VMs not managed by
-SecureDrop Workstation to use the Fedora 31 template.
+SecureDrop Workstation to use the Fedora 32 template.
 
-Install Fedora-31 template
+Install Fedora-32 template
 --------------------------
 
 In a ``dom0`` terminal (**Qubes Application Menu > Terminal Emulator**), type
-the following to download the Fedora 31 template:
+the following to download the Fedora 32 template:
 
 .. code:: sh
 
-   sudo qubes-dom0-update qubes-template-fedora-31
+   sudo qubes-dom0-update qubes-template-fedora-32
 
 You will see some information from the package manager, including a progress
 bar.
@@ -40,36 +40,13 @@ bar.
 When the download has concluded, you will be prompted to install the package.
 Type ``y`` to proceed with the installation.
 
-TEMPORARY: Update the ``qubes-mgmt-salt-vm-connector`` package
---------------------------------------------------------------
 
-.. important:: Due to an `upstream issue <https://github.com/QubesOS/qubes-issues/issues/6188>`_, blocking updates
-  either via the Qubes Updater or the SecureDrop Workstation launcher, you will
-  need to temporarily update the ``qubes-mgmt-salt-vm-connector`` package in the ``fedora-31`` TemplateVM
-  with the version in the Qubes testing repo. Follow the steps below:
-
-  * Open a ``fedora-31`` terminal via **Q > Template: fedora-31 > fedora-31: Terminal**.
-  * Run the command:
-
-  .. code-block:: sh
-
-    sudo dnf update --refresh --enablerepo=qubes-vm-r4.0-current-testing \
-      qubes-mgmt-salt-vm-connector
-
-  * Shut down the ``fedora-31`` VM  with the command ``sudo poweroff``.
-
-  These steps will be removed from this document as soon as the issue mentioned above
-  is resolved. This fix does not need to be reverted - as soon as the fixed version is
-  available in the prod repos, it will be applied with the next update.
-
-
-
-Update the Fedora-31 template
+Update the Fedora-32 template
 -----------------------------
 Once the template installation is complete, update the template using the Qubes
 Updater. Click **Q > System Tools > Qubes Update** in the application menu.
 Click the checkbox "Enable updates for qubes without known updates" option,
-and click the checkbox next to ``fedora-31``. Click **Next** and wait for
+and click the checkbox next to ``fedora-32``. Click **Next** and wait for
 any available updates to be downloaded and applied.
 
 .. _configure_vms:
@@ -80,10 +57,10 @@ To apply the template to VMs that currently use an older version, open the
 Qube Manager via **Q > System Tools > Qube Manager**. All VMs will be visible at
 a glance; to change a VM's settings, right-click it and select **Qube Settings**.
 
-In the Qube Settings window, select ``fedora-31`` from the drop-down menu
+In the Qube Settings window, select ``fedora-32`` from the drop-down menu
 beside **Template**, then click **OK.**
 
-|screenshot_qsettings_fedora31|
+|screenshot_qsettings_fedora32|
 
 You should perform this process for:
 
@@ -106,7 +83,7 @@ restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking
    template changes for VMs that are currently running, so you may have to
    manually shut down VMs in the correct order to do so.
 
-.. |screenshot_qsettings_fedora31| image:: ../images/screenshot_qsettings_fedora31.png
+.. |screenshot_qsettings_fedora32| image:: ../images/screenshot_qsettings_fedora32.png
 
 Getting Support
 ---------------
