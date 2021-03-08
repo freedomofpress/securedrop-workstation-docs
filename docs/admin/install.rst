@@ -54,7 +54,7 @@ Pre-install tasks
 
 Verify the SecureDrop server configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In order to be used with SecureDrop Workstation, your instance must be running the latest version of SecureDrop, and the server configuration must have been updated to allow for HTTP ``DELETE`` requests. The configuration change to enable this was added in the ``0.13.0`` version of SecureDrop, released on May 29 2019. If your instance was created using this or a later version, it has the necessary changes. If not, then the ``./securedrop-admin install`` command must have been run from an *Admin Workstation* updated with the ``0.13.0`` code or later. To check this:
+In order to be used with SecureDrop Workstation, your instance must be running the latest version of SecureDrop, and the server configuration must have been updated to allow for HTTP ``DELETE`` requests. The configuration change to enable this was added in the ``0.13.0`` version of SecureDrop, released on May 29, 2019. If your instance was created using this or a later version, it has the necessary changes. If not, then the ``./securedrop-admin install`` command must have been run from an *Admin Workstation* updated with the ``0.13.0`` code or later. To check this:
 
 - Use an *Admin Workstation* USB to boot into Tails, with the persistent volume unlocked and an administration password set.
 - Navigate to **Applications ▸ System Tools ▸ Terminal** to open a terminal.
@@ -79,6 +79,19 @@ In order to be used with SecureDrop Workstation, your instance must be running t
   - Update the instance configuration by running ``./securedrop-admin install``.
 
 - When the instance configuration is up to date, continue with the SecureDrop Workstation installation.
+
+
+Rotate legacy passphrases
+~~~~~~~~~~~~~~~~~~~~~~~~~
+To ensure that all passphrases meet the security requirements of the system, you must rotate the passphrases of any *Journalist Interface* users whose accounts were set up on or before September 12, 2017.
+
+To verify when users were added to the system:
+
+- Log into the *Journalist Interface* with an admin account.
+- Click the **Admin** link in the top right.
+- Review the **Created** column in the list of users.
+
+To rotate passphrases for accounts, please see the `instructions <https://docs.securedrop.org/en/stable/admin.html#passphrases-and-two-factor-resets>`_ in the SecureDrop Admin Guide.
 
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
