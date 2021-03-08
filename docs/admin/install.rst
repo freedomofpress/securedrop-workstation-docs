@@ -15,7 +15,6 @@ Pre-install tasks:
 #. Download and verify Qubes OS
 #. Install Qubes OS
 #. Apply updates to system templates
-#. Install Fedora 32 base template
 
 Install tasks:
 ~~~~~~~~~~~~~~
@@ -104,7 +103,7 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the latest stable Qubes OS ISO (``4.0.3`` at time of writing) from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/>`_. The ISO is 4.5GB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the latest stable Qubes OS ISO (``4.0.4`` at time of writing) from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/>`_. The ISO is 4.5GB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-qubes-iso-signatures>`_.
 
@@ -112,7 +111,7 @@ Once you've verified the ISO, copy it to your installation medium - for example,
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.0.3-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.0.4-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
@@ -137,7 +136,7 @@ Once the installation is complete, you will be prompted to reboot into Qubes. Re
 
 You will be prompted to enter the FDE passphrase set during installation.
 
-.. note:: On first booting into a Qubes OS 4.0.3 installation, you may be prompted to enter the FDE passphrase at a command-line prompt rather than via the GUI. The next system update will restore the GUI prompt.
+.. note:: On first booting into a Qubes OS 4.0.4 installation, you may be prompted to enter the FDE passphrase at a command-line prompt rather than via the GUI. The next system update will restore the GUI prompt.
 
 After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon, then accept the default options and click **Done**. Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
@@ -155,11 +154,6 @@ Before installing SecureDrop Workstation, you must set up network and Tor access
   .. note:: If Tor connections are blocked on your network, you may need to configure Tor to use bridges in order to get a connection. For more information, see the `Anon Connection Wizard <https://www.whonix.org/wiki/Anon_Connection_Wizard>`_ documentation.
 
 - Once Tor has connected, select **Q > System Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above. Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
-
-Install Fedora 32 template
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :doc:`upgrading_to_fedora_32`.
 
 Install tasks
 -------------
@@ -528,3 +522,7 @@ The submission key and ``config.json`` file will still be present in ``dom0`` in
 
 .. |Attach TailsData| image:: images/attach_usb.png
 .. |Unlock Tailsdata| image:: images/unlock_tails_usb.png
+
+Getting Support
+---------------
+.. include:: ../includes/getting_support.rst
