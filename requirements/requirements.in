@@ -1,6 +1,6 @@
 # pin pip due to https://github.com/jazzband/pip-tools/issues/853
-pip==19.1
-pip-tools>=4.0.0
+pip
+pip-tools
 sphinx
 sphinx-autobuild
 sphinx_rtd_theme
