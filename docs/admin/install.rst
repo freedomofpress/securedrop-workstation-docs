@@ -299,9 +299,9 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
   .. code-block:: sh
 
     gpg --keyserver hkps://keys.openpgp.org --recv-key \
-      "2224 5C81 E3BA EB41 38B3 6061 310F 5612 00F4 AD77"
+      "2359 E653 8C06 13E6 5295 5E6C 188E DD3B 7B22 E6A3"
 
-    gpg --armor --export 22245C81E3BAEB4138B36061310F561200F4AD77 \
+    gpg --armor --export 2359E6538C0613E652955E6C188EDD3B7B22E6A3 \
       > securedrop-release-key.pub
 
     sudo rpmkeys --import securedrop-release-key.pub
