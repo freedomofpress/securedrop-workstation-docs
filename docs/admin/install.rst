@@ -281,6 +281,8 @@ In order to copy a journalist's login credentials:
 
 - Close the application window and shut down the ``vault`` VM (using the Qube widget in the upper right panel).
 
+.. _download_rpm:
+
 Download and install SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

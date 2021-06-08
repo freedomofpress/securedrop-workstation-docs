@@ -8,54 +8,53 @@ that allows for backup and restoration of user-specified VMs.
 
 To perform backups, you will need:
 
- - an encrypted storage medium
- - a secure place to store backup credentials    
+ - a LUKS-encrypted external hard drive, with at least 50GB space
+ - a secure place to store backup credentials (such as a password manager
+   on your primary laptop)    
 
 Backup 
 ------
 
-Prepare files in ``dom0``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Preserve files from ``dom0``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Files outside the ``dom0`` home folder aren't normally backed up by the 
-Qubes backup tool. Preserve key configuration files by coping them to the 
-home directory. 
+Preserve key configuration files by coping them into the 
+``vault`` VM.
 
 In a ``dom0`` Terminal via **Q ▸ Terminal Emulator**:
 
   .. code-block:: sh
 
-    mkdir ~/backup/
-    cp -r /usr/share/securedrop-workstation-dom0-config/ ~/backup/
+    cd /usr/share/securedrop-workstation-dom0-config
+    qvm-copy-to-vm vault {config.json,sd-journalist.sec}
 
-If you have customized :doc:`clipboard access <managing_clipboard>` 
-to SecureDrop Workstation, or have made any other customizations 
-involving RPC policies, back up related configuration files:   
+Open a ``vault`` Terminal and verify that the files were copied successfully:
 
   .. code-block:: sh
+  
+    head -n1 ~/QubesIncoming/dom0/sd-journalist.sec # line contains "BEGIN PRIVATE KEY BLOCK"
+    grep -q descriptor ~/QubesIncoming/dom0/config.json && echo OK # line is "OK"
 
-   mkdir -p ~/backup/etc/qubes
-   mkdir ~/backup/etc/qubes-rpc
-   cp -a /etc/qubes/* ~/backup/etc/qubes/
-   cp -a /etc/qubes-rpc/* ~/backup/etc/qubes-rpc
+.. note::
+  If you have made advanced customizations to your Qubes Workstation, 
+  you may need to back up additional components of ``dom0``. Refer to
+  the `Qubes documentation <https://www.qubes-os.org/doc/backup-restore/>`_
+  or contact Support.
 
 Back up SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure your storage medium is plugged in, attached to a VM, and mounted.
-(LUKS-encrypted storage media may be attached to ``sd-usb``, or you may use a custom 
-VM of your choosing, if you are relying on another form of encryption such as 
-Veracrypt).
+Ensure your storage medium is plugged in, attached to ``sd-devices``,
+and unlocked.
 
 Navigate to **Q ▸ System Tools ▸ Backup Qubes**, and move all VMs from 
 "Selected" to "Available" by pressing the ``<<`` button. 
 
 To target a VM for backup, highlight it and move it into the "Selected" 
-column by pressing the ``>`` button. Select the following VMs:
+column by pressing the ``>`` button. Select:
 
- - ``dom0``
- - ``vault``
- - any customized VMs that you wish to preserve.
+- the ``vault`` VM
+- any customized VMs that you may wish to preserve.
 
 You do not need to back up the ``sd-`` VMs.
 
@@ -85,71 +84,33 @@ Reinstall QubesOS
 
 To restore SecureDrop Workstation, follow our 
 :doc:`pre-install tasks <install>` to provision a QubesOS system complete with
-updated base templates.
-
-.. note::
- If you backed up a number of custom VMs, during the installer, you may opt
- to un-select "create default application qubes (personal, work, untrusted, vault)".
-
-Manage Unused VMs
-~~~~~~~~~~~~~~~~~
-
-If you installed all default application VMs, remove the ``vault`` VM, since we
-will replace it with the version in our backup.
-
-  .. code-block:: sh
-
-   qvm-prefs --set vault installed_by_rpm False 
-   qvm-remove vault
+updated base templates. This time, during the installation wizard, un-check 
+``create default application qubes (personal, work, untrusted, vault)``.
 
 Restore Backup
 ~~~~~~~~~~~~~~
 
 Plug in your backup medium and unlock it as during the backup. By default
-on a new system, your peripheral devices will be managed by ``sys-usb``. 
-(For non-LUKS-based encryption media, you will need to install and configure the
-appropriate software, either in ``sys-usb`` or in another VM).
+on a new system, your peripheral devices will be managed by a VM called 
+``sys-usb``. 
 
 Navigate to **Q ▸ System Tools ▸ Restore Backup**, and enter the  
 location of the backup file. You do not need to adjust the default Restore 
 options, unless you have made customizations to the backup. Enter the
-decryption/verification passphrase, and proceed to restore the backup.
-
-Your ``vault`` VM will be restored. 
-
-The contents of the previous ``dom0`` will be backed up to a folder in the 
-new ``dom0`` home directory called ``home-restore-<timestamp>/dom0-home/user``.
-In this guide we will refer to that location as ``$DOM0_BACKUP``.
-
-Open a terminal via **Q ▸ Terminal Emulator**: 
-
-  .. code-block:: sh
-
-   cd $DOM0_BACKUP/backup
-   cp -r securedrop-workstation-dom0-config/ /usr/share/
-
-If you customized clipboard or RPC policies, you may inspect the files in
-``backup/etc/qubes-rpc/`` and ``backup/etc/qubes/`` to ensure that the
-configurations in those files are re-applied to your new instance. 
-
-.. note::
- Proceed with caution if overwriting files in ``/etc/qubes/`` and 
- ``/etc/qubes-rpc/`` with their counterparts from your backup file, since this
- can have unintended consequences, in particular if there are configuration 
- differences between your old and new installation.   
+decryption/verification passphrase, and proceed to restoring the available
+qubes (which should include the ``vault`` VM).
 
 Reinstall SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the :doc:`installation instructions <install>` to download and verify
-the SecureDrop Workstation rpm to a network-attached VM and copy it to ``dom0``.
+Create a VM called ``work`` with default networking settings: 
 
-.. note::
- If your installation is recent, your backup archive may contain the current
- version of the rpm, in which case you can skip the above steps and move
- straight to installing the rpm. 
- Use ``rpm -qi securedrop-workstation.rpm`` to compare the version with the
- latest version at ``https://yum.securedrop.org/workstation/dom0/f25/``    
+  .. code-block:: sh
+
+    qvm-create -l blue work
+
+Then, :ref:`download and verify <download_rpm>` the SecureDrop Workstation 
+.rpm to the ``work`` VM and copy it to ``dom0``.
 
 Once you have a valid .rpm file in ``dom0``, install the .rpm by running:
 
@@ -157,18 +118,36 @@ Once you have a valid .rpm file in ``dom0``, install the .rpm by running:
 
     sudo dnf install securedrop-workstation.rpm
 
-Copy the previous SecureDrop Workstation configuration into place:
+Retrieve the previous SecureDrop Workstation configuration from the ``vault``
+VM:
 
   .. code-block:: sh
 
-    cp -r $DOM0_BACKUP/backup/usr/share/securedrop-workstation-dom0-config \
-     /usr/share/
+    qvm-run --pass-io vault "cat QubesIncoming/dom0/sd-journalist.sec > /tmp/sd-journalist.sec"
+    qvm-run --pass-io vault "cat QubesIncoming/dom0/config.json > /tmp/config.json"
+
+Optionally, inspect each file before proceeding. The first 
+file should be an ASCII-armored GPG private key file, and the second is a 
+one-line file with the format ``ONIONADDRESS:descriptor:x25519:AUTHTOKEN``.
+
+Copy both files into place:
+
+  .. code-block:: sh
+
+    sudo cp /tmp{sd-journalist.sec,config.json} /usr/share/securedrop-workstation-dom0-config/
 
 Verify that the configuration is valid:
 
   .. code-block:: sh
 
     sdw-admin --validate
+
+If the above command does not produce any errors, the configuration is valid, 
+and you may remove the configuration files from the ``vault`` VM:
+
+  .. code-block:: sh
+
+    qvm-run vault "rm QubesIncoming/dom0/{config.json,sd-journalist.sec}"
 
 Finally, reinstall SecureDrop Workstation:
 
