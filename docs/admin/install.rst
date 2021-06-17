@@ -235,14 +235,6 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
       "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
       > /tmp/journalist.txt
 
-  If your instance uses legacy v2 onion services, use the following command instead:
-
-  .. code-block:: sh
-
-    qvm-run --pass-io vault \
-      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist-aths" \
-      > /tmp/journalist.txt
-
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
 
 - If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the USB drive.
@@ -404,23 +396,17 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
   - **submission_key_fpr**: use the value of the submission key fingerprint as displayed above
   - **hidserv.hostname**: use the hostname of the *Journalist Interface*, including the ``.onion`` TLD
-  - **hidserv.key**: use the value of the v2 HidServAuth token for the *Journalist Interface*, or the v3 private authorization key value if your SecureDrop instance uses v3 onion services
+  - **hidserv.key**: use the private v3 onion service authorization key value
   - **environment**: use the value ``prod``
 
 .. note::
-  You can find the values for the **hidserv.*** fields in the ``/tmp/journalist.txt`` file that you created in ``dom0`` earlier:
 
-  If your instance uses v2 onion services, the file will be formatted as follows:
+   You can find the values for the **hidserv.*** fields in the ``/tmp/journalist.txt`` file that you created in ``dom0`` earlier.
+   The file will be formatted as follows:
 
-  .. code-block:: none
+   .. code-block:: none
 
-    HidServAuth ONIONADDRESS.onion AUTHTOKEN # comments, can be ignored
-
-  If your instance uses v3 onion services, the file will be formatted as follows:
-
-  .. code-block:: none
-
-   ONIONADDRESS:descriptor:x25519:AUTHTOKEN
+     ONIONADDRESS:descriptor:x25519:AUTHTOKEN
 
 - Verify that the configuration is valid using the command below in the ``dom0`` terminal:
 
