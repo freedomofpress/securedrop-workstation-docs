@@ -15,6 +15,7 @@ Pre-install tasks:
 #. Download and verify Qubes OS
 #. Install Qubes OS
 #. Apply updates to system templates
+#. Install Fedora 33 base template
 
 Install tasks:
 ~~~~~~~~~~~~~~
@@ -168,6 +169,11 @@ Before installing SecureDrop Workstation, you must set up network and Tor access
 
 - Once Tor has connected, select **Q > System Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above. Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
 
+Install Fedora 33 template
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :doc:`upgrading_to_fedora_33`.
+
 Install tasks
 -------------
 
@@ -233,14 +239,6 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 
     qvm-run --pass-io vault \
       "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
-      > /tmp/journalist.txt
-
-  If your instance uses legacy v2 onion services, use the following command instead:
-
-  .. code-block:: sh
-
-    qvm-run --pass-io vault \
-      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist-aths" \
       > /tmp/journalist.txt
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
@@ -404,23 +402,17 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
   - **submission_key_fpr**: use the value of the submission key fingerprint as displayed above
   - **hidserv.hostname**: use the hostname of the *Journalist Interface*, including the ``.onion`` TLD
-  - **hidserv.key**: use the value of the v2 HidServAuth token for the *Journalist Interface*, or the v3 private authorization key value if your SecureDrop instance uses v3 onion services
+  - **hidserv.key**: use the private v3 onion service authorization key value
   - **environment**: use the value ``prod``
 
 .. note::
-  You can find the values for the **hidserv.*** fields in the ``/tmp/journalist.txt`` file that you created in ``dom0`` earlier:
 
-  If your instance uses v2 onion services, the file will be formatted as follows:
+   You can find the values for the **hidserv.*** fields in the ``/tmp/journalist.txt`` file that you created in ``dom0`` earlier.
+   The file will be formatted as follows:
 
-  .. code-block:: none
+   .. code-block:: none
 
-    HidServAuth ONIONADDRESS.onion AUTHTOKEN # comments, can be ignored
-
-  If your instance uses v3 onion services, the file will be formatted as follows:
-
-  .. code-block:: none
-
-   ONIONADDRESS:descriptor:x25519:AUTHTOKEN
+     ONIONADDRESS:descriptor:x25519:AUTHTOKEN
 
 - Verify that the configuration is valid using the command below in the ``dom0`` terminal:
 
