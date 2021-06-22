@@ -12,12 +12,11 @@ Why do I need to upgrade?
 SecureDrop Workstation makes use of several Fedora-based VMs which are part of
 a Qubes installation by default, including ``sys-firewall``, ``sys-net``, ``sys-
 usb``, ``work``, and ``vault`` . In Qubes 4.0.4, these VMs are based on a
-Fedora 32 template.
+Fedora 32 template, which reached end-of-life on May 25, 2021.
 
-As of May 25, 2021, Fedora 32 templates are end-of-life. If you are
-provisioning SecureDrop Workstation for the first time, you will need to update
-your Fedora template manually to Fedora 33 *before* installing SecureDrop
-Workstation.
+If you are provisioning SecureDrop Workstation for the first time, you will need
+to update your Fedora template manually to Fedora 33 *before* installing
+SecureDrop Workstation.
 
 If you are an existing SecureDrop Workstation user, SecureDrop Workstation
 will install the template automatically when updates are applied, but you
