@@ -101,7 +101,7 @@ Before beginning the Qubes installation, make sure that your Qubes-compatible co
 Once the BIOS is up-to-date, boot into the BIOS setup utility and update its settings. Note that not all BIOS versions will support the items listed, but if available following changes are recommended:
 
 - Ensure the internal clock is correct.
-- Set a password to access the BIOS (and record the password in your password manager).
+- Set a Supervisor password (BIOS password) to access the BIOS, and record the password in your password manager.
 - Disable BIOS downgrades.
 - Enable Data Execution Prevention.
 - Enable virtualization support (required for Qubes OS).
