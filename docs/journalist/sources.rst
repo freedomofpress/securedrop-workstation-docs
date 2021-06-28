@@ -48,19 +48,10 @@ client.
 Sources without reply keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 You may sometimes see the text "Awaiting encryption key from server" in a grayed
-out reply box for a source. This typically happens in the following situations:
-
-- A source has just contacted your SecureDrop moments ago, and the server has
-  not created an encryption key yet. If you are logged in, the key will be
-  automatically fetched as soon as it becomes available, usually within a few
-  seconds. At that point, the reply box will become available.
-
-- Your SecureDrop server is experiencing a surge of traffic, and the generation
-  of encryption keys has been temporarily disabled. You have to manually
-  `flag the source for reply`_, and the source has to log in again before you
-  can respond. This cannot currently be done from the SecureDrop Client.
-
-.. _`flag the source for reply`: https://docs.securedrop.org/en/stable/journalist.html#flag-for-reply
+out reply box for a source. This typically happens when a source has just 
+contacted your SecureDrop, and the server has not created an encryption key yet.
+If you are logged in, the key will be automatically fetched as soon as it 
+becomes available. At that point, the reply box will become available.
 
 Deleting a conversation
 -----------------------
