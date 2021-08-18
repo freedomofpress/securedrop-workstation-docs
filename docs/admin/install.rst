@@ -119,7 +119,7 @@ Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 On the working computer, download the latest stable Qubes OS ISO (``4.0.4`` at time of writing) from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/>`_. The ISO is 4.5GB approximately, and may take some time to download based on the speed of your Internet connection.
 
-Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-qubes-iso-signatures>`_.
+Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
 
 Once you've verified the ISO, copy it to your installation medium - for example, if using Linux and a USB stick, using the command:
 
