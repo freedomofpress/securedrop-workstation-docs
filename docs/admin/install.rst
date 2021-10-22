@@ -75,7 +75,7 @@ In order to be used with SecureDrop Workstation, your instance must be running t
 - If not, then you will need to:
 
   - Update the *Admin Workstation* to the current SecureDrop release version, by following the applicable upgrade guide in `our documentation <https://docs.securedrop.org>`_.
-  - Back up the SecureDrop instance, using the `server backup <https://docs.securedrop.org/en/master/backup_and_restore.html>`_ instructions.
+  - Back up the SecureDrop instance, using the `server backup <https://docs.securedrop.org/en/stable/backup_and_restore.html>`_ instructions.
   - Verify that the configuration stored on the *Admin Workstation* is correct by running ``cd ~/Persistent/securedrop && ./securedrop-admin sdconfig``. This command will display each setting in turn - to accept without changing, press **Enter** for each.
   - Update the instance configuration by running ``./securedrop-admin install``.
 
