@@ -24,10 +24,10 @@ Current known issues
   performance and reliability of the updater.
 - Currently, only LUKS-encrypted *Export Devices* are supported. VeraCrypt support
   will be added in a future release.
-- Printer support is limited to specific models by Brother and HP, and printing
+- Printer support is limited to a specific HP printer model, and printing
   different file types is not as reliable yet as under Tails. Support for
   additional non-networked printers will be added in a future release.
-- Currently, only app-based two-factor authentication (TOTP) is supported. 
+- Currently, only app-based two-factor authentication (TOTP) is supported.
 - The SecureDrop Client can only be configured with a single *Submission Key*.
   If the *Submission Key* for your SecureDrop server was rotated in the past,
   and submissions encrypted with the old key are still on your server, you will

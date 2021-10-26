@@ -50,7 +50,7 @@ Printing
 --------
 
 To print a document, click the **Print** button. Currently, printing is only
-supported with select printers from Brother and HP, and for security reasons
+supported with a specific HP printer model, and for security reasons
 you are required not to use a printer that has any wireless capabilities.
 
 You should have access to a supported printer that has been set up by your
