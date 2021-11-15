@@ -1,10 +1,7 @@
-Upgrading to Fedora 33
+Upgrading to Fedora 34
 ======================
 
 .. include:: ../includes/top-warning.rst
-
-.. note:: This advisory was written in June 2021, and will be removed when a new
-          version of Qubes that contains the Fedora 33 template is released.
 
 Why do I need to upgrade?
 -------------------------
@@ -15,23 +12,23 @@ usb``, ``work``, and ``vault`` . In Qubes 4.0.4, these VMs are based on a
 Fedora 32 template, which reached end-of-life on May 25, 2021.
 
 If you are provisioning SecureDrop Workstation for the first time, you will need
-to update your Fedora template manually to Fedora 33 *before* installing
+to update your Fedora template manually to Fedora 34 *before* installing
 SecureDrop Workstation.
 
 If you are an existing SecureDrop Workstation user, SecureDrop Workstation
 will install the template automatically when updates are applied, but you
 should also :ref:`manually configure <configure_vms>` VMs not managed by
-SecureDrop Workstation to use the Fedora 33 template.
+SecureDrop Workstation to use the Fedora 34 template.
 
-Install Fedora-33 template
+Install Fedora-34 template
 --------------------------
 
 In a ``dom0`` terminal (**Qubes Application Menu > Terminal Emulator**), type
-the following to download the Fedora 33 template:
+the following to download the Fedora 34 template:
 
 .. code:: sh
 
-   sudo qubes-dom0-update qubes-template-fedora-33
+   sudo qubes-dom0-update qubes-template-fedora-34
 
 You will see some information from the package manager, including a progress
 bar.
@@ -40,12 +37,12 @@ When the download has concluded, you will be prompted to install the package.
 Type ``y`` to proceed with the installation.
 
 
-Update the Fedora-33 template
+Update the Fedora-34 template
 -----------------------------
 Once the template installation is complete, update the template using the Qubes
 Updater. Click **Q > System Tools > Qubes Update** in the application menu.
 Click the checkbox "Enable updates for qubes without known updates" option,
-and click the checkbox next to ``fedora-33``. Click **Next** and wait for
+and click the checkbox next to ``fedora-34``. Click **Next** and wait for
 any available updates to be downloaded and applied.
 
 .. _configure_vms:
@@ -56,7 +53,7 @@ To apply the template to VMs that currently use an older version, open the
 Qube Manager via **Q > System Tools > Qube Manager**. All VMs will be visible at
 a glance; to change a VM's settings, right-click it and select **Qube Settings**.
 
-In the Qube Settings window, select ``fedora-33`` from the drop-down menu
+In the Qube Settings window, select ``fedora-34`` from the drop-down menu
 beside **Template**, then click **OK.**
 
 |screenshot_qsettings_fedora32|

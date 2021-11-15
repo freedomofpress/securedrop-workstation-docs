@@ -38,7 +38,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/troubleshooting_connection
    admin/provisioning_usb
    admin/known_issues
-   admin/upgrading_to_fedora_33
+   admin/upgrading_fedora
    admin/workstation_architecture
    admin/backup
 
