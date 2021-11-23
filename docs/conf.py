@@ -159,7 +159,14 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
+    # Neither of:
+    #     \usepackage[T1]{fontenc}
+    #     \usepackage{textcomp}
+    # seem to make this magically work, so define individual characters.
+    'preamble': r'''
+    \usepackage{amssymb}
+    \DeclareUnicodeCharacter{25B8}{$\blacktriangleright$}
+    '''
 
     # Latex figure (float) alignment
     #
