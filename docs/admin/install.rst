@@ -334,9 +334,9 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
   .. code-block:: none
 
     securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm:
-      Header V4 RSA/SHA256 Signature, key ID 00f4ad77: OK
+      Header V4 RSA/SHA256 Signature, key ID 7b22e6a3: OK
       Header SHA1 digest: OK
-      V4 RSA/SHA256 Signature, key ID 00f4ad77: OK
+      V4 RSA/SHA256 Signature, key ID 7b22e6a3: OK
       MD5 digest: OK
 
 
