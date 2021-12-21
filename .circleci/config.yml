@@ -1,5 +1,5 @@
 version: 2
-    
+
 jobs:
   lint:
     docker:
@@ -10,11 +10,32 @@ jobs:
           name: Install dependencies
           command: pip install --require-hashes -r requirements/requirements.txt
       - run:
-          name: Run lint and link checker
-          command: make docs-lint && make docs-linkcheck
-    
+          name: Run linter
+          command: make docs-lint
+  linkcheck:
+    docker:
+      - image: cimg/python:3.10.0
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: pip install --require-hashes -r requirements/requirements.txt
+      - run:
+          name: Run link checker
+          command: make docs-linkcheck
+
 workflows:
   version: 2
   build:
     jobs:
       - lint
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 3 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - linkcheck
