@@ -6,8 +6,11 @@
 set -e
 
 
-latest_branch=main
-stable_tag=stable
+# TEMPORARY: override these for CI testing
+#latest_branch=main
+latest_branch=k8s-container
+#stable_tag=stable
+stable_tag=stable-plus-k8s-container
 
 do_build() {
     git checkout "$1"
