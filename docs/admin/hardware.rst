@@ -17,12 +17,21 @@ More information on hardware compatibility can be found on the `Qubes OS System 
 
 In order to print submissions, a supported non-networked printer is required. We have tested and recommend the HP LaserJet Pro M404n. More printer options will be added in future releases.
 
-Lenovo T series Laptops
+.. _thinkpad_t_series:
+
+Lenovo T series laptops
 -----------------------
 
-Lenovo ThinkPad T490 (with 8th generation Intel Core processor)
+Lenovo ThinkPad T14 (with 10th-generation Intel Core processor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Thinkpad T490 **with an 8th generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation.
+The ThinkPad T14 **with a 10th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it:
+
+- If your laptop has come with Ubuntu preinstalled, run its **Software Updater** to update the BIOS automatically (via ``fwupd``).
+- Otherwise, follow the instructions below to ensure that the BIOS is up to date.
+
+Lenovo ThinkPad T490 (with 8th-generation Intel Core processor)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Thinkpad T490 **with an 8th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation.
 
 
 .. caution::

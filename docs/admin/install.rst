@@ -67,7 +67,7 @@ To rotate passphrases for accounts, please see the `instructions <https://docs.s
 
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. If you're using the recommended ThinkPad T480, see the :ref:`t480_bios` section in this documentation. The process will be different for other makes and models, and can usually be found on their respective support sites.
+Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. If you're using one of the recommended ThinkPad T-series models, see the section on :ref:`thinkpad_t_series`. The process will be different for other makes and models, and can usually be found on their respective support sites.
 
 Once the BIOS is up-to-date, boot into the BIOS setup utility and update its settings. Note that not all BIOS versions will support the items listed, but if available following changes are recommended:
 
@@ -79,6 +79,7 @@ Once the BIOS is up-to-date, boot into the BIOS setup utility and update its set
   - for Intel-based devices, **Intel VT-d** and **Intel VT-x** should be enabled
   - for AMD-based devices, **AMD-VI** and **AMD-V** should be enabled
 - Disable unnecessary I/O options such as Wireless WAN and  Bluetooth.
+- Disable unnecessary network options such as Wake-on-LAN and UEFI network stacks.
 - Disable Thunderbolt ports, or any other ports that allow Direct Memory Access (DMA).
 - Enable any physical tamper detection options.
 - Disable Computrace.
