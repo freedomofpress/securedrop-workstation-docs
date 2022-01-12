@@ -64,7 +64,8 @@ You should perform this process for:
   - ``vault``
   - ``sys-net``
   - ``sys-usb``
-  - ``sys-firewall``.
+  - ``sys-firewall``
+  - ``default-mgmt-dvm``.
 
 Existing SecureDrop Workstation users may perform this process for ``work`` and
 ``vault`` only, as the other VMs will be updated by SecureDrop Workstation.
