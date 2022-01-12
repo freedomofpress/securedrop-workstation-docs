@@ -146,6 +146,11 @@ Install Fedora 34 template
 
 See :doc:`upgrading_fedora`.
 
+Install Whonix 16
+~~~~~~~~~~~~~~~~~
+
+Qubes 4.0.4 ships with Whonix 15, which reached end-of-life on November 14, 2021.  SecureDrop Workstation will install Whonix 16 for its own use.  However, if you see errors while updating the ``whonix-*-15`` templates, follow the `Whonix instructions for installing Whonix 16 <https://www.whonix.org/wiki/Qubes/Install#Installation>`_, then rerun the Qubes Updater as described above.
+
 Install tasks
 -------------
 
