@@ -29,6 +29,10 @@ The ThinkPad T14 **with a 10th-generation Intel Core processor** is a recommende
 - If your laptop has come with Ubuntu preinstalled, run its **Software Updater** to update the BIOS automatically (via ``fwupd``).
 - Otherwise, follow the instructions below to ensure that the BIOS is up to date.
 
+Network devices (Ethernet and Wi-Fi) will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`.
+
+.. _thinkpad_t490:
+
 Lenovo ThinkPad T490 (with 8th-generation Intel Core processor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Thinkpad T490 **with an 8th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation.
@@ -69,7 +73,7 @@ For both device IDs (e.g. ``dom0:00_1f.6`` and ``dom0:00_14.3``), you will need 
   qvm-start sys-net
 
 
-``sys-net`` should now start, and network devices will be functional. This change is only required once on first install.
+``sys-net`` should now start, and network devices will be functional. This change is only required once on first install.  See the `Qubes documentation of this issue <https://www.qubes-os.org/doc/pci-troubleshooting/#unable-to-reset-pci-device-errors>`_ for more information.
 
 .. |screenshot_sys_net_pci_reset| image:: ../images/screenshot_sys_net_pci_reset.png
 
