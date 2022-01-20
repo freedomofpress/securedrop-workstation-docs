@@ -20,7 +20,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
- 
+
 import os
 
 # Detect if we're being built by Read the Docs
@@ -52,8 +52,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'SecureDrop Workstation'
-copyright = '2020, SecureDrop'
-author = 'SecureDrop'
+copyright = '2020-2022, Freedom of the Press Foundation and Contributors'
+author = 'Freedom of the Press Foundation and Contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -233,5 +233,3 @@ epub_copyright = copyright
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
-
