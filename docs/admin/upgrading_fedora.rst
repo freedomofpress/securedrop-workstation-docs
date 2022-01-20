@@ -81,6 +81,7 @@ restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking
    manually shut down VMs in the correct order to do so.
 
 .. |screenshot_qsettings_fedora32| image:: ../images/screenshot_qsettings_fedora32.png
+  :width: 100%
 
 Getting Support
 ---------------

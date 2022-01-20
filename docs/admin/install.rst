@@ -507,7 +507,9 @@ The submission key and ``config.json`` file will still be present in ``dom0`` in
    sudo shred /usr/share/securedrop-workstation-dom0-config/{config.json,sd-journalist.sec}
 
 .. |Attach TailsData| image:: images/attach_usb.png
+  :width: 100%
 .. |Unlock Tailsdata| image:: images/unlock_tails_usb.png
+  :width: 100%
 
 Getting Support
 ---------------
