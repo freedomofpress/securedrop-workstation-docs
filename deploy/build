@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Run the docs build process twice, producing `build/latest` and
+# `build/stable` instead of `docs/_build`.
+
+set -e
+
+
+latest_branch=main
+stable_tag=stable
+
+do_build() {
+    git checkout "$1"
+    export SECUREDROP_DOCS_RELEASE="$2"
+
+    make html
+    # If at some point this fails, see securedrop-docs for a workaround
+    make latexpdf
+
+    mkdir -p build
+    mv docs/_build "build/${2}"
+}
+
+do_build "$stable_tag" stable
+do_build "$latest_branch" latest
