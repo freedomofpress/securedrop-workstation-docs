@@ -53,35 +53,6 @@ A basic knowledge of the Qubes OS is helpful.
 Pre-install tasks
 -----------------
 
-Verify the SecureDrop server configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In order to be used with SecureDrop Workstation, your instance must be running the latest version of SecureDrop, and the server configuration must have been updated to allow for HTTP ``DELETE`` requests. The configuration change to enable this was added in the ``0.13.0`` version of SecureDrop, released on May 29, 2019. If your instance was created using this or a later version, it has the necessary changes. If not, then the ``./securedrop-admin install`` command must have been run from an *Admin Workstation* updated with the ``0.13.0`` code or later. To check this:
-
-- Use an *Admin Workstation* USB to boot into Tails, with the persistent volume unlocked and an administration password set.
-- Navigate to **Applications ▸ System Tools ▸ Terminal** to open a terminal.
-- Verify that the *Journalist Interface* Apache configuration allows for HTTP ``DELETE`` using the following command:
-
-  .. code-block:: sh
-
-    ssh app "grep '^\s\s<LimitExcept GET POST HEAD DELETE>$' /etc/apache2/sites-enabled/journalist.conf"
-
-- If your instance is configured correctly, this command will output two lines as follows:
-
-  .. code-block:: none
-
-     <LimitExcept GET POST HEAD DELETE>
-     <LimitExcept GET POST HEAD DELETE>
-
-- If not, then you will need to:
-
-  - Update the *Admin Workstation* to the current SecureDrop release version, by following the applicable upgrade guide in `our documentation <https://docs.securedrop.org>`_.
-  - Back up the SecureDrop instance, using the `server backup <https://docs.securedrop.org/en/stable/backup_and_restore.html>`_ instructions.
-  - Verify that the configuration stored on the *Admin Workstation* is correct by running ``cd ~/Persistent/securedrop && ./securedrop-admin sdconfig``. This command will display each setting in turn - to accept without changing, press **Enter** for each.
-  - Update the instance configuration by running ``./securedrop-admin install``.
-
-- When the instance configuration is up to date, continue with the SecureDrop Workstation installation.
-
-
 Rotate legacy passphrases
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 To ensure that all passphrases meet the security requirements of the system, you must rotate the passphrases of any *Journalist Interface* users whose accounts were set up on or before September 12, 2017.
