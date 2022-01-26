@@ -35,7 +35,7 @@ The ThinkPad T14 **with a 10th-generation Intel Core processor** is a recommende
 
 - Otherwise, follow the instructions below to ensure that the BIOS is up to date.
 
-Network devices (Ethernet and Wi-Fi) will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`.
+The Ethernet controller will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`, but only for the ``dom0:00_1f.6`` Ethernet device.
 
 .. _thinkpad_t490:
 
