@@ -26,7 +26,13 @@ Lenovo ThinkPad T14 (with 10th-generation Intel Core processor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The ThinkPad T14 **with a 10th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it:
 
-- If your laptop has come with Ubuntu preinstalled, run its **Software Updater** to update the BIOS automatically (via ``fwupd``).
+- If your laptop has come with Ubuntu preinstalled, run its **Software Updater** twice as follows:
+
+  #. to install software updates, especially for the ``fwupd`` package; and then
+  #. to run ``fwupd`` to update the BIOS automatically.
+
+  If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
+
 - Otherwise, follow the instructions below to ensure that the BIOS is up to date.
 
 Network devices (Ethernet and Wi-Fi) will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`.
