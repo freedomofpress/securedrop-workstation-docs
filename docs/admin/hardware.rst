@@ -87,17 +87,21 @@ Lenovo ThinkPad T480
 ~~~~~~~~~~~~~~~~~~~~
 The ThinkPad T480 is also a recommended option for SecureDrop Workstation, as it is being used by the core team for development and testing. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation:
 
-.. _t480_bios:
+.. _thinkpad_bios:
 
-Upgrading the BIOS (T480/T490)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading the BIOS on ThinkPad models T480, T490, and T14
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The instructions below assume the use of a Linux-based computer for the creation of a BIOS upgrade USB. To upgrade the BIOS:
 
-- Locate the machine type of the T480/T490 - it be found via the ``Main`` tab in Thinkpad Setup (accessed by pressing **Enter** on startup). For recent T480s, it will be a string like `20L5` or `20L6`.
+- Locate the ThinkPad's "machine type" in its BIOS setup program:
+
+  #. Boot (or reboot) the ThinkPad and follow the prompts to enter setup, usually via the <Enter> and <F1> keys.
+  #. On the **Main** tab, look for the **Machine Type Model**.  The first four characters, such as `20L5`, `20L6`, or `20S0`, are the machine type.
+
 - Visit `<https://support.lenovo.com>`_ in the Linux-based computer. Type the machine type found above into the search bar, then press **Enter**.
 - In the T480 Product Home page, select **Drivers And Software** and choose **BIOS/UEFI**.
-- Expand the **BIOS Update** listing and download the **BIOS Update (Bootable CD)** file.
+- Download the file called either **BIOS Update (Bootable CD)** or **BIOS Update (Utility & Bootable CD)**.
 
 .. note::
   A Tails USB can be used for the verification and conversion process described below, but the Lenovo support site blocks requests over Tor, preventing the ISO download. To work around this, either:
@@ -161,13 +165,15 @@ The instructions below assume the use of a Linux-based computer for the creation
 
   Once complete, remove the USB.
 
-- Plug the USB into the T480 and boot it, pressing **F12** on startup. Select the USB's listing in the boot menu.
+- Plug the USB into the ThinkPad.
+
+- Boot the ThinkPad and follow the prompts to enter its startup and boot menus, likely via the <Enter> and <F12> keys, respectively.
 
 - Follow the on-screen instructions to update the BIOS, including any mandatory reboots. Note that the instructions may refer to an update CD instead of your update USB.
 
 USB-C ports
 ~~~~~~~~~~~
-If you intend to use USB-C ports, please note that our recommended BIOS settings will disable dual USB-C/Thunderbolt ports (recognizable by the Thunderbolt logo next to the port). The T480 includes two USB-C ports, `specified <https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-t-series/ThinkPad-T480/p/22TP2TT4800>`__ as follows:
+If you intend to use USB-C ports, please note that our recommended BIOS settings will disable dual USB-C/Thunderbolt ports (recognizable by the Thunderbolt logo next to the port). The T480, for example, includes two USB-C ports, `specified <https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-t-series/ThinkPad-T480/p/22TP2TT4800>`__ as follows:
 
 - 1 x USB 3.1 Gen 1 Type-C (Power Delivery, DisplayPort, Data transfer)
 - 1 x USB 3.1 Gen 2 Type-C / Intel Thunderbolt 3 (Power Delivery, DisplayPort, Data transfer)
