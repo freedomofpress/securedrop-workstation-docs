@@ -57,13 +57,23 @@ If you have trouble running the updater or logging in, please contact your
 administrator. Our :doc:`network troubleshooting guide <../admin/troubleshooting_connection>`
 for administrators gives detailed steps for investigating connectivity issues.
 
+Seen and unseen submissions
+---------------------------
+
+Sources with submissions (messages or files) that have not been seen by
+any journalist user will be displayed in bold text in the source list.
+
+As soon as any journalist user clicks on a source with unseen submissions, it
+will be marked as seen (no longer displayed in bold text) for all users.
+
 Working offline
 ---------------
 
 Offline mode is available for circumstances where you wish to work offline or
 are unable to connect to the SecureDrop servers. In offline mode, any content
 that you have previously downloaded will be available. You will not be able to
-send or delete messages.
+send or delete messages, and your actions will not impact the seen/unseen
+state of submissions.
 
 |screenshot_use_offline|
 
@@ -78,9 +88,16 @@ offline mode and can be accessed even when you are not logged in.
    use.
 
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
+  :width: 100%
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png
+  :width: 100%
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
+  :width: 100%
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
+  :width: 100%
 .. |screenshot_gpg_access| image:: ../images/screenshot_gpg_access.png
+  :width: 100%
 .. |screenshot_use_offline| image:: ../images/screenshot_use_offline.png
+  :width: 100%
 .. |screenshot_offline_mode| image:: ../images/screenshot_offline_mode.png
+  :width: 100%

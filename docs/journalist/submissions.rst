@@ -11,11 +11,8 @@ flow, a file size, and light-gray text that says "Encrypted file on server."
 Downloading
 -----------
 
-To download a file, click the **Download** button.
-
-|screenshot_download_button|
-
-An animated spinner will indicate that the file is downloading:
+To download a file, click the **Download** button. An animated spinner will
+indicate that the file is downloading:
 
 |screenshot_file_downloading|
 
@@ -81,9 +78,14 @@ plugged in and export additional files.
 
 
 .. |screenshot_file_before_download| image:: ../images/screenshot_file_before_download.png
-.. |screenshot_download_button| image:: ../images/screenshot_download_button.png
+  :width: 100%
 .. |screenshot_file_downloading| image:: ../images/screenshot_file_downloading.png
+  :width: 100%
 .. |screenshot_file_download_successful| image:: ../images/screenshot_file_download_successful.png
+  :width: 100%
 .. |screenshot_dispvm| image:: ../images/screenshot_dispvm.png
+  :width: 100%
 .. |screenshot_export_dialog| image:: ../images/screenshot_export_dialog.png
+  :width: 100%
 .. |screenshot_export_drive_passphrase| image:: ../images/screenshot_export_drive_passphrase.png
+  :width: 100%

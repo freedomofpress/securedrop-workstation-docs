@@ -214,10 +214,18 @@ In addition, you may want to examine ``/var/log/syslog`` in ``sys-net`` and
 
 
 .. |screenshot_network_manager_wired_icon| image:: ../images/screenshot_network_manager_wired_icon.png
+  :width: 100%
 .. |screenshot_network_manager_wireless_icon| image:: ../images/screenshot_network_manager_wireless_icon.png
+  :width: 100%
 .. |screenshot_network_manager_no_internet_connection| image:: ../images/screenshot_network_manager_no_internet_connection.png
+  :width: 100%
 .. |screenshot_network_manager_lost_connection_notification| image:: ../images/screenshot_network_manager_lost_connection_notification.png
+  :width: 100%
 .. |screenshot_q_widget_sysnet_run_terminal| image:: ../images/screenshot_q_widget_sysnet_run_terminal.png
+  :width: 100%
 .. |screenshot_q_widget_vm_list| image:: ../images/screenshot_q_widget_vm_list.png
+  :width: 100%
 .. |screenshot_qube_manager| image:: ../images/screenshot_qube_manager.png
+  :width: 100%
 .. |screenshot_start_resume_qube| image:: ../images/screenshot_start_resume_qube.png
+  :width: 100%
