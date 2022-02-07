@@ -89,7 +89,9 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the latest stable Qubes OS ISO (``4.0.4`` at time of writing) from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/>`_. The ISO is 4.5GB approximately, and may take some time to download based on the speed of your Internet connection.
+.. note:: Qubes OS recently released version ``4.1``, which is not yet supported by SecureDrop Workstation. While we are working on a compatible release, please make sure to download and install Qubes OS ``4.0.4``.
+
+On the working computer, download the Qubes OS ISO for version ``4.0.4`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-0-4>`_. The ISO is 4.5GB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
 
