@@ -23,6 +23,7 @@ jobs:
       - run:
           name: Run link checker
           command: make docs-linkcheck
+          no_output_timeout: 30m
 
 workflows:
   version: 2
