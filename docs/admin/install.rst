@@ -15,7 +15,7 @@ Pre-install tasks:
 #. Download and verify Qubes OS
 #. Install Qubes OS
 #. Apply updates to system templates
-#. Install Fedora 34 base template
+#. Install Fedora 35 base template
 
 Install tasks:
 ~~~~~~~~~~~~~~
@@ -143,7 +143,7 @@ Before installing SecureDrop Workstation, you must set up network and Tor access
 
 - Once Tor has connected, select **Q > System Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above. Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
 
-Install Fedora 34 template
+Install Fedora 35 template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :doc:`upgrading_fedora`.
