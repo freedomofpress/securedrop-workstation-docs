@@ -10,7 +10,7 @@ SecureDrop Workstation must be installed on a system running Qubes OS. The insta
 Pre-install tasks:
 ~~~~~~~~~~~~~~~~~~
 
-#. Verify the SecureDrop server configuration
+#. Rotate legacy passphrases (for pre-2018 installations)
 #. Apply BIOS updates and check settings
 #. Download and verify Qubes OS
 #. Install Qubes OS
