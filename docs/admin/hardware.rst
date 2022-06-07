@@ -24,9 +24,9 @@ In order to print submissions, a supported non-networked printer is required. We
 Lenovo T series laptops
 -----------------------
 
-Lenovo ThinkPad T14 (with 10th-generation Intel Core processor)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The ThinkPad T14 **with a 10th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it:
+Lenovo ThinkPad T14 (2nd-generation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The 2nd-generation ThinkPad T14 **with an 11th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1. If you plan to use it:
 
 - If your laptop has come with Ubuntu preinstalled, run its **Software Updater** twice as follows:
 
@@ -37,7 +37,23 @@ The ThinkPad T14 **with a 10th-generation Intel Core processor** is a recommende
 
 - Otherwise, follow the instructions below to ensure that the BIOS is up to date.
 
-The Ethernet controller will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`, but only for the ``dom0:00_1f.6`` Ethernet device.
+The Ethernet and Wi-Fi controllers will not work without one-time manual configuration, as documented in the following sections.
+
+Ethernet controller
+^^^^^^^^^^^^^^^^^^^
+After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`, but only for the ``dom0:00_1f.6`` Ethernet device.
+
+Wi-Fi controller
+^^^^^^^^^^^^^^^^
+Once ``sys-net`` starts, the Intel AX210 Wi-Fi controller will not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  To fix this:
+
+#. Use Ethernet to update the ``fedora-35`` template.  Wait for all updates to be installed.
+#. In the ``fedora-35`` template, run the command::
+
+      sudo mv /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm.xz ~
+
+#. Restart the machine.
+#. Once ``sys-net`` has come back up, the Network Manager should show available Wi-Fi networks.
 
 .. _thinkpad_t490:
 
@@ -181,3 +197,12 @@ If you intend to use USB-C ports, please note that our recommended BIOS settings
 - 1 x USB 3.1 Gen 2 Type-C / Intel Thunderbolt 3 (Power Delivery, DisplayPort, Data transfer)
 
 The first of these ports will continue to function as a USB-C port. After disabling Thunderbolt, the second port can no longer be used for Thunderbolt or for USB-C data transfer, but it can still be used for power delivery (i.e. to plug in your AC adapter). If you are unsure about the features of your laptop's USB-C ports, or if you are using a different make or model, please consult the technical specifications of your laptop for further information.
+
+.. rubric:: Footnotes
+
+.. [#ax210_dmesg] In ``sys-net``'s ``dmesg`` output you'll see an error like:
+
+   .. code-block::
+
+      Timeout waiting for PNVM load!
+      Failed to start RT ucode: 110
