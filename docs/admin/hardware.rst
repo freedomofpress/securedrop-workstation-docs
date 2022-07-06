@@ -49,9 +49,17 @@ Once ``sys-net`` starts, the Intel AX210 Wi-Fi controller will not automatically
 
 #. Connect the machine to the Internet via Ethernet.
 #. :doc:`Install and update the Fedora 36 template. <upgrading_fedora>`
-#. In the ``fedora-36`` template, run the command::
+#. In the ``sys-net`` VM, run the following command::
 
-      sudo mv /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm.xz ~
+      curl https://raw.githubusercontent.com/freedomofpress/securedrop-workstation-docs/main/docs/includes/iwlwifi/rc.local | sudo tee /rw/config/rc.local
+
+#. Then run the following command and verify the expected output::
+
+      cat /rw/config/rc.local
+
+   .. literalinclude:: ../includes/iwlwifi/rc.local
+      :linenos:
+      :emphasize-lines: 13-22
 
 #. Restart the machine.
 #. Once ``sys-net`` has come back up, the Network Manager should show available Wi-Fi networks.
