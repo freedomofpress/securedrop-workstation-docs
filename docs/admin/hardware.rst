@@ -47,8 +47,9 @@ Wi-Fi controller
 ^^^^^^^^^^^^^^^^
 Once ``sys-net`` starts, the Intel AX210 Wi-Fi controller will not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  To fix this:
 
-#. Use Ethernet to update the ``fedora-35`` template.  Wait for all updates to be installed.
-#. In the ``fedora-35`` template, run the command::
+#. Connect the machine to the Internet via Ethernet.
+#. :doc:`Install and update the Fedora 36 template. <upgrading_fedora>`
+#. In the ``fedora-36`` template, run the command::
 
       sudo mv /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm.xz ~
 
