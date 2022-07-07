@@ -15,7 +15,7 @@ Pre-install tasks:
 #. Download and verify Qubes OS
 #. Install Qubes OS
 #. Apply updates to system templates
-#. Install Fedora 35 base template
+#. Install Fedora 36 base template
 
 Install tasks:
 ~~~~~~~~~~~~~~
@@ -32,7 +32,7 @@ Prerequisites
 -------------
 In order to install SecureDrop Workstation and configure it to use an existing SecureDrop instance, you will need the following:
 
-- A Qubes-compatible computer with at least 16GB of RAM (32 GB is recommended). SecureDrop Workstation has mainly been tested against Lenovo 6th-gen T480 and X1 models - see Qubes' `Hardware Compatibility List <https://www.qubes-os.org/hcl/>`_ and the SecureDrop Workstation :doc:`hardware` page for more options .
+- A Qubes-compatible computer with at least 16GB of RAM (32 GB is recommended). SecureDrop Workstation has mainly been tested against Lenovo T480, T490 and T14 - see Qubes' `Hardware Compatibility List <https://www.qubes-os.org/hcl/>`_ and the SecureDrop Workstation :doc:`hardware` page for more options .
 - Qubes installation medium - this guide assumes the use of a USB 3.0 stick. Qubes may also be installed via optical media, which may make more sense depending on your `security concerns <https://www.qubes-os.org/doc/install-security/>`_.
 
   .. note:: A USB stick with a Type-A connector is recommended, as USB-C ports may be disabled on your computer when the BIOS settings detailed below are applied.
@@ -89,9 +89,7 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. note:: Qubes OS recently released version ``4.1``, which is not yet supported by SecureDrop Workstation. While we are working on a compatible release, please make sure to download and install Qubes OS ``4.0.4``.
-
-On the working computer, download the Qubes OS ISO for version ``4.0.4`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-0-4>`_. The ISO is 4.5GB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the Qubes OS ISO for version ``4.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-0>`_. The ISO is 5.6 GiB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
 
@@ -99,7 +97,7 @@ Once you've verified the ISO, copy it to your installation medium - for example,
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.0.4-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.1.0-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
@@ -117,18 +115,41 @@ Follow the `installation documentation <https://www.qubes-os.org/doc/installatio
 - Use all available storage space for the installation (as the computer should be dedicated to SecureDrop Workstation).
 - Set a strong FDE passphrase - a 6-word Diceware passphrase is recommended.
 - Create an administrative account named ``user`` with a strong password.
+- In the template configuration, ensure that the following options are checked:
 
-  .. note:: Qubes is not intended to have multiple user accounts, so this account name and password will be shared by all SecureDrop Workstation users. The password will be required to log in and unlock the screen during sessions - choosing something strong but memorable and easily typed is recommended!
+  - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
+  - "Make sys-firewall and sys-usb disposable"
+- If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see below).
+
+  .. note:: Qubes is not intended to have multiple user accounts, so your account name and password will be shared by all SecureDrop Workstation users. The password will be required to log in and unlock the screen during sessions - choosing something strong but memorable and easily typed is recommended!
 
 Once the installation is complete, you will be prompted to reboot into Qubes. Reboot, removing the install USB when the computer restarts.
 
 You will be prompted to enter the FDE passphrase set during installation.
 
-.. note:: On first booting into a Qubes OS 4.0.4 installation, you may be prompted to enter the FDE passphrase at a command-line prompt rather than via the GUI. The next system update will restore the GUI prompt.
-
 After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon, then accept the default options and click **Done**. Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
 Once the initial setup is complete, the login dialog will be displayed. Log in using the username and password set during installation.
+
+If, during the installation, you encountered the grayed out option "USB qube configuration disabled", you must now create a VM to access your USB devices. To do so, open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+
+.. code-block:: sh
+
+  sudo qubesctl state.sls qvm.sys-usb
+
+After the command exits, confirm that you see an entry "Service: sys-usb" in the Qubes menu.
+
+Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``dom0`` is the most trusted domain on Qubes OS, and has privileged access to all other VMs. As such, it is important to ensure that all available security updates have been applied to ``dom0`` before proceeding. Open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+
+.. code-block:: sh
+
+  sudo qubes-dom0-update -y
+
+Wait for all updates to complete. If you encounter an error during this stage, please contact us for assistance, as it may not be safe to proceed with the installation.
+
+After updating ``dom0``, reboot the workstation to ensure that all updates have taken effect for your active session.
 
 Apply updates to system templates (estimated wait time: 45-60 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,17 +162,12 @@ Before installing SecureDrop Workstation, you must set up network and Tor access
 
   .. note:: If Tor connections are blocked on your network, you may need to configure Tor to use bridges in order to get a connection. For more information, see the `Anon Connection Wizard <https://www.whonix.org/wiki/Anon_Connection_Wizard>`_ documentation.
 
-- Once Tor has connected, select **Q > System Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above. Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
+- Once Tor has connected, select **Q > Qubes Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above except for dom0 (which you have already updated in the previous step). Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
 
-Install Fedora 35 template
+Install Fedora 36 template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :doc:`upgrading_fedora`.
-
-Install Whonix 16
-~~~~~~~~~~~~~~~~~
-
-Qubes 4.0.4 ships with Whonix 15, which reached end-of-life on November 14, 2021.  SecureDrop Workstation will install Whonix 16 for its own use.  However, if you see errors while updating the ``whonix-*-15`` templates, follow the `Whonix instructions for installing Whonix 16 <https://www.whonix.org/wiki/Qubes/Install#Installation>`_, then rerun the Qubes Updater as described above.
 
 Install tasks
 -------------
@@ -291,7 +307,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
     [securedrop-workstation-temporary]
     enabled=1
-    baseurl=https://yum.securedrop.org/workstation/dom0/f25
+    baseurl=https://yum.securedrop.org/workstation/dom0/f32
     name=SecureDrop Workstation Qubes initial install bootstrap
 
 - Download the SecureDrop Workstation config package to the curent working directory with the command:
@@ -306,13 +322,13 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
   .. code-block:: sh
 
-    rpm -Kv securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm
+    rpm -Kv securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm
 
   where ``<versionNumber>`` is the release version number you noted above. The command output should match the following text:
 
   .. code-block:: none
 
-    securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm:
+    securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm:
       Header V4 RSA/SHA512 Signature, key ID 7b22e6a3: OK
       Header SHA256 digest: OK
       Header SHA1 digest: OK
@@ -326,7 +342,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
   .. code-block:: sh
 
     qvm-run --pass-io work \
-      "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm" \
+      "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm" \
       > securedrop-workstation.rpm
 
 - Verify that the RPM was transferred correctly by running the following commands:
@@ -335,7 +351,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
     .. code-block:: sh
 
-      sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc25.noarch.rpm
+      sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm
 
   - in the ``dom0`` terminal:
 
@@ -370,7 +386,7 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
   .. code-block:: sh
 
-    gpg --with-fingerprint --with-colons /tmp/sd-journalist.sec
+    gpg --with-colons --import-options import-show --dry-run --import /tmp/sd-journalist.sec
 
   The fingerprint will be on a line that starts with ``fpr``. For example, if the output included the line ``fpr:::::::::65A1B5FF195B56353CC63DFFCC40EF1228271441:``, the fingerprint would be the character sequence ``65A1B5FF195B56353CC63DFFCC40EF1228271441``.
 
@@ -444,30 +460,6 @@ To revoke this configuration change later or correct a typo, you can use the ``d
 
 Troubleshooting installation errors
 -----------------------------------
-
-"Recurse failed: none of the specified sources were found"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-An error similar to the following may be displayed during the installation, after which the installation will fail:
-
-.. code-block:: none
-
-    ______ID: dom0-securedrop-launcher-directory
-    Function: file.recurse
-        Name: /opt/securedrop/launcher
-      Result: False
-     Comment: Recurse failed: none of the specified sources were found
-     Started: 20:52:46.766870
-    Duration: 2.371 ms
-     Changes:
-
-To clear this error, clear the Salt cache and resynchronize by running the following commands in a ``dom0`` terminal:
-
-.. code-block:: sh
-
-  sudo rm -rf /var/cache/salt
-  sudo qubesctl saltutil.sync_all refresh=true
-
-Then, run ``sdw-admin --apply`` again.
 
 "Failed to return clean data"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
