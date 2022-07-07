@@ -115,19 +115,23 @@ Follow the `installation documentation <https://www.qubes-os.org/doc/installatio
 - Use all available storage space for the installation (as the computer should be dedicated to SecureDrop Workstation).
 - Set a strong FDE passphrase - a 6-word Diceware passphrase is recommended.
 - Create an administrative account named ``user`` with a strong password.
-- In the template configuration, ensure that the following options are checked:
 
-  - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
-  - "Make sys-firewall and sys-usb disposable"
-- If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see below).
-
-  .. note:: Qubes is not intended to have multiple user accounts, so your account name and password will be shared by all SecureDrop Workstation users. The password will be required to log in and unlock the screen during sessions - choosing something strong but memorable and easily typed is recommended!
+.. note:: Qubes is not intended to have multiple user accounts, so your account name and password will be shared by all SecureDrop Workstation users. The password will be required to log in and unlock the screen during sessions - choosing something strong but memorable and easily typed is recommended!
 
 Once the installation is complete, you will be prompted to reboot into Qubes. Reboot, removing the install USB when the computer restarts.
 
 You will be prompted to enter the FDE passphrase set during installation.
 
-After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon, then accept the default options and click **Done**. Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
+After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon.
+
+On the configuration screen, ensure that the following options are checked:
+
+ - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
+ - "Make sys-firewall and sys-usb disposable"
+
+If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see below).
+
+Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
 Once the initial setup is complete, the login dialog will be displayed. Log in using the username and password set during installation.
 
@@ -141,7 +145,11 @@ After the command exits, confirm that you see an entry "Service: sys-usb" in the
 
 Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``dom0`` is the most trusted domain on Qubes OS, and has privileged access to all other VMs. As such, it is important to ensure that all available security updates have been applied to ``dom0`` before proceeding. Open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+``dom0`` is the most trusted domain on Qubes OS, and has privileged access to all other VMs. As such, it is important to ensure that all available security updates have been applied to ``dom0`` as the first step after the installation.
+
+After logging in, use the network manager widget in the upper-right panel to configure your network connection.
+
+Open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
 
 .. code-block:: sh
 
@@ -153,10 +161,7 @@ After updating ``dom0``, reboot the workstation to ensure that all updates have 
 
 Apply updates to system templates (estimated wait time: 45-60 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Before installing SecureDrop Workstation, you must set up network and Tor access, then update the system VMs:
-
-- After logging in, use the network manager widget in the upper-right panel to configure your network connection.
+After logging in again, confirm that the network manager successfully connects you to the configured network. If necessary, verify the network settings using the network manager widget.
 
 - Next, configure Tor by selecting the Qubes menu (the **Q** icon in the upper left corner) and selecting **Service: sys-whonix > sys-whonix: Anon Connection Wizard**. In most cases, choosing the default **Connect** option is best. Click **Next**, then **Next** again. Then, if Tor connects successfully, click **Finish**. If Tor fails to connect, make sure your network conection is up and does not filter Tor connections, then try again.
 
