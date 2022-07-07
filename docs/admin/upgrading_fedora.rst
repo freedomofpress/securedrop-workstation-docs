@@ -8,7 +8,7 @@ Why do I need to upgrade?
 
 SecureDrop Workstation makes use of several Fedora-based VMs which are part of
 a Qubes installation by default, including ``sys-firewall``, ``sys-net``, ``sys-
-usb``, ``work``, and ``vault`` . In Qubes 4.1, these VMs are based on a
+usb``, ``work``, and ``vault`` . In Qubes 4.1.0, these VMs are based on a
 Fedora 34 template, which reached end-of-life on June 7, 2022.
 
 If you are provisioning SecureDrop Workstation for the first time, you will need

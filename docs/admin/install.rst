@@ -89,7 +89,7 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the Qubes OS ISO for version ``4.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-0>`_. The ISO is 5.6 GiB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the Qubes OS ISO for version ``4.1.0`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-0>`_. The ISO is 5.6 GiB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
 
