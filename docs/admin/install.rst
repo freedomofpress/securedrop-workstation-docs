@@ -141,7 +141,15 @@ If, during the installation, you encountered the grayed out option "USB qube con
 
   sudo qubesctl state.sls qvm.sys-usb
 
-After the command exits, confirm that you see an entry "Service: sys-usb" in the Qubes menu.
+After the command exits, confirm that you see an entry "Service: sys-usb" in the Qubes menu. If ``sys-usb`` is not running, you can start it with the command ``qvm-start sys-usb`` in ``dom0``. Once ``sys-usb`` is running, click the devices widget in the upper right panel to expand a listing of all devices detected by Qubes OS.
+
+Now, insert a safe USB device you intend to use with the SecureDrop Workstation. Click the devices widget again. Does the newly attached USB device appear in the list? If so, USB support is working and you can proceed with the installation. If you do encounter the error message "Denied qubes.InputKeyboard from sys-usb to dom0", you need to additionally enable USB keyboard support:
+
+.. code-block:: sh
+
+  sudo qubesctl state.sls qvm.usb-keyboard
+
+Please note that we recommend against the use of a USB keyboard for security reasons, but this error can also occur in combination with other USB devices on some hardware.
 
 Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -321,7 +329,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
     dnf download securedrop-workstation-dom0-config
 
-  Note the release version number in the filename, you'll need it below.
+  Note the release version number in the filename, you'll need it below. During the download, you may be prompted to confirm importing the Qubes OS Release 4 Signing Key. You can safely do so; it will not be used during the subsequent steps.
 
 - Verify the package with the following command:
 
