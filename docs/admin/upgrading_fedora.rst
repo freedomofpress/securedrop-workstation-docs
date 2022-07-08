@@ -63,12 +63,20 @@ You should perform this process for:
   - ``work``
   - ``vault``
   - ``sys-net``
-  - ``sys-usb``
-  - ``sys-firewall``
   - ``default-mgmt-dvm``.
 
-Existing SecureDrop Workstation users may perform this process for ``work`` and
-``vault`` only, as the other VMs will be updated by SecureDrop Workstation.
+Create a new disposable VM template based on Fedora 36 by running
+the following commands in ``dom0``:
+
+.. code:: sh
+
+  qvm-create -l red -t fedora-36 fedora-36-dvm
+  qvm-prefs fedora-36-dvm template_for_dispvms True
+  qvm-features fedora-36-dvm appmenus-dispvm 1
+  qubes-prefs default-dispvm fedora-36-dvm
+
+Now, switch the templates for ``sys-usb`` and ``sys-firewall`` to
+``fedora-36-dvm`` using the same process that you used above.
 
 Reboot the system to ensure the changes take effect. Alternatively, you can
 restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking how you want to connect to the Tor network, select the "Connect" option, which allows a direct connection to the Tor network.
