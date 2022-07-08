@@ -424,6 +424,8 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
 
     sdw-admin --validate
 
+- Configure infinite scrollback for your terminal via **Edit > Preferences > General > Unlimited scrollback**. This helps to ensure that you will be able to review any error output printed to the terminal during the installation.
+
 - Finally, in the ``dom0`` terminal, run the command:
 
   .. code-block:: sh
