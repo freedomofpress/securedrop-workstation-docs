@@ -33,7 +33,7 @@ Open a ``vault`` Terminal and verify that the files were copied successfully:
   .. code-block:: sh
 
     head -n1 ~/QubesIncoming/dom0/sd-journalist.sec # line contains "BEGIN PRIVATE KEY BLOCK"
-    grep -q descriptor ~/QubesIncoming/dom0/config.json && echo OK # line is "OK"
+    grep -q hostname ~/QubesIncoming/dom0/config.json && echo OK # line is "OK"
 
 .. note::
   If you have made advanced customizations to your Qubes Workstation,
@@ -94,7 +94,7 @@ Plug in your backup medium and unlock it as during the backup. By default
 on a new system, your peripheral devices will be managed by a VM called
 ``sys-usb``.
 
-Navigate to **Q ▸ Qubes Tools ▸ Restore Backup**, and enter the  
+Navigate to **Q ▸ Qubes Tools ▸ Restore Backup**, and enter the
 location of the backup file. You do not need to adjust the default Restore
 options, unless you have made customizations to the backup. Enter the
 decryption/verification passphrase, and proceed to restoring the available
