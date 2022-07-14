@@ -123,8 +123,8 @@ VM:
 
   .. code-block:: sh
 
-    qvm-run --pass-io vault "cat QubesIncoming/dom0/sd-journalist.sec > /tmp/sd-journalist.sec"
-    qvm-run --pass-io vault "cat QubesIncoming/dom0/config.json > /tmp/config.json"
+    qvm-run --pass-io vault "cat QubesIncoming/dom0/sd-journalist.sec" > /tmp/sd-journalist.sec
+    qvm-run --pass-io vault "cat QubesIncoming/dom0/config.json" > /tmp/config.json
 
 Optionally, inspect each file before proceeding. The first
 file should be an ASCII-armored GPG private key file, and the second is a
@@ -134,7 +134,7 @@ Copy both files into place:
 
   .. code-block:: sh
 
-    sudo cp /tmp{sd-journalist.sec,config.json} /usr/share/securedrop-workstation-dom0-config/
+    sudo cp /tmp/{sd-journalist.sec,config.json} /usr/share/securedrop-workstation-dom0-config/
 
 Verify that the configuration is valid:
 
