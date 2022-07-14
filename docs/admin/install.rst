@@ -314,7 +314,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
     sudo rpmkeys --import securedrop-release-key.pub
 
-- In the ``work`` terminal, open a text editor with escalated privileges (for example, with the command ``sudo gedit``) and create a file ``/etc/yum.repos.d/securedrop-temp.repo`` with the following contents:
+- In the ``work`` terminal, open a text editor with escalated privileges (for example, with the command ``sudo nano``) and create a file ``/etc/yum.repos.d/securedrop-temp.repo`` with the following contents:
 
   .. code-block:: none
 
