@@ -13,6 +13,8 @@ In order to install and use SecureDrop Workstation, you will need a Qubes-Compat
 - a minimum of 16GB RAM (32GB recommended for production use)
 - sufficient disk space for the Qubes OS base install and SecureDrop Workstation VMs (a 128GB or greater SSD is recommended)
 
+We recommend against a device that requires an external USB keyboard for security reasons.
+
 More information on hardware compatibility can be found on the `Qubes OS System Requirements <https://www.qubes-os.org/doc/system-requirements/>`_ page, and information on specific systems can be found via the `hardware compatibility list <https://www.qubes-os.org/hcl/>`_.
 
 In order to print submissions, a supported non-networked printer is required. We have tested and recommend the HP LaserJet Pro M404n. More printer options will be added in future releases.
