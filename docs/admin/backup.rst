@@ -3,7 +3,7 @@ Backup and Restore
 
 .. include:: ../includes/top-warning.rst
 
-QubesOS has a `backup utility <https://www.qubes-os.org/doc/backup-restore/>`_
+Qubes OS has a `backup utility <https://www.qubes-os.org/doc/backup-restore/>`_
 that allows for backup and restoration of user-specified VMs.
 
 To perform backups, you will need:
@@ -71,25 +71,34 @@ passphrase is stored securely outside SecureDrop Workstation.
 
 Uncheck "save backup profile," then proceed with the backup.
 
-QubesOS recommends verifying the integrity of the backup once the backup
+Qubes OS recommends verifying the integrity of the backup once the backup
 completes. This can be done by using the Restore Backup GUI tool and selecting
 "Verify backup integrity, but do not restore the data." For details, see the
-`QubesOS backup documentation <https://www.qubes-os.org/doc/backup-restore/>`_.
+`Qubes OS backup documentation <https://www.qubes-os.org/doc/backup-restore/>`_.
 
 Restore
 -------
 
-Reinstall QubesOS
-~~~~~~~~~~~~~~~~~
+Reinstall Qubes OS
+~~~~~~~~~~~~~~~~~~
 
 To restore SecureDrop Workstation, follow our
-:doc:`pre-install tasks <install>` to provision a QubesOS system complete with
-updated base templates. This time, during the installation wizard, un-check
-``create default application qubes (personal, work, untrusted, vault)``.
+:doc:`pre-install tasks <install>` to provision a Qubes OS system complete with
+updated base templates.
+
+Rename or delete redundant AppVMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By default, Qubes OS will create the AppVMs ``personal``, ``work``, ``untrusted``
+and ``vault`` as part of the installation process. Rename or delete any
+of these newly created AppVMs whose names conflict with the AppVMs you
+intend to restore from a backup.
+
+Example: If you restore only ``vault``, rename or delete the existing
+``vault`` VM prior to restoring the backup. You can do so in
+**Q > Domain: vault > vault: Qube Settings** (the VM must not be running).
 
 Restore Backup
 ~~~~~~~~~~~~~~
-
 Plug in your backup medium and unlock it as during the backup. By default
 on a new system, your peripheral devices will be managed by a VM called
 ``sys-usb``.
@@ -103,7 +112,7 @@ qubes (which should include the ``vault`` VM).
 Reinstall SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a VM called ``work`` with default networking settings:
+If you do not already have a ``work`` VM, create it with default networking settings:
 
   .. code-block:: sh
 
@@ -127,8 +136,10 @@ VM:
     qvm-run --pass-io vault "cat QubesIncoming/dom0/config.json" > /tmp/config.json
 
 Optionally, inspect each file before proceeding. The first
-file should be an ASCII-armored GPG private key file, and the second is a
-one-line file with the format ``ONIONADDRESS:descriptor:x25519:AUTHTOKEN``.
+file should be an ASCII-armored GPG private key file. The second file should
+follow the format of the `example configuration file <https://raw.githubusercontent.com/freedomofpress/securedrop-workstation/main/config.json.example>`_,
+with values for its fields (e.g., ``hostname``, ``submission_key_fpr``) specific to
+your configuration. The file may be formatted in a single line without whitespace.
 
 Copy both files into place:
 

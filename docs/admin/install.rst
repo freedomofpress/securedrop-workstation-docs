@@ -14,6 +14,7 @@ Pre-install tasks:
 #. Apply BIOS updates and check settings
 #. Download and verify Qubes OS
 #. Install Qubes OS
+#. (Hardware-dependent) Apply USB fixes
 #. Apply updates to system templates
 
 Install tasks:
@@ -128,13 +129,18 @@ On the configuration screen, ensure that the following options are checked:
  - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
  - "Make sys-firewall and sys-usb disposable"
 
-If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see below).
+If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see next section).
 
 Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
 Once the initial setup is complete, the login dialog will be displayed. Log in using the username and password set during installation.
 
-If, during the installation, you encountered the grayed out option "USB qube configuration disabled", you must now create a VM to access your USB devices. To do so, open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+(Hardware-dependent) Apply USB fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If, during the installation, you encountered the grayed out option "USB qube configuration disabled", you must now create a VM to access your USB devices. If you did not encounter this issue, you can skip this section.
+
+To create a USB qube, open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
 
 .. code-block:: sh
 
@@ -148,7 +154,7 @@ Now, insert a safe USB device you intend to use with the SecureDrop Workstation.
 
   sudo qubesctl state.sls qvm.usb-keyboard
 
-Please note that we recommend against the use of a USB keyboard for security reasons, but this error can also occur in combination with other USB devices on some hardware.
+While we recommend against the use of a USB keyboard for security reasons, this error can also occur in combination with other USB devices on some hardware.
 
 Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
