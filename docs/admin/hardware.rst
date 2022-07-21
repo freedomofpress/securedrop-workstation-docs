@@ -37,18 +37,18 @@ The 2nd-generation ThinkPad T14 **with an 11th-generation Intel Core processor**
 
 - Otherwise, follow the instructions below to ensure that the BIOS is up to date.
 
-The Ethernet and Wi-Fi controllers will not work without one-time manual configuration, as documented in the following sections.
+The Ethernet and Wi-Fi controllers may not work without one-time manual configuration, as documented in the following sections.
 
 Ethernet controller
 ^^^^^^^^^^^^^^^^^^^
 After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`, but only for the ``dom0:00_1f.6`` Ethernet device.
 
-Wi-Fi controller
-^^^^^^^^^^^^^^^^
-Once ``sys-net`` starts, the Intel AX210 Wi-Fi controller will not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  To fix this:
+Wi-Fi controller (AX210/211 only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If your T14 has an Intel AX210/211 Wi-Fi controller, it will not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  (If your T14 has an AX201 controller, it should work without any special configuration.)  To fix this:
 
+#. Open ``sys-net``'s **Qube Settings**.  On the **Advanced** tab, set **Kernel** to the highest-numbered entry beginning ``5.10``, which as of this writing is ``5.10.112-1.fc32``.
 #. Connect the machine to the Internet via Ethernet.
-#. :doc:`Install and update the Fedora 36 template. <upgrading_fedora>`
 #. In the ``sys-net`` VM, run the following command::
 
       curl https://raw.githubusercontent.com/freedomofpress/securedrop-workstation-docs/main/docs/includes/iwlwifi/rc.local | sudo tee /rw/config/rc.local
