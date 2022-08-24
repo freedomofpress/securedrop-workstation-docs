@@ -1,35 +1,47 @@
 version: 2
 
+common-steps:
+  - &install-deps
+    run:
+      name: Install system-level and Python dependencies
+      command: |
+        apt-get update && apt-get install -y --no-install-recommends make python3 python3-venv python3-setuptools
+        python3 -m venv .venv
+        ./.venv/bin/pip install --require-hashes -r requirements/requirements.txt
+
 jobs:
   lint:
     docker:
-      - image: cimg/python:3.10.0
+      # We use a standard Debian image to mirror a typical developer environment.
+      # This should be updated whenever a new Debian stable version is available.
+      - image: debian:bullseye
     steps:
       - checkout
+      - *install-deps
       - run:
-          name: Install dependencies
-          command: pip install --require-hashes -r requirements/requirements.txt
-      - run:
-          name: Run linter
-          command: make docs-lint
+          name: Run lint
+          command: |
+            source .venv/bin/activate
+            make docs-lint
+
   linkcheck:
     docker:
-      - image: cimg/python:3.10.0
+      - image: debian:bullseye
     steps:
       - checkout
+      - *install-deps
       - run:
-          name: Install dependencies
-          command: pip install --require-hashes -r requirements/requirements.txt
-      - run:
-          name: Run link checker
-          command: make docs-linkcheck
-          no_output_timeout: 30m
+          name: Run link check
+          command: |
+            source .venv/bin/activate
+            make docs-linkcheck
 
 workflows:
   version: 2
   build:
     jobs:
       - lint
+
   nightly:
     triggers:
       - schedule:
