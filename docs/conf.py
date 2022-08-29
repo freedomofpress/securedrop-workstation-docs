@@ -233,3 +233,7 @@ epub_copyright = copyright
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
+
+# The default is to use Python’s global socket timeout, which may be `None`.
+# This can cause CI jobs to time out.
+linkcheck_timeout = 30
