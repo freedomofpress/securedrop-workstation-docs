@@ -45,24 +45,7 @@ After Qubes starts for the first time, when ``sys-net`` fails to start, follow t
 
 Wi-Fi controller (AX210/211 only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If your T14 has an Intel AX210/211 Wi-Fi controller, it will not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  (If your T14 has an AX201 controller, it should work without any special configuration.)  To fix this:
-
-#. Open ``sys-net``'s **Qube Settings**.  On the **Advanced** tab, set **Kernel** to the highest-numbered entry beginning ``5.10``, which as of this writing is ``5.10.112-1.fc32``.
-#. Connect the machine to the Internet via Ethernet.
-#. In the ``sys-net`` VM, run the following command::
-
-      curl https://raw.githubusercontent.com/freedomofpress/securedrop-workstation-docs/main/docs/includes/iwlwifi/rc.local | sudo tee /rw/config/rc.local
-
-#. Then run the following command and verify the expected output::
-
-      cat /rw/config/rc.local
-
-   .. literalinclude:: ../includes/iwlwifi/rc.local
-      :linenos:
-      :emphasize-lines: 13-22
-
-#. Restart the machine.
-#. Once ``sys-net`` has come back up, the Network Manager should show available Wi-Fi networks.
+If your T14 has an Intel AX210/211 Wi-Fi controller, it may not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  (If your T14 has an AX201 controller, it should work without any special configuration.)  To fix this, connect the machine via Ethernet and use the `Qubes Update tool <https://www.qubes-os.org/doc/how-to-update/#routine-updates>`_ to apply all available system updates.  Once Qubes is fully updated and the machine has been rebooted, the Network Manager should display a list of Wi-Fi networks as normal.
 
 .. _thinkpad_t490:
 
