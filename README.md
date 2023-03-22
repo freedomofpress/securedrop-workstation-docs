@@ -5,10 +5,10 @@ User documentation for SecureDrop Workstation.
 
 # Quickstart
 
-- Set up and activate a Python 3 virtualenv using your preferred method for your system
-- Install dependencies using `pip install --require-hashes -r requirements/requirements.txt`
-- Run `make docs` to start a live build of the documentation at `http://127.0.0.1:8000`
-- Edit RST files under the `docs` directory - your changes will be reflected in the live build
+1. [Install poetry](https://python-poetry.org/docs/#installation)
+2. Install the dependencies using `poetry install`
+3. Run `make docs` to start a live build of the documentation at http://localhost:8000
+4. Edit [RST](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) files under the docs directory - your changes will be reflected in the live build
 
 ## Stable and development builds
 
