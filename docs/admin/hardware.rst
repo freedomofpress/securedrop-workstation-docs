@@ -43,27 +43,6 @@ Ethernet controller
 ^^^^^^^^^^^^^^^^^^^
 After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`, but only for the ``dom0:00_1f.6`` Ethernet device.
 
-Wi-Fi controller (AX210/211 only)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If your T14 has an Intel AX210/211 Wi-Fi controller, it will not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  (If your T14 has an AX201 controller, it should work without any special configuration.)  To fix this:
-
-#. Open ``sys-net``'s **Qube Settings**.  On the **Advanced** tab, set **Kernel** to the highest-numbered entry beginning ``5.10``, which as of this writing is ``5.10.112-1.fc32``.
-#. Connect the machine to the Internet via Ethernet.
-#. In the ``sys-net`` VM, run the following command::
-
-      curl https://raw.githubusercontent.com/freedomofpress/securedrop-workstation-docs/main/docs/includes/iwlwifi/rc.local | sudo tee /rw/config/rc.local
-
-#. Then run the following command and verify the expected output::
-
-      cat /rw/config/rc.local
-
-   .. literalinclude:: ../includes/iwlwifi/rc.local
-      :linenos:
-      :emphasize-lines: 13-22
-
-#. Restart the machine.
-#. Once ``sys-net`` has come back up, the Network Manager should show available Wi-Fi networks.
-
 .. _thinkpad_t490:
 
 Lenovo ThinkPad T490 (with 8th-generation Intel Core processor)
@@ -207,11 +186,3 @@ If you intend to use USB-C ports, please note that our recommended BIOS settings
 
 The first of these ports will continue to function as a USB-C port. After disabling Thunderbolt, the second port can no longer be used for Thunderbolt or for USB-C data transfer, but it can still be used for power delivery (i.e. to plug in your AC adapter). If you are unsure about the features of your laptop's USB-C ports, or if you are using a different make or model, please consult the technical specifications of your laptop for further information.
 
-.. rubric:: Footnotes
-
-.. [#ax210_dmesg] In ``sys-net``'s ``dmesg`` output you'll see an error like:
-
-   .. code-block::
-
-      Timeout waiting for PNVM load!
-      Failed to start RT ucode: 110
