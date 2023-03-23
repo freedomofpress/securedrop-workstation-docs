@@ -43,10 +43,6 @@ Ethernet controller
 ^^^^^^^^^^^^^^^^^^^
 After Qubes starts for the first time, when ``sys-net`` fails to start, follow the instructions below for the :ref:`thinkpad_t490`, but only for the ``dom0:00_1f.6`` Ethernet device.
 
-Wi-Fi controller (AX210/211 only)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If your T14 has an Intel AX210/211 Wi-Fi controller, it may not automatically be available to the Network Manager for you to select a network. [#ax210_dmesg]_  (If your T14 has an AX201 controller, it should work without any special configuration.)  To fix this, connect the machine via Ethernet and use the `Qubes Update tool <https://www.qubes-os.org/doc/how-to-update/#routine-updates>`_ to apply all available system updates.  Once Qubes is fully updated and the machine has been rebooted, the Network Manager should display a list of Wi-Fi networks as normal.
-
 .. _thinkpad_t490:
 
 Lenovo ThinkPad T490 (with 8th-generation Intel Core processor)
@@ -190,11 +186,3 @@ If you intend to use USB-C ports, please note that our recommended BIOS settings
 
 The first of these ports will continue to function as a USB-C port. After disabling Thunderbolt, the second port can no longer be used for Thunderbolt or for USB-C data transfer, but it can still be used for power delivery (i.e. to plug in your AC adapter). If you are unsure about the features of your laptop's USB-C ports, or if you are using a different make or model, please consult the technical specifications of your laptop for further information.
 
-.. rubric:: Footnotes
-
-.. [#ax210_dmesg] In ``sys-net``'s ``dmesg`` output you'll see an error like:
-
-   .. code-block::
-
-      Timeout waiting for PNVM load!
-      Failed to start RT ucode: 110
