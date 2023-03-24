@@ -124,6 +124,8 @@ You will be prompted to enter the FDE passphrase set during installation.
 
 After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon.
 
+.. warning:: Make sure **Fedora** is selected as the default VM template. Otherwise, you will need to manually switch the *Work* Qube template to Fedora in order to download the SecureDrop Workstation `dom0` configuration needed to begin the install.
+
 On the configuration screen, ensure that the following options are checked:
 
  - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
@@ -207,14 +209,14 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
   .. code-block:: sh
 
     qvm-run --pass-io vault \
-      "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint"
+      "gpg --homedir /media/user/TailsData/gnupg -K --fingerprint"
 
 - Next, run the comand:
 
   .. code-block:: sh
 
     qvm-run --pass-io vault \
-      "gpg --homedir /run/media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" \
+      "gpg --homedir /media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" \
       > /tmp/sd-journalist.sec
 
   where ``<SVSFingerprint>`` is the submission key fingerprint, typed as a single unit without whitespace. This will copy the submission key in ASCII format to a temporary file in dom0, ``/tmp/sd-journalist.sec``.
@@ -246,7 +248,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
   .. code-block:: sh
 
     qvm-run --pass-io vault \
-      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
+      "cat /media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
       > /tmp/journalist.txt
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
