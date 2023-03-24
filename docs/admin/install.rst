@@ -89,7 +89,7 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the Qubes OS ISO for version ``4.1.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-1>`_. The ISO is 5.4 GiB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the Qubes OS ISO for version ``4.1.2`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-2>`_. The ISO is 5.4 GiB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
 
@@ -97,7 +97,7 @@ Once you've verified the ISO, copy it to your installation medium - for example,
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.1.1-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.1.2-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
