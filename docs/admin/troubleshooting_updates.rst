@@ -13,6 +13,17 @@ underlying issue has been resolved. This is to ensure
 that the system is in a secure state before you
 interact with SecureDrop.
 
+.. figure:: images/preflight_update_failed.png
+   :alt: A screenshot of the preflight update window,
+         displaying a failed update error message. The
+         title reads "Security updates failed", and the
+         message instructs the user to contact the administrator
+         to correct the error. The SecureDrop client cannot
+         be started until the error is corrected.
+
+   The error displayed when the preflight updater
+   does not successfully complete the update.
+
 This guide offers troubleshooting steps for common
 update issues.
 
