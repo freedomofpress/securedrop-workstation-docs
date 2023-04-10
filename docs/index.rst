@@ -36,6 +36,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/managing_clipboard
    admin/reviewing_logs
    admin/troubleshooting_connection
+   admin/troubleshooting_updates
    admin/provisioning_usb
    admin/known_issues
    admin/workstation_architecture
