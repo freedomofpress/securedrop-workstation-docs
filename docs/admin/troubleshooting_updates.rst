@@ -129,7 +129,7 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
 
 3. Follow the prompts to resolve any issues. If you are
    unsure on how to resolve an error, please contact us
-   or assistance.
+   for assistance.
 
 ``fedora-37`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
