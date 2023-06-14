@@ -137,7 +137,7 @@ VM:
 
 Optionally, inspect each file before proceeding. The first
 file should be an ASCII-armored GPG private key file. The second file should
-follow the format of the `example configuration file <https://raw.githubusercontent.com/freedomofpress/securedrop-workstation/main/config.json.example>`_,
+follow the format of the `example configuration file <https://raw.githubusercontent.com/freedomofpress/securedrop-workstation/main/files/config.json.example>`_,
 with values for its fields (e.g., ``hostname``, ``submission_key_fpr``) specific to
 your configuration. The file may be formatted in a single line without whitespace.
 
