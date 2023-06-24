@@ -63,7 +63,7 @@ To verify when users were added to the system:
 - Click the **Admin** link in the top right.
 - Review the **Created** column in the list of users.
 
-To rotate passphrases for accounts, please see the `instructions <https://docs.securedrop.org/en/stable/admin.html#passphrases-and-two-factor-resets>`_ in the SecureDrop Admin Guide.
+To rotate passphrases for accounts, please see the `instructions <https://docs.securedrop.org/en/stable/admin/reference/admin_interface.html#passphrases-and-two-factor-resets>`_ in the SecureDrop Admin Guide.
 
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
