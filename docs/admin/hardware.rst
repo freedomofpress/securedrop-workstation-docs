@@ -19,6 +19,26 @@ More information on hardware compatibility can be found on the `Qubes OS System 
 
 In order to print submissions, a supported non-networked printer is required. We have tested and recommend the HP LaserJet Pro M404n. More printer options will be added in future releases.
 
+.. _thinkpad_x1_series:
+
+Lenovo X1 series laptops
+------------------------
+
+Lenovo ThinkPad X1 Carbon (10th-generation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The 10th-generation Thinkpad X1 Carbon **with a 12th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1.  If you plan to use it:
+
+- If your laptop has come with Ubuntu preinstalled, run its **Software Updater** twice as follows:
+
+  #. to install software updates, especially for the ``fwupd`` package; and then
+  #. to run ``fwupd`` to update the BIOS automatically.
+
+  If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
+
+- Otherwise, follow the instructions below to ensure that the BIOS is up to date.
+
+You'll need to have a USB-to-Ethernet adapter on hand in order to :ref:`apply Qubes updates <apply_dom0_updates>`, which will enable Wi-Fi and fix glitchy video rendering and cursor performance.
+
 .. _thinkpad_t_series:
 
 Lenovo T series laptops
