@@ -115,8 +115,8 @@ The ThinkPad T480 is also a recommended option for SecureDrop Workstation, as it
 
 .. _thinkpad_bios:
 
-Upgrading the BIOS on ThinkPad models T480, T490, and T14
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading the BIOS on Lenovo ThinkPad laptops
+---------------------------------------------
 
 The instructions below assume the use of a Linux-based computer for the creation of a BIOS upgrade USB. To upgrade the BIOS:
 
@@ -126,7 +126,7 @@ The instructions below assume the use of a Linux-based computer for the creation
   #. On the **Main** tab, look for the **Machine Type Model**.  The first four characters, such as `20L5`, `20L6`, or `20S0`, are the machine type.
 
 - Visit `<https://support.lenovo.com>`_ in the Linux-based computer. Type the machine type found above into the search bar, then press **Enter**.
-- In the T480 Product Home page, select **Drivers And Software** and choose **BIOS/UEFI**.
+- In the "Product Home" page, select **Drivers And Software** and choose **BIOS/UEFI**.
 - Download the file called either **BIOS Update (Bootable CD)** or **BIOS Update (Utility & Bootable CD)**.
 
 .. note::
@@ -198,7 +198,7 @@ The instructions below assume the use of a Linux-based computer for the creation
 - Follow the on-screen instructions to update the BIOS, including any mandatory reboots. Note that the instructions may refer to an update CD instead of your update USB.
 
 USB-C ports
-~~~~~~~~~~~
+-----------
 If you intend to use USB-C ports, please note that our recommended BIOS settings will disable dual USB-C/Thunderbolt ports (recognizable by the Thunderbolt logo next to the port). The T480, for example, includes two USB-C ports, `specified <https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T480/ThinkPad_T480_Spec.PDF>`__ as follows:
 
 - 1 x USB 3.1 Gen 1 Type-C (Power Delivery, DisplayPort, Data transfer)
