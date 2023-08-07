@@ -26,7 +26,7 @@ Lenovo X1 series laptops
 
 Lenovo ThinkPad X1 Carbon (10th-generation)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The 10th-generation Thinkpad X1 Carbon **with a 12th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1.  If you plan to use it:
+The 10th-generation ThinkPad X1 Carbon **with a 12th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1.  If you plan to use it:
 
 - If your laptop has come with Ubuntu preinstalled, run its **Software Updater** twice as follows:
 
@@ -67,7 +67,7 @@ After Qubes starts for the first time, when ``sys-net`` fails to start, follow t
 
 Lenovo ThinkPad T490 (with 8th-generation Intel Core processor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Thinkpad T490 **with an 8th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation.
+The ThinkPad T490 **with an 8th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation.
 
 
 .. caution::
