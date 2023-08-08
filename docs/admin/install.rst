@@ -156,6 +156,8 @@ Now, insert a safe USB device you intend to use with the SecureDrop Workstation.
 
 While we recommend against the use of a USB keyboard for security reasons, this error can also occur in combination with other USB devices on some hardware.
 
+.. _apply_dom0_updates:
+
 Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``dom0`` is the most trusted domain on Qubes OS, and has privileged access to all other VMs. As such, it is important to ensure that all available security updates have been applied to ``dom0`` as the first step after the installation.
