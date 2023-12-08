@@ -1,0 +1,10 @@
+---
+name: Link check
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  reusable:
+    uses: freedomofpress/securedrop-docs/.github/workflows/linkcheck.yml@main
