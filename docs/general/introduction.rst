@@ -35,4 +35,4 @@ and viewing. SecureDrop Workstation combines all of those steps
 into one workflow on one machine: a Qubes computer that
 combines the *Journalist Workstation* and the *Secure Viewing Station*.
 
-For more information on SecureDrop Workstation, see our :doc:`faq`.
+For more information on SecureDrop Workstation, see our :doc:`faq <../journalist/faq>`.
