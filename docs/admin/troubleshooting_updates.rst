@@ -107,13 +107,13 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
    security-sensitive, and may requrie a reboot to take
    effect.
 
-``sd-*-template`` or ``whoix-gw-16`` update failures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``sd-*-template`` or ``whonix-gateway-17`` update failures
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the Qubes menu and open a terminal in the impacted
-   template. For example, if ``whonix-gw-16`` failed to
+   template. For example, if ``whonix-gateway-17`` failed to
    update, select its entry in the Qubes menu and click
    **Terminal**. (Be sure not to confuse it with the
-   similarly named ``whonix-ws-16`` template.)
+   similarly named ``whonix-workstation-17`` template.)
 
 2. Perform an interactive template update by running the
    the following commands:
@@ -131,9 +131,9 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
    unsure on how to resolve an error, please contact us
    for assistance.
 
-``fedora-37`` update failures
+``fedora-38`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Click the Qubes menu and open a terminal in the ``fedora-37``
+1. Click the Qubes menu and open a terminal in the ``fedora-38``
    template.
 
 2. Perform an interactive template update by running the following
