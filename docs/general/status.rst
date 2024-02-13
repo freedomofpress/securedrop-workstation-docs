@@ -11,7 +11,7 @@ number of organizations whose environments were especially well-suited for
 early testing of the Workstation. This pilot program is now closed. No new
 pilot participants will be considered or accepted, and current pilot
 participants can expect to transiton to the standard support experience
-before the general availability release is made available later this year.
+before the general availability release is made available later in 2024.
 
 
 Is SecureDrop Workstation right for you?
