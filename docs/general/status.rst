@@ -10,7 +10,7 @@ Freedom of the Press Foundation has operated a pilot program with a limited
 number of organizations whose environments were especially well-suited for
 early testing of the Workstation. This pilot program is now closed. No new
 pilot participants will be considered or accepted, and current pilot
-participants can expect to transiton to the standard support experience
+participants can expect to transition to the standard support experience
 before the general availability release is made available later in 2024.
 
 
