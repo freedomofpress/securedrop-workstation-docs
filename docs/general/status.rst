@@ -29,7 +29,7 @@ by organizations that meet the following criteria:
 
 * You have an existing SecureDrop Server in place
 * You have fewer than 500 Sources on the Server
-* You typically only interact with .PDF, .DOC, and .JPG files via your
+* You typically only interact with .pdf, .doc, and .jpg files via your
   SecureDrop
 * You have a functional *Secure Viewing Station* to fall back on
 
@@ -59,26 +59,8 @@ as a backup is imperative.
 Roadmap and Timeline
 --------------------
 
-While not a comprehensive or exhaustive list of the things the SecureDrop
-Team will be working on, the following is a rough roadmap of the upcoming
-work planned for the next three-to-six months:
-
-* SecureDrop Server 2.8.0 Release
-* SecureDrop Workstation 0.9.0, featuring improvements to the export workflow,
-  including VeraCrypt support
-* A point release for Whonix from version 16 to 17
-* SecureDrop Workstation 1.0.0, featuring Qubes 4.2 compatibility
-
-Aside from upstream end-of-life (EOL) dates, there are not any concrete
-release dates for the upcoming stable releases of SecureDrop Workstation.
-That said, the following timeline is a rough estimate of when we expect to
-reach various milestones within the project:
-
-* TK: SecureDrop Workstation 1.0.0 available
-* TK: Assisted reinstalls of SecureDrop Workstation for
-  pilot participants
-* TK: Pilot program ends, pilot participants transition to the
-  official SecureDrop Support Portal (Redmine)
+You can find information about our current development roadmap and timeline at
+the `SecureDrop Development Wiki <https://github.com/freedomofpress/securedrop/wiki/Development-Roadmap>`_.
 
 General availability
 --------------------
