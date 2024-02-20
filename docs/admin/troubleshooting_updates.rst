@@ -70,13 +70,13 @@ line in the log file that looks similar to the following:
   INFO: Signal: upgrade_status {
   'dom0': <UpdateStatus.UPDATES_OK: '0'>,
   'apply_dom0': <UpdateStatus.UPDATES_OK: '0'>,
-  'fedora-37': <UpdateStatus.UPDATES_OK: '0'>,
+  'fedora-38': <UpdateStatus.UPDATES_OK: '0'>,
   'sd-large-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
-  'whonix-gw-16': <UpdateStatus.UPDATES_FAILED: '3'>,
+  'whonix-gateway-17': <UpdateStatus.UPDATES_FAILED: '3'>,
   'sd-small-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
   'recommended_action': <UpdateStatus.UPDATES_FAILED: '3'>}
 
-In this example, the ``whonix-gw-16`` VM has failed to update.
+In this example, the ``whonix-gateway-17`` VM has failed to update.
 This is indicated by the text ``<UpdateStatus.UPDATES_FAILED: '3'>``.
 
 It is possible that multiple steps have failed. Make note of any
