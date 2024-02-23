@@ -104,8 +104,61 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
    for assistance.
 
 4. Reboot the system. ``dom0`` updates are often
-   security-sensitive, and may requrie a reboot to take
+   security-sensitive, and may require a reboot to take
    effect.
+   
+Expired SecureDrop Signing Key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the update fails after running ``sudo qubes-dom0-update`` as described
+above, and the terminal console displays the following message:
+
+.. code-block:: sh
+   
+   1. Certificiate 188EDD3B7B22E6A3 invalid: certificate is not alive
+       because: The primary key is not live
+       because: Expired on 2023-07-04T10:52:20Z
+   2. Key 188EDD3B7B22E6A3 invalid: key is not alive
+       because: The primary key is not live
+       because: Expired on 2023-07-04T10:52:20Z
+   [...]
+   Error: GPG check FAILED
+
+your system is trying to use an old copy of the SecureDrop Release
+Signing Key. The new, valid key will already be locally available on your
+system, so you can perform the following steps to remove the expired key
+and enable this updated key:
+
+1. Open a terminal in ``dom0`` by clicking the Qubes menu
+   icon in the upper left corner of your screen, and
+   selecting **Terminal Emulator**.
+   
+2. Run the following command:
+
+   .. code-block:: sh
+   
+      sudo rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n' | grep SecureDrop
+    
+   The output should look similar to:
+   
+   .. code-block:: sh
+   
+      gpg-pubkey-xxxxx-xxxxx        SecureDrop Release Signing Key <securedrop-release-key-2021@freedom.press  public key
+    
+3. Make note of the KEY ID (in the format ``gpg-pubkey-xxxxx-xxxxx``).
+
+4. Run the following commands:
+
+   .. code-block:: sh
+   
+      sudo rpm -e gpg-pubkey-xxxxxx-xxxxxx # use KEY ID from step 3
+   
+      sudo rpm --import /etc/pki/rpm-GPG/RPM-GPG-KEY-securedrop-workstation
+   
+
+5. Reboot, then run updates again. If there are new errors, repeat
+the full troubleshooting process.
+
 
 ``sd-*-template`` or ``whonix-gateway-17`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
