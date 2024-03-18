@@ -56,26 +56,35 @@ administrator. The printer must be plugged into the computer's USB port.
 Exporting to an Export USB
 --------------------------
 
-Currently, a LUKS-encrypted USB drive is required for exporting submissions. A
-Linux-based system such as Tails is required to configure and use a LUKS-encrypted
-drive, meaning that for the time being, you will only be able to
-export to a Linux environment where these drives can be read. For assistance
-with this, see your SecureDrop administrator.
+Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting submissions.
 
-Once you have provisioned a LUKS-encrypted export drive, insert the drive and
-click **Export**.
+1. Insert the USB drive and wait for the ``sd-devices`` VM to start.
+2. If your drive is using VeraCrypt, you will need to unlock it manually:
 
-|screenshot_export_dialog|
+   1. Open the file menu by clicking on the **Q** application menu (in the top left),
+      select **sd-devices** and click **Files**.
+   2. In the left sidebar, there should be an entry labeled **# GB Possibly Encrypted**,
+      click it.
+      |screenshot_veracrypt_sd_devices_files|
+   3. You will be prompted for the password configured for this USB drive:
 
-You will be prompted for the password configured for this
-USB drive.
+      - Volume type: leave both unchecked
+      - PIM: leave empty
+      - Password: drive's password
+      - Forget password immediately: selected
 
-|screenshot_export_drive_passphrase|
+      |screenshot_veracrypt_sd_devices_files_unlock|
+   4. Click **Connect**.
 
-Once you see a message informing you that the export was successfully completed,
-you can safely unplug the USB drive. Alternatively, you can leave the drive
-plugged in and export additional files.
+3. Back in your source's conversation, click **Export**.
+   |screenshot_export_dialog|
+4. If you have not already unlocked your USB drive, you will be prompted for the
+   password configured for this USB drive.
+   |screenshot_export_drive_passphrase|
 
+5. Once you see a message informing you that the export was successfully completed,
+   you can safely unplug the USB drive. Alternatively, you can leave the drive
+   plugged in and export additional files.
 
 .. |screenshot_file_before_download| image:: ../images/screenshot_file_before_download.png
   :width: 100%
@@ -88,4 +97,8 @@ plugged in and export additional files.
 .. |screenshot_export_dialog| image:: ../images/screenshot_export_dialog.png
   :width: 100%
 .. |screenshot_export_drive_passphrase| image:: ../images/screenshot_export_drive_passphrase.png
+  :width: 100%
+.. |screenshot_veracrypt_sd_devices_files| image:: ../images/screenshot_veracrypt_sd_devices_files.png
+  :width: 100%
+.. |screenshot_veracrypt_sd_devices_files_unlock| image:: ../images/screenshot_veracrypt_sd_devices_files_unlock.png
   :width: 100%

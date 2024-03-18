@@ -24,13 +24,11 @@ Current known issues
   performance and reliability of the updater.
 - SecureDrop instances with very large numbers of sources may encounter
   UI performance issues. While performance improvements are on the roadmap,
-  `our recommendation <https://docs.securedrop.org/en/stable/admin/maintenance/backup_and_restore.html#minimizing-disk-use>`_ 
+  `our recommendation <https://docs.securedrop.org/en/stable/admin/maintenance/backup_and_restore.html#minimizing-disk-use>`_
   is to delete information from the servers as regularly as possible, both
   for performance and security reasons.
 - There is currently no mechanism for cancelling or retrying file downloads.
   This feature is planned.
-- Currently, only LUKS-encrypted *Export Devices* are supported. VeraCrypt support
-  will be added in a future release.
 - Printer support is limited to a specific HP printer model, and printing
   different file types is not as reliable yet as under Tails. Support for
   additional non-networked printers will be added in a future release.
