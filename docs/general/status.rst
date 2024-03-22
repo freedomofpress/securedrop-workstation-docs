@@ -4,7 +4,7 @@ SecureDrop Workstation Project Status
 SecureDrop Workstation is currently in active development, and has not yet
 had a stable release.
 
-The 1.0.0 general availability release is tentatively planned for TBD.
+The 1.0.0 general availability release is tentatively planned for Q3/Q4 2024.
 
 Freedom of the Press Foundation has operated a pilot program with a limited
 number of organizations whose environments were especially well-suited for
