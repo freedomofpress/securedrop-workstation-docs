@@ -15,9 +15,16 @@ against malware and other security risks. It is built on Qubes OS and requires a
 
 .. toctree::
    :maxdepth: 2
+   :caption: Overview
+   
+   general/introduction
+   general/workstation_architecture
+   general/status
+
+.. toctree::
+   :maxdepth: 2
    :caption: Guide for Journalists
 
-   journalist/introduction
    journalist/starting_qubes
    journalist/starting_client
    journalist/sources
@@ -40,7 +47,6 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/provisioning_usb
    admin/known_issues
    admin/upgrading_fedora
-   admin/workstation_architecture
    admin/backup
 
 * :ref:`genindex`
