@@ -70,7 +70,7 @@ line in the log file that looks similar to the following:
   INFO: Signal: upgrade_status {
   'dom0': <UpdateStatus.UPDATES_OK: '0'>,
   'apply_dom0': <UpdateStatus.UPDATES_OK: '0'>,
-  'fedora-38': <UpdateStatus.UPDATES_OK: '0'>,
+  'fedora-39': <UpdateStatus.UPDATES_OK: '0'>,
   'sd-large-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
   'whonix-gateway-17': <UpdateStatus.UPDATES_FAILED: '3'>,
   'sd-small-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
@@ -184,9 +184,9 @@ the full troubleshooting process.
    unsure on how to resolve an error, please contact us
    for assistance.
 
-``fedora-38`` update failures
+``fedora-39`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Click the Qubes menu and open a terminal in the ``fedora-38``
+1. Click the Qubes menu and open a terminal in the ``fedora-39``
    template.
 
 2. Perform an interactive template update by running the following
