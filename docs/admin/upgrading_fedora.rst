@@ -1,4 +1,4 @@
-Upgrading to Fedora 39
+Upgrading to Fedora 40
 ======================
 
 .. include:: ../includes/top-warning.rst
@@ -8,27 +8,27 @@ Why do I need to upgrade?
 
 SecureDrop Workstation makes use of several Fedora-based VMs which are part of
 a Qubes installation by default, including ``sys-firewall``, ``sys-net``, ``sys-
-usb``, ``work``, and ``vault`` . In Qubes 4.1.2, these VMs are based on a
-Fedora 37 template, which reached end-of-life on December 5, 2023.
+usb``, ``work``, and ``vault`` . In Qubes 4.2, these VMs are based on a
+Fedora 39 template, which reaches end-of-life in November 2024.
 
-If you are provisioning SecureDrop Workstation for the first time, you will need
-to update your Fedora template manually to Fedora 39 *before* installing
+If you are provisioning SecureDrop Workstation for the first time,
+update your Fedora template manually to Fedora 40 *before* installing
 SecureDrop Workstation.
 
 If you are an existing SecureDrop Workstation user, SecureDrop Workstation
 will install the template automatically when updates are applied, but you
 should also :ref:`manually configure <configure_vms>` VMs not managed by
-SecureDrop Workstation to use the Fedora 39 template.
+SecureDrop Workstation to use the Fedora 40 template.
 
-Install Fedora-39 template
+Install Fedora-40 template
 --------------------------
 
 In a ``dom0`` terminal (**Qubes Application Menu > Terminal Emulator**), type
-the following to download the Fedora 39 template:
+the following to download the Fedora 40 template:
 
 .. code:: sh
 
-   sudo qvm-template install fedora-39
+   sudo qvm-template install fedora-40-xfce
 
 You will see some information from the template manager, including a progress
 bar.
@@ -37,12 +37,12 @@ When the download has concluded, you will be prompted to install the package.
 Type ``y`` to proceed with the installation.
 
 
-Update the Fedora-39 template
+Update the Fedora-40 template
 -----------------------------
 Once the template installation is complete, update the template using the Qubes
 Updater. Click **Q > Qubes Tools > Qubes Update** in the application menu.
 Click the checkbox "Enable updates for qubes without known updates" option,
-and click the checkbox next to ``fedora-39``. Click **Next** and wait for
+and click the checkbox next to ``fedora-40-xfce``. Click **Next** and wait for
 any available updates to be downloaded and applied.
 
 .. _configure_vms:
@@ -53,7 +53,7 @@ To apply the template to VMs that currently use an older version, open the
 Qube Manager via **Q > Qubes Tools > Qube Manager**. All VMs will be visible at
 a glance; to change a VM's settings, right-click it and select **Qube Settings**.
 
-In the Qube Settings window, select ``fedora-39`` from the drop-down menu
+In the Qube Settings window, select ``fedora-40-xfce`` from the drop-down menu
 beside **Template**, then click **OK.**
 
 |screenshot_qsettings_fedora32|
@@ -65,18 +65,18 @@ You should perform this process for:
   - ``sys-net``
   - ``default-mgmt-dvm``.
 
-Create a new disposable VM template based on Fedora 39 by running
+Create a new disposable VM template based on Fedora 40 by running
 the following commands in ``dom0``:
 
 .. code:: sh
 
-  qvm-create -l red -t fedora-39 fedora-39-dvm
-  qvm-prefs fedora-39-dvm template_for_dispvms True
-  qvm-features fedora-39-dvm appmenus-dispvm 1
-  qubes-prefs default-dispvm fedora-39-dvm
+  qvm-create -l red -t fedora-40-xfce fedora-40-dvm
+  qvm-prefs fedora-40-dvm template_for_dispvms True
+  qvm-features fedora-40-dvm appmenus-dispvm 1
+  qubes-prefs default-dispvm fedora-40-dvm
 
 Now, switch the templates for ``sys-usb`` and ``sys-firewall`` to
-``fedora-39-dvm`` using the same process that you used above.
+``fedora-40-dvm`` using the same process that you used above.
 
 Reboot the system to ensure the changes take effect. Alternatively, you can
 restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking how you want to connect to the Tor network, select the "Connect" option, which allows a direct connection to the Tor network.
