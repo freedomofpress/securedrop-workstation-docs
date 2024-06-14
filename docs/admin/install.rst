@@ -16,7 +16,7 @@ Pre-install tasks:
 #. Install Qubes OS
 #. (Hardware-dependent) Apply USB fixes
 #. Apply updates to system templates
-#. Install and update Fedora 39 base template
+#. Install and update Fedora 40 base template
 
 Install tasks:
 ~~~~~~~~~~~~~~
@@ -185,7 +185,7 @@ After logging in again, confirm that the network manager successfully connects y
 
 - Once Tor has connected, select **Q > Qubes Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above except for dom0 (which you have already updated in the previous step). Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
 
-Install Fedora 39 template
+Install Fedora 40 template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :doc:`upgrading_fedora`.
