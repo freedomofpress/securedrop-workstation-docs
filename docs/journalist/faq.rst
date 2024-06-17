@@ -151,8 +151,8 @@ pastes of sensitive content, and to reduce the attack surface for attempts to
 exfiltrate information.
 
 Administrators can configure limited exceptions to this policy; please see the
-section :doc:`Managing Clipboard Access <../admin/managing_clipboard>` of the admin guide
-for more information.
+section :doc:`Managing Clipboard Access <../admin/reference/managing_clipboard>`
+of the admin guide for more information.
 
 Why does it take so long to start the SecureDrop Client?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 Keeping the Workstation secure
 ==============================
 
-.. include:: ../includes/top-warning.rst
+.. include:: ../../includes/top-warning.rst
 
 The *SecureDrop Workstation* provides the combined functionality of the 
 Tails-based *Journalist Workstation* and *Secure Viewing Station* (SVS). As such,

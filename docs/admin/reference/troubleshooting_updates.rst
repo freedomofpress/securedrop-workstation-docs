@@ -1,7 +1,7 @@
 Troubleshooting system updates
 ==============================
 
-.. include:: ../includes/top-warning.rst
+.. include:: ../../includes/top-warning.rst
 
 After you log into Qubes, the SecureDrop Workstation
 preflight updater will prompt you to check for available
