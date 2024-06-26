@@ -1,7 +1,7 @@
 Upgrading to Fedora 40
 ======================
 
-.. include:: ../includes/top-warning.rst
+.. include:: ../../includes/top-warning.rst
 
 Why do I need to upgrade?
 -------------------------
@@ -88,10 +88,10 @@ restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking
    template changes for VMs that are currently running, so you may have to
    manually shut down VMs in the correct order to do so.
 
-.. |screenshot_qsettings_fedora32| image:: ../images/screenshot_qsettings_fedora32.png
+.. |screenshot_qsettings_fedora32| image:: ../../images/screenshot_qsettings_fedora32.png
   :width: 100%
 
 Getting Support
 ---------------
 
-.. include:: ../includes/getting_support.rst
+.. include:: ../../includes/getting_support.rst

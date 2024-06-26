@@ -1,7 +1,7 @@
 Backup and Restore
 ==================
 
-.. include:: ../includes/top-warning.rst
+.. include:: ../../includes/top-warning.rst
 
 Qubes OS has a `backup utility <https://www.qubes-os.org/doc/backup-restore/>`_
 that allows for backup and restoration of user-specified VMs.
@@ -83,7 +83,7 @@ Reinstall Qubes OS
 ~~~~~~~~~~~~~~~~~~
 
 To restore SecureDrop Workstation, follow our
-:doc:`pre-install tasks <install>` to provision a Qubes OS system complete with
+:doc:`pre-install tasks <../install/prepare>` to provision a Qubes OS system complete with
 updated base templates.
 
 Rename or delete redundant AppVMs

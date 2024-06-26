@@ -54,7 +54,8 @@ you click on a source submission.
 Troubleshooting tips
 ~~~~~~~~~~~~~~~~~~~~
 If you have trouble running the updater or logging in, please contact your
-administrator. Our :doc:`network troubleshooting guide <../admin/troubleshooting_connection>`
+administrator. Our :doc:`network troubleshooting guide 
+<../admin/reference/troubleshooting_connection>`
 for administrators gives detailed steps for investigating connectivity issues.
 
 Seen and unseen submissions

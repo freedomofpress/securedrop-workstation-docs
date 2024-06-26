@@ -23,7 +23,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide for Journalists
+   :caption: Journalist Guide
 
    journalist/starting_qubes
    journalist/starting_client
@@ -31,23 +31,30 @@ against malware and other security risks. It is built on Qubes OS and requires a
    journalist/submissions
    journalist/ending_session
    journalist/faq
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Admin Guide: Installation
 
+   admin/install/overview
+   admin/install/prepare
+   admin/install/install
+   admin/install/troubleshoot
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide for Administrators
+   :caption: Admin Guide: Reference
 
-   admin/hardware
-   admin/install
-   admin/securing_workstation
-   admin/managing_clipboard
-   admin/reviewing_logs
-   admin/troubleshooting_connection
-   admin/troubleshooting_updates
-   admin/provisioning_usb
-   admin/known_issues
-   admin/upgrading_fedora
-   admin/backup
+   admin/reference/hardware
+   admin/reference/securing_workstation
+   admin/reference/managing_clipboard
+   admin/reference/reviewing_logs
+   admin/reference/troubleshooting_connection
+   admin/reference/troubleshooting_updates
+   admin/reference/provisioning_usb
+   admin/reference/known_issues
+   admin/reference/upgrading_fedora
+   admin/reference/backup
 
 * :ref:`genindex`
 * :ref:`search`
