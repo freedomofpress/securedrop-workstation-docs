@@ -78,7 +78,7 @@ Network devices (Ethernet and Wi-Fi) will not immediately work out of the box an
 
 |screenshot_sys_net_pci_reset|
 
-Open a ``dom0`` terminal via **Q > Terminal Emulator**, and run the following command to list the devices connected to the ``sys-net`` VM.
+Open a ``dom0`` terminal via **Q > ⚙️ > Other > Xfce Terminal**, and run the following command to list the devices connected to the ``sys-net`` VM.
 
 .. code-block:: sh
 

@@ -41,7 +41,7 @@ connection notification, it is most likely due to one of these causes.
 .. important::
 
    Not all VMs in Qubes OS have Internet access. For example, opening the Qubes
-   menu (top left) and clicking **Terminal Emulator** opens a ``dom0`` terminal
+   menu (top left) and clicking **Q > ⚙️ > Other > Xfce Terminal** opens a ``dom0`` terminal
    without Internet access. See our :ref:`networking architecture <Networking Architecture>`
    overview for additional background.
 
@@ -219,7 +219,7 @@ finish synchronizing with the server, you can perform the following steps:
 
 1. Log into the Qubes workstation
 2. Start a system Terminal in ``dom0`` by going to the Qubes Menu, then choose
-   *Terminal Emulator*
+   **Q > ⚙️ > Other > Xfce Terminal**
 3. Run the following commands::
    
        qvm-service --enable sd-app SDEXTENDEDTIMEOUT_600

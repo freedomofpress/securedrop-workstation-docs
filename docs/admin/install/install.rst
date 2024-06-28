@@ -9,7 +9,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
 - First, use the network manager widget in the upper right panel to disable your network connection. These instructions refer to the ``vault`` VM, which has no network access by default, but if the SVS USB is attached to another VM by mistake, this will offer some protection against exfiltration.
 
-- Next, choose **Q > Domain: vault > vault: Files** to open the file manager in the ``vault`` VM.
+- Next, choose **Q > APPS > vault > Thunar File Manager** to open the file manager in the ``vault`` VM.
 
 - Connect the SVS USB to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be three entries for the USB in the section titled **Data (Block) Devices**. Choose the *unlabeled* entry (*not* the one labeled "TAILS") annotated with a ``sys-usb`` text that ends with a number, like ``sys-usb:sdb2``. That is the persistent volume.
 
@@ -19,7 +19,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal via **Q > Terminal Emulator**, and run the following command to list the SVS submission key details, including its fingerprint:
+- Open a ``dom0`` terminal via **Q > ⚙️ > Other > Xfce Terminal**, and run the following command to list the SVS submission key details, including its fingerprint:
 
   .. code-block:: sh
 
@@ -76,9 +76,9 @@ Users of SecureDrop Workstation must enter their username, passphrase and two-fa
 
 In order to set up KeePassXC for easy use:
 
-- Add KeePassXC to the application menu by selecting it from the list of available apps in **Q > Domain: vault > vault: Qube Settings > Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
+- Add KeePassXC to the application menu by selecting it from the list of available apps in **Q > APPS > vault > Settings > Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
 
-- Launch KeePassXC via **Q > Domain: vault > vault: KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
+- Launch KeePassXC via **Q > APPS > vault > KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
 
 - Close the application.
 
@@ -115,9 +115,9 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
 - First, re-enable the network connection using the network manager widget.
 
-- Next, start a terminal in the network-attached ``work`` VM, via **Q > Domain:work > work: Terminal**.
+- Next, start a terminal in the network-attached ``work`` VM, via **Q > APPS > work > Xfce Terminal**.
 
-.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Domain: work > work: Firefox**
+.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > APPS > work > Firefox**
 
 - In the ``work`` terminal, run the following commands to download and add the SecureDrop signing key, which is needed to verify the SecureDrop Workstation package:
 

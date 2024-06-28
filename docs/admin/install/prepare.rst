@@ -38,7 +38,7 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the Qubes OS ISO for version ``4.1.2`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-2>`_. The ISO is 5.4 GiB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the Qubes OS ISO for version ``4.2.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-2-1>`_. The ISO is 5.4 GiB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
 
@@ -46,7 +46,7 @@ Once you've verified the ISO, copy it to your installation medium - for example,
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.1.2-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.2.1-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
@@ -89,7 +89,16 @@ Once the initial setup is complete, the login dialog will be displayed. Log in u
 
 If, during the installation, you encountered the grayed out option "USB qube configuration disabled", you must now create a VM to access your USB devices. If you did not encounter this issue, you can skip this section.
 
-To create a USB qube, open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+To create a USB qube, open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > ⚙️ > Other > Xfce Terminal**.
+
+.. tip::
+
+  For quicker access, you can add the ``dom0`` terminal to the "Favorites" section of the
+  Qubes menu (identified by a bookmark symbol). Right-click the entry and select
+  **Add to favorites**. To remove it at a later time, right-click the entry in your
+  list of favorites and select **Remove from favorites**.
+
+Run the following command:
 
 .. code-block:: sh
 
@@ -113,7 +122,7 @@ Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
 
 After logging in, use the network manager widget in the upper-right panel to configure your network connection.
 
-Open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+Open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > ⚙️ > Other > Xfce Terminal**. Run the following command:
 
 .. code-block:: sh
 
@@ -131,7 +140,7 @@ After logging in again, confirm that the network manager successfully connects y
 
   .. note:: If Tor connections are blocked on your network, you may need to configure Tor to use bridges in order to get a connection. For more information, see the `Anon Connection Wizard <https://www.whonix.org/wiki/Anon_Connection_Wizard>`_ documentation.
 
-- Once Tor has connected, select **Q > Qubes Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above except for dom0 (which you have already updated in the previous step). Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
+- Once Tor has connected, select **Q > ⚙️ > Qubes Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes OS Update`` window, check all entries in the list except ``dom0`` (which you have already updated in the previous step). Then, click **Update**. When the updates are complete, click **Next**.
 
 Install Fedora 40 template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

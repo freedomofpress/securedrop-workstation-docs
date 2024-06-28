@@ -39,7 +39,7 @@ In order to examine the most recent log file:
 
 1. Open a terminal in ``dom0`` by clicking the Qubes menu
    icon in the upper left corner of your screen, and
-   selecting **Terminal Emulator**.
+   selecting **Q > ⚙️ > Other > Xfce Terminal**.
 
 2. Change to the ``~/.securedrop_launcher/logs/`` directory:
 
@@ -92,7 +92,7 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Open a terminal in ``dom0`` by clicking the Qubes menu
    icon in the upper left corner of your screen, and
-   selecting **Terminal Emulator**.
+   selecting **Q > ⚙️ > Other > Xfce Terminal**.
 
 2. Perform an interactive ``dom0`` update by running the
    following command:
@@ -131,7 +131,7 @@ and enable this updated key:
 
 1. Open a terminal in ``dom0`` by clicking the Qubes menu
    icon in the upper left corner of your screen, and
-   selecting **Terminal Emulator**.
+   selecting **Q > ⚙️ > Other > Xfce Terminal**.
    
 2. Run the following command:
 
