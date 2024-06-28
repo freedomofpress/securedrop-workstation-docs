@@ -23,7 +23,7 @@ SecureDrop Workstation to use the Fedora 40 template.
 Install Fedora-40 template
 --------------------------
 
-In a ``dom0`` terminal (**Qubes Application Menu > Terminal Emulator**), type
+In a ``dom0`` terminal (**Q > ⚙️ > Other > Xfce Terminal**), type
 the following to download the Fedora 40 template:
 
 .. code:: sh
@@ -40,9 +40,8 @@ Type ``y`` to proceed with the installation.
 Update the Fedora-40 template
 -----------------------------
 Once the template installation is complete, update the template using the Qubes
-Updater. Click **Q > Qubes Tools > Qubes Update** in the application menu.
-Click the checkbox "Enable updates for qubes without known updates" option,
-and click the checkbox next to ``fedora-40-xfce``. Click **Next** and wait for
+Updater. Click **Q > ⚙️ > Qubes Tools > Qubes Update** in the application menu.
+Cick the checkbox next to ``fedora-40-xfce``. Click **Update** and wait for
 any available updates to be downloaded and applied.
 
 .. _configure_vms:
@@ -50,7 +49,7 @@ any available updates to be downloaded and applied.
 Configure VMs to use the new template
 -------------------------------------
 To apply the template to VMs that currently use an older version, open the
-Qube Manager via **Q > Qubes Tools > Qube Manager**. All VMs will be visible at
+Qube Manager via **Q > ⚙️ > Qubes Tools > Qube Manager**. All VMs will be visible at
 a glance; to change a VM's settings, right-click it and select **Qube Settings**.
 
 In the Qube Settings window, select ``fedora-40-xfce`` from the drop-down menu
@@ -83,7 +82,7 @@ restart only the VMs you have updated. If you get a ``sys-whonix`` prompt asking
 
 .. tip::
 
-   You can also use the **Qubes Template Manager** (also in **Q > Qubes Tools**)
+   You can also use the **Qubes Template Manager** (also in **Q > ⚙️ > Qubes Tools**)
    to make template changes. However, note that it will not allow you to make
    template changes for VMs that are currently running, so you may have to
    manually shut down VMs in the correct order to do so.

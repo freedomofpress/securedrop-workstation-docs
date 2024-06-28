@@ -62,7 +62,7 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
 2. If your drive is using VeraCrypt, you will need to unlock it manually:
 
    1. Open the file menu by clicking on the **Q** application menu (in the top left),
-      select **sd-devices** and click **Files**.
+      select **sd-devices** in the **APPS** section, and click **File Manager**.
    2. In the left sidebar, there should be an entry labeled **# GB Possibly Encrypted**,
       click it.
       |screenshot_veracrypt_sd_devices_files|
