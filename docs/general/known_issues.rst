@@ -1,7 +1,8 @@
 Limitations and known issues
 ============================
 
-.. include:: ../../includes/top-warning.rst
+.. include:: ../includes/top-warning.rst
+
 Reporting issues
 ----------------
 
