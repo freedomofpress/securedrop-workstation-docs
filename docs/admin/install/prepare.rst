@@ -16,7 +16,7 @@ To rotate passphrases for accounts, please see the `instructions <https://docs.s
 
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. If you're using one of the recommended ThinkPad T-series models, see the section on :ref:`thinkpad_t_series`. The process will be different for other makes and models, and can usually be found on their respective support sites.
+Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. For more details about this process, see the section on :ref:`general_BIOS_update`.
 
 Once the BIOS is up-to-date, boot into the BIOS setup utility and update its settings. Note that not all BIOS versions will support the items listed, but if available following changes are recommended:
 
