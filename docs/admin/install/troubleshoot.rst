@@ -63,6 +63,38 @@ For both device IDs (e.g. ``dom0:00_1f.6`` and ``dom0:00_14.3``), you will need 
 
 .. |screenshot_sys_net_pci_reset| image:: ../../images/screenshot_sys_net_pci_reset.png
 
+Full system freezes
+~~~~~~~~~~~~~~~~~~~
+
+A `known issue <https://github.com/QubesOS/qubes-issues/issues/8825>`_ with some hardware results in Qubes fully freezing.
+If you encounter this issue, you will need to forcibly restart your computer, usually by holding down the power button.
+
+When you boot up, you will see a black-and-white menu with the following options:
+
+.. code-block:: text
+
+  Qubes, with Xen hypervisor
+  Advanced options for Qubes (with Xen hypervisor)
+  UEFI Firmware Settings
+
+While ``Qubes, with Xen hypervisor`` is selected, press :kbd:`e` to edit the option. You should now see a rudimentary
+edit interface.
+
+Find the line that starts with ``multiboot2   /xen-`` and ends with ``${xen_rm_opts}``. Use the arrow keys to move your
+cursor to before ``${xen_rm_opts}`` and type :kbd:`cpufreq=xen:hwp=off` (leave a space between ``off`` and the ``$``.
+
+Press :kbd:`Ctrl-x` to continue with booting. This will fix the current boot, we now need to make the fix permanent.
+
+Once Qubes has started and you have logged in, open a ``dom0`` terminal via **Q > Settings Gear > Other Tools > Xfce Terminal** and type
+:kbd:`sudo nano /etc/default/grub` to start an editor.
+
+Move your cursor to the bottom of the file and add: :kbd:`GRUB_CMDLINE_XEN_DEFAULT="$GRUB_CMDLINE_XEN_DEFAULT cpufreq=xen:hwp=off"`
+
+Press :kbd:`Ctrl-x`, then :kbd:`y`, and then :kbd:`Enter` to save the file.
+
+Finally, in the terminal run :kbd:`sudo grub2-mkconfig -o /boot/grub2/grub.cfg`. The workaround will now automatically be applied
+going forwards.
+
 .. |Attach TailsData| image:: images/attach_usb.png
   :width: 100%
 .. |Unlock Tailsdata| image:: images/unlock_tails_usb.png
