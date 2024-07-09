@@ -9,17 +9,21 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
 - First, use the network manager widget in the upper right panel to disable your network connection. These instructions refer to the ``vault`` VM, which has no network access by default, but if the SVS USB is attached to another VM by mistake, this will offer some protection against exfiltration.
 
-- Next, choose **Q > Domain: vault > vault: Files** to open the file manager in the ``vault`` VM.
+- Next, choose **Q > Apps > vault > Thunar File Manager** to open the file manager in the ``vault`` VM.
 
 - Connect the SVS USB to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be three entries for the USB in the section titled **Data (Block) Devices**. Choose the *unlabeled* entry (*not* the one labeled "TAILS") annotated with a ``sys-usb`` text that ends with a number, like ``sys-usb:sdb2``. That is the persistent volume.
 
   |Attach TailsData|
 
-- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the SVS persistent volume passphrase to unlock and mount it.
+- In the the ``vault`` file manager, select the persistent volume's listing in the lower left sidebar. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the SVS persistent volume passphrase to unlock and mount it. When asked if you would like to forget the password immediately or remember it until you logout, choose the option to **Forget password immediately**.
+
+  .. note::
+
+    You will receive a message that says **Failed to open directory "TailsData"**. This is normal behavior and will not cause any issues with the subsequent steps.
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal via **Q > Terminal Emulator**, and run the following command to list the SVS submission key details, including its fingerprint:
+- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to list the SVS submission key details, including its fingerprint:
 
   .. code-block:: sh
 
@@ -42,7 +46,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
     head -n 1 /tmp/sd-journalist.sec
 
-- In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the SVS USB.
+- In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the SVS USB.
 
 
 .. _copy_journalist:
@@ -56,7 +60,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 
 - Connect the USB drive to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
 
-- In the the ``vault`` file manager, select **+ Other Locations**, then click the persistent volume's listing in the right panel. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it.
+- In the the ``vault`` file manager, select the persistent volume's listing in the lower left sidebar. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it. When prompted, select the option to **Forget password immediately**.
 
 - Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
@@ -68,7 +72,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
 
-- If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the USB drive.
+- If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the USB drive.
 
 Copy SecureDrop login credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,9 +80,9 @@ Users of SecureDrop Workstation must enter their username, passphrase and two-fa
 
 In order to set up KeePassXC for easy use:
 
-- Add KeePassXC to the application menu by selecting it from the list of available apps in **Q > Domain: vault > vault: Qube Settings > Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
+- Add KeePassXC to the application menu by selecting it from the list of available apps in **Q > Apps > vault > Settings > Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
 
-- Launch KeePassXC via **Q > Domain: vault > vault: KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
+- Launch KeePassXC via **Q > Apps > vault > KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
 
 - Close the application.
 
@@ -96,7 +100,7 @@ In order to copy a journalist's login credentials:
 
 - Drag and drop the password database to copy it.
 
-- In the ``vault`` file manager, select **+ Other Locations** and eject the TailsData volume, then disconnect the *Journalist Workstation* USB. Close this file manager window.
+- In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the *Journalist Workstation* USB. Close this file manager window.
 
 - In the file manager window that displays the home directory, open the copy you made of the password database by double-clicking it.
 
@@ -115,9 +119,9 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
 - First, re-enable the network connection using the network manager widget.
 
-- Next, start a terminal in the network-attached ``work`` VM, via **Q > Domain:work > work: Terminal**.
+- Next, start a terminal in the network-attached ``work`` VM, via **Q > Apps > work > Xfce Terminal**.
 
-.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Domain: work > work: Firefox**
+.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Apps > work > Firefox**
 
 - In the ``work`` terminal, run the following commands to download and add the SecureDrop signing key, which is needed to verify the SecureDrop Workstation package:
 
@@ -137,7 +141,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
     [securedrop-workstation-temporary]
     enabled=1
-    baseurl=https://yum.securedrop.org/workstation/dom0/f32
+    baseurl=https://yum.securedrop.org/workstation/dom0/f37
     name=SecureDrop Workstation Qubes initial install bootstrap
 
 - Download the SecureDrop Workstation config package to the curent working directory with the command:
@@ -152,18 +156,17 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
   .. code-block:: sh
 
-    rpm -Kv securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm
+    rpm -Kv securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm
 
   where ``<versionNumber>`` is the release version number you noted above. The command output should match the following text:
 
   .. code-block:: none
 
-    securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm:
+    securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm:
       Header V4 RSA/SHA512 Signature, key ID 7b22e6a3: OK
       Header SHA256 digest: OK
       Header SHA1 digest: OK
       Payload SHA256 digest: OK
-      V4 RSA/SHA512 Signature, key ID 7b22e6a3: OK
       MD5 digest: OK
 
 
@@ -172,7 +175,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
   .. code-block:: sh
 
     qvm-run --pass-io work \
-      "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm" \
+      "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm" \
       > securedrop-workstation.rpm
 
 - Verify that the RPM was transferred correctly by running the following commands:
@@ -181,7 +184,7 @@ With the key and configuration available in ``dom0``, you're ready to set up Sec
 
     .. code-block:: sh
 
-      sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc32.noarch.rpm
+      sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm
 
   - in the ``dom0`` terminal:
 
