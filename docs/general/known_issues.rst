@@ -15,8 +15,6 @@ for example:
  - `SecureDrop Workstation issues <https://github.com/freedomofpress/securedrop-workstation/issues>`_ - issues related to the Qubes environment and workstation provisioning.
  - `SecureDrop Client issues <https://github.com/freedomofpress/securedrop-client/issues>`_ - issues related to the *SecureDrop Client*.
 
- - `SecureDrop Export issues <https://github.com/freedomofpress/securedrop-export/issues>`_ - issues related to printing and exporting submissions.
-
 Current known issues
 --------------------
 
@@ -28,7 +26,8 @@ Current known issues
   `our recommendation <https://docs.securedrop.org/en/stable/admin/maintenance/backup_and_restore.html#minimizing-disk-use>`_
   is to delete information from the servers as regularly as possible, both
   for performance and security reasons.
-- There is currently no mechanism for cancelling or retrying file downloads.
+- While failed file downloads are automatically retried a few times, there is currently
+  no mechanism for further retries or cancelling in-progress downloads.
   This feature is planned.
 - Printer support is limited to a specific HP printer model, and printing
   different file types is not as reliable yet as under Tails. Support for
@@ -39,7 +38,7 @@ Current known issues
   Until this is fully supported, we suggest using the Tails-based *Secure Viewing
   Station* for pre-encrypted submissions.
 - There are a limited number of file types that can be viewed on
-  SecureDrop Workstation. Some file types (such as `.webp`, `.heic`) are not
+  SecureDrop Workstation. Some file types (such as `.heic`) are not
   yet supported for viewing, and must be exported via USB, and/or viewed using
   the Tails-based *Secure Viewing Station*. Broader file type support is planned.
 - If the *Submission Key* for your SecureDrop server was rotated in the past,
