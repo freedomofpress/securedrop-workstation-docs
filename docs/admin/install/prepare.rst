@@ -2,18 +2,6 @@ Pre-install Tasks
 =================
 .. include:: ../../includes/top-warning.rst
 
-Rotate legacy passphrases
-~~~~~~~~~~~~~~~~~~~~~~~~~
-To ensure that all passphrases meet the security requirements of the system, you must rotate the passphrases of any *Journalist Interface* users whose accounts were set up on or before September 12, 2017.
-
-To verify when users were added to the system:
-
-- Log into the *Journalist Interface* with an admin account.
-- Click the **Admin** link in the top right.
-- Review the **Created** column in the list of users.
-
-To rotate passphrases for accounts, please see the `instructions <https://docs.securedrop.org/en/stable/admin/reference/admin_interface.html#passphrases-and-two-factor-resets>`_ in the SecureDrop Admin Guide.
-
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. If you're using one of the recommended ThinkPad T-series models, see the section on :ref:`thinkpad_t_series`. The process will be different for other makes and models, and can usually be found on their respective support sites.
