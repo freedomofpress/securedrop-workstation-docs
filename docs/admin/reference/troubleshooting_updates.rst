@@ -30,7 +30,7 @@ update issues.
 Step 1: Locate the updater log
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The preflight updater runs in the ``dom0`` domain. It
-writes its log to ``~/.securedrop_launcher/logs/launcher.log``.
+writes its log to ``~/.securedrop_updater/logs/updater.log``.
 Log files are rotated hourly; if you have started the updater
 again since the error occurred, you may need to check the
 previous log file.
@@ -41,23 +41,23 @@ In order to examine the most recent log file:
    icon in the upper left corner of your screen, and
    selecting **Terminal Emulator**.
 
-2. Change to the ``~/.securedrop_launcher/logs/`` directory:
+2. Change to the ``~/.securedrop_updater/logs/`` directory:
 
-   ``cd ~/.securedrop_launcher/logs/``
+   ``cd ~/.securedrop_updater/logs/``
 
 3. Display the most recent log file:
 
-   ``cat launcher.log``
+   ``cat updater.log``
 
 In order to locate a previous log file in the same directory:
 
 1. Locate the most recently modified log file.
 
-   ``ls -t  launcher.log* | head -n 2``
+   ``ls -t  updater.log* | head -n 2``
 
 2. Display the file that ends with a date and time stamp, e.g.:
 
-   ``cat launcher.log.2023-01-01_10``
+   ``cat updater.log.2023-01-01_10``
 
 Step 2: Identify the cause(s) of the error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,7 +106,7 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
 4. Reboot the system. ``dom0`` updates are often
    security-sensitive, and may require a reboot to take
    effect.
-   
+
 Expired SecureDrop Signing Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -114,7 +114,7 @@ If the update fails after running ``sudo qubes-dom0-update`` as described
 above, and the terminal console displays the following message:
 
 .. code-block:: sh
-   
+
    1. Certificiate 188EDD3B7B22E6A3 invalid: certificate is not alive
        because: The primary key is not live
        because: Expired on 2023-07-04T10:52:20Z
@@ -132,29 +132,29 @@ and enable this updated key:
 1. Open a terminal in ``dom0`` by clicking the Qubes menu
    icon in the upper left corner of your screen, and
    selecting **Terminal Emulator**.
-   
+
 2. Run the following command:
 
    .. code-block:: sh
-   
+
       sudo rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n' | grep SecureDrop
-    
+
    The output should look similar to:
-   
+
    .. code-block:: sh
-   
+
       gpg-pubkey-xxxxx-xxxxx        SecureDrop Release Signing Key <securedrop-release-key-2021@freedom.press  public key
-    
+
 3. Make note of the KEY ID (in the format ``gpg-pubkey-xxxxx-xxxxx``).
 
 4. Run the following commands:
 
    .. code-block:: sh
-   
+
       sudo rpm -e gpg-pubkey-xxxxxx-xxxxxx # use KEY ID from step 3
-   
+
       sudo rpm --import /etc/pki/rpm-GPG/RPM-GPG-KEY-securedrop-workstation
-   
+
 
 5. Reboot, then run updates again. If there are new errors, repeat
 the full troubleshooting process.
@@ -211,16 +211,16 @@ issues.
 
 If this does not resolve the issue:
 
-1. Locate the ``launcher-detail.log`` file in the same directory
-   as the ``launcher.log`` file. This file contains more detailed
+1. Locate the ``updater-detail.log`` file in the same directory
+   as the ``updater.log`` file. This file contains more detailed
    information about the ``apply_dom0`` step.
 
-   Like the ``launcher.log`` file, this file is rotated hourly.
+   Like the ``updater.log`` file, this file is rotated hourly.
 
 2. Copy this file to a networked VM by using the ``qvm-copy-to-vm``
    command. For example, to copy the file to the ``work`` VM:
 
-   ``qvm-copy-to-vm work ~/.securedrop_launcher/logs/launcher-detail.log``
+   ``qvm-copy-to-vm work ~/.securedrop_updater/logs/updater-detail.log``
 
 3. The file can now be found in ``~/QubesIncoming/dom0/`` in the
    ``work`` VM.
