@@ -44,3 +44,8 @@ Current known issues
 - If the *Submission Key* for your SecureDrop server was rotated in the past,
   you must manually re-add the old key to your vault VM (`sd-gpg`) in order to
   view old submissions in SecureDrop Client. Contact Support for assistance.
+- We do not support uninstalling SecureDrop Workstation without wiping all of
+  Qubes OS. There is an ``--uninstall`` option for ``sdw-admin``, but it is not
+  officially supported and will leave behind sensitive material in
+  ``/usr/share/securedrop-workstation-dom0-config`` in ``dom0``. If you need to decomission
+  a SecureDrop Workstation, please contact us for assistance.
