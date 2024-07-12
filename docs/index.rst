@@ -53,7 +53,6 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/reference/troubleshooting_connection
    admin/reference/troubleshooting_updates
    admin/reference/provisioning_usb
-   admin/reference/upgrading_fedora
    admin/reference/backup
 
 * :ref:`genindex`

@@ -2,18 +2,6 @@ Pre-install Tasks
 =================
 .. include:: ../../includes/top-warning.rst
 
-Rotate legacy passphrases
-~~~~~~~~~~~~~~~~~~~~~~~~~
-To ensure that all passphrases meet the security requirements of the system, you must rotate the passphrases of any *Journalist Interface* users whose accounts were set up on or before September 12, 2017.
-
-To verify when users were added to the system:
-
-- Log into the *Journalist Interface* with an admin account.
-- Click the **Admin** link in the top right.
-- Review the **Created** column in the list of users.
-
-To rotate passphrases for accounts, please see the `instructions <https://docs.securedrop.org/en/stable/admin/reference/admin_interface.html#passphrases-and-two-factor-resets>`_ in the SecureDrop Admin Guide.
-
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before beginning the Qubes installation, make sure that your Qubes-compatible computer's BIOS is updated to the latest available version. If you're using one of the recommended ThinkPad T-series models, see the section on :ref:`thinkpad_t_series`. The process will be different for other makes and models, and can usually be found on their respective support sites.
@@ -38,15 +26,43 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the Qubes OS ISO for version ``4.1.2`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-1-2>`_. The ISO is 5.4 GiB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the Qubes OS ISO and cryptographic hash values for version ``4.2.2`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-2-2>`_. The ISO is 6.9 GB approximately, and may take some time to download based on the speed of your Internet connection.
 
-Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_.
+Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_. Ensure that the ISO and hash values are in the same directory, then run:
+
+.. code-block:: sh
+
+  gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc
+  gpg -v --verify Qubes-R4.2.2-x86_64.iso.DIGESTS
+  
+The output should look like this:
+
+.. code-block:: sh
+ 
+  gpg: requesting key from 'https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc'
+  gpg: key E022E58F8E34D89F: public key "Qubes OS Release 4.2 Signing Key" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
+  gpg: no ultimately trusted keys found
+
+  gpg: armor header: Hash: SHA256
+  gpg: original file name=''
+  gpg: Signature made Tue 25 Jun 2024 01:32:23 PM EDT
+  gpg:                using RSA key 9C884DF3F81064A569A4A9FAE022E58F8E34D89F
+  gpg: using pgp trust model
+  gpg: Good signature from "Qubes OS Release 4.2 Signing Key" [unknown]
+  gpg: WARNING: This key is not certified with a trusted signature!
+  gpg:          There is no indication that the signature belongs to the owner.
+  Primary key fingerprint: 9C88 4DF3 F810 64A5 69A4  A9FA E022 E58F 8E34 D89F
+  gpg: textmode signature, digest algorithm SHA256, key algorithm rsa4096
+  
+Specifically, you will want to make sure that you see "Good signature" listed in the text. If it does not report a good signature, try deleting the ISO and downloading it again.
 
 Once you've verified the ISO, copy it to your installation medium - for example, if using Linux and a USB stick, using the command:
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.1.2-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.2.2-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
@@ -63,7 +79,7 @@ Follow the `installation documentation <https://www.qubes-os.org/doc/installatio
 
 - Use English - United States as the setup language. (This requirement will be dropped in a future version).
 - Use all available storage space for the installation (as the computer should be dedicated to SecureDrop Workstation).
-- Set a strong FDE passphrase - a 6-word Diceware passphrase is recommended.
+- Set a strong full disk encryption (FDE) passphrase - a 6-word Diceware passphrase is recommended.
 - Create an administrative account named ``user`` with a strong password.
 
 .. note:: Qubes is not intended to have multiple user accounts, so your account name and password will be shared by all SecureDrop Workstation users. The password will be required to log in and unlock the screen during sessions - choosing something strong but memorable and easily typed is recommended!
@@ -76,6 +92,7 @@ After the disk is unlocked and Qubes starts, you will be prompted to complete th
 
 On the configuration screen, ensure that the following options are checked:
 
+ - Default Template should be set to "Fedora 40 Xfce"
  - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
  - "Make sys-firewall and sys-usb disposable"
 
@@ -90,7 +107,16 @@ Once the initial setup is complete, the login dialog will be displayed. Log in u
 
 If, during the installation, you encountered the grayed out option "USB qube configuration disabled", you must now create a VM to access your USB devices. If you did not encounter this issue, you can skip this section.
 
-To create a USB qube, open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+To create a USB qube, open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**
+
+.. tip::
+
+  For quicker access, you can add the ``dom0`` terminal to the "Favorites" section of the
+  Qubes menu (identified by a bookmark symbol). Right-click the entry and select
+  **Add to favorites**. To remove it at a later time, right-click the entry in your
+  list of favorites and select **Remove from favorites**.
+
+Run the following command:
 
 .. code-block:: sh
 
@@ -114,7 +140,7 @@ Apply ``dom0`` updates (estimated wait time: 15-30 minutes)
 
 After logging in, use the network manager widget in the upper-right panel to configure your network connection.
 
-Open a ``dom0`` terminal via the Qubes menu (the **Q** icon in the upper left corner): **Q > Terminal Emulator**. Run the following command:
+Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Run the following command:
 
 .. code-block:: sh
 
@@ -128,13 +154,8 @@ Apply updates to system templates (estimated wait time: 45-60 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 After logging in again, confirm that the network manager successfully connects you to the configured network. If necessary, verify the network settings using the network manager widget.
 
-- Next, configure Tor by selecting the Qubes menu (the **Q** icon in the upper left corner) and selecting **Service: sys-whonix > sys-whonix: Anon Connection Wizard**. In most cases, choosing the default **Connect** option is best. Click **Next**, then **Next** again. Then, if Tor connects successfully, click **Finish**. If Tor fails to connect, make sure your network conection is up and does not filter Tor connections, then try again.
+- Next, configure Tor by selecting the Qubes menu (the **Q** icon in the upper left corner) and selecting **Q > Service > sys-whonix > Anon Connection Wizard**. In most cases, choosing the default **Connect** option is best. Click **Next**, then **Next** again. Then, if Tor connects successfully, click **Finish**. If Tor fails to connect, make sure your network conection is up and does not filter Tor connections, then try again.
 
   .. note:: If Tor connections are blocked on your network, you may need to configure Tor to use bridges in order to get a connection. For more information, see the `Anon Connection Wizard <https://www.whonix.org/wiki/Anon_Connection_Wizard>`_ documentation.
 
-- Once Tor has connected, select **Q > Qubes Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, first check ``Enable updates for qubes without known available updates``, then check all entries in the list above except for dom0 (which you have already updated in the previous step). Then, click **Next**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Finish**.
-
-Install Fedora 40 template
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :doc:`../reference/upgrading_fedora`.
+- Once Tor has connected, select the **Q Menu**, click the gear icon on the left-hand side, then select **Qubes Tools > Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Updater`` window, check all entries in the list above except for ``dom0`` (which you have already updated in the previous step). Then, click **Update**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Next**. You will then be prompted to **Finish and restart/shutdown 4 qubes.** Go ahead and do so, and allow time for them to restart.
