@@ -74,41 +74,6 @@ The ThinkPad T490 **with an 8th-generation Intel Core processor** is a recommend
 
   The versions of the T490 with 10th generation Intel Core processors are at present **untested and unsupported**. The Workstation has been tested on models 20N2002AUS & 20N20046US.
 
-Network devices (Ethernet and Wi-Fi) will not immediately work out of the box and require a one-time manual configuration on install. After Qubes starts for the first time, ``sys-net`` will fail to start:
-
-|screenshot_sys_net_pci_reset|
-
-Open a ``dom0`` terminal via **Q > Terminal Emulator**, and run the following command to list the devices connected to the ``sys-net`` VM.
-
-.. code-block:: sh
-
-  qvm-pci ls sys-net
-
-
-This will return the two devices (Ethernet and WiFi) that are connected to ``sys-net``:
-
-.. code-block:: sh
-
-  BACKEND:DEVID  DESCRIPTION                                                            USED BY
-  dom0:00_14.3   Network controller: Intel Corporation                                  sys-net
-  dom0:00_1f.6   Ethernet controller: Intel Corporation Ethernet Connection (5) I219-V  sys-net
-
-
-For both device IDs (e.g. ``dom0:00_1f.6`` and ``dom0:00_14.3``), you will need to detach and re-attach the device to ``sys-net``, then restart ``sys-net`` as follows:
-
-.. code-block:: sh
-
-  qvm-pci detach sys-net dom0:00_14.3
-  qvm-pci detach sys-net dom0:00_1f.6
-  qvm-pci attach sys-net --persistent --option no-strict-reset=True dom0:00_14.3
-  qvm-pci attach sys-net --persistent --option no-strict-reset=True dom0:00_1f.6
-  qvm-start sys-net
-
-
-``sys-net`` should now start, and network devices will be functional. This change is only required once on first install.  See the `Qubes documentation of this issue <https://www.qubes-os.org/doc/pci-troubleshooting/#unable-to-reset-pci-device-errors>`_ for more information.
-
-.. |screenshot_sys_net_pci_reset| image:: ../../images/screenshot_sys_net_pci_reset.png
-
 Lenovo ThinkPad T480
 ~~~~~~~~~~~~~~~~~~~~
 The ThinkPad T480 is also a recommended option for SecureDrop Workstation, as it is being used by the core team for development and testing. If you plan to use it, you should follow the instructions below to ensure that the BIOS is up to date and adequately configured before proceeding with the installation:
@@ -205,4 +170,3 @@ If you intend to use USB-C ports, please note that our recommended BIOS settings
 - 1 x USB 3.1 Gen 2 Type-C / Intel Thunderbolt 3 (Power Delivery, DisplayPort, Data transfer)
 
 The first of these ports will continue to function as a USB-C port. After disabling Thunderbolt, the second port can no longer be used for Thunderbolt or for USB-C data transfer, but it can still be used for power delivery (i.e. to plug in your AC adapter). If you are unsure about the features of your laptop's USB-C ports, or if you are using a different make or model, please consult the technical specifications of your laptop for further information.
-
