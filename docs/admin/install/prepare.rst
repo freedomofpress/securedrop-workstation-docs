@@ -61,6 +61,7 @@ To begin the Qubes installation, connect the Qubes install USB to your target co
 
 Follow the `installation documentation <https://www.qubes-os.org/doc/installation-guide/>`_ to install Qubes on your computer, ensuring that you:
 
+- Use English - United States as the setup language. (This requirement will be dropped in a future version).
 - Use all available storage space for the installation (as the computer should be dedicated to SecureDrop Workstation).
 - Set a strong FDE passphrase - a 6-word Diceware passphrase is recommended.
 - Create an administrative account named ``user`` with a strong password.
