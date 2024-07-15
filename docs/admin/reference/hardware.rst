@@ -1,8 +1,5 @@
-
 Recommended hardware
 ====================
-
-.. include:: ../../includes/top-warning.rst
 
 Qubes OS hardware requirements
 ------------------------------

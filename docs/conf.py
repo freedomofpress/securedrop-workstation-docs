@@ -60,7 +60,7 @@ author = 'Freedom of the Press Foundation and Contributors'
 # built documents.
 #
 # The short X.Y version.
-version = '0.0.1'
+version = '1.0.0'
 # The full version, including alpha/beta/rc tags.
 # On the live site, this will be overridden to "stable" or "latest".
 release = os.environ.get("SECUREDROP_DOCS_RELEASE", version)

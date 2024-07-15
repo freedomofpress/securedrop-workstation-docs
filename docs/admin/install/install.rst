@@ -1,6 +1,5 @@
 Installing SecureDrop Workstation
 =================================
-.. include:: ../../includes/top-warning.rst
 
 Copy the submission key
 ~~~~~~~~~~~~~~~~~~~~~~~

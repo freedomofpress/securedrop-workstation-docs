@@ -1,6 +1,5 @@
 Pre-install Tasks
 =================
-.. include:: ../../includes/top-warning.rst
 
 Apply BIOS updates and check settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
