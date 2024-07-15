@@ -4,14 +4,18 @@ Limitations and known issues
 Reporting issues
 ----------------
 
-For the duration of the pilot, bugs and other issues found in
-*SecureDrop Workstation* should be reported by pilot participants via the
-`support portal <https://support.freedom.press>`_. Issues that are not instance-
-specific will be added to the appropriate public issue tracker by the developers,
-for example:
+Please report sensitive issues that are specific to your instance
+via the `support portal <https://support.freedom.press>`_. 
+
+Bugs and other issues that are not specific to your instance can be reported
+via GitHub using the following links:
 
  - `SecureDrop Workstation issues <https://github.com/freedomofpress/securedrop-workstation/issues>`_ - issues related to the Qubes environment and workstation provisioning.
  - `SecureDrop Client issues <https://github.com/freedomofpress/securedrop-client/issues>`_ - issues related to the *SecureDrop Client*.
+ 
+If you encounter a security-related issue, please see
+`SECURITY.md <https://github.com/freedomofpress/securedrop-workstation/blob/main/SECURITY.md>`_ 
+for instructions on how to privately report it.
 
 Current known issues
 --------------------

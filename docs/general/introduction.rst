@@ -20,7 +20,7 @@ not true of other operating systems.
 What is SecureDrop Workstation?
 -------------------------------
 
-SecureDrop Workstation is a pilot project that uses Qubes to make
+SecureDrop Workstation is a project that uses Qubes to make
 SecureDrop faster and simpler for journalists to use.
 
 A key feature of SecureDrop is that journalists can receive submissions from
