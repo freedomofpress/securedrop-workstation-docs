@@ -33,7 +33,8 @@ Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/secu
 .. code-block:: sh
 
   gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc
-  gpg -v --verify Qubes-R4.2.2-x86_64.iso.DIGESTS && sha256sum -c Qubes-R4.2.2-x86_64.iso.DIGESTS || echo FAILED VERIFICATION
+  gpg -v --verify Qubes-R4.2.2-x86_64.iso.DIGESTS
+  sha256sum -c Qubes-R4.2.2-x86_64.iso.DIGESTS
   
 The output should look like this:
 
