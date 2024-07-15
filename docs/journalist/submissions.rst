@@ -1,8 +1,6 @@
 Working with submissions
 ========================
 
-.. include:: ../includes/top-warning.rst
-
 When a source submits files, you will see a Download button in the conversation
 flow, a file size, and light-gray text that says "Encrypted file on server."
 

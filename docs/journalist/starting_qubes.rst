@@ -1,8 +1,6 @@
 Starting Qubes
 ==============
 
-.. include:: ../includes/top-warning.rst
-
 When turning on SecureDrop Workstation, you will be greeted with a
 password prompt. This is the full-disk encryption passphrase.
 

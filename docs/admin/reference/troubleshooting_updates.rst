@@ -1,8 +1,6 @@
 Troubleshooting system updates
 ==============================
 
-.. include:: ../../includes/top-warning.rst
-
 After you log into Qubes, the SecureDrop Workstation
 preflight updater will prompt you to check for available
 system updates at least once per day.

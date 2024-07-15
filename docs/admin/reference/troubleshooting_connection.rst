@@ -1,8 +1,6 @@
 Troubleshooting connection problems
 ===================================
 
-.. include:: ../../includes/top-warning.rst
-
 Before troubleshooting connection problems, we recommend reading about the
 :ref:`networking architecture <Networking Architecture>`
 of SecureDrop Workstation. If you are in a hurry, this guide offers quick

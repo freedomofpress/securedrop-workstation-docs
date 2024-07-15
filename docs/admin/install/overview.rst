@@ -1,6 +1,5 @@
 SecureDrop Workstation Installation Overview
 ============================================
-.. include:: ../../includes/top-warning.rst
 
 Overview
 --------

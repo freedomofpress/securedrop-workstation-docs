@@ -108,7 +108,7 @@ our `design document <https://securedrop.org/whitepaper.pdf>`__.
 Can I install custom software on SecureDrop Workstation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Right now, the pilot project is designed to make the journalist experience
+Right now, the project is designed to make the journalist experience
 easier by combining the functionality of the Journalist Workstation and Secure
 Viewing Station. The main focus is making sure that checking SecureDrop is
 easier and faster.

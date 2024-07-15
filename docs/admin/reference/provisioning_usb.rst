@@ -1,8 +1,6 @@
 Provisioning Export USB devices
 ===============================
 
-.. include:: ../../includes/top-warning.rst
-
 SecureDrop Workstation supports the export of submissions from the Qubes client
 to a LUKS- or VeraCrypt-encrypted USB *Export Device*.
 

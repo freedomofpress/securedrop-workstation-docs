@@ -1,8 +1,6 @@
 SecureDrop Workstation Architecture
 ===================================
 
-.. include:: ../includes/top-warning.rst
-
 .. _Networking Architecture:
 
 SecureDrop Workstation networking architecture

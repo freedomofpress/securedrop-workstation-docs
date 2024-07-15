@@ -1,6 +1,5 @@
 Troubleshooting Installation Errors
 ===================================
-.. include:: ../../includes/top-warning.rst
 
 "Failed to return clean data"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

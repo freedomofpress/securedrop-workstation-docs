@@ -1,8 +1,6 @@
 Communicating with sources
 ==========================
 
-.. include:: ../includes/top-warning.rst
-
 SecureDrop Workstation lets journalists check SecureDrop, decrypt and securely
 view submissions, and reply to sources, all on the same computer.
 

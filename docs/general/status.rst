@@ -1,18 +1,15 @@
 SecureDrop Workstation Project Status
 =====================================
 
-SecureDrop Workstation is currently in active development, and has not yet
-had a stable release.
+SecureDrop Workstation is currently in active development.
 
-The general availability release is tentatively planned for Q3/Q4 2024.
-
-Freedom of the Press Foundation has operated a pilot program with a limited
+Freedom of the Press Foundation had operated a pilot program with a limited
 number of organizations whose environments were especially well-suited for
-early testing of the Workstation. This pilot program is now closed. No new
-pilot participants will be considered or accepted, and current pilot
-participants can expect to transition to the standard support experience
-before the general availability release is made available later in 2024.
+early testing of the Workstation. This pilot program has now ended.
 
+With the 1.0.0 release, we’re now switching to an open beta. If you are
+interested in using SecureDrop Workstation, please reach out to us
+via the `support portal <https://support.freedom.press>`_.
 
 Is SecureDrop Workstation right for you?
 ----------------------------------------

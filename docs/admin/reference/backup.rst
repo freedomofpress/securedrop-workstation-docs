@@ -1,8 +1,6 @@
 Backup and Restore
 ==================
 
-.. include:: ../../includes/top-warning.rst
-
 Qubes OS has a `backup utility <https://www.qubes-os.org/doc/backup-restore/>`_
 that allows for backup and restoration of user-specified VMs.
 

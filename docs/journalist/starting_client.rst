@@ -1,8 +1,6 @@
 Starting the SecureDrop Client
 ==============================
 
-.. include:: ../includes/top-warning.rst
-
 After you log into Qubes, the SecureDrop Client app will start automatically. If
 you have previously exited the application, you can double-click on the
 **SecureDrop** desktop shortcut to launch it.
