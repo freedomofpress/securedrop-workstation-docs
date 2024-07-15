@@ -73,6 +73,10 @@ the block device corresponding to your USB stick. Note that any data on the USB 
 Install Qubes OS (estimated wait time: 30-45 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Before starting the installation, please ensure that:
+  - the computer is charging
+  - all USB devices like YubiKeys, mice and keyboards are disconnected
+
 To begin the Qubes installation, connect the Qubes install USB to your target computer and boot from it. You may need to bring up a boot menu at startup to do so - on Lenovo laptops, for example, you can do so by pressing **F12** on boot.
 
 Follow the `installation documentation <https://www.qubes-os.org/doc/installation-guide/>`_ to install Qubes on your computer, ensuring that you:
