@@ -33,7 +33,7 @@ Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/secu
 .. code-block:: sh
 
   gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc
-  gpg -v --verify Qubes-R4.2.2-x86_64.iso.DIGESTS
+  gpg -v --verify Qubes-R4.2.2-x86_64.iso.DIGESTS && sha256sum -c Qubes-R4.2.2-x86_64.iso.DIGESTS || echo FAILED VERIFICATION
   
 The output should look like this:
 
@@ -55,6 +55,8 @@ The output should look like this:
   gpg:          There is no indication that the signature belongs to the owner.
   Primary key fingerprint: 9C88 4DF3 F810 64A5 69A4  A9FA E022 E58F 8E34 D89F
   gpg: textmode signature, digest algorithm SHA256, key algorithm rsa4096
+  Qubes-R4.2.2-x86_64.iso: OK
+  sha256sum: WARNING: 20 lines are improperly formatted
   
 Specifically, you will want to make sure that you see "Good signature" listed in the text. If it does not report a good signature, try deleting the ISO and downloading it again.
 
