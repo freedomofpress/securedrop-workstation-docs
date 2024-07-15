@@ -4,7 +4,7 @@ SecureDrop Workstation Project Status
 SecureDrop Workstation is currently in active development, and has not yet
 had a stable release.
 
-The 1.0.0 general availability release is tentatively planned for Q3/Q4 2024.
+The general availability release is tentatively planned for Q3/Q4 2024.
 
 Freedom of the Press Foundation has operated a pilot program with a limited
 number of organizations whose environments were especially well-suited for
@@ -65,7 +65,7 @@ the `SecureDrop Development Wiki <https://github.com/freedomofpress/securedrop/w
 General availability
 --------------------
 
-When SecureDrop Workstation reaches general availability in mid-2024, any
+When SecureDrop Workstation reaches general availability in late-2024, any
 organizations who have used a previous version of SecureDrop Workstation
 will need to perform a complete reinstallation of Qubes 4.2 and the
 SecureDrop Workstation.
