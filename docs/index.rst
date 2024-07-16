@@ -19,6 +19,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    general/workstation_architecture
    general/status
    general/known_issues
+   general/supported_filetypes
 
 .. toctree::
    :maxdepth: 2

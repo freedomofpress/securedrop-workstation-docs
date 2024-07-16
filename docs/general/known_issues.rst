@@ -20,20 +20,23 @@ for instructions on how to privately report it.
 Current known issues
 --------------------
 
+- Searching/filtering by codename is not yet implemented.
+- While failed file downloads are automatically retried, there is currently
+  no mechanism cancelling in-progress downloads or viewing the progress or speed of
+  a download. These features are planned.
 - Updates are slow due to the number of VMs involved, and due to some updates
-  being fetched over Tor. We are investigating various strategies to improve
-  performance and reliability of the updater.
+  being fetched over Tor. We have made improvements to the performance and reliability
+  of the updater, and this work will continue.
 - SecureDrop instances with very large numbers of sources may encounter
   UI performance issues. While performance improvements are on the roadmap,
   `our recommendation <https://docs.securedrop.org/en/stable/admin/maintenance/backup_and_restore.html#minimizing-disk-use>`_
   is to delete information from the servers as regularly as possible, both
   for performance and security reasons.
-- While failed file downloads are automatically retried a few times, there is currently
-  no mechanism for further retries or cancelling in-progress downloads.
-  This feature is planned.
-- Printer support is limited to a specific HP printer model, and printing
+- Printer support is limited to specific HP and Brother printer models, and printing
   different file types is not as reliable yet as under Tails. Support for
   additional non-networked printers will be added in a future release.
+- Printing of individual files inside an archived submission is not yet supported.
+- Currently, users 
 - Currently, only app-based two-factor authentication (TOTP) is supported.
 - The SecureDrop Client does not currently handle files that are "double-encrypted"
   (when a source pre-encrypts a submission locally before uploading it to SecureDrop).
@@ -42,7 +45,7 @@ Current known issues
 - There are a limited number of file types that can be viewed on
   SecureDrop Workstation. Some file types (such as `.heic`) are not
   yet supported for viewing, and must be exported via USB, and/or viewed using
-  the Tails-based *Secure Viewing Station*. Broader file type support is planned.
+  the Tails-based *Secure Viewing Station*. :doc:`Broader file type support is planned <supported_filetypes>`.
 - If the *Submission Key* for your SecureDrop server was rotated in the past,
   you must manually re-add the old key to your vault VM (`sd-gpg`) in order to
   view old submissions in SecureDrop Client. Contact Support for assistance.
