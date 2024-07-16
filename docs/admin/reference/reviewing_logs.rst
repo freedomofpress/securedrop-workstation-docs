@@ -2,6 +2,8 @@ Reviewing and exporting logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 SecureDrop Workstation aggregates system logs from all its VMs in the ``sd-log`` VM, in the folder ``~/QubesIncomingLogs``, with one subfolder for each VM. You can inspect these logs directly in the ``sd-log`` VM, or you can copy them to another VM, e.g., for purposes of sharing logs with the SecureDrop development team.
 
+You can open the logs folder by running the following in a dom0 terminal: ``qvm-run sd-log nautilus ~/QubesIncomingLogs``.
+
 Please note that while the logs do not include original filenames or message contents, they do contain sensitive information, e.g.:
 
 - timing and usage information related to SecureDrop access
