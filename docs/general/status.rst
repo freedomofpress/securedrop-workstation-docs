@@ -21,14 +21,20 @@ who have already installed it as part of the pilot program).
 That said, the project is entirely open source, and you can install it
 independently if you want to get a feel for how it all works. 
 
-If you're a journalist or news organization trying to decide if this is right for you, please note that SecureDrop Workstation should only be used
+If you're a journalist or news organization trying to decide if this is right for you,
+please note that SecureDrop Workstation should only be used
 by organizations that meet the following criteria:
 
 * You have an existing SecureDrop Server in place
 * You have fewer than 500 Sources on the Server
 * You typically only interact with .pdf, .doc, and .jpg files via your
-  SecureDrop
+  SecureDrop (as opposed to large datasets or complex file formats, which are
+  :doc:`not yet supported <supported_filetypes>`)
 * You have a functional *Secure Viewing Station* to fall back on
+* Your journalists and support staff are comfortable trying a new operating
+  system (Qubes OS), and are aware that they may need to troubleshoot with us
+  or with your internal tech team if issues arise
+* Your journalists don't rely on the features that are :doc:`not yet implemented <known_issues>`
 
 If you do not meet the criteria above, you are likely to run into
 difficulties or frustrating experiences using the Workstation, and should
@@ -39,6 +45,17 @@ consider waiting until it is more mature.
    you **will** experience significant performance issues using SecureDrop
    Workstation that may hinder your ability to use it at any functional
    level.
+
+SecureDrop Workstation Feature Comparison
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SecureDrop Workstation provides a faster and more streamlined way of interacting
+with sources and submissions, while preserving important security properties.
+That said, it is still under development, and not all features available on the
+Tails-based (existing) system are available in SecuredDrop Workstation. We are
+working towards feature parity, but in the meantime, there are some notable differences;
+see the :doc:`known_issues` page for more information.
+
 
 Do you still need a Tails-based *Secure Viewing Station*?
 ---------------------------------------------------------
@@ -59,10 +76,6 @@ Roadmap and Timeline
 You can find information about our current development roadmap and timeline at
 the `SecureDrop Development Wiki <https://github.com/freedomofpress/securedrop/wiki/Development-Roadmap>`_.
 
-General availability
---------------------
+We encourage former pilot participants and open beta participants to file support tickets
+with us, to help us understand and prioritize your needs as we continue development.
 
-When SecureDrop Workstation reaches general availability in late-2024, any
-organizations who have used a previous version of SecureDrop Workstation
-will need to perform a complete reinstallation of Qubes 4.2 and the
-SecureDrop Workstation.
