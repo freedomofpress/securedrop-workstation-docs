@@ -31,7 +31,7 @@ On some hardware, network devices (Ethernet and Wi-Fi) will not immediately work
 
 |screenshot_sys_net_pci_reset|
 
-Open a ``dom0`` terminal via **Q > Settings Gear > Other Tools > Xfce Terminal**, and run the following command to list the devices connected to the ``sys-net`` VM.
+Open a ``dom0`` terminal via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal**, and run the following command to list the devices connected to the ``sys-net`` VM.
 
 .. code-block:: sh
 
@@ -84,7 +84,7 @@ cursor to before ``${xen_rm_opts}`` and type :kbd:`cpufreq=xen:hwp=off` (leave a
 
 Press :kbd:`Ctrl-x` to continue with booting. This will fix the current boot, we now need to make the fix permanent.
 
-Once Qubes has started and you have logged in, open a ``dom0`` terminal via **Q > Settings Gear > Other Tools > Xfce Terminal** and type
+Once Qubes has started and you have logged in, open a ``dom0`` terminal via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal** and type
 :kbd:`sudo nano /etc/default/grub` to start an editor.
 
 Move your cursor to the bottom of the file and add: :kbd:`GRUB_CMDLINE_XEN_DEFAULT="$GRUB_CMDLINE_XEN_DEFAULT cpufreq=xen:hwp=off"`

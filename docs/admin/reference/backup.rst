@@ -24,7 +24,7 @@ Preserve files from ``dom0`` and ``sd-gpg``
 
 Preserve configuration files and private key material by copying them into ``dom0``.
 
-In a ``dom0`` Terminal via **Q ▸ Terminal Emulator**:
+In a ``dom0`` Terminal via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal**:
 
   .. code-block:: sh
 
@@ -66,7 +66,7 @@ will re-download from your SecureDrop server.
 Ensure your storage medium is plugged in, attached to ``sd-devices``,
 and unlocked.
 
-Navigate to **Q ▸ Qubes Tools ▸ Backup Qubes**, and move all VMs from
+Navigate to **Q > Gear Icon (left-hand side) > Qubes Tools > Backup Qubes**, and move all VMs from
 "Selected" to "Available" by pressing the ``<<`` button.
 
 To target a VM for backup, highlight it and move it into the "Selected"
@@ -124,7 +124,7 @@ intend to restore from a backup.
 
 Example: If you wish to restore the ``vault`` VM, rename or delete the existing
 ``vault`` VM prior to restoring the backup. You can do so in
-**Q Apps ▸ vault ▸ Settings** (the VM must not be running).
+**Q > Apps > vault > Settings** (the VM must not be running).
 
 Restore Backup (SecureDrop Workstation components)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +132,7 @@ Plug in your backup medium and unlock it as during the backup. By default
 on a new system, your peripheral devices will be managed by a VM called
 ``sys-usb``.
 
-Navigate to **Q Application Menu ▸ Gear Icon ▸ Qubes Tools ▸ Restore Backup**,
+Navigate to **Q > Gear Icon (left-hand side) > Qubes Tools > Restore Backup**,
 and enter the location of the backup file. You do not need to adjust the default
 Restore options, unless you have made customizations to the backup. Enter the
 decryption/verification passphrase, and proceed to restoring the available
