@@ -172,4 +172,9 @@
 	.wy-menu-vertical .xref {
 		color: #529ecf !important;
 	}
+
+	.kbd {
+		color: #404040 !important;
+	}
+
 }
