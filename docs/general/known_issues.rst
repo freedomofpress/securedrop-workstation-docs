@@ -43,7 +43,7 @@ Current known issues
   Until this is fully supported, we suggest using the Tails-based *Secure Viewing
   Station* for pre-encrypted submissions.
 - There are a limited number of file types that can be viewed on
-  SecureDrop Workstation. Some file types (such as `.heic`) are not
+  SecureDrop Workstation. Some file types (such as `.eml`) are not
   yet supported for viewing, and must be exported via USB, and/or viewed using
   the Tails-based *Secure Viewing Station*. :doc:`Broader file type support is planned <supported_filetypes>`.
 - If the *Submission Key* for your SecureDrop server was rotated in the past,
