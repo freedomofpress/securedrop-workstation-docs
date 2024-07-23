@@ -30,6 +30,7 @@ In a ``dom0`` Terminal via **Q ▸ Terminal Emulator**:
 
     qvm-run --pass-io sd-gpg 'gpg -a --export-secret-keys' > sd-keys.asc
     sudo mv sd-keys.asc /usr/share/securedrop-workstation-dom0-config/
+    cp -r /usr/share/securedrop-workstation-dom0-config ~
 
 If you have made customizations to ``dom0`` (for example, custom RPC policy files):
 
