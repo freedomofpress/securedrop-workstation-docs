@@ -9,7 +9,7 @@ Currently-supported filetypes include:
 * Audio: .mp3, .mp4, .mpeg, .wav, .ogg (Ogg Vorbis)
 * Video: .mp4, .webm, .mov (Quicktime), .avi (Audio Video Interleave - Microsoft),
   .wmv (Windows Media Video)
-* Image: .gif, .png, .jpeg, .tiff, .svg, .ico, .webp
+* Image: .gif, .png, .jpeg, .tiff, .svg, .ico, .webp, .heic, .avif
 * Compressed archives: .zip, .tar.gz (although printer support for files inside
   an archive is still to be implemented)
 
