@@ -221,7 +221,7 @@ In a ``dom0`` terminal:
 
   .. code-block:: sh
 
-    qvm-copy-to-vm sd-gpg $RESTORE_DIR/usr/share/securedrop-workstation-dom0-config/sd-keys.asc
+    qvm-copy-to-vm sd-gpg $RESTORE_DIR/securedrop-workstation-dom0-config/sd-keys.asc
     qvm-run sd-gpg 'gpg --import /home/user/QubesIncoming/dom0/sd-keys.asc'
 
 
