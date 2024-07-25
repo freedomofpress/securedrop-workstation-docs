@@ -190,7 +190,7 @@ From the ``dom0`` home directory:
 
   .. code-block:: sh
 
-    sudo cp ~/$RESTORE_DIR/usr/share/securedrop-workstation-dom0-config/{sd-journalist.sec,config.json,sd-keys.asc} /usr/share/securedrop-workstation-dom0-config/
+    sudo cp ~/$RESTORE_DIR/securedrop-workstation-dom0-config/{sd-journalist.sec,config.json,sd-keys.asc} /usr/share/securedrop-workstation-dom0-config/
 
 Optionally, inspect each file before proceeding. The first
 file should be an ASCII-armored GPG private key file. The second file should
