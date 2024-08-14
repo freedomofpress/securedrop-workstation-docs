@@ -36,7 +36,6 @@ Current known issues
   different file types is not as reliable yet as under Tails. Support for
   additional non-networked printers will be added in a future release.
 - Printing of individual files inside an archived submission is not yet supported.
-- Currently, users 
 - Currently, only app-based two-factor authentication (TOTP) is supported.
 - The SecureDrop Client does not currently handle files that are "double-encrypted"
   (when a source pre-encrypts a submission locally before uploading it to SecureDrop).
