@@ -11,6 +11,9 @@ anonymous sources and manage submitted documents, while providing mitigations
 against malware and other security risks. It is built on Qubes OS and requires a
 `SecureDrop <https://securedrop.org/>`__ server setup.
 
+.. note:: This documentation is also available as a Tor Onion Service at
+          http://wcjrbbrllo2r554s542u55on6y4sf3aq2gheigjs3rpsfoa2qq3z2gqd.onion/en/stable/.
+
 .. toctree::
    :maxdepth: 2
    :caption: Overview
