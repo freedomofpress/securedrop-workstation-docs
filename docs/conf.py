@@ -101,7 +101,6 @@ else:
         # https://github.com/snide/sphinx_rtd_theme#via-package
         import sphinx_rtd_theme
         html_theme = "sphinx_rtd_theme"
-        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     except ImportError:
         # This theme is included with Sphinx and is quite nice (based
         # on the Pocoo themes), but since we're using the RTD theme
