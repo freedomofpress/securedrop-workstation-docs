@@ -28,6 +28,19 @@ FPF-tested laptops
 ~~~~~~~~~~~~~~~~~~
 In addition to Qubes-certified devices, we develop and test using Qubes-compatible laptops from other vendors. The following models may be used for SecureDrop Workstation, though some level of additional configuration may be required.
 
+.. _framework_13_series:
+
+Framework 13 (13th-generation)
+***********************************
+
+The Framework 13 laptop with a 13th generation Intel Processor is a recommended option for the SecureDrop Workstation beginning with Qubes 4.2. 
+
+You can either order a preassmbled system, or you can customize your build and assemble the laptop yourself once it is delivered, which is useful as either a cost-saving measure or in the event that you wish to customize the ports or internal components.
+
+Framework laptops are designed to be repairable, customizable, and user-servicable, and have grown to be a popular choice with Qubes users and SecureDrop developers.
+
+You will want to ensure you are using the latest BIOS version available. Instructions for checking the BIOS version and performing an upgrade for the 13th generation models can be found on `this page in the Framework knowledgebase. <https://knowledgebase.frame.work/framework-laptop-bios-and-driver-releases-13th-gen-intel-core-BkQBvKWr3>`_
+
 .. _thinkpad_x_series:
 
 Lenovo ThinkPad X1 Carbon (10th-generation)
@@ -68,15 +81,32 @@ Ethernet controller
 ^^^^^^^^^^^^^^^^^^^
 After Qubes starts for the first time, when ``sys-net`` fails to start, follow the troubleshooting instructions for :ref:`reset_pci`, but only for the ``dom0:00_1f.6`` Ethernet device.
 
-.. _framework_13_series:
-
-Framework 13 13th generation laptop
-***********************************
-TK text and description here
-
 The Qubes Hardware Compatibility List (HCL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TK text and description here
+
+The `Qubes Hardware Compatibility List (HCL) <https://www.qubes-os.org/hcl/>`_
+is a community-maintained list of hardware that has been tested by Qubes users.
+It consists of individual reports generated and submitted by Qubes users across
+the world. Anyone can attempt to install Qubes on their computer, then report
+back on whether or not it can be installed, if there are any issues, and overall,
+what the experience is like.
+
+There are some benefits to this list:
+
+* A much wider selection of hardware is tested, because anyone can contribute to the list
+* There are sometimes multiple reports for a particular system, which lets you compare and feel confident the results are consistent
+* It tells you exactly what is and isn't working within the system, so you can decide if a device you own will function well enough to suit your needs
+* Devices get tested across many different configurations and Qubes versions
+
+However, there are some things to consider:
+
+* Reports are not verified for their accuracy by either the Qubes team or Freedom of the Press Foundation
+* Reports correspond to a specific Qubes OS version, and may not reflect breaking changes or expanded hardware support in the most recent Qubes OS version
+
+For the best experience, we recommend choosing a Qubes-certified laptop, or a
+laptop that we have directly tested (in that order); however, if none of those
+suit your needs, or if you want to see if your existing hardware might be
+Qubes compatible, the HCL is a good choice.
 
 Choosing a printer
 ------------------
