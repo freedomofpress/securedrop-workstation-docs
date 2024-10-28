@@ -158,9 +158,15 @@ measures it requires before any additional VMs are configured.
   you may upgrade your existing templates following the upstream documentation
   (`Fedora templates <https://www.qubes-os.org/doc/templates/fedora/#upgrading>`_,
   `Debian templates <https://www.qubes-os.org/doc/templates/debian/#upgrading>`_),
-  then upgrade their package repositories to the Qubes 4.2 repoistories using
-  ``qubes-dist-upgrade --template-standalone--upgrade`` (more information can be
-  found in the `upstream documentation <https://www.qubes-os.org/doc/upgrade/4.2/#clean-installation>`_).
+  then upgrade their package repositories to the Qubes 4.2 repositories using:
+
+  .. code-block:: sh
+
+    sudo qubes-dom0-update -y qubes-dist-upgrade
+    qubes-dist-upgrade --template-standalone --upgrade
+ 
+  More information can be
+  found in the `upstream documentation <https://www.qubes-os.org/doc/upgrade/4.2/#clean-installation>`_.
   Contact Support with any questions.
 
 Reinstall SecureDrop Workstation
