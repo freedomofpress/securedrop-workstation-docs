@@ -153,12 +153,22 @@ measures it requires before any additional VMs are configured.
   the VM.** Continue through the reinstallation process. The correct template will be
   configured as you follow the rest of these instructions.
 
-  If you are restoring your own customized VMs and templates, you may need to take
-  additional steps, such as ensuring your templates are supported. Follow the Qubes
-  documentation on upgrading templates (for example:
-  `Fedora templates <https://www.qubes-os.org/doc/templates/fedora/#upgrading>`_,
+  If you are restoring your own customized VMs and templates, you will need to take
+  additional steps. You may decide to create new templates for your custom VMs and
+  provision them with the necessary applications/customizations (recommended), or
+  you may upgrade your existing templates following the upstream documentation
+  (`Fedora templates <https://www.qubes-os.org/doc/templates/fedora/#upgrading>`_,
   `Debian templates <https://www.qubes-os.org/doc/templates/debian/#upgrading>`_),
-  or contact Support.
+  then upgrade their package repositories to the Qubes 4.2 repositories using:
+
+  .. code-block:: sh
+
+    sudo qubes-dom0-update -y qubes-dist-upgrade
+    qubes-dist-upgrade --template-standalone --upgrade
+ 
+  More information can be
+  found in the `upstream documentation <https://www.qubes-os.org/doc/upgrade/4.2/#clean-installation>`_.
+  Contact Support with any questions.
 
 Reinstall SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
