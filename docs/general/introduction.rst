@@ -15,8 +15,6 @@ Broadly speaking, this means that even if files in one of your virtual machines
 are exposed to malware, files in others still have some protection, which is
 not true of other operating systems.
 
-.. _`Qubes OS`: https://www.qubes-os.org
-
 What is SecureDrop Workstation?
 -------------------------------
 
@@ -43,7 +41,7 @@ US-based nonprofit organization. You can support our work through
 
 Our work would not be possible without the larger open source community.
 
-The foundation of SecureDrop Workstation is `Qubes OS <https://www.qubes-os.org/>`_.
+The foundation of SecureDrop Workstation is `Qubes OS`_.
 FPF has directly sponsored Qubes OS development, and we encourage you to
 `donate to Qubes OS <https://www.qubes-os.org/donate/>`_ as well.
 
@@ -59,3 +57,6 @@ In addition, SecureDrop Workstation relies on other open source projects such as
 contributing to these projects as well.
 
 For more information on SecureDrop Workstation, see our :doc:`FAQ <../journalist/faq>`.
+
+
+.. _`Qubes OS`: https://www.qubes-os.org
