@@ -33,4 +33,29 @@ and viewing. SecureDrop Workstation combines all of those steps
 into one workflow on one machine: a Qubes computer that
 combines the *Journalist Workstation* and the *Secure Viewing Station*.
 
-For more information on SecureDrop Workstation, see our :doc:`faq <../journalist/faq>`.
+Who is behind SecureDrop Workstation?
+-------------------------------------
+SecureDrop and SecureDrop Workstation are open source projects of
+`Freedom of the Press Foundation (FPF) <https://freedom.press/>`_, a
+US-based nonprofit organization. You can support our work through
+`your donation <https://freedom.press/donate>`_ or by
+`contributing to SecureDrop development <https://developers.securedrop.org/en/latest/contributing.html>`_.
+
+Our work would not be possible without the larger open source community.
+
+The foundation of SecureDrop Workstation is `Qubes OS <https://www.qubes-os.org/>`_.
+FPF has directly sponsored Qubes OS development, and we encourage you to
+`donate to Qubes OS <https://www.qubes-os.org/donate/>`_ as well.
+
+SecureDrop Workstation uses `Whonix <https://www.whonix.org/>`_ to maintain
+connectivity with the Tor network. You can `make a donation to the Whonix project <https://www.whonix.org/wiki/Donate>`_.
+
+In addition, SecureDrop Workstation relies on other open source projects such as
+`grsecurity <https://www.grsecurity.net>`_, `Python <https://www.python.org/>`_,
+`Debian <https://www.debian.org/>`_, `Fedora <https://fedoraproject.org/>`_,
+`GNOME <https://www.gnome.org/>`_, `GnuPG <https://gnupg.org/>`_,
+`LibreOffice <https://www.libreoffice.org/>`_,
+`Audacious <https://audacious-media-player.org/>`_, and others. Please consider
+contributing to these projects as well.
+
+For more information on SecureDrop Workstation, see our :doc:`FAQ <../journalist/faq>`.
