@@ -41,6 +41,15 @@ and by making `a donation <https://freedom.press/donate>`_.
 
 Our work would not be possible without the larger open source community.
 
+We're deeply grateful to the SecureDrop volunteer community for translating
+our software into many languages. Their work is enabled by `Weblate <https://weblate.org/>`_,
+an open source platform for continuous localization. You can `make a donation <https://weblate.org/en/donate/>`_
+to support Weblate development.
+
+Translation of SecureDrop is supported by `Localization Lab <https://www.localizationlab.org/>`_. You can
+`make a donation <https://www.localizationlab.org/donate>`_ to support their important
+work to help bring open source software into many languages.
+
 The backbone of SecureDrop Workstation is `Qubes OS`_.
 FPF has directly sponsored Qubes OS development, and we encourage you to
 `donate to Qubes OS <https://www.qubes-os.org/donate/>`_ as well.
