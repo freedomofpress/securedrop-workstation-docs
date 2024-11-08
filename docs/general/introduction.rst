@@ -35,28 +35,32 @@ Who is behind SecureDrop Workstation?
 -------------------------------------
 SecureDrop and SecureDrop Workstation are open source projects of
 `Freedom of the Press Foundation (FPF) <https://freedom.press/>`_, a
-US-based nonprofit organization. You can support our work through
-`your donation <https://freedom.press/donate>`_ or by
-`contributing to SecureDrop development <https://developers.securedrop.org/en/latest/contributing.html>`_.
+US-based nonprofit organization. You can support our work
+by `contributing to SecureDrop development <https://developers.securedrop.org/en/latest/contributing.html>`_
+and by making `a donation <https://freedom.press/donate>`_.
 
 Our work would not be possible without the larger open source community.
 
-The foundation of SecureDrop Workstation is `Qubes OS`_.
+The backbone of SecureDrop Workstation is `Qubes OS`_.
 FPF has directly sponsored Qubes OS development, and we encourage you to
 `donate to Qubes OS <https://www.qubes-os.org/donate/>`_ as well.
 
-SecureDrop Workstation uses `Whonix <https://www.whonix.org/>`_ to maintain
-connectivity with the Tor network. You can `make a donation to the Whonix project <https://www.whonix.org/wiki/Donate>`_.
+We use the `Python <https://www.python.org/>`_ programming language and
+ecosystem, which you can support by `donating to the Python Software Foundation <https://www.python.org/psf/donations/>`_.
 
-In addition, SecureDrop Workstation relies on other open source projects such as
-`grsecurity <https://www.grsecurity.net>`_, `Python <https://www.python.org/>`_,
-`Debian <https://www.debian.org/>`_, `Fedora <https://fedoraproject.org/>`_,
-`GNOME <https://www.gnome.org/>`_, `GnuPG <https://gnupg.org/>`_,
-`LibreOffice <https://www.libreoffice.org/>`_,
-`Audacious <https://audacious-media-player.org/>`_, and others. Please consider
-contributing to these projects as well.
+SecureDrop Workstation VMs are powered by `Debian <https://www.debian.org/>`_,
+`Fedora <https://fedoraproject.org/>`_, and `Whonix <https://www.whonix.org/>`_, all
+of which rely on volunteer contributions and financial support. The
+`GNOME <https://www.gnome.org/>`_ project acts as an umbrella for many of the individual
+software components we rely on.
+
+Finally, SecureDrop Workstation relies on many other open source projects such as
+`grsecurity <https://www.grsecurity.net>`_,  `GnuPG <https://gnupg.org/>`_,
+`Sequoia <https://sequoia-pgp.org/>`_, `LibreOffice <https://www.libreoffice.org/>`_,
+`Audacious <https://audacious-media-player.org/>`_, and others. These projects,
+in turn, are built on open source foundations. Please consider
+directing time and financial support wherever it can make a positive difference.
 
 For more information on SecureDrop Workstation, see our :doc:`FAQ <../journalist/faq>`.
-
 
 .. _`Qubes OS`: https://www.qubes-os.org
