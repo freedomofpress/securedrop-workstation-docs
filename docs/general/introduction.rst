@@ -47,7 +47,7 @@ an open source platform for continuous localization. You can `make a donation <h
 to support Weblate development.
 
 Translation of SecureDrop is supported by `Localization Lab <https://www.localizationlab.org/>`_. You can
-`make a donation <https://www.localizationlab.org/donate>`_ to support their important
+`donate <https://www.localizationlab.org/donate>`_ to support their important
 work to help bring open source software into many languages.
 
 The backbone of SecureDrop Workstation is `Qubes OS`_.
