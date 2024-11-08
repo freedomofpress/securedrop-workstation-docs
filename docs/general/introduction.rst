@@ -54,7 +54,7 @@ The backbone of SecureDrop Workstation is `Qubes OS`_.
 FPF has directly sponsored Qubes OS development, and we encourage you to
 `donate to Qubes OS <https://www.qubes-os.org/donate/>`_ as well.
 
-We use the `Python <https://www.python.org/>`_ programming language and
+We use the `Python <https://www.python.org/>`_ programming language and many tools in its
 ecosystem, which you can support by `donating to the Python Software Foundation <https://www.python.org/psf/donations/>`_.
 
 SecureDrop Workstation VMs are powered by `Debian <https://www.debian.org/>`_,
