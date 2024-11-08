@@ -36,7 +36,7 @@ Who is behind SecureDrop Workstation?
 SecureDrop and SecureDrop Workstation are open source projects of
 `Freedom of the Press Foundation (FPF) <https://freedom.press/>`_, a
 US-based nonprofit organization. You can support our work
-by `contributing to SecureDrop development <https://developers.securedrop.org/en/latest/contributing.html>`_
+by `contributing to SecureDrop <https://developers.securedrop.org/en/latest/contributing.html>`_
 and by making `a donation <https://freedom.press/donate>`_.
 
 Our work would not be possible without the larger open source community.
