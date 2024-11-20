@@ -50,14 +50,6 @@ client.
 
 |screenshot_send_reply|
 
-Sources without reply keys
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-You may sometimes see the text "Awaiting encryption key from server" in a grayed
-out reply box for a source. This typically happens when a source has just
-contacted your SecureDrop, and the server has not created an encryption key yet.
-If you are logged in, the key will be automatically fetched as soon as it
-becomes available. At that point, the reply box will become available.
-
 Deleting a conversation
 -----------------------
 
