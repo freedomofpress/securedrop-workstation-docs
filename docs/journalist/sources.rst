@@ -4,7 +4,7 @@ Communicating with sources
 SecureDrop Workstation lets journalists check SecureDrop, decrypt and securely
 view submissions, and reply to sources, all on the same computer.
 
-Once logged in, you will see a chat-like user interface consisting of three panels:
+Once logged in, you will see a chat-like user interface:
 
 - The leftmost panel shows your username, if you are logged in, or the
   sign-in button.
@@ -15,6 +15,12 @@ Once logged in, you will see a chat-like user interface consisting of three pane
 - The rightmost panel holds the conversation view. All parts of the conversation
   with a specific source (messages, files, and journalist replies) will be
   displayed here.
+
+- The top panel holds a toolbar that allows you to apply actions to multiple
+  sources at once. (Currently, "Delete Sources" is the only supported action.)
+
+- The bottom status bar will alert you to any problems (such as lack of network
+  connectivity or issues downloading a file).
 
 Opening a conversation
 ----------------------
@@ -50,13 +56,17 @@ client.
 
 |screenshot_send_reply|
 
-Deleting a conversation
------------------------
+Deleting conversations
+---------------------- 
 
-You can delete a source conversation by clicking on the three dots at the top
-righthand side of the application window, beside the timestamp. You should
+Deleting a single conversation
+''''''''''''''''''''''''''''''
+
+You can delete a single source conversation by clicking on the three dots at
+the top right-hand side of the application window, beside the timestamp. You should
 see a dropdown menu with two options: **Files and messages** and **Entire source
-account**.
+account**. In both cases, a confirmation dialog will appear before anything is
+deleted.
 
 |screenshot_deletion_dropdown|
 
@@ -74,4 +84,26 @@ be completely removed from the system.
 .. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
   :width: 100%
 .. |screenshot_deletion_dropdown| image:: ../images/screenshot_deletion_dropdown.png
+  :width: 100%
+
+
+Deleting multiple conversations
+'''''''''''''''''''''''''''''''
+
+You can also delete multiple source conversations at once. Hold down the Control
+(Ctrl) key and click on different rows to select (or deselect) sources from the list.
+(You can also Ctrl + drag the mouse, or Shift + select, to select a range of continuous
+sources.) Once you are finished selecting, click the "Delete Sources" toolbar button.
+
+.. |screenshot_select_sources|  image:: ../images/screenshot_delete_sources_select.png
+  :width: 100%
+
+This action deletes the **entire source account**, meaning files and messages will
+be removed, and that source will no longer be able to log in using their codename.
+
+You will be shown a confirmation dialog before any sources are deleted. If you select
+a very large number of sources, you will also notice a brief time delay, to prevent
+unintentional deletion.
+
+.. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
   :width: 100%
