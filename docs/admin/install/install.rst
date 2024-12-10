@@ -4,7 +4,11 @@ Installing SecureDrop Workstation
 Copy the submission key
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to decrypt submissions, your SecureDrop Workstation will need a copy of the secret key from your SecureDrop instance's SVS. To protect this key and preserve the air gap, you will need to connect the SVS USB to a Qubes VM with no network access, and copy it from there to ``dom0``. Note that you cannot directly copy and paste to the ``dom0`` VM from another VM - instead, follow the steps below to copy the file into ``dom0``:
+In order to decrypt submissions, you will need a copy of the
+`Submission Private Key <https://docs.securedrop.org/en/stable/glossary.html#submission-key>`_
+from your SecureDrop instance's Secure Viewing Station.
+
+To protect this key and preserve the air gap, you will need to connect the SVS USB to a Qubes VM with no network access, and copy it from there to ``dom0``. Note that you cannot directly copy and paste to the ``dom0`` VM from another VM - instead, follow the steps below to copy the file into ``dom0``:
 
 - First, use the network manager widget in the upper right panel to disable your network connection. These instructions refer to the ``vault`` VM, which has no network access by default, but if the SVS USB is attached to another VM by mistake, this will offer some protection against exfiltration.
 
@@ -47,6 +51,7 @@ In order to decrypt submissions, your SecureDrop Workstation will need a copy of
 
 - In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the SVS USB.
 
+- If you were prompted for a passphrase during import, you will now need to remove the passphrase on ``sd-journalist.sec``. See :doc:`/admin/reference/removing_gpg_passphrase`.
 
 .. _copy_journalist:
 
@@ -59,7 +64,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 
 - Connect the USB drive to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
 
-- In the the ``vault`` file manager, select the persistent volume's listing in the lower left sidebar. It will be named ```N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it. When prompted, select the option to **Forget password immediately**.
+- In the the ``vault`` file manager, select the persistent volume's listing in the lower left sidebar. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it. When prompted, select the option to **Forget password immediately**.
 
 - Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
@@ -250,6 +255,8 @@ Before setting up the set of VMs used by SecureDrop Workstation, you must config
   .. code-block:: sh
 
     sdw-admin --validate
+
+If you encounter a validation error due to a password-protected GPG key, see :doc:`/admin/reference/removing_gpg_passphrase`.
 
 - Configure infinite scrollback for your terminal via **Edit > Preferences > General > Unlimited scrollback**. This helps to ensure that you will be able to review any error output printed to the terminal during the installation.
 

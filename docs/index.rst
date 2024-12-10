@@ -57,7 +57,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/reference/provisioning_usb
    admin/reference/backup
    admin/reference/bios_update
-
+   admin/reference/removing_gpg_passphrase
 
 * :ref:`genindex`
 * :ref:`search`
