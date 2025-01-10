@@ -239,3 +239,9 @@ epub_exclude_files = ['search.html']
 # The default is to use Python’s global socket timeout, which may be `None`.
 # This can cause CI jobs to time out.
 linkcheck_timeout = 30
+
+linkcheck_ignore = [
+    r"http://.*\.onion/.*",
+    "https://www.gnome.org/", # returns 403 from cloud networks
+    "https://support.lenovo.com", # timeout from cloud networks
+]
