@@ -25,20 +25,20 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the Qubes OS ISO and cryptographic hash values for version ``4.2.2`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-release-4-2-2>`_. The ISO is 6.9 GB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the Qubes OS ISO and cryptographic hash values for version ``4.2.3`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-2-3>`_. The ISO is 6.9 GB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_. Ensure that the ISO and hash values are in the same directory, then run:
 
 .. code-block:: sh
 
   gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc
-  gpg -v --verify Qubes-R4.2.2-x86_64.iso.DIGESTS
-  sha256sum -c Qubes-R4.2.2-x86_64.iso.DIGESTS
-  
+  gpg -v --verify Qubes-R4.2.3-x86_64.iso.DIGESTS
+  sha256sum -c Qubes-R4.2.3-x86_64.iso.DIGESTS
+
 The output should look like this:
 
 .. code-block:: sh
- 
+
   gpg: requesting key from 'https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc'
   gpg: key E022E58F8E34D89F: public key "Qubes OS Release 4.2 Signing Key" imported
   gpg: Total number processed: 1
@@ -47,7 +47,7 @@ The output should look like this:
 
   gpg: armor header: Hash: SHA256
   gpg: original file name=''
-  gpg: Signature made Tue 25 Jun 2024 01:32:23 PM EDT
+  gpg: Signature made Mon Sep 16 09:46:51 2024 EDT
   gpg:                using RSA key 9C884DF3F81064A569A4A9FAE022E58F8E34D89F
   gpg: using pgp trust model
   gpg: Good signature from "Qubes OS Release 4.2 Signing Key" [unknown]
@@ -55,16 +55,16 @@ The output should look like this:
   gpg:          There is no indication that the signature belongs to the owner.
   Primary key fingerprint: 9C88 4DF3 F810 64A5 69A4  A9FA E022 E58F 8E34 D89F
   gpg: textmode signature, digest algorithm SHA256, key algorithm rsa4096
-  Qubes-R4.2.2-x86_64.iso: OK
+  Qubes-R4.2.3-x86_64.iso: OK
   sha256sum: WARNING: 20 lines are improperly formatted
-  
+
 Specifically, you will want to make sure that you see "Good signature" listed in the text. If it does not report a good signature, try deleting the ISO and downloading it again.
 
 Once you've verified the ISO, copy it to your installation medium - for example, if using Linux and a USB stick, using the command:
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.2.2-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.2.3-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
