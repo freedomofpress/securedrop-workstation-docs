@@ -43,6 +43,15 @@ of its airgap:
 Creating a VeraCrypt-encrypted drive
 ------------------------------------
 
+.. Remove the following warning once securedrop-docs#599 and
+   veracrypt/VeraCrypt#1422 are resolved.
+
+.. warning::
+
+   If you plan to use your *Export Device* with computers running macOS 15
+   ("Sequoia") or later, you must also perform the VeraCrypt setup on that
+   version of macOS.
+
 - If it isn't already done, download and install the `VeraCrypt software <https://www.veracrypt.fr/en/Home.html>`_.
 - Start VeraCrypt from your computer's application or software interface.
 - Click **Create Volume**
