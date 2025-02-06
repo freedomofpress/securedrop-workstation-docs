@@ -240,6 +240,24 @@ key and remove the expired one:
    *No output expected.*
 
 
+12. **Verify the expiry is 2027-05-24:**
+
+   *Run command:*
+
+   .. code-block::
+
+      gpg --show-keys /etc/pki/rpm-gpg/RPM-GPG-KEY-securedrop-workstation
+
+   *Expected output:*
+
+   .. code-block::
+
+      pub   rsa4096 2021-05-10 [SC] [expires: 2027-05-24]
+         2359E6538C0613E652955E6C188EDD3B7B22E6A3
+      uid           [ unknown] SecureDrop Release Signing Key <securedrop-release-key-2021@freedom.press>
+      sub   rsa4096 2021-05-10 [E] [expires: 2027-05-24]
+
+
 ``sd-*-template`` or ``whonix-gateway-17`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the Qubes menu and open a terminal in the impacted
