@@ -119,37 +119,46 @@ above, and the terminal console displays the following message:
    Error: GPG check FAILED
 
 your system is trying to use an old copy of the SecureDrop Release
-Signing Key. The new, valid key will already be locally available on your
-system, so you can perform the following steps to remove the expired key
-and enable this updated key:
+Signing Key. You can perform the following steps to fetch the updated
+key and remove the expired one:
 
-1. Open a terminal in ``dom0`` via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal**.
+1. Start a terminal in the "work" VM via the menu: **Q > Apps > work > Xfce Terminal**
+2. Download the key: ``gpg --keyserver hkps://keys.openpgp.org --recv-key "2359 E653 8C06 13E6 5295 5E6C 188E DD3B 7B22 E6A3"``
 
-2. Run the following command:
+.. code-block::
 
-   .. code-block:: sh
+   gpg: key 188EDD3B7B22E6A3: public key "SecureDrop Release Signing Key <securedrop-release-key-2021@freedom.press>" imported
+   gpg: Total number processed: 1
+   gpg: imported: 1
 
-      sudo rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n' | grep SecureDrop
+3. Run ``gpg -k securedrop`` to verify the expiry is 2027-05-24:
 
-   The output should look similar to:
+.. code-block::
 
-   .. code-block:: sh
+   pub   rsa4096 2021-05-10 [SC] [expires: 2027-05-24]
+       2359E6538C0613E652955E6C188EDD3B7B22E6A3
+   uid           [ unknown] SecureDrop Release Signing Key <securedrop-release-key-2021@freedom.press>
+   sub   rsa4096 2021-05-10 [E] [expires: 2027-05-24]
 
-      gpg-pubkey-xxxxx-xxxxx        SecureDrop Release Signing Key <securedrop-release-key-2021@freedom.press  public key
+4. Export the downloaded key: ``gpg --armor --export "2359 E653 8C06 13E6 5295 5E6C 188E DD3B 7B22 E6A3" > securedrop-release-key.pub``
+5. Print the exported key's checksum: ``sha256sum securedrop-release-key.pub``
 
-3. Make note of the KEY ID (in the format ``gpg-pubkey-xxxxx-xxxxx``).
+.. code-block::
 
-4. Run the following commands:
+   fedef93de425668541545373952b5f92bac4ac1f1253fe5b64c2be2fc941073b securedrop-release-key.pub
 
-   .. code-block:: sh
+6. Start a dom0 terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**.
+   The remaining commands will all be executed in this dom0 terminal.
+7. Copy the key into dom0: ``qvm-run --pass-io work cat securedrop-release-key.pub > /tmp/securedrop-release-key.pub``
+8. Verify the key checksum is the same as earlier: ``sha256sum /tmp/securedrop-release-key.pub``
 
-      sudo rpm -e gpg-pubkey-xxxxxx-xxxxxx # use KEY ID from step 3
+.. code-block::
 
-      sudo rpm --import /etc/pki/rpm-GPG/RPM-GPG-KEY-securedrop-workstation
+   fedef93de425668541545373952b5f92bac4ac1f1253fe5b64c2be2fc941073b /tmp/securedrop-release-key.pub
 
-
-5. Reboot, then run updates again. If there are new errors, repeat
-the full troubleshooting process.
+9. Copy the key into place: ``sudo cp /tmp/securedrop-release-key.pub /etc/pki/rpm-gpg/RPM-GPG-KEY-securedrop-workstation``
+10. Delete the old key from RPM: ``sudo rpm -e gpg-pubkey-7b22e6a3-609966ad``
+11. Import the new key into RPM: ``sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-securedrop-workstation``
 
 
 ``sd-*-template`` or ``whonix-gateway-17`` update failures
