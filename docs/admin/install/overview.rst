@@ -32,7 +32,7 @@ Prerequisites
 -------------
 In order to install SecureDrop Workstation and configure it to use an existing SecureDrop instance, you will need the following:
 
-- A Qubes-compatible computer with at least 16GB of RAM (32 GB is recommended). SecureDrop Workstation has mainly been tested against Lenovo T480, T490 and T14 - see Qubes' `Hardware Compatibility List <https://www.qubes-os.org/hcl/>`_ and the SecureDrop Workstation :doc:`../reference/hardware` page for more options .
+- A Qubes-compatible computer with at least 16GB of RAM (32 GB is recommended) and known Linux Firmware Vendor support (https://fwupd.org/). SecureDrop Workstation has mainly been tested against Lenovo T400-series and T14 and Framework laptops. See Qubes' `Hardware Compatibility List <https://www.qubes-os.org/hcl/>`_ and the SecureDrop Workstation :doc:`../reference/hardware` page for more options. Note that HP laptops are not recommended due to firmware support limitations.
 - Qubes installation medium - this guide assumes the use of a USB 3.0 stick. Qubes may also be installed via optical media, which may make more sense depending on your `security concerns <https://www.qubes-os.org/doc/install-security/>`_.
 
   .. note:: A USB stick with a Type-A connector is recommended, as USB-C ports may be disabled on your computer when the BIOS settings detailed below are applied.

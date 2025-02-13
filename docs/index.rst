@@ -57,6 +57,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/reference/provisioning_usb
    admin/reference/backup
    admin/reference/thinkpad_bios
+   admin/reference/forensic_backup
 
 * :ref:`genindex`
 * :ref:`search`
