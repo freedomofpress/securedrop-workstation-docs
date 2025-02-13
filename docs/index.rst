@@ -56,6 +56,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/reference/troubleshooting_updates
    admin/reference/provisioning_usb
    admin/reference/backup
+   admin/reference/forensic_backup
 
 * :ref:`genindex`
 * :ref:`search`
