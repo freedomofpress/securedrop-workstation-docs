@@ -24,6 +24,8 @@ This is a transient error that may affect any of the SecureDrop Workstation VMs.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Transient network issues may cause an installation to fail. To work around this, verify that you have a working Internet connection, and re-run the ``sdw-admin --apply`` command.
 
+.. _reset_pci:
+
 "Unable to reset PCI device"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
