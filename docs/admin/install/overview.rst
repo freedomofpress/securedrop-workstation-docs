@@ -15,7 +15,7 @@ Pre-install tasks:
 #. Install Qubes OS
 #. (Hardware-dependent) Apply USB fixes
 #. Apply updates to system templates
-#. Install and update Fedora 40 base template
+#. Install and update Fedora 41 base template
 
 Install tasks:
 ~~~~~~~~~~~~~~

@@ -62,11 +62,11 @@ line in the log file that looks similar to the following:
 
 .. code-block:: none
 
-  2023-03-30 20:12:11,821 - sd.sdw_updater_gui.UpdaterApp:71(upgrade_status)
+  2025-02-24 20:12:11,821 - sd.sdw_updater_gui.UpdaterApp:71(upgrade_status)
   INFO: Signal: upgrade_status {
   'dom0': <UpdateStatus.UPDATES_OK: '0'>,
   'apply_dom0': <UpdateStatus.UPDATES_OK: '0'>,
-  'fedora-40': <UpdateStatus.UPDATES_OK: '0'>,
+  'fedora-41-xfce': <UpdateStatus.UPDATES_OK: '0'>,
   'sd-large-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
   'whonix-gateway-17': <UpdateStatus.UPDATES_FAILED: '3'>,
   'sd-small-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
@@ -282,19 +282,17 @@ key and remove the expired one:
    unsure on how to resolve an error, please contact us
    for assistance.
 
-``fedora-40`` update failures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Click the Qubes menu and open a terminal in the ``fedora-40``
-   template.
+``fedora-41-xfce`` update failures
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Launch the Qubes GUI Updater from the top righthand
+   tray icon. Ensure the ``fedora-41-xfce`` template is
+   selected.
 
-2. Perform an interactive template update by running the following
-   command:
+2. Run the updater, observing the output in the
+   updater dialog.
 
-   ``sudo dnf update``
-
-3. Follow the prompts to resolve any issues. If you are
-   unsure on how to resolve an error, please contact us
-   or assistance.
+3. If the update is not successful, contact Support
+   and provide the output you see in the dialog.
 
 ``apply_dom0`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
