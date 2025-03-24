@@ -74,7 +74,7 @@ Creating a VeraCrypt-encrypted drive
 - You will be asked if you need to store large files, select **No** and click **Next**.
 - Select the following options in the Volume Format dialog:
 
-  - Filesystem: FAT
+  - Filesystem: exFAT
   - Quick Format: unselected
 - Click **Next**. VeraCrypt will now collect entropy from your mouse movements.
   Randomly move your mouse cursor around the screen until the progress bar is filled up.
