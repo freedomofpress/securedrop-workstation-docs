@@ -125,7 +125,7 @@ Qubes compatible, the HCL is a good choice.
 
 Choosing a printer
 ------------------
-SecureDrop Workstation uses driverless IPP printing to support a large selection of modern printers. Driverless IPP compatible printers can be easily identified by their support for the Apple AirPrint or Moipra standards:
+SecureDrop Workstation uses driverless IPP printing to support a large selection of modern printers. Driverless IPP-compatible printers can be easily identified by their support for the Apple AirPrint or Moipra standards:
 
 .. figure:: images/airprint.jpg
 
