@@ -125,15 +125,15 @@ Qubes compatible, the HCL is a good choice.
 
 Choosing a printer
 ------------------
-SecureDrop Workstation uses driverless IPP printing to support a large selection of modern printers. Driverless IPP-compatible printers can be easily identified by their support for the Apple AirPrint or Moipra standards:
+SecureDrop Workstation only supports printing over USB, and so it is essential to choose a compatible printer that **has a USB port**. 
+
+Driverless IPP printing is used to support a large selection of modern printers. Compatible printers can be easily identified by their support for the Apple AirPrint or Moipra standards:
 
 .. figure:: images/airprint.jpg
 
 .. figure:: images/moipra.jpg
 
-You may consult Apple's `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_, Moipra's `list of certified products <https://mopria.org/certified-products>`_, or OpenPrinting's `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_. 
-
-Such printers generally feature WiFi connectivity and can function as network printers. SecureDrop Workstation only supports printing over USB, and so it is essential to choose a compatible printer that **has a USB port**. 
+You may consult Apple's `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_, Moipra's `list of certified products <https://mopria.org/certified-products>`_, or OpenPrinting's `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_, looking for a compatible printer that will print over USB. 
 
 .. warning::
-  For security reasons, we strongly recommend keeping your chosen printer offline and disabling WiFi (if present). It should be used exclusively to print from SecureDrop Workstation.
+  For security reasons, we strongly recommend keeping your chosen printer offline and disabling WiFi (if present). It should only be used to print from your SecureDrop Workstation.
