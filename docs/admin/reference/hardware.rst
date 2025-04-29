@@ -127,8 +127,11 @@ Choosing a printer
 ------------------
 In order to print submissions, a compatible printer is connected via USB. Therefore you must choose a printer that **has a USB port**. 
 
-Any printer that supports Apple's AirPrint should be compatible. Such printers are easily identified by the "Works with Apple AirPrint" sticker:
+SecureDrop Workstation supports driverless printing, enabling compatiblity with a large selection of modern printers. Printers supporting Apple's AirPrint should work without issue, and they are easily identified by the "Works with Apple AirPrint" sticker:
 
 .. figure:: images/airprint.jpg
 
-Additionally, Apple maintains a `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_. 
+Additionally, Apple maintains a `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_. You may also consult this `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_ from OpenPrinting. 
+
+.. warning::
+  To protect the security of your own machines and networks, we recommend getting a dedicated offline printer to be used exclusively with SecureDrop Workstation. Most AirPrint-compatible printers include WiFi connectivity and can function as networked printers. For security reasons, we strongly recommend disabling WiFI on the printer you choose. 
