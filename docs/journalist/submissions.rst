@@ -44,7 +44,7 @@ computer.
 Printing
 --------
 
-To print a document, a :doc:`compatible printer <../admin/reference/hardware.html#choosing-a-printer>`  must be plugged into the computer's USB port.
+To print a document, a :doc:`compatible printer <../admin/reference/hardware.html>`  must be plugged into the computer's USB port.
 
 1. Click "Print" button and wait for ``sd-devices`` VM to start.
 2. You will prompted to attach your printer.
