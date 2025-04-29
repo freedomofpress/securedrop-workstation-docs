@@ -44,12 +44,11 @@ computer.
 Printing
 --------
 
-To print a document, click the **Print** button. Currently, printing is only
-supported with a specific HP printer model, and for security reasons
-you are required not to use a printer that has any wireless capabilities.
+To print a document, a :doc:`compatible printer <../admin/reference/hardware>`  must be plugged into the computer's USB port.
 
-You should have access to a supported printer that has been set up by your
-administrator. The printer must be plugged into the computer's USB port.
+1. Click "Print" button and wait for ``sd-devices`` VM to start.
+2. You will prompted to attach your printer.
+3. A typical Print Document dialog will appear, from which you can configure different print options before printing the document.
 
 Exporting to an Export USB
 --------------------------

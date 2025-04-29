@@ -125,5 +125,10 @@ Qubes compatible, the HCL is a good choice.
 
 Choosing a printer
 ------------------
-In order to print submissions, a supported non-networked printer is required. We have tested and recommend the HP LaserJet Pro M404n. More printer options will be added in future releases.
+In order to print submissions, a compatible printer is connected via USB. Therefore you must choose a printer that **has a USB port**. 
 
+Any printer that supports Apple's AirPrint should be compatible. Such printers are easily identified by the "Works with Apple AirPrint" sticker:
+
+.. figure:: images/airprint.jpg
+
+Additionally, Apple maintains a `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_. 
