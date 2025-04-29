@@ -133,7 +133,7 @@ Driverless IPP printing is used to support a large selection of modern printers.
 
 .. figure:: images/moipra.jpg
 
-You may consult Apple's `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_, Moipra's `list of certified products <https://mopria.org/certified-products>`_, or OpenPrinting's `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_, looking for a compatible printer that will print over USB. 
+You may consult Apple's `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_, Moipra's `list of certified products <https://mopria.org/certified-products>`_, or OpenPrinting's `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_, being careful to choose a printer with a USB port.
 
 .. warning::
   For security reasons, we strongly recommend keeping your chosen printer offline and disabling WiFi (if present). It should only be used to print from your SecureDrop Workstation.
