@@ -127,11 +127,13 @@ Choosing a printer
 ------------------
 In order to print submissions, a compatible printer is connected via USB. Therefore you must choose a printer that **has a USB port**. 
 
-SecureDrop Workstation supports driverless printing, enabling compatiblity with a large selection of modern printers. Printers supporting Apple's AirPrint should work without issue, and they are easily identified by the "Works with Apple AirPrint" sticker:
+SecureDrop Workstation employs driverless IPP printing to support a large selection of modern printers. Compatible printers can be easily identified by the "Works with Apple Airprint" or Moipra logos:
 
 .. figure:: images/airprint.jpg
 
-Additionally, Apple maintains a `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_. You may also consult this `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_ from OpenPrinting. 
+You may consult Apple's `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_, Moipra's `list of certified products <https://mopria.org/certified-products>`_` or OpenPrinting's `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_. 
+
+Such printers generally feature WiFi connectivity and can function as network printers. SecureDrop Workstation only supports printing over USB, and so it is essential to choose a compatible printer that **has a USB port**. 
 
 .. warning::
-  To protect the security of your own machines and networks, we recommend getting a dedicated offline printer to be used exclusively with SecureDrop Workstation. Most AirPrint-compatible printers include WiFi connectivity and can function as networked printers. For security reasons, we strongly recommend disabling WiFI on the printer you choose. 
+  For security reasons, we strongly recommend keeping your chosen printer offline and disabling WiFi (if present). To further protect the security of your own machines and networks, this printer should be used exclusively with SecureDrop Workstation.  
