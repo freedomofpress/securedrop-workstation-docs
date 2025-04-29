@@ -48,7 +48,7 @@ To print a document, a :doc:`compatible printer <../admin/reference/hardware>`  
 
 1. Click "Print" button and wait for ``sd-devices`` VM to start.
 2. You will prompted to attach your printer.
-3. A typical Print Document dialog will appear, from which you can configure different print options before printing the document.
+3. A Print Document dialog will appear, from which you can configure different print options before printing the document.
 
 Exporting to an Export USB
 --------------------------
