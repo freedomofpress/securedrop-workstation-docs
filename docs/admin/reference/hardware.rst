@@ -70,7 +70,7 @@ The 10th-generation ThinkPad X1 Carbon **with a 12th-generation Intel Core proce
 
   If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
 
-- Otherwise, follow the instructions below to ensure that the BIOS is up to date.
+- Otherwise, ensure the BIOS is up-to date by following these instructions: :ref:`thinkpad_bios`.
 
 You'll need to have a USB-to-Ethernet adapter on hand in order to :ref:`apply Qubes updates <apply_dom0_updates>`, which will enable Wi-Fi and fix glitchy video rendering and cursor performance.
 
@@ -88,7 +88,7 @@ The 2nd-generation ThinkPad T14 **with an 11th-generation Intel Core processor**
 
   If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
 
-- Otherwise, ensure the BIOS is up-to date by following these instructions: :doc:`thinkpad_bios`.
+- Otherwise, ensure the BIOS is up-to date by following these instructions: :ref:`thinkpad_bios`.
 
 The Ethernet and Wi-Fi controllers may not work without one-time manual configuration, as documented in the following sections.
 
@@ -117,6 +117,7 @@ However, there are some things to consider:
 
 * Reports are not verified for their accuracy by either the Qubes team or Freedom of the Press Foundation
 * Reports correspond to a specific Qubes OS version, and may not reflect breaking changes or expanded hardware support in the most recent Qubes OS version
+* It's important that you update the BIOS of your laptop prior to installing SecureDrop Workstation: for more details see :ref:`general_BIOS_update`
 
 For the best experience, we recommend choosing a Qubes-certified laptop, or a
 laptop that we have directly tested (in that order); however, if none of those
