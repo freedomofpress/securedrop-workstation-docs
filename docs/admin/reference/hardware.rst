@@ -61,16 +61,7 @@ You will want to ensure you are using the latest BIOS version available. Instruc
 Lenovo ThinkPad X1 Carbon (10th-generation)
 *******************************************
 
-The 10th-generation ThinkPad X1 Carbon **with a 12th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1.  If you plan to use it:
-
-- If your laptop has come with Ubuntu preinstalled, run its **Software Updater** twice as follows:
-
-  #. to install software updates, especially for the ``fwupd`` package; and then
-  #. to run ``fwupd`` to update the BIOS automatically.
-
-  If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
-
-- Otherwise, ensure the BIOS is up-to date by following these instructions: :ref:`thinkpad_bios`.
+The 10th-generation ThinkPad X1 Carbon **with a 12th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1. If you plan to use it, you will want to ensure the BIOS is up-to date by following these instructions: :ref:`general_BIOS_update`.
 
 You'll need to have a USB-to-Ethernet adapter on hand in order to :ref:`apply Qubes updates <apply_dom0_updates>`, which will enable Wi-Fi and fix glitchy video rendering and cursor performance.
 
@@ -79,16 +70,7 @@ You'll need to have a USB-to-Ethernet adapter on hand in order to :ref:`apply Qu
 Lenovo ThinkPad T14 (2nd-generation)
 ************************************
 
-The 2nd-generation ThinkPad T14 **with an 11th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1. If you plan to use it:
-
-- If your laptop has come with Ubuntu preinstalled, run its **Software Updater** twice as follows:
-
-  #. to install software updates, especially for the ``fwupd`` package; and then
-  #. to run ``fwupd`` to update the BIOS automatically.
-
-  If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
-
-- Otherwise, ensure the BIOS is up-to date by following these instructions: :ref:`thinkpad_bios`.
+The 2nd-generation ThinkPad T14 **with an 11th-generation Intel Core processor** is a recommended option for the SecureDrop Workstation beginning with Qubes 4.1. If you plan to use it, you will want to ensure the BIOS is up-to date by following these instructions: :ref:`general_BIOS_update`.
 
 The Ethernet and Wi-Fi controllers may not work without one-time manual configuration, as documented in the following sections.
 
