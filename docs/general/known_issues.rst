@@ -32,9 +32,7 @@ Current known issues
   `our recommendation <https://docs.securedrop.org/en/stable/admin/maintenance/backup_and_restore.html#minimizing-disk-use>`_
   is to delete information from the servers as regularly as possible, both
   for performance and security reasons.
-- Printer support is limited to specific HP and Brother printer models, and printing
-  different file types is not as reliable yet as under Tails. Support for
-  additional non-networked printers will be added in a future release.
+- Printing different file types is not as reliable yet as under Tails. 
 - Printing of individual files inside an archived submission is not yet supported.
 - Currently, only app-based two-factor authentication (TOTP) is supported.
 - The SecureDrop Client does not currently handle files that are "double-encrypted"

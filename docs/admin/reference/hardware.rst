@@ -108,5 +108,39 @@ Qubes compatible, the HCL is a good choice.
 
 Choosing a printer
 ------------------
-In order to print submissions, a supported non-networked printer is required. We have tested and recommend the HP LaserJet Pro M404n. More printer options will be added in future releases.
 
+There are several requirements for a printer to be compatible with SecureDrop Workstation. Your printer should:
+
+1. Support **driverless printing** standards
+2. Have a **USB port**
+3. Be offline, or at least have **no WiFi**
+
+These requirements are expanded below.
+
+Driverless
+~~~~~~~~~~
+
+SecureDrop Workstation implements driverless IPP printing to support a large selection of modern printers. Compatible printers can be easily identified by their support for the Apple AirPrint or Moipra standards:
+
+.. figure:: images/airprint.jpg
+
+.. figure:: images/moipra.jpg
+
+You may consult Apple's `list of printers that support AirPrint <https://support.apple.com/en-us/HT201311#printers>`_, Moipra's `list of certified products <https://mopria.org/certified-products>`_, or OpenPrinting's `list of printers supporting driverless printing <https://openprinting.github.io/printers/>`_.
+
+USB
+~~~
+
+SecureDrop Workstation only supports printing over USB, so ensure the printer you select has a **USB port**.
+
+.. note::
+  In rare cases, an AirPrint or Moipra-compatible printer with a USB port may not actually support IPP-over-USB, which is required for SecureDrop to use the printer. Check with the manufacturer if in doubt. 
+
+Offline
+~~~~~~~
+
+To maintain the isolation of SecureDrop Workstation, it is essential that your printer not be shared with other computers and networks. 
+
+* Select a compatible printer with **no WiFi**. A printer that connects with USB only is best if you can find one, but compatible USB printers lacking *both* Ethernet and WiFi are rare. 
+* In the case of a printer with Ethernet and/or WiFi, **keep the printer offline** and **disabling WiFi** (if present).
+* Use this printer exclusively with SecureDrop Workstation and do not connect it directly to other computers.

@@ -17,7 +17,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
 .. toctree::
    :maxdepth: 2
    :caption: Overview
-   
+
    general/introduction
    general/workstation_architecture
    general/status
@@ -34,7 +34,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    journalist/submissions
    journalist/ending_session
    journalist/faq
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: Admin Guide: Installation
@@ -57,7 +57,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/reference/provisioning_usb
    admin/reference/backup
    admin/reference/bios_update
-   admin/reference/forensic_backup
+
 
 * :ref:`genindex`
 * :ref:`search`
