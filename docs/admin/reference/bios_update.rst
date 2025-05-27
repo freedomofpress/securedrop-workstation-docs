@@ -1,7 +1,42 @@
-Upgrading the BIOS on Lenovo ThinkPad laptops
-=============================================
+BIOS Update Instructions
+====================================
+
+.. _general_BIOS_update:
+
+
+Automatic BIOS Updates
+----------------------
+
+These instructions should work for many recent laptops, including the two ThinkPad models specifically included in our :doc:`hardware`.
+
+If your laptop has Ubuntu preinstalled, run its **Software Updater** twice as follows:
+
+  #. to install software updates, especially for the ``fwupd`` package; and then
+  #. to run ``fwupd`` to update the BIOS automatically.
+
+If **Software Updater** offers to run ``fwupd`` during step (1), decline until step (2), to make sure ``fwupd`` itself has received its latest security updates.
+
+Other Linux
+~~~~~~~~~~~
+
+If your laptop has another Linux distribution installed, use the built-in software manager (such as GNOME Software or KDE Discover) to update the available software. Most modern distributions include ``fwupd`` by default. If not, you can install the package using your preferred software manager.
+
+Once ``fwupd`` is installed, you can install available updates by running:
+
+  .. code-block:: sh
+  
+    fwupdmgr refresh
+    fwupdmgr update
+
+Manual BIOS Updates
+-------------------
+
+If your laptop is not supported by ``fwupd``, you will need to consult the manual for your specific make and model to determine how to manually apply a BIOS update. The process will likely include downloading an update file, verifying its integrity, copying it to a USB drive, and then accessing an update menu within the BIOS settings. If you have a Thinkpad, refer to the instructions for :ref:`thinkpad_bios`.
 
 .. _thinkpad_bios:
+
+Manual BIOS on Lenovo ThinkPad laptops
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The instructions below assume the use of a Linux-based computer for the creation of a BIOS upgrade USB. To upgrade the BIOS:
 
