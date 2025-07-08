@@ -56,8 +56,12 @@ client.
 
 |screenshot_send_reply|
 
+.. note:: If a reply fails to be sent successfully, it will still be visible in
+  subsequent sessions, including to any other users logging into the same
+  physical SecureDrop Workstation.
+
 Deleting conversations
----------------------- 
+----------------------
 
 Deleting a single conversation
 ''''''''''''''''''''''''''''''
