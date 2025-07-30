@@ -66,8 +66,8 @@ software components we rely on.
 Finally, SecureDrop Workstation relies on many other open source projects such as
 `grsecurity <https://www.grsecurity.net>`_,  `GnuPG <https://gnupg.org/>`_,
 `Sequoia <https://sequoia-pgp.org/>`_, `LibreOffice <https://www.libreoffice.org/>`_,
-`Audacious <https://audacious-media-player.org/>`_, and others. These projects,
-in turn, are built on open source foundations. Please consider
+`Audacious <https://audacious-media-player.org/>`_, `OpenPrinting <https://openprinting.github.io/>`_
+and others. These projects, in turn, are built on open source foundations. Please consider
 directing time and financial support wherever it can make a positive difference.
 
 For more information on SecureDrop Workstation, see our :doc:`FAQ <../journalist/faq>`.
