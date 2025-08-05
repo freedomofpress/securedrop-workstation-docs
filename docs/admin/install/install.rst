@@ -1,9 +1,6 @@
 Installing SecureDrop Workstation
 =================================
 
-To install the SecureDrop Workstation, you will need to copy your `Submission Private Key <https://docs.securedrop.org/en/stable/glossary.html#submission-key>`_ and the *Journalist Interface* configuration. This can be done using the ``sdw-admin`` tool, or can be completed manually.
-
-
 Import the submission key
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -29,45 +26,17 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hands ide, then selecting **Other > Xfce Terminal**. Once the Terminal windo wopens, run the following command to import the submission key.
+- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hands ide, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key.
+
   .. code-block:: sh 
+
       sdw-admin --configure
 
-This command should prompt you to proceed and notify when the submission key import is complete. It will then prompt you to begin importing the journalist interface details, documented in the :ref:`next section <_copy_journalist>`.
+  Follow the command prompts to complete submission key import. 
 
-- In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the SVS USB.
+- Once the submission key import is complete, in the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the SVS USB.
 
 - If you were prompted for a passphrase during import, you will now need to remove the passphrase on ``sd-journalist.sec``. See :doc:`/admin/reference/removing_gpg_passphrase`.
-
-Manually copy submission key
-----------------------------
-
-You can also manually copy the submission key from the SVS USB to ``dom0``.
-
-- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to list the SVS submission key details, including its fingerprint:
-
-  .. code-block:: sh
-
-    qvm-run --pass-io vault \
-      "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint"
-
-- Next, run the comand:
-
-  .. code-block:: sh
-
-    qvm-run --pass-io vault \
-      "gpg --homedir /run/media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" \
-      > /tmp/sd-journalist.sec
-
-  where ``<SVSFingerprint>`` is the submission key fingerprint, typed as a single unit without whitespace. This will copy the submission key in ASCII format to a temporary file in dom0, ``/tmp/sd-journalist.sec``.
-
-- Verify the that the file starts with ``-----BEGIN PGP PRIVATE KEY BLOCK-----`` using the command:
-
-  .. code-block:: sh
-
-    head -n 1 /tmp/sd-journalist.sec
-
-- Unmount the SVS USB 
 
 .. _copy_journalist:
 
@@ -85,24 +54,12 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 - In the ``dom0`` terminal, proceed with the next import step of the ``sdw-admin`` command or rerun 
 
   .. code-block:: sh 
+
       sdw-admin --configure 
 
-The command will print out the imported Journalist Interface details to confirm before proceeding.
+  The command will print out the imported Journalist Interface details to confirm before proceeding.
 
 - If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the USB drive.
-
-Manually copy *Journalist Interface* details
---------------------------------------------
-
-- Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
-
-  .. code-block:: sh
-
-    qvm-run --pass-io vault \
-      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
-      > /tmp/journalist.txt
-
-- Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
 
 Copy SecureDrop login credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

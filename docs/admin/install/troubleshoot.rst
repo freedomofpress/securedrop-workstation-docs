@@ -1,6 +1,54 @@
 Troubleshooting Installation Errors
 ===================================
 
+Error importing submission key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If importing the submission key  using ``sdw-admin --configure`` fails, you can also copy the submission key manually.
+
+- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to list the SVS submission key details, including its fingerprint:
+
+  .. code-block:: sh
+
+    qvm-run --pass-io vault \
+      "gpg --homedir /run/media/user/TailsData/gnupg -K --fingerprint"
+
+- Next, run the comand:
+
+  .. code-block:: sh
+
+    qvm-run --pass-io vault \
+      "gpg --homedir /run/media/user/TailsData/gnupg --export-secret-keys --armor <SVSFingerprint>" \
+      > /tmp/sd-journalist.sec
+
+  where ``<SVSFingerprint>`` is the submission key fingerprint, typed as a single unit without whitespace. This will copy the submission key in ASCII format to a temporary file in dom0, ``/tmp/sd-journalist.sec``.
+
+- Verify the that the file starts with ``-----BEGIN PGP PRIVATE KEY BLOCK-----`` using the command:
+
+  .. code-block:: sh
+
+    head -n 1 /tmp/sd-journalist.sec
+
+- Unmount the SVS USB 
+
+.. _manual_copy_journalist: 
+
+Error importing *Journalist Interface* details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If importing the *Journalist Interface* configuration using ``sdw-admin --configure`` fails, you can copy the configuration to ``dom0`` manually.
+
+- Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
+
+  .. code-block:: sh
+
+    qvm-run --pass-io vault \
+      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
+      > /tmp/journalist.txt
+
+- Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
+
+
 "Failed to return clean data"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,5 +150,5 @@ going forwards.
   :width: 100%
 
 Getting Support
----------------
+~~~~~~~~~~~~~~~
 .. include:: ../../includes/getting_support.rst
