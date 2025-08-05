@@ -26,7 +26,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hands ide, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key.
+- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key.
 
   .. code-block:: sh 
 
