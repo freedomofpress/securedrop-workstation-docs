@@ -26,7 +26,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key.
+- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key:
 
   .. code-block:: sh 
 
@@ -51,7 +51,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 
 - In the the ``vault`` file manager, select the persistent volume's listing in the lower left sidebar. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it. When prompted, select the option to **Forget password immediately**.
 
-- In the ``dom0`` terminal, proceed with the next import step of the ``sdw-admin`` command or rerun 
+- In the ``dom0`` terminal, proceed with the next import step of the ``sdw-admin`` command or re-run 
 
   .. code-block:: sh 
 
