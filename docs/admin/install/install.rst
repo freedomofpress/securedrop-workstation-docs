@@ -1,8 +1,11 @@
 Installing SecureDrop Workstation
 =================================
 
-Copy the submission key
-~~~~~~~~~~~~~~~~~~~~~~~
+To install the SecureDrop Workstation, you will need to copy your `Submission Private Key <https://docs.securedrop.org/en/stable/glossary.html#submission-key>`_ and the *Journalist Interface* configuration. This can be done using the ``sdw-admin`` tool, or can be completed manually.
+
+
+Import the submission key
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to decrypt submissions, you will need a copy of the
 `Submission Private Key <https://docs.securedrop.org/en/stable/glossary.html#submission-key>`_
@@ -25,6 +28,21 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
     You will receive a message that says **Failed to open directory "TailsData"**. This is normal behavior and will not cause any issues with the subsequent steps.
 
   |Unlock TailsData|
+
+- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hands ide, then selecting **Other > Xfce Terminal**. Once the Terminal windo wopens, run the following command to import the submission key.
+  .. code-block:: sh 
+      sdw-admin --configure
+
+This command should prompt you to proceed and notify when the submission key import is complete. It will then prompt you to begin importing the journalist interface details, documented in the :ref:`next section <_copy_journalist>`.
+
+- In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the SVS USB.
+
+- If you were prompted for a passphrase during import, you will now need to remove the passphrase on ``sd-journalist.sec``. See :doc:`/admin/reference/removing_gpg_passphrase`.
+
+Manually copy submission key
+----------------------------
+
+You can also manually copy the submission key from the SVS USB to ``dom0``.
 
 - Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to list the SVS submission key details, including its fingerprint:
 
@@ -49,14 +67,12 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
     head -n 1 /tmp/sd-journalist.sec
 
-- In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the SVS USB.
-
-- If you were prompted for a passphrase during import, you will now need to remove the passphrase on ``sd-journalist.sec``. See :doc:`/admin/reference/removing_gpg_passphrase`.
+- Unmount the SVS USB 
 
 .. _copy_journalist:
 
-Copy *Journalist Interface* details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Import *Journalist Interface* details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SecureDrop Workstation connects to your SecureDrop instance's API via the *Journalist Interface*. In order to do so, it will need the *Journalist Interface* address and authentication info. As the clipboard from another VM cannot be copied into ``dom0`` directly, follow these steps to copy the file into place:
 
@@ -65,6 +81,18 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 - Connect the USB drive to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be 3 listings for the USB in the widget: one for the base USB, one for the Tails partition on the USB, labeled ``Tails``, and a 3rd unlabeled listing, for the persistent volume. Choose the third listing.
 
 - In the the ``vault`` file manager, select the persistent volume's listing in the lower left sidebar. It will be named ``N GB encrypted``, where N is the size of the persistent volume. Enter the persistent volume passphrase to unlock and mount it. When prompted, select the option to **Forget password immediately**.
+
+- In the ``dom0`` terminal, proceed with the next import step of the ``sdw-admin`` command or rerun 
+
+  .. code-block:: sh 
+      sdw-admin --configure 
+
+The command will print out the imported Journalist Interface details to confirm before proceeding.
+
+- If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the USB drive.
+
+Manually copy *Journalist Interface* details
+--------------------------------------------
 
 - Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
@@ -75,8 +103,6 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
       > /tmp/journalist.txt
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
-
-- If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the USB drive.
 
 Copy SecureDrop login credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
