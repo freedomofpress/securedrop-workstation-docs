@@ -198,7 +198,7 @@ In order to copy a journalist's login credentials:
 
 - Inspect each section of the password database to ensure that it contains only the information required by the journalist user to log in.
 
-- Close the application window and shut down the ``vault`` VM (using the Qube widget in the upper right panel). At this time, you can also re-enable network connection using the network manager widget.
+- Close the application window and shut down the ``vault`` VM (using the Qube widget in the upper right panel). At this time, you can also re-enable the network connection using the network manager widget.
 
 Install SecureDrop Workstation (estimated wait time: 60-90 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
