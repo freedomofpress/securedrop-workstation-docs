@@ -6,7 +6,7 @@ Installing SecureDrop Workstation
 Download SecureDrop Workstation Packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, we'll download the SecureDrop Workstation packages needed to configure and install the SecureDrop Workstation.
+First, you must download the SecureDrop Workstation packages needed to configure and install the SecureDrop Workstation.
 
 - First, make sure that network connection is enabled using the network manager widget in the upper right panel.
 
@@ -98,7 +98,7 @@ First, we'll download the SecureDrop Workstation packages needed to configure an
 Configure SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now we're ready to proceed with configuring the SecureDrop Workstation with the correct *Journalist Interface* details and submission private key.
+Now you can proceed with configuring the SecureDrop Workstation with the correct *Journalist Interface* details and submission private key.
 
 Import Submission Private Key
 -----------------------------
@@ -159,7 +159,7 @@ SecureDrop Workstation connects to your SecureDrop instance's API via the *Journ
 
       sdw-admin --configure 
 
-  The command will print out the imported Journalist Interface details to confirm before proceeding.
+  The command will print out the imported *Journalist Interface* details to confirm before proceeding.
 
 - If you used an *Admin Workstation* USB drive, or you don't intend to copy a password database to this workstation, safely disconnect the USB drive now. In the ``vault`` file manager, right-click on the **TailsData** sidebar entry, then select **Unmount** and disconnect the USB drive.
 
@@ -198,7 +198,7 @@ In order to copy a journalist's login credentials:
 
 - Inspect each section of the password database to ensure that it contains only the information required by the journalist user to log in.
 
-- Close the application window and shut down the ``vault`` VM (using the Qube widget in the upper right panel).
+- Close the application window and shut down the ``vault`` VM (using the Qube widget in the upper right panel). At this time, you can also re-enable network connection using the network manager widget.
 
 Install SecureDrop Workstation (estimated wait time: 60-90 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
