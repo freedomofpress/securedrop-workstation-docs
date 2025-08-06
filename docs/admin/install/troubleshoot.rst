@@ -1,8 +1,11 @@
 Troubleshooting Installation Errors
 ===================================
 
-Error importing submission key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error configuring SecureDrop Workstation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Failed to import Submission Private Key
+---------------------------------------
 
 If importing the submission key  using ``sdw-admin --configure`` fails, you can also copy the submission key manually.
 
@@ -31,12 +34,20 @@ If importing the submission key  using ``sdw-admin --configure`` fails, you can 
 
 - Unmount the SVS USB 
 
+- Run the following command in the ``dom0`` terminal:
+
+  .. code-block:: sh
+
+    sudo cp /tmp/sd-journalist.sec /usr/share/securedrop-workstation-dom0-config/
+
+- Proceed with :ref:`configuring the workstation<manual_configure>`
+
 .. _manual_copy_journalist: 
 
-Error importing *Journalist Interface* details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Failed to import *Journalist Interface* details
+-----------------------------------------------
 
-If importing the *Journalist Interface* configuration using ``sdw-admin --configure`` fails, you can copy the configuration to ``dom0`` manually.
+If importing the *Journalist Interface* details using ``sdw-admin --configure`` fails, you can copy the configuration to ``dom0`` manually.
 
 - Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
 
@@ -47,6 +58,55 @@ If importing the *Journalist Interface* configuration using ``sdw-admin --config
       > /tmp/journalist.txt
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
+
+- Proceed with :ref:`configuring the workstation<manual_configure>`
+
+
+If you encounter a validation error due to a password-protected GPG key, see :doc:`/admin/reference/removing_gpg_passphrase`.
+
+.. _manual_configure:
+
+Configure SecureDrop Workstation
+--------------------------------
+
+Once the *Journalist Interface* details and submission key have been copied to ``dom0``, you can create the configuration for the SecureDrop Workstation.
+
+- Your submission key has a unique fingerprint required for the configuration. Obtain the fingerprint by using this command:
+
+  .. code-block:: sh
+
+    gpg --with-colons --import-options import-show --dry-run --import /tmp/sd-journalist.sec
+
+  The fingerprint will be on a line that starts with ``fpr``. For example, if the output included the line ``fpr:::::::::65A1B5FF195B56353CC63DFFCC40EF1228271441:``, the fingerprint would be the character sequence ``65A1B5FF195B56353CC63DFFCC40EF1228271441``.
+
+- Next, create the SecureDrop Workstation configuration file:
+
+  .. code-block:: sh
+
+    cd /usr/share/securedrop-workstation-dom0-config
+    sudo cp config.json.example config.json
+
+- The ``config.json`` file must be updated with the correct values for your instance. Open it with root privileges in a text editor such as ``vi`` or ``nano`` and update the following fields' values:
+
+  - **submission_key_fpr**: use the value of the submission key fingerprint as displayed above
+  - **hidserv.hostname**: use the hostname of the *Journalist Interface*, including the ``.onion`` TLD
+  - **hidserv.key**: use the private v3 onion service authorization key value
+  - **environment**: use the value ``prod``
+
+.. note::
+
+   You can find the values for the **hidserv.*** fields in the ``/tmp/journalist.txt`` file that you created in ``dom0`` earlier.
+   The file will be formatted as follows:
+
+   .. code-block:: none
+
+     ONIONADDRESS:descriptor:x25519:AUTHTOKEN
+
+- Verify that the configuration is valid using the command below in the ``dom0`` terminal:
+
+  .. code-block:: sh
+
+    sdw-admin --validate
 
 
 "Failed to return clean data"
