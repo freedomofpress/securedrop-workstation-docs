@@ -40,9 +40,9 @@ If importing the submission key  using ``sdw-admin --configure`` fails, you can 
 
     sudo cp /tmp/sd-journalist.sec /usr/share/securedrop-workstation-dom0-config/
 
-- You can run ``sdw-admin --configure`` to now import the Journalist Interface details and complete configuration. 
+- You can run ``sdw-admin --configure`` to now import the *Journalist Interface* details and complete configuration. 
 
-  Alternatively, follow the steps below to do so manually. Once both Submission Key and Journalist Interface details are imported, proceed with :ref:`configuring the workstation<manual_configure>`.
+  Alternatively, follow the steps below to do so manually. Once both Submission Key and *Journalist Interface* details are imported, proceed with :ref:`configuring the workstation<manual_configure>`.
 
 .. _manual_copy_journalist: 
 
