@@ -216,7 +216,11 @@ This command will take a considerable amount of time and approximately 4GB of ba
 Test the Workstation
 ~~~~~~~~~~~~~~~~~~~~
 
-To start the SecureDrop Client, double-click the SecureDrop desktop icon that was set up by the previous command. The preflight updater will start and check for updates. The system should be up-to-date and no updates should be required, but if updates are available follow the instructions in the preflight updater to apply them.
+The preflight updater will start automatically after logging into the system. Since the system should be up-to-date, no updates this step should be fast. Please follow the preflight updater's instructions. 
+
+  .. note::
+
+    There is also a SecureDrop desktop icon to start the SecureDrop Client, in case it is ever closed.  
 
 Once the update check is complete, the SecureDrop Client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
 
