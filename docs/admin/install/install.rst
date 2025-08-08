@@ -216,7 +216,7 @@ This command will take a considerable amount of time and approximately 4GB of ba
 Test the Workstation
 ~~~~~~~~~~~~~~~~~~~~
 
-The preflight updater will start automatically after logging into the system. Since the system should be up-to-date, no updates this step should be fast. Please follow the preflight updater's instructions. 
+The preflight updater will start automatically after logging into the system. Please follow the preflight updater's instructions. 
 
   .. note::
 
