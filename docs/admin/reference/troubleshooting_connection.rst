@@ -128,7 +128,7 @@ please contact us for assistance.
 
 If all required VMs are running, proceed to the next step.
 
-Step 4: Verify that the network VMs have connectivity
+Step 4: Verify that required VMs have connectivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In step 1, you have already verified that you can connect to the
 Internet using ``sys-net``. Now, test whether ``sys-firewall`` and ``sd-proxy`` are working.
@@ -136,9 +136,21 @@ Internet using ``sys-net``. Now, test whether ``sys-firewall`` and ``sd-proxy`` 
 First, open a terminal in ``sys-firewall`` and run the ``ping google.com`` command.
 You should see similar output as in ``sys-net`` before.
 
+Now, open a terminal in ``sd-proxy`` and run the following command:
+
+``curl -s --proxy socks5h://localhost:9150 https://check.torproject.org | grep Congratulations``
+
+This command contacts a service intended for web browsers to verify whether your
+Tor connection is working.
+
+You should see the text "Congratulations. This browser is configured to use Tor."
+or a similar message on the terminal.
+
+If the output does not include the text "Congratulations", proceed to the next steps.
+
 Step 5: Restart ``sd-proxy``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restart ``sd-proxy`` to attempt to restore Tor connectivity:
+Restart ``sd-proxy`` to attempt to restore connectivity:
 
 1. Exit the SecureDrop app if it is running.
 2. Click the "Q" icon in the system tray (top left).
