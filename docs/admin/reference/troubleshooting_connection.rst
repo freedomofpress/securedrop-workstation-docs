@@ -100,7 +100,6 @@ to sources, starring sources, deleting sources):
 - ``sd-gpg``
 - ``sd-log``
 - ``sd-proxy``
-- ``sd-whonix``
 - ``sys-firewall``
 - ``sys-net``
 - ``sys-whonix`` (during updates)
@@ -132,13 +131,12 @@ If all required VMs are running, proceed to the next step.
 Step 4: Verify that required VMs have connectivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In step 1, you have already verified that you can connect to the
-Internet using ``sys-net``. Now, test whether ``sys-firewall``, ``sd-whonix``
-and ``sd-proxy`` are working.
+Internet using ``sys-net``. Now, test whether ``sys-firewall`` and ``sd-proxy`` are working.
 
 First, open a terminal in ``sys-firewall`` and run the ``ping google.com`` command.
 You should see similar output as in ``sys-net`` before.
 
-Now, open a terminal in ``sd-whonix`` and run the following command:
+Now, open a terminal in ``sd-proxy`` and run the following command:
 
 ``wget -qO- https://check.torproject.org/ | cat | grep -m 1 "Congratulations"``
 
@@ -148,35 +146,17 @@ Tor connection is working.
 You should see the text "Congratulations. This browser is configured to use Tor."
 or a similar message on the terminal.
 
-If the output does not include the text "Congratulations", keep the terminal
-window open and proceed to the next steps.
+If the output does not include the text "Congratulations", proceed to the next steps.
 
-If the command does include the expected text in ``sd-whonix``, also run it in
-``sd-proxy``. If it only fails in ``sd-proxy``, your workstation may be
-misconfigured, or the proxy may have crashed. In that case, skip ahead to step 6.
-We also recommend that you contact us, so we can help identify the root cause.
-
-Step 5: Restart Tor
-~~~~~~~~~~~~~~~~~~~
-If you have narrowed down the problem to ``sd-whonix``, try restarting Tor.
-You can do this from within the ``sd-whonix`` terminal using the following
-command:
-
-``sudo systemctl restart tor``
-
-If this does not resolve the issue, proceed to the next step.
-
-Step 6: Restart ``sd-proxy`` and ``sd-whonix``
+Step 5: Restart ``sd-proxy``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restart ``sd-proxy`` and ``sd-whonix`` to attempt to restore connectivity:
+Restart ``sd-proxy`` to attempt to restore connectivity:
 
 1. Exit the SecureDrop app if it is running.
-2. Click the "Q" icon in the system tray (top right).
+2. Click the "Q" icon in the system tray (top left).
 3. Click **Run Qube Manager**
 4. Right-click ``sd-proxy`` in the list of VMs. Click **Shutdown qube**.
-5. Right-click ``sd-whonix`` in the list of VMs. Click **Shutdown qube**.
-6. Right-click ``sd-proxy`` in the list of VMs. Click **Start/Resume qube**.
-   The ``sd-whonix`` VM should start automatically.
+5. Right-click ``sd-proxy`` in the list of VMs. Click **Start/Resume qube**.
 
 If this does not resolve the issue, proceed to the next step.
 
@@ -188,16 +168,15 @@ Step 7: Restart ``sys-net`` and ``sys-firewall``
    You will temporarily lose all Internet connectivity in Qubes OS during this
    step.
 
-Using the same procedure as in the previous step, shut down ``sd-proxy``,
-``sd-whonix`` and ``sys-whonix`` (in this order). Attempt to shut down
+Using the same procedure as in the previous step, shut down ``sd-proxy``. Attempt to shut down
 ``sys-firewall``. You may see an error message telling you that other VMs still
 require access to ``sys-firewall``. Save your work in those VMs, shut them
 down, and attempt to shut down ``sys-firewall`` again.
 
 Finally, shut down ``sys-net``. The network manager icon should disappear.
 
-Now, start ``sys-whonix``, which will bring up ``sys-net`` and ``sys-firewall``
-at the same time. Start ``sd-proxy``, which will bring up ``sd-whonix``.
+Now, start ``sys-proxy``, which will bring up ``sys-net`` and ``sys-firewall``
+at the same time.
 
 If this does not resolve the issue, please contact us for assistance.
 

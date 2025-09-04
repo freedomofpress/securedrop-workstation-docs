@@ -47,7 +47,3 @@ running for the SecureDrop Client to successfully connect to the server.
    access the SecureDrop API via Tor, and should not be attached to VMs that are
    unrelated to SecureDrop.
 
-.. is this still relevant vv
-Qubes OS ships with a Whonix service called ``sys-whonix``. When troubleshooting
-connection issues specific to SecureDrop, ``sys-whonix`` is only relevant during
-updates of the Whonix VMs (e.g., while the preflight updater is running).

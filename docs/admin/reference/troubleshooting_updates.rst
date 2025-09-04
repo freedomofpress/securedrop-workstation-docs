@@ -67,8 +67,8 @@ line in the log file that looks similar to the following:
   'dom0': <UpdateStatus.UPDATES_OK: '0'>,
   'apply_dom0': <UpdateStatus.UPDATES_OK: '0'>,
   'fedora-42-xfce': <UpdateStatus.UPDATES_FAILED: '3'>,
-  'sd-large-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
-  'sd-small-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
+  'sd-large-bookworm-template': <UpdateStatus.UPDATES_OK: '0'>,
+  'sd-small-bookworm-template': <UpdateStatus.UPDATES_OK: '0'>,
   'recommended_action': <UpdateStatus.UPDATES_FAILED: '3'>}
 
 In this example, the ``fedora-42-xfce`` VM has failed to update.
