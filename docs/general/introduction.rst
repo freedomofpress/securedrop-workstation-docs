@@ -57,10 +57,8 @@ FPF has directly sponsored Qubes OS development, and we encourage you to
 We use the `Python <https://www.python.org/>`_ programming language and many tools in its
 ecosystem, which you can support by `donating to the Python Software Foundation <https://www.python.org/psf/donations/>`_.
 
-SecureDrop Workstation VMs are powered by `Debian <https://www.debian.org/>`_,
-`Fedora <https://fedoraproject.org/>`_, and `Whonix <https://www.whonix.org/>`_, all
-of which rely on volunteer contributions and financial support. The
-`GNOME <https://www.gnome.org/>`_ project acts as an umbrella for many of the individual
+SecureDrop Workstation VMs are powered by `Debian <https://www.debian.org/>`_ and `Fedora <https://fedoraproject.org/>`_ both
+of which rely on volunteer contributions and financial support. The `GNOME <https://www.gnome.org/>`_ project acts as an umbrella for many of the individual
 software components we rely on.
 
 Finally, SecureDrop Workstation relies on many other open source projects such as

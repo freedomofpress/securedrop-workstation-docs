@@ -35,18 +35,15 @@ Because the SecureDrop Client must connect to the SecureDrop
 *Application Server* in order to send or retrieve messages, documents, and
 replies, it can communicate through Qubes-internal Remote Procedure Calls (RPCs)
 with another VM, ``sd-proxy``, which can only access the open Internet through
-the Tor network, using the separate ``sd-whonix`` VM.
+the Tor network.
 
-Like all networked VMs, ``sd-whonix`` uses the ``sys-firewall`` service to
-connect to the network, which is provided via ``sys-net``. All four VMs must be
+Like all networked VMs, ``sd-proxy`` uses the ``sys-firewall`` service to
+connect to the network, which is provided via ``sys-net``. All three VMs must be
 running for the SecureDrop Client to successfully connect to the server.
 
 .. important::
 
-   The ``sd-whonix`` VM contains a sensitive authentication token required to
+   The ``sd-proxy`` VM contains a sensitive authentication token required to
    access the SecureDrop API via Tor, and should not be attached to VMs that are
    unrelated to SecureDrop.
 
-Qubes OS ships with a Whonix service called ``sys-whonix``. When troubleshooting
-connection issues specific to SecureDrop, ``sys-whonix`` is only relevant during
-updates of the Whonix VMs (e.g., while the preflight updater is running).
