@@ -58,7 +58,7 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
 1. Insert the USB drive and wait for the ``sd-devices`` VM to start.
 2. If your drive is using VeraCrypt, you will need to unlock it manually:
 
-   1. Open the file menu by clicking on the Qubes App Menu |qubes_menu| (in the top left),
+   1. Open the file menu by clicking on the Qubes Application menu |qubes_menu| (in the top left),
       select **sd-devices** and click **Files**.
    2. In the left sidebar, there should be an entry labeled **# GB Possibly Encrypted**,
       click it.

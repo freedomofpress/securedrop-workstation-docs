@@ -180,7 +180,7 @@ key and remove the expired one:
 
       fedef93de425668541545373952b5f92bac4ac1f1253fe5b64c2be2fc941073b securedrop-release-key.pub
 
-6. **Start a dom0 terminal** by opening the Qubes App Menu |qubes_menu|, selecting the gear icon on the left-hand side, then selecting **Other ▸ Xfce Terminal**.
+6. **Start a dom0 terminal** by opening the Qubes Application menu |qubes_menu|, selecting the gear icon on the left-hand side, then selecting **Other ▸ Xfce Terminal**.
    The remaining commands will all be executed in this dom0 terminal.
 
 7. **Copy the key into dom0:**
