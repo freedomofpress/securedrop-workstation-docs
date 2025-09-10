@@ -39,7 +39,7 @@ connection notification, it is most likely due to one of these causes.
 .. important::
 
    Not all VMs in Qubes OS have Internet access. For example, opening a terminal via
-   **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal** opens a ``dom0``
+   |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal** opens a ``dom0``
    terminal without Internet access. See our :ref:`networking architecture <Networking Architecture>`
    overview for additional background.
 
@@ -48,7 +48,7 @@ verify whether your connection is working by opening a terminal in ``sys-net``:
 
 |screenshot_q_widget_sysnet_run_terminal|
 
-1. Click the "Q" icon in the in the system tray (top right area).
+1. Click the Qubes Domains menu |blue_qube| in the in the system tray (top right area).
 2. A list of running VMs should appear. Select ``sys-net`` from the list, and
    click **Run Terminal**.
 3. In the terminal window, type the command ``ping -c 5 google.com``.
@@ -104,7 +104,7 @@ to sources, starring sources, deleting sources):
 - ``sys-net``
 - ``sys-whonix`` (during updates)
 
-You can verify whether a VM is running or not by clicking the "Q" icon in the
+You can verify whether a VM is running or not by clicking the |blue_qube| icon in the
 system tray (top right). Only VMs that are currently running will appear in the
 list:
 
@@ -153,7 +153,7 @@ Step 5: Restart ``sd-proxy``
 Restart ``sd-proxy`` to attempt to restore connectivity:
 
 1. Exit the SecureDrop app if it is running.
-2. Click the "Q" icon in the system tray (top left).
+2. Click the Qubes Application Menu |qubes_menu| icon in the system tray (top left).
 3. Click **Run Qube Manager**
 4. Right-click ``sd-proxy`` in the list of VMs. Click **Shutdown qube**.
 5. Right-click ``sd-proxy`` in the list of VMs. Click **Start/Resume qube**.
@@ -195,7 +195,7 @@ To temporarily increase the timeout, and give the system more time to
 finish synchronizing with the server, you can perform the following steps:
 
 1. Log into the Qubes workstation
-2. Start a system Terminal in ``dom0`` via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal**
+2. Start a system Terminal in ``dom0`` via |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal**
 3. Run the following commands::
    
        qvm-service --enable sd-app SDEXTENDEDTIMEOUT_600
@@ -238,3 +238,5 @@ In addition, you may want to examine ``/var/log/syslog`` in ``sys-net`` and
   :width: 100%
 .. |screenshot_start_resume_qube| image:: ../../images/screenshot_start_resume_qube.png
   :width: 100%
+.. |blue_qube| image:: ../../images/blue_qube.png
+.. |qubes_menu| image:: ../../images/qubes_menu.png

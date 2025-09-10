@@ -10,9 +10,9 @@ First, you must download the SecureDrop Workstation packages needed to configure
 
 - First, make sure that network connection is enabled using the network manager widget in the upper right panel.
 
-- Next, start a terminal in the network-attached ``work`` VM, via **Q > Apps > work > Xfce Terminal**.
+- Next, start a terminal in the network-attached ``work`` VM, via |qubes_menu| **▸ Apps ▸ work ▸ Xfce Terminal**.
 
-.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via **Q > Apps > work > Firefox**
+.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via |qubes_menu| **▸ Apps ▸ work ▸ Firefox**
 
 - In the ``work`` terminal, run the following commands to download and add the SecureDrop signing key, which is needed to verify the SecureDrop Workstation package:
 
@@ -111,7 +111,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
 - First, use the network manager widget in the upper right panel to disable your network connection. These instructions refer to the ``vault`` VM, which has no network access by default, but if the SVS USB is attached to another VM by mistake, this will offer some protection against exfiltration.
 
-- Next, choose **Q > Apps > vault > Thunar File Manager** to open the file manager in the ``vault`` VM.
+- Next, choose |qubes_menu| **▸ Apps ▸ vault ▸ Thunar File Manager** to open the file manager in the ``vault`` VM.
 
 - Connect the SVS USB to a USB port on the Qubes computer, then use the devices widget in the upper right panel to attach it to the ``vault`` VM. There will be three entries for the USB in the section titled **Data (Block) Devices**. Choose the *unlabeled* entry (*not* the one labeled "TAILS") annotated with a ``sys-usb`` text that ends with a number, like ``sys-usb:sdb2``. That is the persistent volume.
 
@@ -125,7 +125,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key:
+- Open a ``dom0`` terminal via |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key:
 
   .. code-block:: sh 
 
@@ -170,9 +170,9 @@ Users of SecureDrop Workstation must enter their username, passphrase and two-fa
 
 In order to set up KeePassXC for easy use:
 
-- Add KeePassXC to the application menu by selecting it from the list of available apps in **Q > Apps > vault > Settings > Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
+- Add KeePassXC to the application menu by selecting it from the list of available apps in |qubes_menu| **▸ Apps ▸ vault ▸ Settings ▸ Applications** and pressing the button labeled **>** (do not press the button labeled **>>**, which will add *all* applications to the menu).
 
-- Launch KeePassXC via **Q > Apps > vault > KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
+- Launch KeePassXC via |qubes_menu| **▸ Apps ▸ vault ▸ KeePassXC**. When prompted to enable automatic updates, decline. ``vault`` is networkless, so the built-in update check will fail; the app will be updated through system updates instead.
 
 - Close the application.
 
@@ -194,7 +194,7 @@ In order to copy a journalist's login credentials:
 
 - In the file manager window that displays the home directory, open the copy you made of the password database by double-clicking it.
 
-- If the database is passwordless, KeePassXC may display a security warning when opening it. To preserve convenient passwordless access, you can protect the database using a key file, via **Database > Database settings > Security > Add additional protection > Add Key File > Generate**. This key file has to be selected when you open the database, but KeePassXC will remember the last selection.
+- If the database is passwordless, KeePassXC may display a security warning when opening it. To preserve convenient passwordless access, you can protect the database using a key file, via **Database ▸ Database settings ▸ Security ▸ Add additional protection ▸ Add Key File ▸ Generate**. This key file has to be selected when you open the database, but KeePassXC will remember the last selection.
 
 - Inspect each section of the password database to ensure that it contains only the information required by the journalist user to log in.
 
@@ -203,7 +203,7 @@ In order to copy a journalist's login credentials:
 Install SecureDrop Workstation (estimated wait time: 60-90 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Configure infinite scrollback for your terminal via **Edit > Preferences > General > Unlimited scrollback**. This helps to ensure that you will be able to review any error output printed to the terminal during the installation.
+- Configure infinite scrollback for your terminal via **Edit ▸ Preferences ▸ General ▸ Unlimited scrollback**. This helps to ensure that you will be able to review any error output printed to the terminal during the installation.
 
 - Finally, in the ``dom0`` terminal, run the command:
 
@@ -252,3 +252,4 @@ To revoke this configuration change later or correct a typo, you can use the ``d
   :width: 100%
 .. |Unlock Tailsdata| image:: images/unlock_tails_usb.png
   :width: 100%
+.. |qubes_menu| image:: ../../images/qubes_menu.png
