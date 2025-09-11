@@ -254,4 +254,5 @@ To revoke this configuration change later or correct a typo, you can use the ``d
   :width: 100%
 .. |qubes_menu| image:: ../../images/qubes_menu.png
   :alt: Qubes Application menu
-
+.. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
+  :alt: System Tools 
