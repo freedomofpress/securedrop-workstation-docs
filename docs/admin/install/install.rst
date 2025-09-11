@@ -125,7 +125,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal via |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal**. Once the Terminal window opens, run the following command to import the submission key:
+- Open a ``dom0`` terminal via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**. Once the terminal window opens, run the following command to import the submission key:
 
   .. code-block:: sh 
 
@@ -253,3 +253,5 @@ To revoke this configuration change later or correct a typo, you can use the ``d
 .. |Unlock Tailsdata| image:: images/unlock_tails_usb.png
   :width: 100%
 .. |qubes_menu| image:: ../../images/qubes_menu.png
+  :alt: Qubes Application menu
+

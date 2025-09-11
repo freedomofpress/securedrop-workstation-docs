@@ -100,3 +100,4 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
 .. |screenshot_veracrypt_sd_devices_files_unlock| image:: ../images/screenshot_veracrypt_sd_devices_files_unlock.png
   :width: 100%
 .. |qubes_menu| image:: ../images/qubes_menu.png
+  :alt: Qubes Application menu

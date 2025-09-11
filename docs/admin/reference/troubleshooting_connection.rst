@@ -39,7 +39,7 @@ connection notification, it is most likely due to one of these causes.
 .. important::
 
    Not all VMs in Qubes OS have Internet access. For example, opening a terminal via
-   |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal** opens a ``dom0``
+   |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal** opens a ``dom0``
    terminal without Internet access. See our :ref:`networking architecture <Networking Architecture>`
    overview for additional background.
 
@@ -195,7 +195,7 @@ To temporarily increase the timeout, and give the system more time to
 finish synchronizing with the server, you can perform the following steps:
 
 1. Log into the Qubes workstation
-2. Start a system Terminal in ``dom0`` via |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal**
+2. Start a ``dom0`` terminal via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**
 3. Run the following commands::
    
        qvm-service --enable sd-app SDEXTENDEDTIMEOUT_600
@@ -239,4 +239,8 @@ In addition, you may want to examine ``/var/log/syslog`` in ``sys-net`` and
 .. |screenshot_start_resume_qube| image:: ../../images/screenshot_start_resume_qube.png
   :width: 100%
 .. |blue_qube| image:: ../../images/blue_qube.png
+  :alt: Qubes Domains menu
 .. |qubes_menu| image:: ../../images/qubes_menu.png
+  :alt: Qubes Application menu
+.. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
+  :alt: System Tools 
