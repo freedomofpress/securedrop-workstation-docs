@@ -17,7 +17,7 @@ of its airgap:
 
 - First, boot into the *Secure Viewing Station*, without unlocking its
   persistent volume or setting an admin password.
-- Next, open the Disks utility: **Applications > Utilities > Disks**.
+- Next, open the Disks utility: **Applications ▸ Utilities ▸ Disks**.
 - Connect the fresh USB stick and select it in the list in the left-hand panel.
 
 .. warning:: The formatting operation will wipe any data on an existing partition.
