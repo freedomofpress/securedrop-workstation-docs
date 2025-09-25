@@ -35,7 +35,7 @@ previous log file.
 
 In order to examine the most recent log file:
 
-1. Open a terminal in ``dom0`` via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal**.
+1. Open a terminal in ``dom0`` via |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal**.
 
 2. Change to the ``~/.securedrop_updater/logs/`` directory:
 
@@ -66,13 +66,12 @@ line in the log file that looks similar to the following:
   INFO: Signal: upgrade_status {
   'dom0': <UpdateStatus.UPDATES_OK: '0'>,
   'apply_dom0': <UpdateStatus.UPDATES_OK: '0'>,
-  'fedora-41-xfce': <UpdateStatus.UPDATES_OK: '0'>,
-  'sd-large-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
-  'whonix-gateway-17': <UpdateStatus.UPDATES_FAILED: '3'>,
-  'sd-small-bullseye-template': <UpdateStatus.UPDATES_OK: '0'>,
+  'fedora-42-xfce': <UpdateStatus.UPDATES_FAILED: '3'>,
+  'sd-large-bookworm-template': <UpdateStatus.UPDATES_OK: '0'>,
+  'sd-small-bookworm-template': <UpdateStatus.UPDATES_OK: '0'>,
   'recommended_action': <UpdateStatus.UPDATES_FAILED: '3'>}
 
-In this example, the ``whonix-gateway-17`` VM has failed to update.
+In this example, the ``fedora-42-xfce`` VM has failed to update.
 This is indicated by the text ``<UpdateStatus.UPDATES_FAILED: '3'>``.
 
 It is possible that multiple steps have failed. Make note of any
@@ -86,7 +85,7 @@ Note that ``dom0`` and ``apply_dom0`` are separate steps.
 
 ``dom0`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^
-1. Open a terminal in ``dom0`` via **Q > Gear Icon (left-hand side) > Other Tools > Xfce Terminal**.
+1. Open a terminal in ``dom0`` via |qubes_menu| **▸ Gear Icon (left-hand side) ▸ Other Tools ▸ Xfce Terminal**.
 
 2. Perform an interactive ``dom0`` update by running the
    following command:
@@ -122,7 +121,7 @@ your system is trying to use an old copy of the SecureDrop Release
 Signing Key. You can perform the following steps to fetch the updated
 key and remove the expired one:
 
-1. **Start a terminal** in the "work" VM via the menu: **Q > Apps > work > Xfce Terminal**
+1. **Start a terminal** in the "work" VM via the menu: |qubes_menu| **▸ Apps ▸ work ▸ Xfce Terminal**
 
 2. **Download the key:**
 
@@ -181,7 +180,8 @@ key and remove the expired one:
 
       fedef93de425668541545373952b5f92bac4ac1f1253fe5b64c2be2fc941073b securedrop-release-key.pub
 
-6. **Start a dom0 terminal** by opening the **Q Menu**, selecting the gear icon on the left-hand side, then selecting **Other > Xfce Terminal**.
+6. **Start a dom0 terminal** via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**.
+
    The remaining commands will all be executed in this dom0 terminal.
 
 7. **Copy the key into dom0:**
@@ -282,10 +282,10 @@ key and remove the expired one:
    unsure on how to resolve an error, please contact us
    for assistance.
 
-``fedora-41-xfce`` update failures
+``fedora-42-xfce`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Launch the Qubes GUI Updater from the top righthand
-   tray icon. Ensure the ``fedora-41-xfce`` template is
+   tray icon. Ensure the ``fedora-42-xfce`` template is
    selected.
 
 2. Run the updater, observing the output in the
@@ -330,3 +330,10 @@ Click the SecureDrop desktop icon to restart the updater.
 If all issues have been resolved, the updater should run to
 completion and display a success message. If the issue
 persists, please contact us for assistance.
+
+.. |blue_qube| image:: ../../images/blue_qube.png
+   :alt: Qubes Domains menu
+.. |qubes_menu| image:: ../../images/qubes_menu.png
+  :alt: Qubes Application menu
+.. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
+  :alt: System Tools 
