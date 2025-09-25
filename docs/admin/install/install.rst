@@ -10,7 +10,7 @@ First, you must configure the Qubes-Contrib repo, then download the SecureDrop W
 
 - Make sure that network connection is enabled using the network manager widget in the upper right panel.
 
-- Next, in a ``dom0`` terminal (|qubes_menu| **▸ Other > Xfce Terminal**):
+- Next, in a ``dom0`` terminal (|qubes_menu| **▸ Other ▸ Xfce Terminal**):
 
   .. code-block:: sh
 
