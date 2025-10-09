@@ -15,13 +15,15 @@ First, you must configure the Qubes-Contrib repo, then download the SecureDrop W
   .. code-block:: sh
 
     sudo qubes-dom0-update -y qubes-repo-contrib
+    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-4-contrib-fedora
     sudo qubes-dom0-update -y --clean securedrop-workstation-keyring
 
 - The SecureDrop Relase keyring will be installed on your machine. Wait 15 seconds for the key to be imported into the ``rpm`` database. Then:
 
     .. code-block:: sh
 
-    sudo qubes-dom0-update -y securedrop-workstation-dom0-config
+    sudo qubes-dom0-update -y --clean securedrop-workstation-dom0-config
+    sudo dnf -y remove qubes-repo-contrib
 
 Configure SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +55,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**. Once the terminal window opens, run the following command to import the submission key:
+- Open a ``dom0`` terminal via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other ▸ Xfce Terminal**. Once the terminal window opens, run the following command to import the submission key:
 
   .. code-block:: sh 
 
