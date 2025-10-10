@@ -20,7 +20,7 @@ First, you must configure the Qubes-Contrib repo, then download the SecureDrop W
 
 - The SecureDrop Relase keyring will be installed on your machine. Wait 15 seconds for the key to be imported into the ``rpm`` database. Then:
 
-    .. code-block:: sh
+  .. code-block:: sh
 
     sudo qubes-dom0-update -y --clean securedrop-workstation-dom0-config
     sudo dnf -y remove qubes-repo-contrib
