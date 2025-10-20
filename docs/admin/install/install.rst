@@ -6,94 +6,25 @@ Installing SecureDrop Workstation
 Download SecureDrop Workstation Packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, you must download the SecureDrop Workstation packages needed to configure and install the SecureDrop Workstation.
+First, you must configure the Qubes-Contrib repo, then download the SecureDrop Workstation packages.
 
-- First, make sure that network connection is enabled using the network manager widget in the upper right panel.
+- Make sure that network connection is enabled using the network manager widget in the upper right panel.
 
-- Next, start a terminal in the network-attached ``work`` VM, via |qubes_menu| **▸ Apps ▸ work ▸ Xfce Terminal**.
-
-.. note:: As the next steps include commands that must be typed exactly, you may want to open a browser in the ``work`` VM, open this documentation there, and copy-and-paste the commands below into your ``work`` terminal. Note that due to Qubes' default security settings you will *not* be able to paste commands into your ``dom0`` terminal. The ``work`` browser can be opened via |qubes_menu| **▸ Apps ▸ work ▸ Firefox**
-
-- In the ``work`` terminal, run the following commands to download and add the SecureDrop signing key, which is needed to verify the SecureDrop Workstation package:
+- Next, in a ``dom0`` terminal (|qubes_menu| **▸** |qubes_menu_gear| **▸ Other ▸ Xfce Terminal**):
 
   .. code-block:: sh
 
-    gpg --keyserver hkps://keys.openpgp.org --recv-key \
-      "2359 E653 8C06 13E6 5295 5E6C 188E DD3B 7B22 E6A3"
+    sudo qubes-dom0-update -y qubes-repo-contrib
+    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-qubes-4-contrib-fedora
+    sudo qubes-dom0-update --clean -y securedrop-workstation-keyring
 
-    gpg --armor --export 2359E6538C0613E652955E6C188EDD3B7B22E6A3 \
-      > securedrop-release-key.pub
-
-    sudo rpmkeys --import securedrop-release-key.pub
-
-- In the ``work`` terminal, open a text editor with escalated privileges (for example, with the command ``sudo nano``) and create a file ``/etc/yum.repos.d/securedrop-temp.repo`` with the following contents:
-
-  .. code-block:: none
-
-    [securedrop-workstation-temporary]
-    enabled=1
-    baseurl=https://yum.securedrop.org/workstation/dom0/f37
-    name=SecureDrop Workstation Qubes initial install bootstrap
-
-- Download the SecureDrop Workstation config package to the curent working directory with the command:
+- The SecureDrop Relase keyring will be installed on your machine. Wait 15 seconds for the key to be imported into the ``rpm`` database. Then:
 
   .. code-block:: sh
 
-    dnf download securedrop-workstation-dom0-config
-
-  Note the release version number in the filename, you'll need it below. During the download, you may be prompted to confirm importing the Qubes OS Release 4 Signing Key. You can safely do so; it will not be used during the subsequent steps.
-
-- Verify the package with the following command:
-
-  .. code-block:: sh
-
-    rpm -Kv securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm
-
-  where ``<versionNumber>`` is the release version number you noted above. The command output should match the following text:
-
-  .. code-block:: none
-
-    securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm:
-      Header V4 RSA/SHA512 Signature, key ID 7b22e6a3: OK
-      Header SHA256 digest: OK
-      Header SHA1 digest: OK
-      Payload SHA256 digest: OK
-      MD5 digest: OK
-
-
-- If the package verification was successful, in the ``dom0`` terminal, run the following command to transfer the RPM package to dom0:
-
-  .. code-block:: sh
-
-    qvm-run --pass-io work \
-      "cat /home/user/securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm" \
-      > securedrop-workstation.rpm
-
-- Verify that the RPM was transferred correctly by running the following commands:
-
-  - in the ``work`` terminal:
-
-    .. code-block:: sh
-
-      sha256sum securedrop-workstation-dom0-config-<versionNumber>-1.fc37.noarch.rpm
-
-  - in the ``dom0`` terminal:
-
-    .. code-block:: sh
-
-      sha256sum securedrop-workstation.rpm
-
-  If the hash output for both files matches, the RPM was transferred successfully.
-
-- Install the RPM using the following command in the ``dom0`` terminal:
-
-    .. code-block:: sh
-
-      sudo dnf install securedrop-workstation.rpm
-
-  When prompted, type **Y** and **Enter** to install the package.
-
-- Shut down the ``work`` VM using the Qube widget in the top-right panel.
+    sudo qubes-dom0-update --clean -y securedrop-workstation-dom0-config
+    sudo dnf -y remove qubes-repo-contrib
+    systemd-run --on-active=5min rpm -e gpg-pubkey-d0941e87-5d8c9210
 
 Configure SecureDrop Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,7 +56,7 @@ To protect this key and preserve the air gap, you will need to connect the SVS U
 
   |Unlock TailsData|
 
-- Open a ``dom0`` terminal via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**. Once the terminal window opens, run the following command to import the submission key:
+- Open a ``dom0`` terminal via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other ▸ Xfce Terminal**. Once the terminal window opens, run the following command to import the submission key:
 
   .. code-block:: sh 
 
