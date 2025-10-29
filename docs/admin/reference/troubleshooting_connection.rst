@@ -102,7 +102,6 @@ to sources, starring sources, deleting sources):
 - ``sd-proxy``
 - ``sys-firewall``
 - ``sys-net``
-- ``sys-whonix`` (during updates)
 
 You can verify whether a VM is running or not by clicking the |blue_qube| icon in the
 system tray (top right). Only VMs that are currently running will appear in the

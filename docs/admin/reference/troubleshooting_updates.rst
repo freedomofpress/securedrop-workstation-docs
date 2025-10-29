@@ -258,13 +258,12 @@ key and remove the expired one:
       sub   rsa4096 2021-05-10 [E] [expires: 2027-05-24]
 
 
-``sd-*-template`` or ``whonix-gateway-17`` update failures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``sd-*-template`` update failures
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the Qubes menu and open a terminal in the impacted
-   template. For example, if ``whonix-gateway-17`` failed to
+   template. For example, if ``sd-small-bookworm-template`` failed to
    update, select its entry in the Qubes menu and click
-   **Terminal**. (Be sure not to confuse it with the
-   similarly named ``whonix-workstation-17`` template.)
+   **Terminal**.
 
 2. Perform an interactive template update by running the
    the following commands:
