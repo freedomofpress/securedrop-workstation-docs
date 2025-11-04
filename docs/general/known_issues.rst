@@ -5,7 +5,7 @@ Reporting issues
 ----------------
 
 Please report sensitive issues that are specific to your instance
-via the `support portal <https://support.freedom.press>`_. 
+via Signal or another secure method. 
 
 Bugs and other issues that are not specific to your instance can be reported
 via GitHub using the following links:

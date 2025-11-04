@@ -116,11 +116,10 @@ easier and faster.
 While we hope to add advanced tooling and document-processing options down the line,
 at this time we request that you do not change the configuration of the workstation
 or install additional software on it. If you have specific needs that you would like
-to discuss with us, please open an issue `in our support portal`_ or send us a
-`GPG-encrypted email`_ at support@freedom.press.
+to discuss with us, please contact us via Signal, or send us a
+`PGP-encrypted email`_ at support@freedom.press.
 
-.. _`in our support portal`: https://support.freedom.press/
-.. _`GPG-encrypted email`: https://securedrop.org/sites/default/files/fpf-email.asc
+.. _`PGP-encrypted email`: https://securedrop.org/sites/default/files/fpf-email.asc
 
 Why can’t I save or print from the Viewer VM apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
