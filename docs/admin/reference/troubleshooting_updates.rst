@@ -320,7 +320,7 @@ If this does not resolve the issue:
 3. The file can now be found in ``~/QubesIncoming/dom0/`` in the
    ``work`` VM.
 
-   Send us the file through a secure channel, such as our support portal.
+   Send us the file through a secure channel, such as via Signal.
    We will provide further instructions.
 
 Step 4: Restart the updater
