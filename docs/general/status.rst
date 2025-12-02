@@ -9,7 +9,7 @@ early testing of the Workstation. This pilot program has now ended.
 
 With the 1.0.0 release, we’re now switching to an open beta. If you are
 interested in using SecureDrop Workstation, please reach out to us
-via the `support portal <https://support.freedom.press>`_.
+via our `contact form <https://securedrop.org/help>`_.
 
 Is SecureDrop Workstation right for you?
 ----------------------------------------
@@ -76,6 +76,5 @@ Roadmap and Timeline
 You can find information about our current development roadmap and timeline at
 the `SecureDrop Development Wiki <https://github.com/freedomofpress/securedrop/wiki/Development-Roadmap>`_.
 
-We encourage former pilot participants and open beta participants to file support tickets
-with us, to help us understand and prioritize your needs as we continue development.
+We encourage former pilot participants and open beta participants to reach out, to help us understand and prioritize your needs as we continue development.
 
