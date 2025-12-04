@@ -49,14 +49,22 @@ If importing the submission key  using ``sdw-admin --configure`` fails, you can 
 Failed to import *Journalist Interface* details
 -----------------------------------------------
 
-If importing the *Journalist Interface* details using ``sdw-admin --configure`` fails, you can copy the configuration to ``dom0`` manually.
+If importing the *Journalist Interface* details using ``sdw-admin --configure`` fails, you can copy the configuration file to ``dom0`` manually.
 
-- Copy the *Journalist Interface* configuration file to ``dom0``. If your SecureDrop instance uses v3 onion services, use the following command:
+- If your *Journalist Interface* is based on SecureDrop 2.13.0 or later, use the following command:
 
   .. code-block:: sh
 
     qvm-run --pass-io vault \
-      "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
+      "cat /run/media/user/TailsData/securedrop-admin/app-journalist.auth_private" \
+      > /tmp/journalist.txt
+
+- If your *Journalist Interface* is based on SecureDrop 2.12.10 or earlier, use the following command:
+
+  .. code-block:: sh
+
+    qvm-run --pass-io vault \
+            "cat /run/media/user/TailsData/Persistent/securedrop/install_files/ansible-base/app-journalist.auth_private" \
       > /tmp/journalist.txt
 
 - Verify that the ``/tmp/journalist.txt`` file on ``dom0`` contains valid configuration information using the command ``cat /tmp/journalist.txt`` in the ``dom0`` terminal.
