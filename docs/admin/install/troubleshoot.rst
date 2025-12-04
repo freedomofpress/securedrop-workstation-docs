@@ -51,7 +51,7 @@ Failed to import *Journalist Interface* details
 
 If importing the *Journalist Interface* details using ``sdw-admin --configure`` fails, you can copy the configuration file to ``dom0`` manually.
 
-- If your *Journlist Interface* is based on SecureDrop 2.13.0 or later, use the following command:
+- If your *Journalist Interface* is based on SecureDrop 2.13.0 or later, use the following command:
 
   .. code-block:: sh
 
