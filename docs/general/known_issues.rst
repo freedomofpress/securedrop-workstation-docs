@@ -11,7 +11,7 @@ Bugs and other issues that are not specific to your instance can be reported
 via GitHub using the following links:
 
  - `SecureDrop Workstation issues <https://github.com/freedomofpress/securedrop-workstation/issues>`_ - issues related to the Qubes environment and workstation provisioning.
- - `SecureDrop Client issues <https://github.com/freedomofpress/securedrop-client/issues>`_ - issues related to the *SecureDrop Client*.
+ - `SecureDrop App issues <https://github.com/freedomofpress/securedrop-client/issues>`_ - issues related to the *SecureDrop App*.
  
 If you encounter a security-related issue, please see
 `SECURITY.md <https://github.com/freedomofpress/securedrop-workstation/blob/main/SECURITY.md>`_ 
@@ -20,22 +20,13 @@ for instructions on how to privately report it.
 Current known issues
 --------------------
 
-- Searching/filtering by codename is not yet implemented.
-- While failed file downloads are automatically retried, there is currently
-  no mechanism cancelling in-progress downloads or viewing the progress or speed of
-  a download. These features are planned.
 - Updates are slow due to the number of VMs involved, and due to some updates
   being fetched over Tor. We have made improvements to the performance and reliability
   of the updater, and this work will continue.
-- SecureDrop instances with very large numbers of sources may encounter
-  UI performance issues. While performance improvements are on the roadmap,
-  `our recommendation <https://docs.securedrop.org/en/stable/admin/maintenance/backup_and_restore.html#minimizing-disk-use>`_
-  is to delete information from the servers as regularly as possible, both
-  for performance and security reasons.
 - Printing different file types is not as reliable yet as under Tails. 
 - Printing of individual files inside an archived submission is not yet supported.
 - Currently, only app-based two-factor authentication (TOTP) is supported.
-- The SecureDrop Client does not currently handle files that are "double-encrypted"
+- The SecureDrop App does not currently handle files that are "double-encrypted"
   (when a source pre-encrypts a submission locally before uploading it to SecureDrop).
   Until this is fully supported, we suggest using the Tails-based *Secure Viewing
   Station* for pre-encrypted submissions.
