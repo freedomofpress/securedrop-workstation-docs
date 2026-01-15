@@ -182,13 +182,13 @@ If this does not resolve the issue, please contact us for assistance.
 Customizing Synchronization Timeouts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The SecureDrop Workstation Client application performs a synchronization on
+The SecureDrop App performs a synchronization on
 launch, which may time out in situations where there are a large number of 
 sources on the server. To the extent possible, we recommend regularly removing
 sources that are no longer actively engaging with you, or any sources that
 appear to be spam.
 
-If you are able to login to the Client application, but sources are not
+If you are able to login to the SecureDrop App, but sources are not
 appearing, you may be reaching a timeout for the synchronization process.
 To temporarily increase the timeout, and give the system more time to
 finish synchronizing with the server, you can perform the following steps:
@@ -200,7 +200,7 @@ finish synchronizing with the server, you can perform the following steps:
        qvm-service --enable sd-app SDEXTENDEDTIMEOUT_600
        qvm-shutdown sd-app && sleep 5 && qvm-start sd-app
    
-4. Start the SecureDrop Client application, like normal
+4. Start the SecureDrop App, like normal
 
 These instructions will change the sync timeout to 10 minutes. If the sync
 fails to complete in that time, repeat the instructions, replacing the "600"

@@ -1,7 +1,7 @@
 Provisioning Export USB devices
 ===============================
 
-SecureDrop Workstation supports the export of submissions from the Qubes client
+SecureDrop Workstation supports the export of submissions from the SecureDrop App
 to a LUKS- or VeraCrypt-encrypted USB *Export Device*.
 
 Creating a LUKS-encrypted drive
