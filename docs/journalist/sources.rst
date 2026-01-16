@@ -6,21 +6,21 @@ view submissions, and reply to sources, all on the same computer.
 
 Once logged in, you will see a chat-like user interface:
 
-- The leftmost panel shows your username, if you are logged in, or the
+- The top of the left panel shows your username, if you are logged in, or the
   sign-in button.
+  
+- The action area of the left panel provides the ability to search for sources,
+  toggle the sort order, select multiple sources, and delete sources.
 
-- The middle panel holds the list of sources that have submitted to your
-  instance. Each source is identified to you with a two word pseudonym.
+- The larger portion of the left panel holds the list of sources that have submitted to your
+  instance. Each source is identified to you with a two word pseudonym. You will also
+  see the date of the last source activity, an icon to indicate if a source contains attachments,
+  and a button to mark a source as starred.
 
-- The rightmost panel holds the conversation view. All parts of the conversation
+- The right panel holds the conversation view. All parts of the conversation
   with a specific source (messages, files, and journalist replies) will be
   displayed here.
 
-- The top panel holds a toolbar that allows you to apply actions to multiple
-  sources at once. (Currently, "Delete Sources" is the only supported action.)
-
-- The bottom status bar will alert you to any problems (such as lack of network
-  connectivity or issues downloading a file).
 
 Opening a conversation
 ----------------------
@@ -50,7 +50,7 @@ Sending a reply
 ---------------
 
 Compose a reply to the selected source in the text box at the bottom of the
-conversation view. Click the paper airplane icon or press "Ctrl+Enter" to send
+conversation view. Click the **Send** button or press "Ctrl+Enter" to send
 a reply. Any replies you did not send will be discarded when you exit the
 client.
 
@@ -66,20 +66,14 @@ Deleting conversations
 Deleting a single conversation
 ''''''''''''''''''''''''''''''
 
-You can delete a single source conversation by clicking on the three dots at
-the top right-hand side of the application window, beside the timestamp. You should
-see a dropdown menu with two options: **Files and messages** and **Entire source
-account**. In both cases, a confirmation dialog will appear before anything is
-deleted.
+You can delete a single source conversation checking the box beside the Source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top. You will be presented with a pop-up where you will be asked to confirm if you would prefer to **Delete Conversation** or **Delete Account**.
 
-|screenshot_deletion_dropdown|
-
-Click **Files and messages** to delete all files and messages (including journalist
+Click **Delete Conversation** to delete all files and messages (including journalist
 replies) associated with this source, while keeping the source account active.
 The source will continue to appear in the source list, and will be able to
 communicate with you through the Source Interface.
 
-Click **Entire source account** to also remove the source from the source list,
+Click **Delete Account** to also remove the source from the source list,
 and to prevent them from logging into the Source Interface. Their account will
 be completely removed from the system.
 
@@ -87,27 +81,20 @@ be completely removed from the system.
   :width: 100%
 .. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
   :width: 100%
-.. |screenshot_deletion_dropdown| image:: ../images/screenshot_deletion_dropdown.png
-  :width: 100%
-
 
 Deleting multiple conversations
 '''''''''''''''''''''''''''''''
 
-You can also delete multiple source conversations at once. Hold down the Control
-(Ctrl) key and click on different rows to select (or deselect) sources from the list.
-(You can also Ctrl + drag the mouse, or Shift + select, to select a range of continuous
-sources.) Once you are finished selecting, click the "Delete Sources" toolbar button.
+You can also delete multiple source conversations at once. To do so, either check the
+boxes beside each source you wish to delete, or check the box in the action area to
+select all sources. Once you have the sources that you wish to delete checked, click the
+delete button (trash icon).
 
 .. |screenshot_select_sources|  image:: ../images/screenshot_delete_sources_select.png
   :width: 100%
 
-This action deletes the **entire source account**, meaning files and messages will
-be removed, and that source will no longer be able to log in using their codename.
-
-You will be shown a confirmation dialog before any sources are deleted. If you select
-a very large number of sources, you will also notice a brief time delay, to prevent
-unintentional deletion.
+You will be presented with another confirmation pop-up where you can choose to either
+**Delete Conversations** or **Delete Accounts**.
 
 .. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
   :width: 100%

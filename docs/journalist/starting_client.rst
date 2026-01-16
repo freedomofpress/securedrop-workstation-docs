@@ -1,7 +1,7 @@
-Starting the SecureDrop Client
+Starting the SecureDrop App
 ==============================
 
-After you log into Qubes, the SecureDrop Client app will start automatically. If
+After you log into Qubes, the SecureDrop App will start automatically. If
 you have previously exited the application, you can double-click on the
 **SecureDrop** desktop shortcut to launch it.
 
@@ -15,7 +15,7 @@ you to automatically download and apply any available security updates:
 
 |screenshot_update_prompt|
 
-For security reasons, you will not be able to launch the SecureDrop Client until
+For security reasons, you will not be able to launch the SecureDrop App until
 updates have been applied. This typically takes between 10 and 30 minutes.
 
 Click "Start updates" if you are ready to start the process. (If you prefer to
@@ -29,7 +29,7 @@ You will see a progress indicator until updates are completed:
 
 At the end of this process, SecureDrop Workstation may prompt you to reboot
 if core system components were updated. Once all steps in the update process have
-been completed, the SecureDrop Client will launch automatically.
+been completed, the SecureDrop App will launch automatically.
 
 Signing in
 ----------

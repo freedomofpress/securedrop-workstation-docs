@@ -2,7 +2,7 @@ Working with submissions
 ========================
 
 When a source submits files, you will see a Download button in the conversation
-flow, a file size, and light-gray text that says "Encrypted file on server."
+flow, a file size, and light-gray text that says "Encrypted File."
 
 |screenshot_file_before_download|
 
@@ -10,9 +10,13 @@ Downloading
 -----------
 
 To download a file, click the **Download** button. An animated spinner will
-indicate that the file is downloading:
+indicate that the file is downloading, and a progress bar will indicate
+the download completion:
 
 |screenshot_file_downloading|
+
+If necessary, you can pause the download by clicking "Pause," and resume
+the download later with "Resume."
 
 Once the file has been downloaded and decrypted, the filename will be visible,
 as will the action **Export** and **Print**. The displayed file size may increase
