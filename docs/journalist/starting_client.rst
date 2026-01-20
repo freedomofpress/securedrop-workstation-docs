@@ -42,13 +42,6 @@ Interface.
 
 |screenshot_sd-app_login|
 
-After signing in, you will be prompted by a dialog that says “Do you allow VM
-‘sd-app’ to access your GPG keys (now and for the following 8 hours)?”.
-Click **Yes.** This dialogue may appear immediately after signing in, or when
-you click on a source submission.
-
-|screenshot_gpg_access|
-
 Troubleshooting tips
 ~~~~~~~~~~~~~~~~~~~~
 If you have trouble running the updater or logging in, please contact your
