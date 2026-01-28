@@ -52,7 +52,7 @@ Sending a reply
 Compose a reply to the selected source in the text box at the bottom of the
 conversation view. Click the **Send** button or press "Ctrl+Enter" to send
 a reply. Any replies you did not send will be discarded when you exit the
-client.
+app.
 
 |screenshot_send_reply|
 
@@ -63,10 +63,16 @@ client.
 Deleting conversations
 ----------------------
 
-Deleting a single conversation
+Deleting conversations
 ''''''''''''''''''''''''''''''
 
-You can delete a single source conversation checking the box beside the Source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top. You will be presented with a pop-up where you will be asked to confirm if you would prefer to **Delete Conversation** or **Delete Account**.
+You can delete a single source conversation checking the box beside the Source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top.
+
+|screenshot_delete_sources_select|
+
+You will be presented with a pop-up where you will be asked to confirm if you would prefer to **Delete Conversation** or **Delete Account**.
+
+|screenshot_confirm_delete|
 
 Click **Delete Conversation** to delete all files and messages (including journalist
 replies) associated with this source, while keeping the source account active.
@@ -81,20 +87,15 @@ be completely removed from the system.
   :width: 100%
 .. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
   :width: 100%
+.. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
+  :width: 100%
+.. |screenshot_delete_sources_select|  image:: ../images/screenshot_delete_sources_select.png
+  :width: 100%
 
 Deleting multiple conversations
 '''''''''''''''''''''''''''''''
 
-You can also delete multiple source conversations at once. To do so, either check the
-boxes beside each source you wish to delete, or check the box in the action area to
-select all sources. Once you have the sources that you wish to delete checked, click the
-delete button (trash icon).
-
-.. |screenshot_select_sources|  image:: ../images/screenshot_delete_sources_select.png
-  :width: 100%
-
-You will be presented with another confirmation pop-up where you can choose to either
-**Delete Conversations** or **Delete Accounts**.
-
-.. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
-  :width: 100%
+To delete multiple conversations or accounts, select more than one source
+conversation from the list, then click the delete button. You will be
+presented with the same options to **Delete Conversations** and
+**Delete Accounts** as you would with a single source conversation.
