@@ -150,9 +150,55 @@ The preflight updater will start automatically after logging into the system. Pl
 
   .. note::
 
-    If you close the SecureDrop App during your session, you can launch it again using the SecureDrop icon on the desktop. 
+    If you close the SecureDrop Client during your session, you can launch it again using the SecureDrop icon on the desktop. 
 
-Once the update check is complete, the SecureDrop App will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
+Once the update check is complete, the SecureDrop Client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
+
+(Optional) Enable the SecureDrop App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, you will receive the SecureDrop Client, our original tool for journalists to access the sources,
+messages, and attachments within SecureDrop.
+
+If you would like to switch to the newest tool, the SecureDrop app, you can follow these steps:
+
+1. Ensure your system is completely up-to-date using the preflight updater.
+
+2. In a ``dom0`` terminal, edit the ``config.json`` file by running:
+
+  .. code-block:: sh
+
+    nano /usr/share/securedrop-workstation-dom0-config/config.json
+    
+  You will need to add a line that reads ``"app": true,``. Your final config 
+  should look similar to the example below:
+    
+  .. code-block:: sh
+  
+    {
+      "app": true,
+      "submission_key_fpr": "65A1B5FF195B56353CC63DFFCC40EF1228271441",
+      "hidserv": {
+        "hostname": "sdolvtfhatvsysc6l34d65ymdwxcujausv7k5jk4cy5ttzhjoi6fzvyd.onion",
+        "key": "5U4JPYSZ34N2ZDSOUAL2YLEX2NPI5BLL2Y66QJW24KLSH7R3FEPQ"
+      },
+      "environment": "prod",
+      "vmsizes": {
+        "sd_app": 10,
+        "sd_log": 5
+      }
+    }
+
+3. Apply the changes by running:
+
+  .. code-block:: sh
+
+    sdw-admin --apply
+    
+4. When prompted, reboot your SecureDrop Workstation.
+
+After logging in again, you should now be able to click the SecureDrop icon on the Desktop to launch the
+SecureDrop App.
 
 .. _Password Management Section:
 
