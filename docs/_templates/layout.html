@@ -20,6 +20,9 @@
             <dd{% if release == "latest" %} class="current-release"{% endif %}>
                 <a href="/en/latest/{{ pagename }}.html">latest</a>
             </dd>
+            <dd{% if release == "app" %} class="current-release"{% endif %}>
+                <a href="/en/app/{{ pagename }}.html">app</a>
+            </dd>
         </dl>
         <dl>
             <dt>Downloads</dt>
