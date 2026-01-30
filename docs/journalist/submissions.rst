@@ -11,7 +11,7 @@ Downloading
 
 To download a file, click the **Download** button. An animated spinner will
 indicate that the file is downloading, and a progress bar will indicate
-the download completion:
+the download's progress:
 
 |screenshot_file_downloading|
 

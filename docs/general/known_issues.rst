@@ -20,8 +20,7 @@ for instructions on how to privately report it.
 Current known issues
 --------------------
 
-- Updates are slow due to the number of VMs involved, and due to some updates
-  being fetched over Tor. We have made improvements to the performance and reliability
+- Updates are slow due to the number of VMs involved. We have made improvements to the performance and reliability
   of the updater, and this work will continue.
 - Printing different file types is not as reliable yet as under Tails. 
 - Printing of individual files inside an archived submission is not yet supported.

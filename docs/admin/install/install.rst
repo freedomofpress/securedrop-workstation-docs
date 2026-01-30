@@ -158,9 +158,9 @@ Once the update check is complete, the SecureDrop Client will launch. Log in usi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, you will receive the SecureDrop Client, our original tool for journalists to access the sources,
-messages, and attachments within SecureDrop.
+messages, and attachments within SecureDrop. Our newest tool, the SecureDrop App, can be enabled manually during the initial roll-out period. After this period is complete, the SecureDrop App will become the new default.
 
-If you would like to switch to the newest tool, the SecureDrop App, you can follow these steps:
+If you would like to switch to the SecureDrop App immediately, you can follow these steps:
 
 1. Ensure your system is completely up-to-date using the preflight updater.
 
@@ -188,6 +188,10 @@ If you would like to switch to the newest tool, the SecureDrop App, you can foll
         "sd_log": 5
       }
     }
+    
+  .. hint::
+
+    Be sure to include the ``,`` at the end of the line containing ``"app": true,``
 
 3. Apply the changes by running:
 

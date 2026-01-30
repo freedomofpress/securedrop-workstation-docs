@@ -51,8 +51,8 @@ Sending a reply
 
 Compose a reply to the selected source in the text box at the bottom of the
 conversation view. Click the **Send** button or press "Ctrl+Enter" to send
-a reply. Any replies you did not send will be discarded when you exit the
-app.
+a reply. Any replies you did not send will be discarded when you move to a
+different conversation.
 
 |screenshot_send_reply|
 
