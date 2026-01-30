@@ -42,7 +42,7 @@ Passwords and other credentials in use by *SecureDrop Workstation* include:
   storage on boot. All users will need this password.
 - the Qubes system user password, required to log in. All users will need this
   password
-- *SecureDrop Client* login credentials. These are the same credentials that
+- *SecureDrop App* login credentials. These are the same credentials that
   are used by journalists and administrators to log in to the *Journalist
   Interface*, and are unique per user.
 
