@@ -160,7 +160,7 @@ Once the update check is complete, the SecureDrop Client will launch. Log in usi
 By default, you will receive the SecureDrop Client, our original tool for journalists to access the sources,
 messages, and attachments within SecureDrop.
 
-If you would like to switch to the newest tool, the SecureDrop app, you can follow these steps:
+If you would like to switch to the newest tool, the SecureDrop App, you can follow these steps:
 
 1. Ensure your system is completely up-to-date using the preflight updater.
 
@@ -199,6 +199,10 @@ If you would like to switch to the newest tool, the SecureDrop app, you can foll
 
 After logging in again, you should now be able to click the SecureDrop icon on the Desktop to launch the
 SecureDrop App.
+
+If you encounter an issue or would like to use the original SecureDrop Client,
+you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
+**▸ Other ▸ SecureDrop Client (legacy)**.
 
 .. _Password Management Section:
 
