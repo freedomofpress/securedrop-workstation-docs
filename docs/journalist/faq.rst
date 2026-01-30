@@ -158,8 +158,7 @@ Why does it take so long to start the SecureDrop App?
 If the system has not been updated recently, the preflight updater will check
 for available security updates for all VMs used by SecureDrop Workstation,
 download, and apply them. This takes longer than for typical operating systems
-because of the number of VMs involved, and because some updates are performed
-over the Tor network.
+because of the number of VMs involved.
 
 These updates are essential to keep SecureDrop Workstation secure. Their speed
 is expected to be improved in subsequent releases of SecureDrop Workstation.
