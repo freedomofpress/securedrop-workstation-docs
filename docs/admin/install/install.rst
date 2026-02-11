@@ -158,7 +158,7 @@ Once the update check is complete, the SecureDrop Client will launch. Log in usi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, you will receive the SecureDrop Client, our original tool for journalists to access the sources,
-messages, and attachments within SecureDrop. Our newest tool, [the SecureDrop App](https://github.com/freedomofpress/securedrop-client/tree/main/app#readme), can be enabled manually during the initial roll-out period. After this period is complete, the SecureDrop App will become the new default.
+messages, and attachments within SecureDrop. Our newest tool, `the SecureDrop App  <https://github.com/freedomofpress/securedrop-client/tree/main/app#readme>`_, can be enabled manually during the initial roll-out period. After this period is complete, the SecureDrop App will become the new default.
 
 If you would like to switch to the SecureDrop App immediately, you can follow these steps:
 
