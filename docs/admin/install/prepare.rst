@@ -97,11 +97,12 @@ You will be prompted to enter the FDE passphrase set during installation.
 
 After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon.
 
-On the configuration screen, ensure that the following options are checked:
+On the configuration screen, ensure that the following options are set:
 
-- Default Template should be set to "Fedora 41 Xfce"
-- "Create default system qubes (sys-net, sys-firewall, default DispVM)"
-- "Make sys-firewall and sys-usb disposable"
+- Uncheck: "Whonix 17"
+- Dropdown: Default Template should be "Fedora 41 Xfce"
+- Check: "Create default system qubes (sys-net, sys-firewall, default DispVM)"
+- Check: "Make sys-firewall and sys-usb disposable"
 
 If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see next section).
 
