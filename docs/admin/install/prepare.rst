@@ -174,6 +174,5 @@ Once connected, launch the Qubes Update tool via |qubes_menu| **▸ Qubes Tools 
 .. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
   :alt: System Tools 
 .. |screenshot_qubes_unselect_whonix17| image:: ../../images/screenshot_qubes_unselect_whonix17.png
-  :class: image-border
   :alt: the location of the Whonix 17 box to uncheck
   
