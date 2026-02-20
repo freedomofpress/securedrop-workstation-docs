@@ -106,6 +106,11 @@ On the configuration screen, ensure that the following options are set:
 
 If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see next section).
 
+.. tip::
+  Before you finish the configuration, confirm that you have *unchecked* the Whonix option, as in this screenshot:
+
+  |screenshot_qubes_unselect_whonix17|
+
 Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
 Once the initial setup is complete, the login dialog will be displayed. Log in using the username and password set during installation.
@@ -172,3 +177,7 @@ After logging in again, confirm that the network manager successfully connects y
   :alt: Qubes Application menu
 .. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
   :alt: System Tools 
+.. |screenshot_qubes_unselect_whonix17| image:: ../../images/screenshot_qubes_unselect_whonix17.png
+  :class: image-border
+  :alt: the location of the Whonix 17 box to uncheck
+  
