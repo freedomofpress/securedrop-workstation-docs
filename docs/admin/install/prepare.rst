@@ -100,7 +100,7 @@ After the disk is unlocked and Qubes starts, you will be prompted to complete th
 On the configuration screen, ensure that the following options are set:
 
 - Uncheck: "Whonix 17"
-- Dropdown: Default Template should be "Fedora 41 Xfce"
+- Dropdown: Default Template should be "Fedora 42 Xfce"
 - Check: "Create default system qubes (sys-net, sys-firewall, default DispVM)"
 - Check: "Make sys-firewall and sys-usb disposable"
 
