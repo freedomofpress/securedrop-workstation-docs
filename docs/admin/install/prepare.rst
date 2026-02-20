@@ -76,8 +76,9 @@ Install Qubes OS (estimated wait time: 30-45 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before starting the installation, please ensure that:
-  - the computer is charging
-  - all USB devices like YubiKeys, mice and keyboards are disconnected
+
+- the computer is charging
+- all USB devices like YubiKeys, mice and keyboards are disconnected
 
 To begin the Qubes installation, connect the Qubes install USB to your target computer and boot from it. You may need to bring up a boot menu at startup to do so - on Lenovo laptops, for example, you can do so by pressing **F12** on boot.
 
@@ -96,13 +97,19 @@ You will be prompted to enter the FDE passphrase set during installation.
 
 After the disk is unlocked and Qubes starts, you will be prompted to complete the initial setup. Click the Qubes OS icon.
 
-On the configuration screen, ensure that the following options are checked:
+On the configuration screen, ensure that the following options are set:
 
- - Default Template should be set to "Fedora 41 Xfce"
- - "Create default system qubes (sys-net, sys-firewall, default DispVM)"
- - "Make sys-firewall and sys-usb disposable"
+- Uncheck: "Whonix 17"
+- Dropdown: Default Template should be "Fedora 42 Xfce"
+- Check: "Create default system qubes (sys-net, sys-firewall, default DispVM)"
+- Check: "Make sys-firewall and sys-usb disposable"
 
 If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see next section).
+
+.. tip::
+  Before you finish the configuration, confirm that you have *unchecked* the Whonix option, as in this screenshot:
+
+  |screenshot_qubes_unselect_whonix17|
 
 Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
@@ -160,13 +167,12 @@ Apply updates to system templates (estimated wait time: 45-60 minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 After logging in again, confirm that the network manager successfully connects you to the configured network. If necessary, verify the network settings using the network manager widget.
 
-- Next, configure Tor via |qubes_menu| **▸ Service ▸ sys-whonix ▸ Anon Connection Wizard**. In most cases, choosing the default **Connect** option is best. Click **Next**, then **Next** again. Then, if Tor connects successfully, click **Finish**. If Tor fails to connect, make sure your network conection is up and does not filter Tor connections, then try again.
-
-  .. note:: If Tor connections are blocked on your network, you may need to configure Tor to use bridges in order to get a connection. For more information, see the `Anon Connection Wizard <https://www.whonix.org/wiki/Anon_Connection_Wizard>`_ documentation.
-
-- Once Tor has connected, launch the Qubes Update tool via |qubes_menu| **▸ Qubes Tools ▸ Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Update`` window, check all entries in the list above except for ``dom0`` (which you have already updated in the previous step). Then, click **Update**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Next**. You will then be prompted to **Finish and restart/shutdown 4 qubes.** Go ahead and do so, and allow time for them to restart.
+Once connected, launch the Qubes Update tool via |qubes_menu| **▸ Qubes Tools ▸ Qubes Update** to update the system VMs. in the ``[Dom0] Qubes Update`` window, check all entries in the list above except for ``dom0`` (which you have already updated in the previous step). Then, click **Update**. The system's VMs will be updated sequentially - this may take some time. When the updates are complete, click **Next**. You will then be prompted to **Finish and restart/shutdown 4 qubes.** Go ahead and do so, and allow time for them to restart.
 
 .. |qubes_menu| image:: ../../images/qubes_menu.png
   :alt: Qubes Application menu
 .. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
   :alt: System Tools 
+.. |screenshot_qubes_unselect_whonix17| image:: ../../images/screenshot_qubes_unselect_whonix17.png
+  :alt: the location of the Whonix 17 box to uncheck
+  
