@@ -6,6 +6,8 @@ docs:  ## Build project documentation with live reload for editing.
 
 .PHONY: docs-lint
 docs-lint:  ## Check documentation for common syntax errors.
+	@echo "███ Checking for common errors..."
+	@./check_errors.sh
 	@echo "███ Linting documentation..."
 # The `-W` option converts warnings to errors.
 # The `-n` option enables "nit-picky" mode.
