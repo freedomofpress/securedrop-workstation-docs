@@ -1,7 +1,7 @@
-Starting the SecureDrop Client
+Starting the SecureDrop App
 ==============================
 
-After you log into Qubes, the SecureDrop Client app will start automatically. If
+After you log into Qubes, the SecureDrop App will start automatically. If
 you have previously exited the application, you can double-click on the
 **SecureDrop** desktop shortcut to launch it.
 
@@ -15,7 +15,7 @@ you to automatically download and apply any available security updates:
 
 |screenshot_update_prompt|
 
-For security reasons, you will not be able to launch the SecureDrop Client until
+For security reasons, you will not be able to launch the SecureDrop App until
 updates have been applied. This typically takes between 10 and 30 minutes.
 
 Click "Start updates" if you are ready to start the process. (If you prefer to
@@ -29,7 +29,7 @@ You will see a progress indicator until updates are completed:
 
 At the end of this process, SecureDrop Workstation may prompt you to reboot
 if core system components were updated. Once all steps in the update process have
-been completed, the SecureDrop Client will launch automatically.
+been completed, the SecureDrop App will launch automatically.
 
 Signing in
 ----------
@@ -41,13 +41,6 @@ are the same credentials that you would use to log in to the Journalist
 Interface.
 
 |screenshot_sd-app_login|
-
-After signing in, you will be prompted by a dialog that says “Do you allow VM
-‘sd-app’ to access your GPG keys (now and for the following 8 hours)?”.
-Click **Yes.** This dialogue may appear immediately after signing in, or when
-you click on a source submission.
-
-|screenshot_gpg_access|
 
 Troubleshooting tips
 ~~~~~~~~~~~~~~~~~~~~
@@ -93,8 +86,6 @@ offline mode and can be accessed even when you are not logged in.
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
   :width: 100%
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
-  :width: 100%
-.. |screenshot_gpg_access| image:: ../images/screenshot_gpg_access.png
   :width: 100%
 .. |screenshot_use_offline| image:: ../images/screenshot_use_offline.png
   :width: 100%
