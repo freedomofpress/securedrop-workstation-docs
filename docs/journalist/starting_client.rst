@@ -97,3 +97,7 @@ If you encounter an issue with the new SecureDrop Inbox or would like to use the
   :width: 100%
 .. |screenshot_offline_mode| image:: ../images/screenshot_offline_mode.png
   :width: 100%
+.. |qubes_menu| image:: /images/qubes_menu.png
+  :alt: Qubes Application menu
+.. |qubes_menu_gear| image:: /images/qubes_menu_gear.png
+  :alt: System Tools 
