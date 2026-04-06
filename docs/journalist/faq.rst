@@ -16,7 +16,7 @@ machine thanks to a `feature of Qubes`_ that creates temporary VMs in
 which to view untrusted content without exposing the rest of your system to
 that content.
 
-As a journalist, you will log into the SecureDrop application with the
+As a journalist, you will log into the SecureDrop Inboxlication with the
 same credentials you previously used to log into the Journalist Interface. You
 will then be able to view, download, and reply to and submissions---all on the
 same device.
@@ -82,7 +82,7 @@ in a timely manner, which can significantly worsen its security posture.
 In SecureDrop Workstation, any document received via SecureDrop is opened in a
 disposable VM that has no Internet access and no access to other files submitted
 via SecureDrop. The encryption keys are stored in a separate, networkless VM
-from the SecureDrop App app.
+from the SecureDrop Inbox.
 
 Because SecureDrop Workstation has Internet access, updates can be applied
 automatically as soon as they are available. SecureDrop Workstation enforces this
@@ -135,7 +135,7 @@ You cannot print from the viewer application, because it does not have access
 to peripherals. This prevents malware from exfiltrating data (e.g., via attached
 USB devices), and from targeting hardware-level security vulnerabilities.
 
-You *can* print files directly from the SecureDrop App by clicking "Print"
+You *can* print files directly from the SecureDrop Inbox by clicking "Print"
 for a downloaded file, which will pass the file through to your USB printer
 without opening it in an interactive viewer application.
 
@@ -153,7 +153,7 @@ Administrators can configure limited exceptions to this policy; please see the
 section :doc:`Managing Clipboard Access <../admin/reference/managing_clipboard>`
 of the admin guide for more information.
 
-Why does it take so long to start the SecureDrop App?
+Why does it take so long to start the SecureDrop Inbox?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If the system has not been updated recently, the preflight updater will check
 for available security updates for all VMs used by SecureDrop Workstation,

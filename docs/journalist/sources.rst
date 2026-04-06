@@ -36,7 +36,7 @@ name.
 
 .. note:: When you are prompted by a dialog that says “Do you allow VM
    'sd-app' to access your GPG keys (now and for the following 28800
-   seconds)?”, click **Yes**. This allows the SecureDrop Application VM access
+   seconds)?”, click **Yes**. This allows the SecureDrop Inbox VM access
    to the secure VM that holds your SecureDrop Submission Key.
 
 Highlighting conversations

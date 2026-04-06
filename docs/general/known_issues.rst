@@ -11,7 +11,7 @@ Bugs and other issues that are not specific to your instance can be reported
 via GitHub using the following links:
 
  - `SecureDrop Workstation issues <https://github.com/freedomofpress/securedrop-workstation/issues>`_ - issues related to the Qubes environment and workstation provisioning.
- - `SecureDrop App issues <https://github.com/freedomofpress/securedrop-client/issues>`_ - issues related to the *SecureDrop App*.
+ - `SecureDrop Inbox issues <https://github.com/freedomofpress/securedrop-client/issues>`_ - issues related to the *SecureDrop Inbox*.
  
 If you encounter a security-related issue, please see
 `SECURITY.md <https://github.com/freedomofpress/securedrop-workstation/blob/main/SECURITY.md>`_ 
@@ -25,7 +25,7 @@ Current known issues
 - Printing different file types is not as reliable yet as under Tails. 
 - Printing of individual files inside an archived submission is not yet supported.
 - Currently, only app-based two-factor authentication (TOTP) is supported.
-- The SecureDrop App does not currently handle files that are "double-encrypted"
+- The SecureDrop Inbox does not currently handle files that are "double-encrypted"
   (when a source pre-encrypts a submission locally before uploading it to SecureDrop).
   Until this is fully supported, we suggest using the Tails-based *Secure Viewing
   Station* for pre-encrypted submissions.
