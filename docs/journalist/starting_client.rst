@@ -79,6 +79,12 @@ offline mode and can be accessed even when you are not logged in.
    SecureDrop Workstation needs to be powered off completely when it is not in
    use.
 
+Falling back to the legacy SecureDrop Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you encounter an issue with the new SecureDrop Inbox or would like to use the older SecureDrop Client, you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
+**▸ Other ▸ SecureDrop Client (legacy)**.
+
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
   :width: 100%
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png

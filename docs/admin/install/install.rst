@@ -154,12 +154,6 @@ The preflight updater will start automatically after logging into the system. Pl
 
 Once the update check is complete, the SecureDrop Client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
 
-Falling back to the legacy SecureDrop Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you encounter an issue with the new SecureDrop Inbox or would like to use the original SecureDrop Client, you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
-**▸ Other ▸ SecureDrop Client (legacy)**.
-
 .. _Password Management Section:
 
 Enable password copy and paste
