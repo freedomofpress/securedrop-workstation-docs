@@ -20,8 +20,8 @@ adversaries. Specifically, the following VMs have no network access:
   documents from the SecureDrop App.
 - ``sd-gpg``, which holds the *Submission Private Key* required to decrypt
   messages, replies, and documents.
-- ``sd-devices``, which passes exported documents through to USB devices like
-  printers and encrypted flash drives.
+- ``sd-devices`` / ``sd-printers``, which passes exported documents through to
+  USB devices like encrypted flash drives and printers, respectively.
 
 By design, the Qubes OS host domain, ``dom0``, also does not have Internet
 access.
