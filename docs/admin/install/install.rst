@@ -154,67 +154,13 @@ The preflight updater will start automatically after logging into the system. Pl
 
 Once the update check is complete, the SecureDrop Client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
 
-(Optional) Enable the SecureDrop App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, you will receive the SecureDrop Client, our original tool for journalists to access the sources,
-messages, and attachments within SecureDrop. Our newest tool, `the SecureDrop App  <https://github.com/freedomofpress/securedrop-client/tree/main/app#readme>`_, can be enabled manually during the initial roll-out period. After this period is complete, the SecureDrop App will become the new default.
-
-If you would like to switch to the SecureDrop App immediately, you can follow these steps:
-
-1. Ensure your system is completely up-to-date using the preflight updater.
-
-2. In a ``dom0`` terminal, edit the ``config.json`` file by running:
-
-  .. code-block:: sh
-
-    nano /usr/share/securedrop-workstation-dom0-config/config.json
-    
-  You will need to add a line that reads ``"app": true,``. Your final config 
-  should look similar to the example below:
-    
-  .. code-block:: sh
-  
-    {
-      "app": true,
-      "submission_key_fpr": "65A1B5FF195B56353CC63DFFCC40EF1228271441",
-      "hidserv": {
-        "hostname": "sdolvtfhatvsysc6l34d65ymdwxcujausv7k5jk4cy5ttzhjoi6fzvyd.onion",
-        "key": "5U4JPYSZ34N2ZDSOUAL2YLEX2NPI5BLL2Y66QJW24KLSH7R3FEPQ"
-      },
-      "environment": "prod",
-      "vmsizes": {
-        "sd_app": 10,
-        "sd_log": 5
-      }
-    }
-    
-  .. hint::
-
-    Be sure to include the ``,`` at the end of the line containing ``"app": true,``
-
-3. Apply the changes by running:
-
-  .. code-block:: sh
-
-    sdw-admin --apply
-    
-4. When prompted, reboot your SecureDrop Workstation.
-
-After logging in again, you should now be able to click the SecureDrop icon on the Desktop to launch the
-SecureDrop App.
-
-If you encounter an issue or would like to use the original SecureDrop Client,
-you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
-**▸ Other ▸ SecureDrop Client (legacy)**.
-
 .. _Password Management Section:
 
 Enable password copy and paste
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you use KeePassXC in the ``vault`` VM to manage login credentials, you can enable the user to copy passwords to the SecureDrop App using inter-VM copy and paste. While this is relatively safe, we recommend reviewing the section :doc:`Managing Clipboard Access <../reference/managing_clipboard>` of this guide, which goes into further detail on the security considerations for inter-VM copy and paste.
+If you use KeePassXC in the ``vault`` VM to manage login credentials, you can enable the user to copy passwords to the SecureDrop Inbox using inter-VM copy and paste. While this is relatively safe, we recommend reviewing the section :doc:`Managing Clipboard Access <../reference/managing_clipboard>` of this guide, which goes into further detail on the security considerations for inter-VM copy and paste.
 
-The password manager runs in the networkless ``vault`` VM, and the SecureDrop App runs in the ``sd-app`` VM. To permit this one-directional clipboard use, issue the following command in ``dom0``:
+The password manager runs in the networkless ``vault`` VM, and the SecureDrop Inbox runs in the ``sd-app`` VM. To permit this one-directional clipboard use, issue the following command in ``dom0``:
 
 .. code-block:: sh
 

@@ -1,7 +1,7 @@
-Starting the SecureDrop App
+Starting the SecureDrop Inbox
 ==============================
 
-After you log into Qubes, the SecureDrop App will start automatically. If
+After you log into Qubes, the SecureDrop Inbox will start automatically. If
 you have previously exited the application, you can double-click on the
 **SecureDrop** desktop shortcut to launch it.
 
@@ -15,7 +15,7 @@ you to automatically download and apply any available security updates:
 
 |screenshot_update_prompt|
 
-For security reasons, you will not be able to launch the SecureDrop App until
+For security reasons, you will not be able to launch the SecureDrop Inbox until
 updates have been applied. This typically takes between 10 and 30 minutes.
 
 Click "Start updates" if you are ready to start the process. (If you prefer to
@@ -29,7 +29,7 @@ You will see a progress indicator until updates are completed:
 
 At the end of this process, SecureDrop Workstation may prompt you to reboot
 if core system components were updated. Once all steps in the update process have
-been completed, the SecureDrop App will launch automatically.
+been completed, the SecureDrop Inbox will launch automatically.
 
 Signing in
 ----------
@@ -79,6 +79,12 @@ offline mode and can be accessed even when you are not logged in.
    SecureDrop Workstation needs to be powered off completely when it is not in
    use.
 
+Falling back to the legacy SecureDrop Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you encounter an issue with the new SecureDrop Inbox or would like to use the older SecureDrop Client, you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
+**▸ Other ▸ SecureDrop Client (legacy)**.
+
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
   :width: 100%
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png
@@ -91,3 +97,7 @@ offline mode and can be accessed even when you are not logged in.
   :width: 100%
 .. |screenshot_offline_mode| image:: ../images/screenshot_offline_mode.png
   :width: 100%
+.. |qubes_menu| image:: /images/qubes_menu.png
+  :alt: Qubes Application menu
+.. |qubes_menu_gear| image:: /images/qubes_menu_gear.png
+  :alt: System Tools 
