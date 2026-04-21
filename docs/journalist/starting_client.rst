@@ -37,7 +37,7 @@ Signing in
 To sign in, enter the username and passphrase provided to you by your
 SecureDrop administrator, as well as the two-factor code using the method you
 have set up. If you have used SecureDrop before, these
-are the same credentials that you would use to log in to the Journalist
+are the same credentials that you would use to sign in to the Journalist
 Interface.
 
 |screenshot_sd-app_login|
@@ -62,16 +62,13 @@ Working offline
 ---------------
 
 Offline mode is available for circumstances where you wish to work offline or
-are unable to connect to the SecureDrop servers. In offline mode, any content
-that you have previously downloaded will be available. You will not be able to
-send or delete messages, and your actions will not impact the seen/unseen
-state of submissions.
+are unable to connect to the SecureDrop servers. 
 
 |screenshot_use_offline|
 
 Because SecureDrop Workstation allows you to download and decrypt submissions
-on one machine, submissions that you have downloaded are still available in
-offline mode and can be accessed even when you are not logged in.
+on one machine, submissions that you have previously downloaded are still available in
+offline mode and can be accessed even when you are not logged in. Any actions you take while in offline mode, such as sending replies or deleting conversations, will be synchronized to the server the next time you sign in. To sign in while in offline mode, click the orange "Offline Mode" to open the menu and select "Sign In".
 
 |screenshot_offline_mode|
 
