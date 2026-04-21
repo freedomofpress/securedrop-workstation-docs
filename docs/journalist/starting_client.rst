@@ -86,11 +86,8 @@ If you encounter an issue with the new SecureDrop Inbox or would like to use the
 **▸ Other ▸ SecureDrop Client (legacy)**.
 
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
-  :width: 100%
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png
-  :width: 100%
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
-  :width: 100%
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
   :width: 100%
 .. |screenshot_use_offline| image:: ../images/screenshot_use_offline.png

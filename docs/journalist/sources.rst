@@ -30,9 +30,7 @@ source list.
 
 |screenshot_sdapp_main_view|
 
-Journalists sending replies are assigned different colors and identified with
-their initials. Move your mouse pointer over the initials to reveal the full
-name.
+Replies from other journalists in your organization are identified by their name.
 
 .. note:: When you are prompted by a dialog that says “Do you allow VM
    'sd-app' to access your GPG keys (now and for the following 28800
@@ -90,7 +88,7 @@ be completely removed from the system.
 .. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
   :width: 100%
 .. |screenshot_delete_sources_select|  image:: ../images/screenshot_delete_sources_select.png
-  :width: 100%
+
 
 Deleting multiple conversations
 '''''''''''''''''''''''''''''''
