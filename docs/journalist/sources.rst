@@ -6,7 +6,9 @@ view submissions, and reply to sources, all on the same computer.
 
 Once logged in, you will see a chat-like user interface:
 
-- The top of the left panel shows your username, if you are not working in offline mode. Clicking your username shows the menu.
+- The top of the left panel shows your username, if you are not working in offline mode. Clicking your username shows the menu, which lets you intiate a sync with your SecureDrop Server, get help, sign out, or 
+
+.. TODO screenshot of the menu
   
 - The action area of the left panel provides the ability to search submissions, star sources, select multiple sources, delete sources, toggle sort order, and filter the source list. 
 
@@ -94,3 +96,27 @@ To delete multiple conversations or accounts, select more than one source
 conversation from the list, then click the delete button. You will be
 presented with the same options to **Delete Conversations** and
 **Delete Accounts** as you would with a single source conversation.
+
+Searching and Filtering
+-----------------------
+
+You can search through the text of all conversations and source pseudonyms using the search bar at the top of the source list. This will not search for text inside submitted attachments. 
+
+.. TODO Screenshot Search
+
+To filter the list of conversations, use the dropdown. You can filter the conversation list to show only unread or starred conversations. 
+
+.. TODO Screenshot Filter
+
+The list of conversations can be sorted newest-to-oldest or oldest-to-newest. Change the sort order by clicking the sort toggle.
+
+.. TODO screenshot sort toggle
+
+Syncing
+-------
+
+Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every time you send a reply, or every 60 seconds. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing "Ctrl+S". 
+
+The sync indicator will be green if the last sync was successful. If the sync indicator is orange, it means the most recent sync failed or did not complete properly. If your SecureDrop Inbox is repeatedly unable to sync, you can try :doc:`troubleshooting the network connection</admin/reference/troubleshooting_connection>` on your SecureDrop Workstation or contacting your admin for help. 
+
+.. TODO screenshot of sync indicator

@@ -58,6 +58,8 @@ any journalist user will be displayed in bold text in the source list.
 As soon as any journalist user clicks on a source with unseen submissions, it
 will be marked as seen (no longer displayed in bold text) for all users.
 
+.. _Offline mode:
+
 Working offline
 ---------------
 
