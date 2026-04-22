@@ -6,11 +6,9 @@ view submissions, and reply to sources, all on the same computer.
 
 Once logged in, you will see a chat-like user interface:
 
-- The top of the left panel shows your username, if you are logged in, or the
-  sign-in button.
+- The top of the left panel shows your username, if you are not working in offline mode. Clicking your username shows the menu.
   
-- The action area of the left panel provides the ability to search for sources,
-  toggle the sort order, select multiple sources, and delete sources.
+- The action area of the left panel provides the ability to search submissions, star sources, select multiple sources, delete sources, toggle sort order, and filter the source list. 
 
 - The larger portion of the left panel holds the list of sources that have submitted to your
   instance. Each source is identified to you with a two word pseudonym. You will also
@@ -21,7 +19,6 @@ Once logged in, you will see a chat-like user interface:
   with a specific source (messages, files, and journalist replies) will be
   displayed here.
 
-
 Opening a conversation
 ----------------------
 
@@ -30,7 +27,7 @@ source list.
 
 |screenshot_sdapp_main_view|
 
-Replies from other journalists in your organization are identified by their name.
+Replies from other journalists in your organization show up in the conversation, and are identified by the journalist's name.
 
 .. note:: When you are prompted by a dialog that says “Do you allow VM
    'sd-app' to access your GPG keys (now and for the following 28800
