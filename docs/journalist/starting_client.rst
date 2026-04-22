@@ -1,7 +1,7 @@
-Starting the SecureDrop Inbox
+Starting SecureDrop Inbox
 ==============================
 
-After you log into Qubes, the SecureDrop Inbox will start automatically. If
+After you log into Qubes, SecureDrop Inbox will start automatically. If
 you have previously exited the application, you can double-click on the
 **SecureDrop** desktop shortcut to launch it.
 
