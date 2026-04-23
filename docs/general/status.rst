@@ -5,7 +5,7 @@ SecureDrop Workstation is currently in active development.
 
 We are currently in an open beta. If you are
 interested in using SecureDrop Workstation, please `reach out to us
-via our <https://securedrop.org/help/>`_.
+using one of the methods listed here. <https://securedrop.org/help/>`_.
 
 Is SecureDrop Workstation right for you?
 ----------------------------------------
