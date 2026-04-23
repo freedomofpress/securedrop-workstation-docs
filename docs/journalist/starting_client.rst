@@ -3,15 +3,14 @@ Starting SecureDrop Inbox
 
 After you log into Qubes, SecureDrop Inbox will start automatically. If
 you have previously exited the application, you can double-click on the
-**SecureDrop** desktop shortcut to launch it.
+**SecureDrop Inbox** desktop shortcut to launch it.
 
 |screenshot_desktop-shortcut|
 
 Performing updates
 ------------------
 
-Unless the system has just been updated, SecureDrop Workstation will now prompt
-you to automatically download and apply any available security updates:
+Unless the system has just been updated, you will now be prompted to automatically download and apply any available security updates:
 
 |screenshot_update_prompt|
 
@@ -52,9 +51,20 @@ for administrators gives detailed steps for investigating connectivity issues.
 Menu
 ----
 
-Once signed in, the top of the left panel shows your username. Clicking your username shows the menu, which lets you initiate a sync with your SecureDrop Server, get help, sign out, or quit SecureDrop Inbox.
+Once signed in, the top of the left panel shows your username. Clicking your username shows the menu, which lets you initiate a sync with your SecureDrop server, get help, sign out, or quit SecureDrop Inbox.
 
 |screenshot_menu|
+
+Syncing
+-------
+
+Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every time you send a reply, or every 60 seconds. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing "Ctrl+S". 
+
+The sync indicator will be green if the last sync was successful. 
+
+|screenshot_sync_indicator|
+
+If the sync indicator is orange, it means the most recent sync failed or did not complete properly. If your SecureDrop Inbox is repeatedly unable to sync, you can try :doc:`troubleshooting the network connection</admin/reference/troubleshooting_connection>` on your SecureDrop Workstation or contacting your admin for help. 
 
 .. _Offline mode:
 
@@ -62,7 +72,7 @@ Working offline
 ---------------
 
 Offline mode is available for circumstances where you wish to work offline or
-are unable to connect to the SecureDrop servers. 
+are unable to connect to your SecureDrop server. 
 
 |screenshot_use_offline|
 
@@ -90,6 +100,7 @@ If you encounter an issue with the new SecureDrop Inbox or would like to use the
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
   :width: 100%
 .. |screenshot_menu| image:: /images/screenshot_menu.png
+.. |screenshot_sync_indicator| image:: /images/screenshot_sync_indicator.png
 .. |screenshot_use_offline| image:: ../images/screenshot_use_offline.png
   :width: 100%
 .. |screenshot_offline_mode| image:: ../images/screenshot_offline_mode.png

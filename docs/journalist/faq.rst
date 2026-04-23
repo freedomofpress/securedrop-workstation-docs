@@ -16,7 +16,7 @@ machine thanks to a `feature of Qubes`_ that creates temporary VMs in
 which to view untrusted content without exposing the rest of your system to
 that content.
 
-As a journalist, you will log into the SecureDrop Inboxlication with the
+As a journalist, you will log into the SecureDrop Inbox with the
 same credentials you previously used to log into the Journalist Interface. You
 will then be able to view, download, and reply to and submissions---all on the
 same device.
@@ -153,7 +153,7 @@ Administrators can configure limited exceptions to this policy; please see the
 section :doc:`Managing Clipboard Access <../admin/reference/managing_clipboard>`
 of the admin guide for more information.
 
-Why does it take so long to start the SecureDrop Inbox?
+Why does it take so long for SecureDrop Inbox to start?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If the system has not been updated recently, the preflight updater will check
 for available security updates for all VMs used by SecureDrop Workstation,

@@ -109,19 +109,6 @@ The list of conversations can be sorted newest-to-oldest or oldest-to-newest. Ch
 
 |screenshot_sort_toggle|
 
-Syncing
--------
-
-Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every time you send a reply, or every 60 seconds. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing "Ctrl+S". 
-
-The sync indicator will be green if the last sync was successful. 
-
-|screenshot_sync_indicator|
-
-If the sync indicator is orange, it means the most recent sync failed or did not complete properly. If your SecureDrop Inbox is repeatedly unable to sync, you can try :doc:`troubleshooting the network connection</admin/reference/troubleshooting_connection>` on your SecureDrop Workstation or contacting your admin for help. 
-
-
-
 .. |screenshot_sdapp_main_view| image:: ../images/screenshot_sdapp_main_view.png
   :width: 100%
 .. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
@@ -132,4 +119,3 @@ If the sync indicator is orange, it means the most recent sync failed or did not
 .. |screenshot_search| image:: /images/screenshot_search.png
 .. |screenshot_filter| image:: /images/screenshot_filter.png
 .. |screenshot_sort_toggle| image:: /images/screenshot_sort_toggle.png
-.. |screenshot_sync_indicator| image:: /images/screenshot_sync_indicator.png
