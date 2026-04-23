@@ -5,10 +5,6 @@ SecureDrop Workstation lets journalists check SecureDrop, decrypt and securely
 view submissions, and reply to sources, all on the same computer.
 
 Once logged in, you will see a chat-like user interface:
-
-- The top of the left panel shows your username, if you are not working in offline mode. Clicking your username shows the menu, which lets you intiate a sync with your SecureDrop Server, get help, sign out, or 
-
-.. TODO screenshot of the menu
   
 - The action area of the left panel provides the ability to search submissions, star sources, select multiple sources, delete sources, toggle sort order, and filter the source list. 
 
@@ -20,6 +16,15 @@ Once logged in, you will see a chat-like user interface:
 - The right panel holds the conversation view. All parts of the conversation
   with a specific source (messages, files, and journalist replies) will be
   displayed here.
+
+Seen and unseen submissions
+---------------------------
+
+Sources with submissions (messages or files) that have not been seen by
+any journalist user will be displayed in bold text in the source list.
+
+As soon as any journalist user clicks on a source with unseen submissions, it
+will be marked as seen (no longer displayed in bold text) for all users.
 
 Opening a conversation
 ----------------------
@@ -57,8 +62,8 @@ different conversation.
   subsequent sessions, including to any other users logging into the same
   physical SecureDrop Workstation.
 
-Deleting conversations
-----------------------
+Deleting
+---------
 
 Deleting conversations
 ''''''''''''''''''''''''''''''
@@ -80,14 +85,6 @@ Click **Delete Account** to also remove the source from the source list,
 and to prevent them from logging into the Source Interface. Their account will
 be completely removed from the system.
 
-.. |screenshot_sdapp_main_view| image:: ../images/screenshot_sdapp_main_view.png
-  :width: 100%
-.. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
-  :width: 100%
-.. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
-  :width: 100%
-.. |screenshot_delete_sources_select|  image:: ../images/screenshot_delete_sources_select.png
-
 
 Deleting multiple conversations
 '''''''''''''''''''''''''''''''
@@ -102,21 +99,37 @@ Searching and Filtering
 
 You can search through the text of all conversations and source pseudonyms using the search bar at the top of the source list. This will not search for text inside submitted attachments. 
 
-.. TODO Screenshot Search
+|screenshot_search|
 
-To filter the list of conversations, use the dropdown. You can filter the conversation list to show only unread or starred conversations. 
+To filter the list of conversations, use the dropdown menu to the right of the search bar. You can filter the conversation list to show only unread or starred conversations. 
 
-.. TODO Screenshot Filter
+|screenshot_filter|
 
-The list of conversations can be sorted newest-to-oldest or oldest-to-newest. Change the sort order by clicking the sort toggle.
+The list of conversations can be sorted newest-to-oldest or oldest-to-newest. Change the sort order by clicking the sort toggle to the right of the filter dropdown.
 
-.. TODO screenshot sort toggle
+|screenshot_sort_toggle|
 
 Syncing
 -------
 
 Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every time you send a reply, or every 60 seconds. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing "Ctrl+S". 
 
-The sync indicator will be green if the last sync was successful. If the sync indicator is orange, it means the most recent sync failed or did not complete properly. If your SecureDrop Inbox is repeatedly unable to sync, you can try :doc:`troubleshooting the network connection</admin/reference/troubleshooting_connection>` on your SecureDrop Workstation or contacting your admin for help. 
+The sync indicator will be green if the last sync was successful. 
 
-.. TODO screenshot of sync indicator
+|screenshot_sync_indicator|
+
+If the sync indicator is orange, it means the most recent sync failed or did not complete properly. If your SecureDrop Inbox is repeatedly unable to sync, you can try :doc:`troubleshooting the network connection</admin/reference/troubleshooting_connection>` on your SecureDrop Workstation or contacting your admin for help. 
+
+
+
+.. |screenshot_sdapp_main_view| image:: ../images/screenshot_sdapp_main_view.png
+  :width: 100%
+.. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
+  :width: 100%
+.. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
+  :width: 100%
+.. |screenshot_delete_sources_select|  image:: ../images/screenshot_delete_sources_select.png
+.. |screenshot_search| image:: /images/screenshot_search.png
+.. |screenshot_filter| image:: /images/screenshot_filter.png
+.. |screenshot_sort_toggle| image:: /images/screenshot_sort_toggle.png
+.. |screenshot_sync_indicator| image:: /images/screenshot_sync_indicator.png

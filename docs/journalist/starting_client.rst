@@ -49,14 +49,12 @@ administrator. Our :doc:`network troubleshooting guide
 <../admin/reference/troubleshooting_connection>`
 for administrators gives detailed steps for investigating connectivity issues.
 
-Seen and unseen submissions
----------------------------
+Menu
+----
 
-Sources with submissions (messages or files) that have not been seen by
-any journalist user will be displayed in bold text in the source list.
+Once signed in, the top of the left panel shows your username. Clicking your username shows the menu, which lets you initiate a sync with your SecureDrop Server, get help, sign out, or quit SecureDrop Inbox.
 
-As soon as any journalist user clicks on a source with unseen submissions, it
-will be marked as seen (no longer displayed in bold text) for all users.
+|screenshot_menu|
 
 .. _Offline mode:
 
@@ -70,13 +68,15 @@ are unable to connect to the SecureDrop servers.
 
 Because SecureDrop Workstation allows you to download and decrypt submissions
 on one machine, submissions that you have previously downloaded are still available in
-offline mode and can be accessed even when you are not logged in. Any actions you take while in offline mode, such as sending replies or deleting conversations, will be synchronized to the server the next time you sign in. To sign in while in offline mode, click the orange "Offline Mode" to open the menu and select "Sign In".
-
-|screenshot_offline_mode|
+offline mode and can be accessed even when you are not signed in.
 
 .. important:: Protecting downloaded submissions is another reason why
    SecureDrop Workstation needs to be powered off completely when it is not in
    use.
+
+Any actions you take while in offline mode, such as sending replies or deleting conversations, will be synchronized to the server the next time you sign in. To sign in while in offline mode, click the orange "Offline Mode" to open the menu and select "Sign in".
+
+|screenshot_offline_mode_menu|
 
 Falling back to the legacy SecureDrop Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,10 +89,12 @@ If you encounter an issue with the new SecureDrop Inbox or would like to use the
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
   :width: 100%
+.. |screenshot_menu| image:: /images/screenshot_menu.png
 .. |screenshot_use_offline| image:: ../images/screenshot_use_offline.png
   :width: 100%
 .. |screenshot_offline_mode| image:: ../images/screenshot_offline_mode.png
   :width: 100%
+.. |screenshot_offline_mode_menu| image:: /images/screenshot_offline_mode_menu.png
 .. |qubes_menu| image:: /images/qubes_menu.png
   :alt: Qubes Application menu
 .. |qubes_menu_gear| image:: /images/qubes_menu_gear.png
