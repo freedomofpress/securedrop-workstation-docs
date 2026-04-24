@@ -20,7 +20,7 @@ the download later with "Resume."
 
 Once the file has been downloaded and decrypted, the filename will be visible,
 as will the action **Export** and **Print**. The displayed file size may increase
-after the download is complete, because the SecureDrop Client automatically
+after the download is complete, because SecureDrop Inbox automatically
 decompresses the downloaded file.
 
 |screenshot_file_download_successful|

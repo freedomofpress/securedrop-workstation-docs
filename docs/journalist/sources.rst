@@ -6,12 +6,11 @@ view submissions, and reply to sources, all on the same computer.
 
 Once logged in, you will see a chat-like user interface:
   
-- The action area of the left panel provides the ability to search submissions, star sources, select multiple sources, delete sources, toggle sort order, and filter the source list. 
+- The action area of the left panel provides the ability to search submissions, highlight sources, select multiple sources, delete sources and conversations, toggle sort order, and filter the source list. 
 
 - The larger portion of the left panel holds the list of sources that have submitted to your
   instance. Each source is identified to you with a two word pseudonym. You will also
-  see the date of the last source activity, an icon to indicate if a source contains attachments,
-  and a button to mark a source as starred.
+  see the date of the last source activity, an icon to indicate if a source conversation contains any attachments, and a button to mark a source as starred.
 
 - The right panel holds the conversation view. All parts of the conversation
   with a specific source (messages, files, and journalist replies) will be
@@ -29,8 +28,7 @@ will be marked as seen (no longer displayed in bold text) for all users.
 Opening a conversation
 ----------------------
 
-To display a conversation in the conversation view, simply click a source in the
-source list.
+To display the conversation with a source in the conversation view, simply click a source in the source list.
 
 |screenshot_sdapp_main_view|
 
@@ -41,10 +39,10 @@ Replies from other journalists in your organization show up in the conversation,
    seconds)?”, click **Yes**. This allows the SecureDrop Inbox VM access
    to the secure VM that holds your SecureDrop Submission Key.
 
-Highlighting conversations
---------------------------
+Highlighting sources
+--------------------
 
-You can highlight important conversations by clicking on the star beside a
+You can highlight important sources by clicking on the star beside a
 source's name. Starred sources will be visible as starred to everyone in your
 organization.
 
@@ -53,8 +51,7 @@ Sending a reply
 
 Compose a reply to the selected source in the text box at the bottom of the
 conversation view. Click the **Send** button or press "Ctrl+Enter" to send
-a reply. Any replies you did not send will be discarded when you move to a
-different conversation.
+a reply.
 
 |screenshot_send_reply|
 
@@ -62,13 +59,10 @@ different conversation.
   subsequent sessions, including to any other users logging into the same
   physical SecureDrop Workstation.
 
-Deleting
----------
+Deleting source conversations or accounts
+-----------------------------------------
 
-Deleting conversations
-''''''''''''''''''''''''''''''
-
-You can delete a single source conversation checking the box beside the Source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top.
+You can delete a single source conversation or account by checking the box beside the source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top.
 
 |screenshot_delete_sources_select|
 
@@ -85,19 +79,17 @@ Click **Delete Account** to also remove the source from the source list,
 and to prevent them from logging into the Source Interface. Their account will
 be completely removed from the system.
 
+Deleting multiple conversations or accounts
+'''''''''''''''''''''''''''''''''''''''''''
 
-Deleting multiple conversations
-'''''''''''''''''''''''''''''''
-
-To delete multiple conversations or accounts, select more than one source
-conversation from the list, then click the delete button. You will be
+To delete multiple source conversations or accounts, select more than one source from the list, then click the delete button. You will be
 presented with the same options to **Delete Conversations** and
 **Delete Accounts** as you would with a single source conversation.
 
-Searching and Filtering
+Searching and filtering
 -----------------------
 
-You can search through the text of all conversations and source pseudonyms using the search bar at the top of the source list. This will not search for text inside submitted attachments. 
+You can search through all source pseudonyms and the text of all conversations using the search bar at the top of the source list. This will not search for text inside submitted attachments. 
 
 |screenshot_search|
 
