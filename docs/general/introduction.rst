@@ -18,18 +18,14 @@ not true of other operating systems.
 What is SecureDrop Workstation?
 -------------------------------
 
-SecureDrop Workstation is a project that uses Qubes to make
-SecureDrop faster and simpler for journalists to use.
+SecureDrop Workstation combines a native SeucreDrop client application — SecureDrop Inbox — with Qubes OS, to produce a system that faster and simpler for journalists to use.
 
 A key feature of SecureDrop is that journalists can receive submissions from
 unknown sources without risking the security of their own machines and
-networks. Previously, SecureDrop accomplished this by using a physical airgap
-(the *Secure Viewing Station*), meaning that to view submissions, journalists
-would have to download them, transfer them to an encrypted USB drive, and
-physically take that drive to a separate, non-networked computer for decryption
+networks. Previously, this was accomplished by using a physical airgap: to view submissions, journalists would have to download them using the *Journalist Workstation*, transfer them to an encrypted USB drive, and physically take that drive to a separate, non-networked computer (the *Secure Viewing Station*) for decryption
 and viewing. 
 
-SecureDrop Workstation combines all of those steps into one workflow on one machine: SecureDrop Inbox running on a Qubes laptop that combines the *Journalist Workstation* and the *Secure Viewing Station*.
+SecureDrop Workstation combines all of those steps into one workflow on one machine: a Qubes laptop with SecureDrop Inbox that combines the *Journalist Workstation* and the *Secure Viewing Station*.
 
 Who is behind SecureDrop Workstation?
 -------------------------------------
