@@ -1,10 +1,7 @@
 Communicating with sources
 ==========================
 
-SecureDrop Workstation lets journalists check SecureDrop, decrypt and securely
-view submissions, and reply to sources, all on the same computer.
-
-Once logged in, you will see a chat-like user interface:
+Once signed in to your  SecureDrop Inbox, you will see a chat-like user interface:
   
 - The action area of the left panel provides the ability to search submissions, highlight sources, select multiple sources, delete sources and conversations, toggle sort order, and filter the source list. 
 
@@ -34,11 +31,6 @@ To display the conversation with a source in the conversation view, simply click
 
 Replies from other journalists in your organization show up in the conversation, and are identified by the journalist's name.
 
-.. note:: When you are prompted by a dialog that says “Do you allow VM
-   'sd-app' to access your GPG keys (now and for the following 28800
-   seconds)?”, click **Yes**. This allows the SecureDrop Inbox VM access
-   to the secure VM that holds your SecureDrop Submission Key.
-
 Highlighting sources
 --------------------
 
@@ -50,14 +42,12 @@ Sending a reply
 ---------------
 
 Compose a reply to the selected source in the text box at the bottom of the
-conversation view. Click the **Send** button or press "Ctrl+Enter" to send
+conversation view. Click the **Send** button or press :kbd:`Ctrl+Enter` to send
 a reply.
 
 |screenshot_send_reply|
 
-.. note:: If a reply fails to be sent successfully, it will still be visible in
-  subsequent sessions, including to any other users logging into the same
-  physical SecureDrop Workstation.
+Your reply will be accompanied by a small clock icon pending the next sync with the server. Once the reply has successfully sent, this will change to a small checkmark.
 
 Deleting source conversations or accounts
 -----------------------------------------
@@ -89,7 +79,7 @@ presented with the same options to **Delete Conversations** and
 Searching and filtering
 -----------------------
 
-You can search through all source pseudonyms and the text of all conversations using the search bar at the top of the source list. This will not search for text inside submitted attachments. 
+The search bar lets you search through all sources based on pseudonym or conversation content (include filenames of already downloaded submissions). This will not search for text *inside* document submissions. 
 
 |screenshot_search|
 

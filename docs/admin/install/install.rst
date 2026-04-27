@@ -116,7 +116,7 @@ In order to copy a journalist's login credentials:
 
 - Locate the password database. It should be in the ``Persistent`` directory, and will typically be named ``keepassx.kdbx`` or similar.
 
-- Open a second ``vault`` file manager window (``Ctrl + N`` in the current window) and navigate to the **Home** directory.
+- Open a second ``vault`` file manager window (:kbd:`Ctrl + N` in the current window) and navigate to the **Home** directory.
 
 - Drag and drop the password database to copy it.
 

@@ -27,9 +27,9 @@ networks. Previously, SecureDrop accomplished this by using a physical airgap
 (the *Secure Viewing Station*), meaning that to view submissions, journalists
 would have to download them, transfer them to an encrypted USB drive, and
 physically take that drive to a separate, non-networked computer for decryption
-and viewing. SecureDrop Workstation combines all of those steps
-into one workflow on one machine: a Qubes computer that
-combines the *Journalist Workstation* and the *Secure Viewing Station*.
+and viewing. 
+
+SecureDrop Workstation combines all of those steps into one workflow on one machine: SecureDrop Inbox running on a Qubes laptop that combines the *Journalist Workstation* and the *Secure Viewing Station*.
 
 Who is behind SecureDrop Workstation?
 -------------------------------------

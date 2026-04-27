@@ -3,7 +3,7 @@ Starting SecureDrop Inbox
 
 After you log into Qubes, SecureDrop Inbox will start automatically. If
 you have previously exited the application, you can double-click on the
-**SecureDrop Inbox** desktop shortcut to launch it.
+**SecureDrop Inbox** shortcut in the top left of the desktop to launch it.
 
 |screenshot_desktop-shortcut|
 
@@ -51,14 +51,14 @@ for administrators gives detailed steps for investigating connectivity issues.
 Menu
 ----
 
-Once signed in, the top of the left panel shows your username. Clicking your username shows the menu, which lets you initiate a sync with your SecureDrop server, get help, sign out, or quit SecureDrop Inbox.
+Once signed in, the top of the left panel shows your username. Clicking your username shows the menu, which lets you initiate a sync with your SecureDrop server, view help information, sign out, or quit SecureDrop Inbox.
 
 |screenshot_menu|
 
 Syncing
 -------
 
-Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every time you send a reply, or every 60 seconds. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing "Ctrl+S". 
+Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every 60 seconds, or every time you send a reply. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing :kbd:`Ctrl+S`.
 
 The sync indicator will be green if the last sync was successful. 
 
@@ -92,7 +92,9 @@ Falling back to the legacy SecureDrop Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you encounter an issue with the new SecureDrop Inbox or would like to use the older SecureDrop Client, you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
-**▸ Other ▸ SecureDrop Client (legacy)**.
+**▸ Other ▸ SecureDrop Client (legacy)**. The older SecureDrop Client will remain available until the end of May 2026.
+
+.. important:: Note that the older Client and newer Inbox sync and download data independently; any data you download in SecureDrop Inbox will have to be downloaded again in the Client, if you choose to use it, and vice versa.
 
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png

@@ -1,6 +1,8 @@
 Working with submissions
 ========================
 
+SecureDrop Inbox lets you decrypt and view messages from sources and send replies. Submissions sent by sources are viewed or exported securely using isolated VMs, made possible by the Qubes operating system that runs on your SecureDrop Workstation.
+
 When a source submits files, you will see a Download button in the conversation
 flow, a file size, and light-gray text that says "Encrypted File."
 
@@ -9,7 +11,7 @@ flow, a file size, and light-gray text that says "Encrypted File."
 Downloading
 -----------
 
-To download a file, click the **Download** button. An animated spinner will
+Submissions are not downloaded from your SecureDrop server automatically. To download a submission, click the **Download** button. An animated spinner will
 indicate that the file is downloading, and a progress bar will indicate
 the download's progress:
 
@@ -18,8 +20,9 @@ the download's progress:
 If necessary, you can pause the download by clicking "Pause," and resume
 the download later with "Resume."
 
-Once the file has been downloaded and decrypted, the filename will be visible,
-as will the action **Export** and **Print**. The displayed file size may increase
+Once the file has been downloaded and decrypted, the filename will be visible. The **Download** button will be replaced with a menu from which you can **View**, **Export to USB** or **Print** the submission.
+
+The displayed file size may increase
 after the download is complete, because SecureDrop Inbox automatically
 decompresses the downloaded file.
 
@@ -50,8 +53,8 @@ Printing
 
 To print a document, a :doc:`compatible printer <../admin/reference/hardware>`  must be plugged into the computer's USB port.
 
-1. Click "Print" button and wait for ``sd-devices`` VM to start.
-2. You will prompted to attach your printer.
+1. Click the submission's **Print** option and wait for ``sd-printers`` VM to start.
+2. You will prompted to plug in your printer.
 3. A Print Document dialog will appear, from which you can configure different print options before printing the document.
 
 Exporting to an Export USB
@@ -77,7 +80,7 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
       |screenshot_veracrypt_sd_devices_files_unlock|
    4. Click **Connect**.
 
-3. Back in your source's conversation, click **Export**.
+3. Back in the source conversation, click the submission's **Export** option.
    |screenshot_export_dialog|
 4. If you have not already unlocked your USB drive, you will be prompted for the
    password configured for this USB drive.
@@ -86,6 +89,8 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
 5. Once you see a message informing you that the export was successfully completed,
    you can safely unplug the USB drive. Alternatively, you can leave the drive
    plugged in and export additional files.
+
+.. TODO export transcript, export transcript and files, print Transcript
 
 .. |screenshot_file_before_download| image:: ../images/screenshot_file_before_download.png
   :width: 100%
