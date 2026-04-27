@@ -20,13 +20,17 @@ the download's progress:
 If necessary, you can pause the download by clicking "Pause," and resume
 the download later with "Resume."
 
-Once the file has been downloaded and decrypted, the filename will be visible. The **Download** button will be replaced with a menu from which you can **View**, **Export to USB** or **Print** the submission.
-
 The displayed file size may increase
 after the download is complete, because SecureDrop Inbox automatically
 decompresses the downloaded file.
 
 |screenshot_file_download_successful|
+
+Once the file has been downloaded and decrypted, the filename will be visible. The **Download** button will be replaced with a menu from which you can **View**, **Export to USB** or **Print** the submission.
+
+|screenshot_submission_menu|
+
+
 
 Viewing
 -------
@@ -98,6 +102,7 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
   :width: 100%
 .. |screenshot_file_download_successful| image:: ../images/screenshot_file_download_successful.png
   :width: 100%
+.. |screenshot_submission_menu| image:: /images/screenshot_submission_menu.png
 .. |screenshot_dispvm| image:: ../images/screenshot_dispvm.png
   :width: 100%
 .. |screenshot_export_dialog| image:: ../images/screenshot_export_dialog.png
