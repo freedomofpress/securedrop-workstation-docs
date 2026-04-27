@@ -1,7 +1,7 @@
 Managing Clipboard Access
 =========================
 
-Every VM in Qubes has its own clipboard, similar to the clipboard of a Mac, Windows or Linux computer. For example, if you used the default ``work`` VM to browse the web and wanted to copy text from one browser window to another, you would use the :kbd:`Ctrl+C` and :kdb:`Ctrl+V` keyboard shortcuts to copy and paste. This type of clipboard usage -- copy and paste in the same VM -- also works in all VMs that are part of SecureDrop Workstation.
+Every VM in Qubes has its own clipboard, similar to the clipboard of a Mac, Windows or Linux computer. For example, if you used the default ``work`` VM to browse the web and wanted to copy text from one browser window to another, you would use the :kbd:`Ctrl+C` and :kbd:`Ctrl+V` keyboard shortcuts to copy and paste. This type of clipboard usage -- copy and paste in the same VM -- also works in all VMs that are part of SecureDrop Workstation.
 
 In addition, Qubes supports copying information *between* VMs. This is done by using `special keyboard shortcuts <https://www.qubes-os.org/doc/copy-paste/>`_, :kbd:`Ctrl+Shift+C` and :kbd:`Ctrl+Shift+V`, in a four-step process. By default, this is disabled for all VMs that are part of SecureDrop Workstation, consistent with the `principle of least privilege <https://en.wikipedia.org/wiki/Principle_of_least_privilege>`__.
 

@@ -11,7 +11,7 @@ flow, a file size, and light-gray text that says "Encrypted File."
 Downloading
 -----------
 
-Submissions are not downloaded from your SecureDrop server automatically. To download a submission, click the **Download** button. An animated spinner will
+Submissions are not downloaded from your SecureDrop server automatically. To download a submission file, click the **Download** button. An animated spinner will
 indicate that the file is downloading, and a progress bar will indicate
 the download's progress:
 
