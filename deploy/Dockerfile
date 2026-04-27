@@ -17,5 +17,3 @@ COPY --from=sphinx --chown=nginx:nginx build/stable/html/html/ /opt/nginx/webroo
 COPY --from=sphinx --chown=nginx:nginx build/stable/html/latex/SecureDropWorkstation.pdf /opt/nginx/webroot/en/stable/
 COPY --from=sphinx --chown=nginx:nginx build/latest/html/html/ /opt/nginx/webroot/en/latest/
 COPY --from=sphinx --chown=nginx:nginx build/latest/html/latex/SecureDropWorkstation.pdf /opt/nginx/webroot/en/latest/
-COPY --from=sphinx --chown=nginx:nginx build/app/html/html/ /opt/nginx/webroot/en/app/
-COPY --from=sphinx --chown=nginx:nginx build/app/html/latex/SecureDropWorkstation.pdf /opt/nginx/webroot/en/app/
