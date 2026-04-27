@@ -1,7 +1,7 @@
 Working with submissions
 ========================
 
-SecureDrop Inbox lets you decrypt and view messages from sources and send replies. Submissions sent by sources are viewed or exported securely using isolated VMs, made possible by the Qubes operating system that runs on your SecureDrop Workstation.
+SecureDrop Inbox decrypts and displays messages from sources and lets you send replies. Files sent by sources are viewed or exported securely using isolated VMs, made possible by the Qubes operating system that runs on your SecureDrop Workstation.
 
 When a source submits files, you will see a Download button in the conversation
 flow, a file size, and light-gray text that says "Encrypted File."
@@ -11,7 +11,7 @@ flow, a file size, and light-gray text that says "Encrypted File."
 Downloading
 -----------
 
-Submissions are not downloaded from your SecureDrop server automatically. To download a submission file, click the **Download** button. An animated spinner will
+Submitted files are not downloaded from your SecureDrop server automatically. To download a submitted file, click the **Download** button. An animated spinner will
 indicate that the file is downloading, and a progress bar will indicate
 the download's progress:
 
@@ -26,16 +26,15 @@ decompresses the downloaded file.
 
 |screenshot_file_download_successful|
 
-Once the file has been downloaded and decrypted, the filename will be visible. The **Download** button will be replaced with a menu from which you can **View**, **Export to USB** or **Print** the submission.
+Once the file has been downloaded and decrypted, the filename will be visible. The **Download** button will be replaced with a menu from which you can **View**, **Export to USB** or **Print** the file.
 
 |screenshot_submission_menu|
-
 
 
 Viewing
 -------
 
-To view a downloaded submission, click its filename. This will open
+To view a submitted file you have downloaded, click its filename. This will open
 the file in a temporary environment, called a "disposable VM." The file you
 clicked on will open in a new window with a different colored border and a
 window title prefixed with "disp" (meaning disposable).
@@ -57,14 +56,14 @@ Printing
 
 To print a document, a :doc:`compatible printer <../admin/reference/hardware>`  must be plugged into the computer's USB port.
 
-1. Click the submission's **Print** option and wait for ``sd-printers`` VM to start.
+1. Click the files's **Print** option and wait for ``sd-printers`` VM to start.
 2. You will prompted to plug in your printer.
 3. A Print Document dialog will appear, from which you can configure different print options before printing the document.
 
 Exporting to an Export USB
 --------------------------
 
-Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting submissions.
+Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting submitted files.
 
 1. Insert the USB drive and wait for the ``sd-devices`` VM to start.
 2. If your drive is using VeraCrypt, you will need to unlock it manually:
@@ -84,7 +83,7 @@ Currently, a LUKS- or VeraCrypt-encrypted USB drive is required for exporting su
       |screenshot_veracrypt_sd_devices_files_unlock|
    4. Click **Connect**.
 
-3. Back in the source conversation, click the submission's **Export** option.
+3. Back in the source conversation, click the file's **Export** option.
    |screenshot_export_dialog|
 4. If you have not already unlocked your USB drive, you will be prompted for the
    password configured for this USB drive.

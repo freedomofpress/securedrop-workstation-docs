@@ -7,7 +7,7 @@ Once signed in to your  SecureDrop Inbox, you will see a chat-like user interfac
 
 - The larger portion of the left panel holds the list of sources that have submitted to your
   instance. Each source is identified to you with a two word pseudonym. You will also
-  see the date of the last source activity, an icon to indicate if a source conversation contains any attachments, and a button to mark a source as starred.
+  see the date of the last source activity, an icon to indicate if a source conversation contains any submitted files, and a button to mark a source as starred.
 
 - The right panel holds the conversation view. All parts of the conversation
   with a specific source (messages, files, and journalist replies) will be

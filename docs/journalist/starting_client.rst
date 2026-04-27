@@ -58,7 +58,7 @@ Once signed in, the top of the left panel shows your username. Clicking your use
 Syncing
 -------
 
-Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every 60 seconds, or every time you send a reply. Syncing also fetches new messages sent by sources or other journalists in your organization. You can initiate a sync manually from the menu or by typing :kbd:`Ctrl+S`.
+Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every 60 seconds, or every time you send a reply. Syncing also fetches new submissions sent by sources or replies from other journalists in your organization. You can initiate a sync manually from the menu or by typing :kbd:`Ctrl+S`.
 
 The sync indicator will be green if the last sync was successful. 
 
