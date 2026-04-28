@@ -1,48 +1,40 @@
 Communicating with sources
 ==========================
 
-SecureDrop Workstation lets journalists check SecureDrop, decrypt and securely
-view submissions, and reply to sources, all on the same computer.
-
-Once logged in, you will see a chat-like user interface:
-
-- The top of the left panel shows your username, if you are logged in, or the
-  sign-in button.
+Once signed in to your  SecureDrop Inbox, you will see a chat-like user interface:
   
-- The action area of the left panel provides the ability to search for sources,
-  toggle the sort order, select multiple sources, and delete sources.
+- The action area of the left panel provides the ability to search submissions, highlight sources, select multiple sources, delete sources and conversations, toggle sort order, and filter the source list. 
 
 - The larger portion of the left panel holds the list of sources that have submitted to your
   instance. Each source is identified to you with a two word pseudonym. You will also
-  see the date of the last source activity, an icon to indicate if a source contains attachments,
-  and a button to mark a source as starred.
+  see the date of the last source activity, an icon to indicate if a source conversation contains any submitted files, and a button to mark a source as starred.
 
 - The right panel holds the conversation view. All parts of the conversation
   with a specific source (messages, files, and journalist replies) will be
   displayed here.
 
+Seen and unseen submissions
+---------------------------
+
+Sources with submissions (messages or files) that have not been seen by
+any journalist user will be displayed in bold text in the source list.
+
+As soon as any journalist user clicks on a source with unseen submissions, it
+will be marked as seen (no longer displayed in bold text) for all users.
 
 Opening a conversation
 ----------------------
 
-To display a conversation in the conversation view, simply click a source in the
-source list.
+To display the conversation with a source in the conversation view, simply click a source in the source list.
 
 |screenshot_sdapp_main_view|
 
-Journalists sending replies are assigned different colors and identified with
-their initials. Move your mouse pointer over the initials to reveal the full
-name.
+Replies from other journalists in your organization show up in the conversation, and are identified by the journalist's name.
 
-.. note:: When you are prompted by a dialog that says “Do you allow VM
-   'sd-app' to access your GPG keys (now and for the following 28800
-   seconds)?”, click **Yes**. This allows the SecureDrop Application VM access
-   to the secure VM that holds your SecureDrop Submission Key.
+Highlighting sources
+--------------------
 
-Highlighting conversations
---------------------------
-
-You can highlight important conversations by clicking on the star beside a
+You can highlight important sources by clicking on the star beside a
 source's name. Starred sources will be visible as starred to everyone in your
 organization.
 
@@ -50,23 +42,17 @@ Sending a reply
 ---------------
 
 Compose a reply to the selected source in the text box at the bottom of the
-conversation view. Click the **Send** button or press "Ctrl+Enter" to send
-a reply. Any replies you did not send will be discarded when you move to a
-different conversation.
+conversation view. Click the **Send** button or press :kbd:`Ctrl+Enter` to send
+a reply.
 
 |screenshot_send_reply|
 
-.. note:: If a reply fails to be sent successfully, it will still be visible in
-  subsequent sessions, including to any other users logging into the same
-  physical SecureDrop Workstation.
+Your reply will be accompanied by a small clock icon pending the next sync with the server. Once the reply has successfully sent, this will change to a small checkmark.
 
-Deleting conversations
-----------------------
+Deleting source conversations or accounts
+-----------------------------------------
 
-Deleting conversations
-''''''''''''''''''''''''''''''
-
-You can delete a single source conversation checking the box beside the Source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top.
+You can delete a single source conversation or account by checking the box beside the source name in the list, then clicking the delete button (as indicated by a trash icon) in the action area at the top.
 
 |screenshot_delete_sources_select|
 
@@ -83,6 +69,28 @@ Click **Delete Account** to also remove the source from the source list,
 and to prevent them from logging into the Source Interface. Their account will
 be completely removed from the system.
 
+Deleting multiple conversations or accounts
+'''''''''''''''''''''''''''''''''''''''''''
+
+To delete multiple source conversations or accounts, select more than one source from the list, then click the delete button. You will be
+presented with the same options to **Delete Conversations** and
+**Delete Accounts** as you would with a single source conversation.
+
+Searching and filtering
+-----------------------
+
+The search bar lets you search through all sources based on pseudonym or conversation content (include filenames of already downloaded submissions). This will not search for text *inside* document submissions. 
+
+|screenshot_search|
+
+To filter the list of conversations, use the dropdown menu to the right of the search bar. You can filter the conversation list to show only unread or starred conversations. 
+
+|screenshot_filter|
+
+The list of conversations can be sorted newest-to-oldest or oldest-to-newest. Change the sort order by clicking the sort toggle to the right of the filter dropdown.
+
+|screenshot_sort_toggle|
+
 .. |screenshot_sdapp_main_view| image:: ../images/screenshot_sdapp_main_view.png
   :width: 100%
 .. |screenshot_send_reply| image:: ../images/screenshot_send_reply.png
@@ -90,12 +98,6 @@ be completely removed from the system.
 .. |screenshot_confirm_delete|  image:: ../images/screenshot_delete_sources_dialog.png
   :width: 100%
 .. |screenshot_delete_sources_select|  image:: ../images/screenshot_delete_sources_select.png
-  :width: 100%
-
-Deleting multiple conversations
-'''''''''''''''''''''''''''''''
-
-To delete multiple conversations or accounts, select more than one source
-conversation from the list, then click the delete button. You will be
-presented with the same options to **Delete Conversations** and
-**Delete Accounts** as you would with a single source conversation.
+.. |screenshot_search| image:: /images/screenshot_search.png
+.. |screenshot_filter| image:: /images/screenshot_filter.png
+.. |screenshot_sort_toggle| image:: /images/screenshot_sort_toggle.png

@@ -1,21 +1,20 @@
-Starting the SecureDrop App
+Starting SecureDrop Inbox
 ==============================
 
-After you log into Qubes, the SecureDrop App will start automatically. If
+After you log into Qubes, SecureDrop Inbox will start automatically. If
 you have previously exited the application, you can double-click on the
-**SecureDrop** desktop shortcut to launch it.
+**SecureDrop Inbox** shortcut in the top left of the desktop to launch it.
 
 |screenshot_desktop-shortcut|
 
 Performing updates
 ------------------
 
-Unless the system has just been updated, SecureDrop Workstation will now prompt
-you to automatically download and apply any available security updates:
+Unless the system has just been updated, you will now be prompted to automatically download and apply any available security updates:
 
 |screenshot_update_prompt|
 
-For security reasons, you will not be able to launch the SecureDrop App until
+For security reasons, you will not be able to launch the SecureDrop Inbox until
 updates have been applied. This typically takes between 10 and 30 minutes.
 
 Click "Start updates" if you are ready to start the process. (If you prefer to
@@ -29,7 +28,7 @@ You will see a progress indicator until updates are completed:
 
 At the end of this process, SecureDrop Workstation may prompt you to reboot
 if core system components were updated. Once all steps in the update process have
-been completed, the SecureDrop App will launch automatically.
+been completed, the SecureDrop Inbox will launch automatically.
 
 Signing in
 ----------
@@ -37,7 +36,7 @@ Signing in
 To sign in, enter the username and passphrase provided to you by your
 SecureDrop administrator, as well as the two-factor code using the method you
 have set up. If you have used SecureDrop before, these
-are the same credentials that you would use to log in to the Journalist
+are the same credentials that you would use to sign in to the Journalist
 Interface.
 
 |screenshot_sd-app_login|
@@ -49,45 +48,67 @@ administrator. Our :doc:`network troubleshooting guide
 <../admin/reference/troubleshooting_connection>`
 for administrators gives detailed steps for investigating connectivity issues.
 
-Seen and unseen submissions
----------------------------
+Menu
+----
 
-Sources with submissions (messages or files) that have not been seen by
-any journalist user will be displayed in bold text in the source list.
+Once signed in, the top of the left panel shows your username. Clicking your username shows the menu, which lets you initiate a sync with your SecureDrop server, view help information, sign out, or quit SecureDrop Inbox.
 
-As soon as any journalist user clicks on a source with unseen submissions, it
-will be marked as seen (no longer displayed in bold text) for all users.
+|screenshot_menu|
+
+Syncing
+-------
+
+Unless you are in :ref:`offline mode<Offline mode>`, SecureDrop Inbox will automatically sync with your SecureDrop Instance every 60 seconds, or every time you send a reply. Syncing also fetches new submissions sent by sources or replies from other journalists in your organization. You can initiate a sync manually from the menu or by typing :kbd:`Ctrl+S`.
+
+The sync indicator will be green if the last sync was successful. 
+
+|screenshot_sync_indicator|
+
+If the sync indicator is orange, it means the most recent sync failed or did not complete properly. If your SecureDrop Inbox is repeatedly unable to sync, you can try :doc:`troubleshooting the network connection</admin/reference/troubleshooting_connection>` on your SecureDrop Workstation or contacting your admin for help. 
+
+.. _Offline mode:
 
 Working offline
 ---------------
 
 Offline mode is available for circumstances where you wish to work offline or
-are unable to connect to the SecureDrop servers. In offline mode, any content
-that you have previously downloaded will be available. You will not be able to
-send or delete messages, and your actions will not impact the seen/unseen
-state of submissions.
+are unable to connect to your SecureDrop server. 
 
 |screenshot_use_offline|
 
 Because SecureDrop Workstation allows you to download and decrypt submissions
-on one machine, submissions that you have downloaded are still available in
-offline mode and can be accessed even when you are not logged in.
-
-|screenshot_offline_mode|
+on one machine, submissions that you have previously downloaded are still available in
+offline mode and can be accessed even when you are not signed in.
 
 .. important:: Protecting downloaded submissions is another reason why
    SecureDrop Workstation needs to be powered off completely when it is not in
    use.
 
+Any actions you take while in offline mode, such as sending replies or deleting conversations, will be synchronized to the server the next time you sign in. To sign in while in offline mode, click the orange "Offline Mode" to open the menu and select "Sign in".
+
+|screenshot_offline_mode_menu|
+
+Falling back to the legacy SecureDrop Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you encounter an issue with the new SecureDrop Inbox or would like to use the older SecureDrop Client, you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
+**▸ Other ▸ SecureDrop Client (legacy)**. The older SecureDrop Client will remain available until the end of May 2026.
+
+.. important:: Note that the older Client and newer Inbox sync and download data independently; any data you download in SecureDrop Inbox will have to be downloaded again in the Client, if you choose to use it, and vice versa.
+
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
-  :width: 100%
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png
-  :width: 100%
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
-  :width: 100%
 .. |screenshot_sd-app_login| image:: ../images/screenshot_sd-app_login.png
   :width: 100%
+.. |screenshot_menu| image:: /images/screenshot_menu.png
+.. |screenshot_sync_indicator| image:: /images/screenshot_sync_indicator.png
 .. |screenshot_use_offline| image:: ../images/screenshot_use_offline.png
   :width: 100%
 .. |screenshot_offline_mode| image:: ../images/screenshot_offline_mode.png
   :width: 100%
+.. |screenshot_offline_mode_menu| image:: /images/screenshot_offline_mode_menu.png
+.. |qubes_menu| image:: /images/qubes_menu.png
+  :alt: Qubes Application menu
+.. |qubes_menu_gear| image:: /images/qubes_menu_gear.png
+  :alt: System Tools 

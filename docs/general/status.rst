@@ -4,8 +4,8 @@ SecureDrop Workstation Project Status
 SecureDrop Workstation is currently in active development.
 
 We are currently in an open beta. If you are
-interested in using SecureDrop Workstation, please reach out to us
-via our `contact form <https://securedrop.org/help>`_.
+interested in using SecureDrop Workstation, please `reach out to us
+using one of the methods listed here. <https://securedrop.org/help/>`_.
 
 Is SecureDrop Workstation right for you?
 ----------------------------------------
@@ -43,7 +43,7 @@ Do you still need a Tails-based *Secure Viewing Station*?
 ---------------------------------------------------------
 
 For now, yes. There are still circumstances where the SecureDrop Workstation
-may not be able to retreive or show submissions. The main instances are
+may not be able to retrieve or show submissions. The main instances are
 either in situations where there are a substantial number of sources or
 submissions stored on the SecureDrop server, or in instances were you are
 trying to open a file type that the Workstation is not yet equipped to handle.
