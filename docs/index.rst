@@ -58,6 +58,7 @@ against malware and other security risks. It is built on Qubes OS and requires a
    admin/reference/backup
    admin/reference/bios_update
    admin/reference/removing_gpg_passphrase
+   admin/reference/upgrade_to_qubes_4.3
 
 * :ref:`genindex`
 * :ref:`search`
