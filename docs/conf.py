@@ -22,6 +22,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import os
+from datetime import date
 
 # Detect if we're being built by Read the Docs
 # https://docs.readthedocs.org/en/latest/faq.html#how-do-i-change-behavior-for-read-the-docs
@@ -52,7 +53,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'SecureDrop Workstation'
-copyright = '2020-2022, Freedom of the Press Foundation and Contributors'
+copyright = '2020-%s, Freedom of the Press Foundation and Contributors'%(date.today().year)
 author = 'Freedom of the Press Foundation and Contributors'
 
 # The version info for the project you're documenting, acts as replacement for
