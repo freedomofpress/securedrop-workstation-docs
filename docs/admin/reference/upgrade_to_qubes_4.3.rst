@@ -151,7 +151,7 @@ We will not be referring to specific stages in the instructions below,
 but if you are interested in the technical details about each stage, please refer
 to `Qubes documentation for the Qubes 4.3 upgrade. <https://doc.qubes-os.org/en/latest/user/downloading-installing-upgrading/upgrade/4_3.html#how-to-upgrade-from-qubes-4-2-to-qubes-4-3-in-place>`_
 
-To begin the Qubes 4.3 upgrade, open a ``dom0`` Terminal and run:
+Begin the Qubes 4.3 upgrade from the ``dom0`` Terminal by running:
 
 .. code-block:: sh
 
