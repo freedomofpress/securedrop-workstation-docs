@@ -63,8 +63,8 @@ From a ``dom0`` Terminal opened via |qubes_menu| **▸** |qubes_menu_gear| **▸
 
 .. code-block:: sh
 
-   sdw-update --skip-delta 0
-   
+   sdw-updater --skip-delta 0
+
 And step through the standard SecureDrop pre-flight updater. If SecureDrop
 Inbox opens at the end, please close it and continue.
 
