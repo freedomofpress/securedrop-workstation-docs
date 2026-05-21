@@ -178,6 +178,13 @@ SecureDrop Workstation one last time.
 After you log back in, your upgrade will be complete, and you can begin using SecureDrop
 Inbox again.
 
+After the upgrade
+^^^^^^^^^^^^^^^^^
+
+You can confirm you are on version 4.3 of Qubes via **Qube Manager ▸ About ▸ Qubes OS**
+
+Opening documents within the SecureDrop Inbox will now be much faster.
+
 .. |qubes_menu| image:: ../../images/qubes_menu.png
   :alt: Qubes Application menu
 .. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
