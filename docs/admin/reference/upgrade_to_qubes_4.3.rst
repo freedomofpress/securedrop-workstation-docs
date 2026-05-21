@@ -160,6 +160,7 @@ Begin the Qubes 4.3 upgrade from the ``dom0`` Terminal by running:
    sudo qubes-dist-upgrade --releasever 4.3 -y --all-pre-reboot
    
 If you encounter any errors with the above commands, please stop and contact support.
+Note that the commands may take a couple of hours to complete and may appear to hang at times.
 
 If you do not encounter any errors, please **reboot your SecureDrop Workstation when prompted**.
 
