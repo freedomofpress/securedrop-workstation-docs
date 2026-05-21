@@ -59,7 +59,7 @@ First, you must make sure that you have all available updates
 (including the Fedora 43 template that is required for a 
 successful upgrade)
 
-From a ``dom0`` Terminal opened via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**, run:
+From a ``dom0`` Terminal opened via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other ▸ Xfce Terminal**, run:
 
 .. code-block:: sh
 
