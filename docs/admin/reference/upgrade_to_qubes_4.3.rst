@@ -172,8 +172,7 @@ Ethernet connection, then continue by running:
    
    sdw-admin --apply
 
-After stepping through the SecureDrop pre-flight updater, go ahead and reboot your
-SecureDrop Workstation one last time.
+After the command completes, go ahead and reboot your SecureDrop Workstation one last time.
 
 After you log back in, your upgrade will be complete, and you can begin using SecureDrop
 Inbox again.
