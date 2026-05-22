@@ -176,13 +176,11 @@ Ethernet connection, then continue by running:
 After stepping through the SecureDrop pre-flight updater, go ahead and reboot your
 SecureDrop Workstation one last time.
 
-After you log back in, your upgrade will be complete, and you can begin using SecureDrop
-Inbox again.
-
 After the upgrade
 ~~~~~~~~~~~~~~~~~
 
-Upon rebooting, you may have to re-connect to your wifi.
+After you log back in, your upgrade will be complete, and you can begin using SecureDrop
+Inbox again. You may have to re-connect to your wifi.
 
 You can confirm you are on version 4.3 of Qubes via **Qube Manager ▸ About ▸ Qubes OS**
 
