@@ -182,7 +182,6 @@ Inbox again.
 After the upgrade
 ~~~~~~~~~~~~~~~~~
 
-
 You can confirm you are on version 4.3 of Qubes via **Qube Manager ▸ About ▸ Qubes OS**
 
 Opening documents within the SecureDrop Inbox will now be much faster!
