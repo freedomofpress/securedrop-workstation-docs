@@ -59,7 +59,7 @@ First, you must make sure that you have all available updates
 (including the Fedora 43 template that is required for a 
 successful upgrade)
 
-From a ``dom0`` Terminal opened via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other Tools ▸ Xfce Terminal**, run:
+From a ``dom0`` Terminal opened via |qubes_menu| **▸** |qubes_menu_gear| **▸ Other ▸ Xfce Terminal**, run:
 
 .. code-block:: sh
 
@@ -151,7 +151,7 @@ We will not be referring to specific stages in the instructions below,
 but if you are interested in the technical details about each stage, please refer
 to `Qubes documentation for the Qubes 4.3 upgrade. <https://doc.qubes-os.org/en/latest/user/downloading-installing-upgrading/upgrade/4_3.html#how-to-upgrade-from-qubes-4-2-to-qubes-4-3-in-place>`_
 
-To begin the Qubes 4.3 upgrade, open a ``dom0`` Terminal and run:
+Begin the Qubes 4.3 upgrade from the ``dom0`` Terminal by running:
 
 .. code-block:: sh
 
@@ -160,6 +160,7 @@ To begin the Qubes 4.3 upgrade, open a ``dom0`` Terminal and run:
    sudo qubes-dist-upgrade --releasever 4.3 -y --all-pre-reboot
    
 If you encounter any errors with the above commands, please stop and contact support.
+Note that the commands may take a couple of hours to complete and may appear to hang at times.
 
 If you do not encounter any errors, please **reboot your SecureDrop Workstation when prompted**.
 
@@ -174,8 +175,15 @@ Ethernet connection, then continue by running:
 
 After the command completes, go ahead and reboot your SecureDrop Workstation one last time.
 
+After the upgrade
+~~~~~~~~~~~~~~~~~
+
 After you log back in, your upgrade will be complete, and you can begin using SecureDrop
-Inbox again.
+Inbox again. You may have to re-connect to your WiFi.
+
+You can confirm you are on version 4.3 of Qubes via **Qube Manager ▸ About ▸ Qubes OS**
+
+Opening documents within the SecureDrop Inbox will now be much faster!
 
 .. |qubes_menu| image:: ../../images/qubes_menu.png
   :alt: Qubes Application menu
