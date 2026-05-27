@@ -180,7 +180,7 @@ After the upgrade
 ~~~~~~~~~~~~~~~~~
 
 After you log back in, your upgrade will be complete, and you can begin using SecureDrop
-Inbox again. You may have to re-connect to your wifi.
+Inbox again. You may have to re-connect to your WiFi.
 
 You can confirm you are on version 4.3 of Qubes via **Qube Manager ▸ About ▸ Qubes OS**
 
