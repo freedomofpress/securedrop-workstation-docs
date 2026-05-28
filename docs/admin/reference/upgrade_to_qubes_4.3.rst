@@ -99,8 +99,23 @@ Before you proceed with the upgrade to Qubes 4.3, it's recommended to perform
 some system cleanup that falls outside of the scope of what the SecureDrop 
 Workstation typically manages.
 
-If you're less familiar with Qubes, or if you have your own customizations and
-feel comfortable managing them independently, you may skip this step.
+To make this process as simple as possible, we provide a script which
+will remove old Fedora templates, remove Whonix (if installed), and
+perform a few other necessary cleanup tasks.
+
+To use the script, open the ``dom0`` Terminal and then run:
+
+.. code-block:: sh
+
+   sdw-upgrade
+   
+The script will warn you about the changes that will be made to your system, and will
+require you to confirm that you wish to continue by typing :kbd:`y` and pressing
+:kbd:`Enter` when prompted.
+
+If you encounter any error messages during this script and are unsure how to move forward,
+please be sure to `contact SecureDrop support via Signal <https://securedrop.org/help/>`_
+before proceeding.
 
 Remove deprecated VMs and templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
