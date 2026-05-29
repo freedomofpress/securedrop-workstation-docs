@@ -96,7 +96,7 @@ upgrade, and using Ethernet can help make the experience faster and smoother.
 Ensure you have enough disk space
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please check on the tray menu (top right of the screen) for an icon that looks
+Please check the tray menu (top right of the screen) for an icon that looks
 like a hard drive (it may have been replaced with a warning sign). Click it
 and confirm:
 
