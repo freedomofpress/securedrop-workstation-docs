@@ -92,6 +92,23 @@ connect via Ethernet and establish a hard-wired connection before continuing
 with the upgrade. A significant amount of data must be downloaded during the
 upgrade, and using Ethernet can help make the experience faster and smoother.
 
+
+Ensure you have Enough Disk Space
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please check on the tray menu (top right of the screen) for an icon that looks
+like a hard drive (it may have been replaced with a warning sign). Click it
+and confirm:
+
+* Under ``varlibqubes``: at most 15GiB of 20GiB
+* Under ``vm-pool``: usage below 80%
+* No warnings at the bottom of the window
+
+If you encounter any problems in this step, please do not proceed and
+`contact SecureDrop support via Signal <https://securedrop.org/help/>`_
+so we can advise on working around limited storage space.
+
+
 Perform additional cleanup (optional, recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -116,6 +133,7 @@ require you to confirm that you wish to continue by typing :kbd:`y` and pressing
 If you encounter any error messages during this script and are unsure how to move forward,
 please be sure to `contact SecureDrop support via Signal <https://securedrop.org/help/>`_
 before proceeding.
+
 
 Remove deprecated VMs and templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
