@@ -97,7 +97,7 @@ Ensure you have enough disk space
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please check the tray menu (top right of the screen) for an icon that looks
-like a hard drive (it may have been replaced with a ⚠️ warning sign). Click it
+like a hard drive (it may have been replaced with a warning sign). Click it
 and confirm:
 
 * Under ``varlibqubes``: there is at least 5 GiB free space available
