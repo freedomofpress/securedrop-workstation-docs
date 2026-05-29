@@ -117,43 +117,6 @@ If you encounter any error messages during this script and are unsure how to mov
 please be sure to `contact SecureDrop support via Signal <https://securedrop.org/help/>`_
 before proceeding.
 
-Remove deprecated VMs and templates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    
-The following templates and disposables should be removed, as they are no longer
-required and no longer receive security updates:
-
-* ``fedora-40-dvm``
-* ``fedora-41-dvm``
-* ``fedora-40-xfce``
-* ``fedora-41-xfce``
-* ``fedora-42-xfce``
-
-You may do so by using the `Qube Manager <https://doc.qubes-os.org/en/latest/introduction/getting-started.html#qube-manager>`_.
-
-For any remaining Fedora-based VMs, you may need to switch their template
-to ``fedora-43-xfce``.
-
-Remove Whonix 17
-^^^^^^^^^^^^^^^^^^
-
-Whonix is no longer necessary for the SecureDrop Workstation.
-
-If you still have Whonix 17 installed, and have no other use-case for it, you
-should remove it. We recommend you remove any of the following VMs:
-
-* ``whonix-workstation-17``
-* ``whonix-gateway-17``
-* ``anon-whonix``
-* ``sys-whonix``
-* ``whonix-workstation-17-dvm``
-
-If you do have a need for Whonix, you should `manually upgrade <https://www.whonix.org/wiki/Release_Upgrade_17_to_18>`_ to version 18
-once you have upgraded to Qubes 4.3.
-
-You should not continue to use any Whonix 17 VMs, as they will not receive
-security updates.
-
 Upgrade to Qubes 4.3
 --------------------
 
