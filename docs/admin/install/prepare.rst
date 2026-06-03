@@ -25,38 +25,37 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the Qubes OS ISO and cryptographic hash values for version ``4.2.4`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-2-4>`_. The ISO is 6.8 GB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the ``.iso`` and the ``Detached PGP signature`` for ``Qubes OS 4.3.0`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-3-0>`_. The ISO is 8 GB approximately, and may take some time to download based on the speed of your Internet connection.
 
-Follow the linked instructions to `verify the ISO <https://www.qubes-os.org/security/verifying-signatures/#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_. Ensure that the ISO and hash values are in the same directory, then run:
+Follow the linked instructions to `verify the ISO <https://doc.qubes-os.org/en/latest/project-security/verifying-signatures.html#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_. Ensure that the ISO and hash values are in the same directory, then run:
 
 .. code-block:: sh
 
-  gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc
-  gpg -v --verify Qubes-R4.2.4-x86_64.iso.DIGESTS
-  sha256sum -c Qubes-R4.2.4-x86_64.iso.DIGESTS
+  gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.3-signing-key.asc
+  gpg -v --verify Qubes-R4.3.0-x86_64.iso.asc
 
 The output should look like this:
 
 .. code-block:: sh
 
-  gpg: requesting key from 'https://keys.qubes-os.org/keys/qubes-release-4.2-signing-key.asc'
-  gpg: key E022E58F8E34D89F: public key "Qubes OS Release 4.2 Signing Key" imported
+  gpg: requesting key from 'https://keys.qubes-os.org/keys/qubes-release-4.3-signing-key.asc'
+  gpg: key 1C3D9B627F3FADA4: 1 signature not checked due to a missing key
+  gpg: /home/user/.gnupg/trustdb.gpg: trustdb created
+  gpg: key 1C3D9B627F3FADA4: public key "Qubes OS Release 4.3 Signing Key" imported
   gpg: Total number processed: 1
   gpg:               imported: 1
   gpg: no ultimately trusted keys found
 
-  gpg: armor header: Hash: SHA256
-  gpg: original file name=''
-  gpg: Signature made Mon 17 Feb 2025 12:00:00 AM EST
-  gpg:                using RSA key 9C884DF3F81064A569A4A9FAE022E58F8E34D89F
+  gpg: enabled compatibility flags:
+  gpg: assuming signed data in 'Qubes-R4.3.0-x86_64.iso'
+  gpg: Signature made Wed Dec 17 23:33:45 2025 GMT
+  gpg:                using RSA key F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
   gpg: using pgp trust model
-  gpg: Good signature from "Qubes OS Release 4.2 Signing Key" [unknown]
+  gpg: Good signature from "Qubes OS Release 4.3 Signing Key" [unknown]
   gpg: WARNING: This key is not certified with a trusted signature!
   gpg:          There is no indication that the signature belongs to the owner.
-  Primary key fingerprint: 9C88 4DF3 F810 64A5 69A4  A9FA E022 E58F 8E34 D89F
-  gpg: textmode signature, digest algorithm SHA256, key algorithm rsa4096
-  Qubes-R4.2.4-x86_64.iso: OK
-  sha256sum: WARNING: 20 lines are improperly formatted
+  Primary key fingerprint: F3FA 3F99 D628 1F7B 3A3E  5E87 1C3D 9B62 7F3F ADA4
+  gpg: binary signature, digest algorithm SHA512, key algorithm rsa4096
 
 Specifically, you will want to make sure that you see "Good signature" listed in the text. If it does not report a good signature, try deleting the ISO and downloading it again.
 
@@ -64,7 +63,7 @@ Once you've verified the ISO, copy it to your installation medium - for example,
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.2.4-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.3.0-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
@@ -99,7 +98,7 @@ After the disk is unlocked and Qubes starts, you will be prompted to complete th
 
 On the configuration screen, ensure that the following options are set:
 
-- Uncheck: "Whonix 17"
+- Uncheck: "Whonix 18"
 - Dropdown: Default Template should be "Fedora 42 Xfce"
 - Check: "Create default system qubes (sys-net, sys-firewall, default DispVM)"
 - Check: "Make sys-firewall and sys-usb disposable"
@@ -109,7 +108,7 @@ If there is a grayed out option "USB qube configuration disabled", make a note o
 .. tip::
   Before you finish the configuration, confirm that you have *unchecked* the Whonix option, as in this screenshot:
 
-  |screenshot_qubes_unselect_whonix17|
+  |screenshot_qubes_unselect_whonix|
 
 Finally, click **Finish Configuration** to set up the default system TemplateVMs and AppVMs.
 
@@ -172,7 +171,6 @@ Once connected, launch the Qubes Update tool via |qubes_menu| **▸ Qubes Tools 
 .. |qubes_menu| image:: ../../images/qubes_menu.png
   :alt: Qubes Application menu
 .. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
-  :alt: System Tools 
-.. |screenshot_qubes_unselect_whonix17| image:: ../../images/screenshot_qubes_unselect_whonix17.png
-  :alt: the location of the Whonix 17 box to uncheck
-  
+  :alt: System Tools
+.. |screenshot_qubes_unselect_whonix| image:: ../../images/screenshot_qubes_unselect_whonix18.png
+  :alt: the location of the Whonix 18 box to uncheck
