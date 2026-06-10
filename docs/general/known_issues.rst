@@ -35,7 +35,7 @@ Current known issues
   the Tails-based *Secure Viewing Station*. :doc:`Broader file type support is planned <supported_filetypes>`.
 - If the *Submission Key* for your SecureDrop server was rotated in the past,
   you must manually re-add the old key to your `sd-gpg` VM in order to
-  view old submissions in SecureDrop Client. `Contact Support <https://securedrop.org/help/>`_ for assistance.
+  view old submissions in SecureDrop Inbox. `Contact Support <https://securedrop.org/help/>`_ for assistance.
 - We do not support uninstalling SecureDrop Workstation without wiping all of
   Qubes OS. There is an ``--uninstall`` option for ``sdw-admin``, but it is not
   officially supported and will leave behind sensitive material in

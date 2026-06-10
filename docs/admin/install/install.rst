@@ -150,9 +150,9 @@ The preflight updater will start automatically after logging into the system. Pl
 
   .. note::
 
-    If you close the SecureDrop Client during your session, you can launch it again using the SecureDrop icon on the desktop. 
+    If you close the SecureDrop Inbox during your session, you can launch it again using the SecureDrop icon on the desktop. 
 
-Once the update check is complete, the SecureDrop Client will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
+Once the update check is complete, SecureDrop Inbox will launch. Log in using an existing journalist account and verify that sources are listed and submissions can be downloaded, decrypted, and viewed.
 
 .. _Password Management Section:
 
