@@ -25,7 +25,7 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the ``.iso`` and the ``Detached PGP signature`` for ``Qubes OS 4.3.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-3-0>`_. The ISO is 8 GB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the ``.iso`` and the ``Detached PGP signature`` for ``Qubes OS 4.3.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-3-1>`_. The ISO is 8 GB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://doc.qubes-os.org/en/latest/project-security/verifying-signatures.html#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_. Ensure that the ISO and hash values are in the same directory, then run:
 
