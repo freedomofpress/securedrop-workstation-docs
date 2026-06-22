@@ -25,14 +25,14 @@ If the Qubes hardware compatibility list entry for your computer recommends the 
 
 Download and verify Qubes OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the working computer, download the ``.iso`` and the ``Detached PGP signature`` for ``Qubes OS 4.3.0`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-3-0>`_. The ISO is 8 GB approximately, and may take some time to download based on the speed of your Internet connection.
+On the working computer, download the ``.iso`` and the ``Detached PGP signature`` for ``Qubes OS 4.3.1`` from `https://www.qubes-os.org/downloads/ <https://www.qubes-os.org/downloads/#qubes-os-4-3-1>`_. The ISO is 8 GB approximately, and may take some time to download based on the speed of your Internet connection.
 
 Follow the linked instructions to `verify the ISO <https://doc.qubes-os.org/en/latest/project-security/verifying-signatures.html#how-to-verify-detached-pgp-signatures-on-qubes-isos>`_. Ensure that the ISO and hash values are in the same directory, then run:
 
 .. code-block:: sh
 
   gpg --keyserver-options no-self-sigs-only,no-import-clean --fetch-keys https://keys.qubes-os.org/keys/qubes-release-4.3-signing-key.asc
-  gpg -v --verify Qubes-R4.3.0-x86_64.iso.asc
+  gpg -v --verify Qubes-R4.3.1-x86_64.iso.asc
 
 The output should look like this:
 
@@ -47,7 +47,7 @@ The output should look like this:
   gpg: no ultimately trusted keys found
 
   gpg: enabled compatibility flags:
-  gpg: assuming signed data in 'Qubes-R4.3.0-x86_64.iso'
+  gpg: assuming signed data in 'Qubes-R4.3.1-x86_64.iso'
   gpg: Signature made Wed Dec 17 23:33:45 2025 GMT
   gpg:                using RSA key F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
   gpg: using pgp trust model
@@ -63,7 +63,7 @@ Once you've verified the ISO, copy it to your installation medium - for example,
 
 .. code-block:: sh
 
-  sudo dd if=Qubes-R4.3.0-x86_64.iso of=/dev/sdX bs=1048576 && sync
+  sudo dd if=Qubes-R4.3.1-x86_64.iso of=/dev/sdX bs=1048576 && sync
 
 where ``if`` is set to the path to your downloaded ISO file and ``of`` is set to
 the block device corresponding to your USB stick. Note that any data on the USB stick will be overwritten.
@@ -99,14 +99,16 @@ After the disk is unlocked and Qubes starts, you will be prompted to complete th
 On the configuration screen, ensure that the following options are set:
 
 - Uncheck: "Whonix 18"
-- Dropdown: Default Template should be "Fedora 42 Xfce"
+- Dropdown: Default Template should be "Fedora 43 Xfce"
 - Check: "Create default system qubes (sys-net, sys-firewall, default DispVM)"
 - Check: "Make sys-firewall and sys-usb disposable"
 
 If there is a grayed out option "USB qube configuration disabled", make a note of this. An additional setup step will be required (see next section).
 
-.. tip::
-  Before you finish the configuration, confirm that you have *unchecked* the Whonix option, as in this screenshot:
+.. note::
+   Whonix is no longer needed by SecureDrop. However, if you have some use for Whonix, you can still install it if you want to. You can expect Whonix to incur additional maintenance.
+   
+   If you do not have a specific need for Whonix, be sure to confirm that you have *unchecked* the Whonix option, as in this screenshot:
 
   |screenshot_qubes_unselect_whonix|
 
