@@ -88,14 +88,6 @@ Any actions you take while in offline mode, such as sending replies or deleting 
 
 |screenshot_offline_mode_menu|
 
-Falling back to the legacy SecureDrop Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you encounter an issue with the new SecureDrop Inbox or would like to use the older SecureDrop Client, you can access it for a limited time via |qubes_menu| **▸** |qubes_menu_gear| 
-**▸ Other ▸ SecureDrop Client (legacy)**. The older SecureDrop Client will remain available until the end of May 2026.
-
-.. important:: Note that the older Client and newer Inbox sync and download data independently; any data you download in SecureDrop Inbox will have to be downloaded again in the Client, if you choose to use it, and vice versa.
-
 .. |screenshot_desktop-shortcut| image:: ../images/screenshot_desktop-shortcut.png
 .. |screenshot_update_prompt| image:: ../images/screenshot_update_prompt.png
 .. |screenshot_apply_updates| image:: ../images/screenshot_apply_updates.png
