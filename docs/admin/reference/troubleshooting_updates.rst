@@ -261,7 +261,7 @@ key and remove the expired one:
 ``sd-*-template`` update failures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1. Click the Qubes menu and open a terminal in the impacted
-   template. For example, if ``sd-small-bookworm-template`` failed to
+   template. For example, if ``sd-inbox-debian-13`` failed to
    update, select its entry in the Qubes menu and click
    **Terminal**.
 
@@ -335,4 +335,4 @@ persists, please contact us for assistance.
 .. |qubes_menu| image:: ../../images/qubes_menu.png
   :alt: Qubes Application menu
 .. |qubes_menu_gear| image:: ../../images/qubes_menu_gear.png
-  :alt: System Tools 
+  :alt: System Tools
